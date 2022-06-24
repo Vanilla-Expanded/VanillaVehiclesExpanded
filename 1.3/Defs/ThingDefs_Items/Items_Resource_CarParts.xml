@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="VVE_CarPartBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>1</stackLimit>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+	<healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+	  <Beauty>-4</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+	  <workSkill>Crafting</workSkill>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <recipeUsers>
+        <li>VVE_GarageBench</li>
+      </recipeUsers>
+      <researchPrerequisite>VVE_BasicVehicles</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  <!-- all the costLists are placeholders for now -->
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_EngineBlock</defName>
+    <label>engine block</label>
+    <description>Literally the part that gets a vehicle moving in the first place, no vehicle can be assembled without one. Exceedingly large or heavy vehicles could require more than one.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_EngineBlock</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <Mass>18</Mass>
+	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+    </statBases>
+    <costList>
+      <Steel>1</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarAlternator</defName>
+    <label>car alternator</label>
+    <description>The alternator - battery included - is an extremely vital engine part for any vehicle that has electrical systems. Some very basic systems can get away and some more complex vehicles can require more than one.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Alternator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <Mass>4</Mass>
+	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+    </statBases>
+    <costList>
+      <Steel>1</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarExhaust</defName>
+    <label>car exhaust</label>
+    <description>A series of pipes, catalysts and fittings that transfer the exhaust from the car engine away from the driver’s cabin. Engines that will be put under a lot of strain require more exhausts.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Exhaust</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <Mass>7</Mass>
+	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+    </statBases>
+    <costList>
+      <Steel>1</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarSuspension</defName>
+    <label>car suspension</label>
+    <description>A series of transmissions, springs and shock absorbers that redirect or reduce forces transferred through the wheels. Generally, the greater the mass and cargo capacity of the vehicle, the more suspensions are needed.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Suspension</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <Mass>8</Mass>
+	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+    </statBases>
+    <costList>
+      <Steel>1</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarWheel</defName>
+    <label>car wheel</label>
+    <description>One of the most ancient technologies developed by man, the wheel takes the power from the engine and translates it into movement. As wheels have to not only move the vehicle in whichever direction necessary but also withstand the combined weight, larger and heavier vehicles can need several or dozens of them.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Wheel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <Mass>10</Mass>
+	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+    </statBases>
+    <costList>
+      <Steel>1</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  
+</Defs>
