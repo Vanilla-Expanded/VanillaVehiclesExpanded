@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Vanilla Vehicles Framework</name>
+    <author>Oskar Potocki, xrushha, Smash Phil</author>
+    <url></url>
+    <description>Vanilla Vehicles Expanded is a long awaited mod utilising Smash Phil’s Vehicles framework. The main purpose of the mod is to add realistic and engaging mechanics surrounding vehicles of all kinds into the game. Not just the cars, but boats and airplanes too, this mod comes packed full of content and new production chains to allow players to dive deep into the vehicle production.
+	
+Vehicles come separated into many different categories and tiers, contributing to the overall progression. You won’t simply be making a car and driving it around - you will keep checking out other vehicles and options this mod brings to the table. Every car, boat and aircraft will have a particular purpose and thanks to the tier system, it will be easy to understand the differences between various vehicles.
+
+This mod utilises the paint job system added in Vehicles framework, allowing you to fully customize the pattern and colors of each of your vehicles. Whether you want a camouflaged armored division, or a pink bomber wing, this mod has it all.</description>
+    <packageId>OskarPotocki.VanillaVehiclesExpanded</packageId>
+    <supportedVersions>
+		<li>1.3</li>
+    </supportedVersions>
+    <modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>brrainz.harmony</li>
+	</loadAfter>
+</ModMetaData>
