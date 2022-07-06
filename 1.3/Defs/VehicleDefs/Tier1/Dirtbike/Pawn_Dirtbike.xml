@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+	<Vehicles.VehicleDef ParentName="BaseVehiclePawn">
+		<defName>Dirtbike</defName>
+		<label>Dirtbike</label>
+		<description>A nice, small, almost portable piece of transportation, the Dirtbike can get you, and only you, to your destination both quickly and quietly. Performs equally well in practically any terrain other than the cold, it’s the ideal choice when you need to travel a long distance off the beaten path. Don’t expect it to carry anything and an ambitious trek can leave you stranded.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Motorbike/Tier1_Motorbike</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<!-- <drawOffset>(0,0,1)</drawOffset> -->
+			<shaderType>Cutout</shaderType>
+		</graphicData>
+		
+		<fillPercent>0.2</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>Dirtbike_Blueprint</buildDef>
+		
+		<size>(1,1)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+				
+		<statBases>
+			<Mass>30</Mass>
+			<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.14</ArmorRating_Sharp>
+			<MarketValue>69420</MarketValue>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<vehicleStats>
+			<MoveSpeed>6.0</MoveSpeed>
+			<CargoCapacity>0</CargoCapacity>
+			<RepairRate>1</RepairRate>
+		</vehicleStats>
+		
+		<drawProperties>
+			<displayRotation>East</displayRotation>
+			<displayOffset>(0, -0.3)</displayOffset>
+			<displaySizeMultiplier>1.4</displaySizeMultiplier>
+		</drawProperties>
+		
+		<properties>
+			<diagonalRotation>false</diagonalRotation>
+			
+			<visibility>0.4</visibility>
+			
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 1)</li>
+			</vehicleJobLimitations>
+			
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+			<customHillinessCosts/>
+			
+			<roles>
+				<li>
+					<key>rider</key>
+					<label>Rider</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<hitbox>
+						<side>Body</side>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>-1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0,0,0.45)</drawOffsetNorth>
+						<drawOffsetSouth>(0,0,0.75)</drawOffsetSouth>
+						<drawOffsetEast>(-0.15,0,0.75)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+			
+			<!--
+			<customTerrainCosts DisallowTerrainWithTag="Water">
+				<li>
+					<key>Mud</key>
+					<value>250</value>
+				</li>
+			</customTerrainCosts>
+			-->
+		</properties>
+		
+		<components>
+			<li>
+				<key>Body</key>
+				<label>Body</label>
+				<health>50</health>
+				<armor>0.05</armor>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+				
+				<categories>
+					<li>BodyIntegrity</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontWheel</key>
+				<label>Front Wheel</label>
+				<health>20</health>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackWheel</key>
+				<label>Back Wheel</label>
+				<health>20</health>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>25</health>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontSuspension</key>
+				<label>Front Suspension</label>
+				<health>10</health>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackSuspension</key>
+				<label>Back Suspension</label>
+				<health>10</health>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+		</components>
+
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<fuelConsumptionRate>12.5</fuelConsumptionRate>
+				<fuelCapacity>30</fuelCapacity>
+				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

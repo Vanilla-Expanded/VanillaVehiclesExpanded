@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>Dirtbike_Blueprint</defName>
+		<label>Dirtbike</label>
+		<description>A nice, small, almost portable piece of transportation, the Dirtbike can get you, and only you, to your destination both quickly and quietly. Performs equally well in practically any terrain other than the cold, it’s the ideal choice when you need to travel a long distance off the beaten path. Don’t expect it to carry anything and an ambitious trek can leave you stranded.</description>
+		<designationCategory>VVE_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Motorbike/Tier1_Motorbike</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<!-- <drawOffset>(0, 0, 1)</drawOffset> -->
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>3500</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(1,1)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>1</VVE_CarAlternator>
+			<VVE_CarExhaust>1</VVE_CarExhaust>
+			<VVE_CarSuspension>2</VVE_CarSuspension>
+			<VVE_CarWheel>2</VVE_CarWheel>
+			<Steel>40</Steel>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>Dirtbike</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

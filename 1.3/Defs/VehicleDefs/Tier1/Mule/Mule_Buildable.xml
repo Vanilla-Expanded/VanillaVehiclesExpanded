@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>Mule_Blueprint</defName>
+		<label>Mule</label>
+		<description>What is ostensibly a bunch of wooden planks nailed together attached to the end of an oldtimer sawn in half, the Mule is as stubborn as its namesake and will carry almost inadvisable amounts of cargo. Thanks to the relatively improved engine, it performs best when travelling over long distances rather than making shortstops. Don’t expect miracles if it’s cold or slightly steep and avoid potholes.</description>
+		<designationCategory>VVE_Vehicles</designationCategory>
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Hauler/Tier1_Hauler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>7500</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(2,4)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>1</VVE_CarAlternator>
+			<VVE_CarExhaust>2</VVE_CarExhaust>
+			<VVE_CarSuspension>8</VVE_CarSuspension>
+			<VVE_CarWheel>4</VVE_CarWheel>
+			<Steel>200</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<WoodLog>100</WoodLog>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>Mule</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

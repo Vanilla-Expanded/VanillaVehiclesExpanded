@@ -99,7 +99,7 @@
         <muteWhenPaused>True</muteWhenPaused>      
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Pawn/Human/Vomit</clipPath> <!-- different sound file so it can be heard despite the engine sound -->
+            <clipPath>Misc/OrbitalBeam/OrbitalBeam</clipPath> <!-- different sound file so it can be heard despite the engine sound -->
           </li>
         </grains>      
         <pitchRange>0.99~1.01</pitchRange>
