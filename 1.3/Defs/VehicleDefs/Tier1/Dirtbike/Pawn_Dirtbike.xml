@@ -9,9 +9,9 @@
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Motorbike/Tier1_Motorbike</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(2,2)</drawSize>
-			<!-- <drawOffset>(0,0,1)</drawOffset> -->
-			<shaderType>Cutout</shaderType>
+			<drawOffset>(0,0,0.25)</drawOffset>
 		</graphicData>
 		
 		<fillPercent>0.2</fillPercent>
@@ -41,22 +41,16 @@
 		</vehicleStats>
 		
 		<drawProperties>
-			<displayRotation>East</displayRotation>
-			<displayOffset>(0, -0.3)</displayOffset>
-			<displaySizeMultiplier>1.4</displaySizeMultiplier>
+			<displayOffset>(-0.05, -0.2)</displayOffset>
+			<displaySizeMultiplier>1.2</displaySizeMultiplier>
 		</drawProperties>
 		
 		<properties>
 			<diagonalRotation>false</diagonalRotation>
-			
 			<visibility>0.4</visibility>
-			
-			<vehicleJobLimitations>
-				<li>(RepairVehicle, 1)</li>
-			</vehicleJobLimitations>
-			
+			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
+			<winterPathCostMultiplier>3.25</winterPathCostMultiplier>
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
-			<customHillinessCosts/>
 			
 			<roles>
 				<li>
@@ -77,21 +71,12 @@
 						<angleEast>0</angleEast>
 						<angleNorthEast>0</angleNorthEast>
 						<angleSouthEast>0</angleSouthEast>
-						<drawOffsetNorth>(0,0,0.45)</drawOffsetNorth>
-						<drawOffsetSouth>(0,0,0.75)</drawOffsetSouth>
-						<drawOffsetEast>(-0.15,0,0.75)</drawOffsetEast>
+						<drawOffsetNorth>(0,0,0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(0,0,0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0,0,0.25)</drawOffsetEast>
 					</pawnRenderer>
 				</li>
 			</roles>
-			
-			<!--
-			<customTerrainCosts DisallowTerrainWithTag="Water">
-				<li>
-					<key>Mud</key>
-					<value>250</value>
-				</li>
-			</customTerrainCosts>
-			-->
 		</properties>
 		
 		<components>

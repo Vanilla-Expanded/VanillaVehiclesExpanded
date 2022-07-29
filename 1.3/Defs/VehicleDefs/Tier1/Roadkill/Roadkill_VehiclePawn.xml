@@ -9,6 +9,7 @@
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Tank/Tier1_Tank</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
 		
@@ -40,11 +41,11 @@
 		<properties>
 			<visibility>3</visibility>
 			
+			<customRoadCosts AssignDefaults = "0.8"/>
+			
 			<vehicleJobLimitations>
 				<li>(RepairVehicle, 3)</li>
 			</vehicleJobLimitations>
-			
-			<customHillinessCosts/>
 			
 			<roles>
 				<li>
@@ -288,14 +289,20 @@
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
 				<fuelConsumptionRate>28.5</fuelConsumptionRate>
+				<worldMultiplierConsumptionRate>1.2</worldMultiplierConsumptionRate>
 				<fuelCapacity>60</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
-			<li Class="Vehicles.CompProperties_Cannons">
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
 				<turrets>
 					<li>
 						<turretDef>Roadkill_MainTurret</turretDef>
-						<renderProperties/>
+						
+						<renderProperties>
+							<north>(0,0.45)</north>
+							<south>(0,0.35)</south>
+							<east>(0.05,0.4)</east>
+						</renderProperties>
 
 						<gizmoLabel>Main Turret</gizmoLabel>
 						<autoTargeting>false</autoTargeting>

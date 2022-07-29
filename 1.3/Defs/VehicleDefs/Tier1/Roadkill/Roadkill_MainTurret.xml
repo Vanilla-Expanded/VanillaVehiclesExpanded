@@ -67,7 +67,7 @@
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Tank/Tier1_Tank_CannonTop</texPath>
 			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
-			<!-- <shaderType>CutoutComplexPattern</shaderType> -->
+			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(4, 4)</drawSize>
 		</graphicData>
 		

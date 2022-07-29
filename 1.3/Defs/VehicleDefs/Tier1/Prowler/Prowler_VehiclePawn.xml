@@ -9,6 +9,7 @@
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Explorer/Tier1_Explorer</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(3,4)</drawSize>
 		</graphicData>
 		
@@ -40,13 +41,7 @@
 		<properties>
 			<visibility>1.5</visibility>
 			
-			<winterPathCostMultiplier>2.5</winterPathCostMultiplier>
-			
-			<vehicleJobLimitations>
-				<li>(RepairVehicle, 1)</li>
-			</vehicleJobLimitations>
-			
-			<customHillinessCosts/>
+			<customHillinessCosts AssignDefaults = "1.5"/>
 			
 			<roles>
 				<li>
@@ -96,8 +91,8 @@
 				
 				<hitbox>
 					<cells>
-						<li>(1, -1)</li>
-						<li>(-1, 0)</li>
+						<li>(-1, -1)</li>
+						<li>(0, -1)</li>
 					</cells>
 				</hitbox>
 				

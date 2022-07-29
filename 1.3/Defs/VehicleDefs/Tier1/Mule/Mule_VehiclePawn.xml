@@ -9,6 +9,7 @@
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Hauler/Tier1_Hauler</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(3,5)</drawSize>
 		</graphicData>
 		
@@ -40,13 +41,10 @@
 		<properties>
 			<visibility>1.4</visibility>
 			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
-			<winterPathCostMultiplier>1.5</winterPathCostMultiplier>
+			<winterPathCostMultiplier>3.25</winterPathCostMultiplier>
 			
-			<vehicleJobLimitations>
-				<li>(RepairVehicle, 1)</li>
-			</vehicleJobLimitations>
-			
-			<customHillinessCosts/>
+			<customRoadCosts AssignDefaults = "0.6"/>
+			<customHillinessCosts AssignDefaults = "2"/>
 			
 			<roles>
 				<li>
@@ -342,6 +340,7 @@
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
 				<fuelConsumptionRate>18</fuelConsumptionRate>
+				<worldMultiplierConsumptionRate>0.5</worldMultiplierConsumptionRate>
 				<fuelCapacity>80</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>

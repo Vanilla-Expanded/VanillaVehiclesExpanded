@@ -20,7 +20,7 @@ This mod utilises the paint job system added in Vehicles framework, allowing you
 			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>smashphil.vehicles</packageId>
+			<packageId>SmashPhil.VehicleFramework</packageId>
 			<displayName>Vehicle Framework</displayName>
 			<downloadUrl>https://github.com/SmashPhil/Vehicles/releases/latest</downloadUrl>
 			<steamWorkshopUrl/>
@@ -30,6 +30,6 @@ This mod utilises the paint job system added in Vehicles framework, allowing you
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
 		<li>brrainz.harmony</li>
-		<li>smashphil.vehicles</li>
+		<li>SmashPhil.VehicleFramework</li>
 	</loadAfter>
 </ModMetaData>
