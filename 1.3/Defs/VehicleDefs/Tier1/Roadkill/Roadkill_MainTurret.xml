@@ -35,6 +35,7 @@
 		<reloadTimer>3.4</reloadTimer>
 		<warmUpTimer>4.5</warmUpTimer>
 		<magazineCapacity>1</magazineCapacity>
+		<ammoCountPerCharge>5</ammoCountPerCharge>
 		<genericAmmo>true</genericAmmo>
 		
 		<recoil>

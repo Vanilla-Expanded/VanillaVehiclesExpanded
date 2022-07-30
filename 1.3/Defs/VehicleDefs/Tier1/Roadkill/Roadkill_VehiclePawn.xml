@@ -289,7 +289,7 @@
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
 				<fuelConsumptionRate>28.5</fuelConsumptionRate>
-				<worldMultiplierConsumptionRate>1.2</worldMultiplierConsumptionRate>
+				<fuelConsumptionWorldMultiplier>1.2</fuelConsumptionWorldMultiplier>
 				<fuelCapacity>60</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>

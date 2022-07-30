@@ -52,6 +52,21 @@
 			<winterPathCostMultiplier>3.25</winterPathCostMultiplier>
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
 			
+			<customSnowCosts>
+				<li>
+					<key>Thin</key>
+					<value>8</value>
+				</li>
+				<li>
+					<key>Medium</key>
+					<value>16</value>
+				</li>
+				<li>
+					<key>Thick</key>
+					<value>24</value>
+				</li>
+			</customSnowCosts>
+			
 			<roles>
 				<li>
 					<key>rider</key>
