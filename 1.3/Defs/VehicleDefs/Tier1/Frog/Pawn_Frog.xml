@@ -184,7 +184,7 @@
 					<rocketTiltRate>0.025</rocketTiltRate>
 					<thrusterSize>0.5~1.25</thrusterSize>
 					<dustSize>0.5~1.5</dustSize>
-					<burnRadius>4</burnRadius>
+					<burnRadius>2</burnRadius>
 					<launchProperties>
 						<speed>0.1</speed>
 						<maxTicks>500</maxTicks>
