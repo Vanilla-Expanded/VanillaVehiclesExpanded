@@ -299,11 +299,17 @@
 						<turretDef>Roadkill_MainTurret</turretDef>
 						
 						<renderProperties>
-							<north>(0,0.45)</north>
-							<south>(0,0.35)</south>
-							<east>(0.05,0.4)</east>
+							<north>(0, 0.45)</north>
+							<south>(0, 0.35)</south>
+							<east>(0.05, 0.4)</east>
 						</renderProperties>
-
+						
+						<uiRenderProperties>
+							<north>(0, -15)</north>
+							<east>(1, -15)</east>
+							<south>(0, -13)</south>
+						</uiRenderProperties>
+						
 						<gizmoLabel>Main Turret</gizmoLabel>
 						<autoTargeting>false</autoTargeting>
 						

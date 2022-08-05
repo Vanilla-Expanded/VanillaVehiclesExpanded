@@ -20,6 +20,7 @@
 		<buildDef>Dirtbike_Blueprint</buildDef>
 		
 		<size>(1,1)</size>
+		<uiIconScale>1</uiIconScale>
 		
 		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Transport</vehicleCategory>
@@ -41,8 +42,9 @@
 		</vehicleStats>
 		
 		<drawProperties>
-			<displayOffset>(-0.05, -0.2)</displayOffset>
-			<displaySizeMultiplier>1.2</displaySizeMultiplier>
+			<displayOffsetNorth>(0, -0.2)</displayOffsetNorth>
+			<displayOffsetEast>(-0.05, -0.2)</displayOffsetEast>
+			<displayOffsetSouth>(0, -0.2)</displayOffsetSouth>
 		</drawProperties>
 		
 		<properties>
