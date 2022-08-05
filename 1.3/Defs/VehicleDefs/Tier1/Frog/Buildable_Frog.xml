@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Frog_Blueprint</defName>
+		<label>Frog (Ribbit)</label>
+		<description>For those who want a transport pod that doesn’t crash into the ground as a method of braking, this hunk of metal fitted with far too many thrusters will not only get you into situations but also back out of them. It is ridiculously wasteful in terms of fuel but it works incredibly well as an ambush vehicle, moving five times faster than drop pods. Earned its nickname as it can only move by launching itself into the stratosphere, thanks to oversized boosters.</description>
+		<designationCategory>VVE_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Droppod/Tier1_Droppod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<drawRotated>false</drawRotated>
+		</graphicData>
+		
+		<rotatable>false</rotatable>
+
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<size>(1,1)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>1</VVE_CarAlternator>
+			<VVE_CarExhaust>9</VVE_CarExhaust>
+			<VVE_CarSuspension>3</VVE_CarSuspension>
+			<Steel>30</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>VVE_Frog</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseVehiclePawn">
+		<defName>VVE_Frog</defName>
+		<label>Frog</label>
+		<description>For those who want a transport pod that doesn’t crash into the ground as a method of braking, this hunk of metal fitted with far too many thrusters will not only get you into situations but also back out of them. It is ridiculously wasteful in terms of fuel but it works incredibly well as an ambush vehicle, moving five times faster than drop pods. Earned its nickname as it can only move by launching itself into the stratosphere, thanks to oversized boosters.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Droppod/Tier1_Droppod</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3,3)</drawSize>
+			<drawRotated>false</drawRotated>
+		</graphicData>
+		
+		<fillPercent>1</fillPercent>
+		
+		<nameable>false</nameable>
+
+		<buildDef>VVE_Frog_Blueprint</buildDef>
+
+		<canCaravan LockSetting="True">false</canCaravan>
+		
+		<size>(1,1)</size>
+		<uiIconScale>0.85</uiIconScale>
+		
+		<vehicleMovementPermissions LockSetting="True">NotAllowed</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Air</vehicleType>
+		
+		<statBases>
+			<Mass>80</Mass>
+			<ArmorRating_Blunt>0.24</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.48</ArmorRating_Sharp>
+			<MarketValue>69420</MarketValue>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<vehicleStats>
+			<MoveSpeed LockSetting="True">0</MoveSpeed>
+			<CargoCapacity>240</CargoCapacity>
+			<RepairRate>1</RepairRate>
+		</vehicleStats>
+		
+		<drawProperties>
+			<displayRotation>North</displayRotation>
+		</drawProperties>
+		
+		<properties>
+			<visibility>5</visibility>
+			<defaultTerrainImpassable>true</defaultTerrainImpassable>
+			
+			<roles>
+				<li>
+					<key>Operator</key>
+					<label>Operator</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<hitbox>
+						<side>Body</side>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Body</key>
+				<label>Body</label>
+				<health>400</health>
+				<armor>1.75</armor>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+				
+				<categories>
+					<li>BodyIntegrity</li>
+				</categories>
+			</li>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>30</health>
+				<armor>0.15</armor>
+				
+				<explosionProperties>
+					<chance>0.25</chance>
+					<radius>3</radius>
+					<damageDef>Bomb</damageDef>
+				</explosionProperties>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FirstThruster</key>
+				<label>First Thruster</label>
+				<health>30</health>
+				<armor>0.15</armor>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>SecondThruster</key>
+				<label>Second Thruster</label>
+				<health>30</health>
+				<armor>0.15</armor>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>ThirdThruster</key>
+				<label>Third Thruster</label>
+				<health>30</health>
+				<armor>0.15</armor>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li><li>
+				<key>Stabilizers</key>
+				<label>Stabilizers</label>
+				<health>20</health>
+				<armor>0.15</armor>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+		</components>
+
+		<comps>	
+			
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<fuelConsumptionRate>360</fuelConsumptionRate>
+				<fuelCapacity>120</fuelCapacity>
+				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleLauncher">
+				<flySpeed>40</flySpeed>
+				<controlInFlight>false</controlInFlight>
+				<reconDistance>0</reconDistance>
+				<launchProtocol Class="Vehicles.RocketTakeoff">
+					<movementType>Decelerate</movementType>
+					<rocketTiltRate>0.025</rocketTiltRate>
+					<thrusterSize>0.5~1.25</thrusterSize>
+					<dustSize>0.5~1.5</dustSize>
+					<burnRadius>4</burnRadius>
+					<launchProperties>
+						<speed>0.1</speed>
+						<maxTicks>500</maxTicks>
+						<additionalLaunchTextures>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(2, 2)</drawSize>
+								<drawOffset>(-0.6, 0, -1.5)</drawOffset>
+								<shaderType>Transparent</shaderType>
+								<layer>-1</layer>
+							</li>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(2, 2)</drawSize>
+								<drawOffset>(0.665, 0, -1.5)</drawOffset>
+								<shaderType>Transparent</shaderType>
+								<layer>-1</layer>
+							</li>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(2, 2)</drawSize>
+								<drawOffset>(0, 0, -0.75)</drawOffset>
+								<shaderType>Transparent</shaderType>
+								<layer>-1</layer>
+							</li>
+						</additionalLaunchTextures>
+					</launchProperties>
+					<landingProperties>
+						<speed>0.3</speed>
+						<maxTicks>500</maxTicks>
+						<delayByTicks>100</delayByTicks>
+						<forcedRotation>North</forcedRotation>
+						<additionalLaunchTextures>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(2, 2)</drawSize>
+								<drawOffset>(-0.6, 0, -1.5)</drawOffset>
+								<shaderType>Transparent</shaderType>
+								<layer>-1</layer>
+							</li>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(2, 2)</drawSize>
+								<drawOffset>(0.665, 0, -1.5)</drawOffset>
+								<shaderType>Transparent</shaderType>
+								<layer>-1</layer>
+							</li>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(2, 2)</drawSize>
+								<drawOffset>(0, 0, -0.75)</drawOffset>
+								<shaderType>Transparent</shaderType>
+								<layer>-1</layer>
+							</li>
+						</additionalLaunchTextures>
+					</landingProperties>
+				</launchProtocol>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

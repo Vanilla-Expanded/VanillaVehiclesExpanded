@@ -36,7 +36,6 @@
 		</costList>
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-		
 		<thingToSpawn>Dirtbike</thingToSpawn>
 	</Vehicles.VehicleBuildDef>
 </Defs>
