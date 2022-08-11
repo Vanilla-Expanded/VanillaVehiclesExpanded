@@ -8,7 +8,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>UI/WeaponHandling/HandleWeapon_SmallA</clipPath>
+            <clipPath>RoadkillCannon_Reload</clipPath>
           </li>
         </grains>
       </li>
@@ -23,7 +23,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>UI/WeaponHandling/HandleWeapon_SmallA</clipPath>
+            <clipPath>BulldogCannon_Reload</clipPath>
           </li>
         </grains>
       </li>
@@ -38,7 +38,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Folder">
-            <clipFolderPath>Weapon/IncendiaryLauncher</clipFolderPath>
+            <clipFolderPath>RoadkillCannon_Shot</clipFolderPath>
           </li>
         </grains>      
         <volumeRange>40~40</volumeRange>
@@ -54,7 +54,55 @@
       <li>
         <grains>
           <li Class="AudioGrain_Folder">
-            <clipFolderPath>Weapon/IncendiaryLauncher</clipFolderPath>
+            <clipFolderPath>BulldogCannon_Shot</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>40~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEnter</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>CarDoor_Closing</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>40~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEnterArmored</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArmoredDoor_Closing</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>40~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleStart</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>VehicleStart</clipFolderPath>
           </li>
         </grains>      
         <volumeRange>40~40</volumeRange>
