@@ -38,6 +38,12 @@
 		<ammoCountPerCharge>5</ammoCountPerCharge>
 		<genericAmmo>true</genericAmmo>
 		
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
+		<projectileOffset>4.5</projectileOffset>
+		<hitFlags>IntendedTarget</hitFlags>
+		<maxRange>32.9</maxRange>
+		<minRange>3</minRange>
+		
 		<recoil>
 			<distanceTotal>0.7</distanceTotal>
 			<distancePerTick>0.15</distancePerTick>
@@ -85,10 +91,5 @@
 				<animationType>Reset</animationType>
 			</li>
 		</motes>
-		
-		<projectileOffset>4.5</projectileOffset>
-		<hitFlags>IntendedTarget</hitFlags>
-		<maxRange>32.9</maxRange>
-		<minRange>3</minRange>
 	</Vehicles.VehicleTurretDef>
 </Defs>

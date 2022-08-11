@@ -3,7 +3,7 @@
 <Defs>
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
 		<defName>VVE_Frog_Blueprint</defName>
-		<label>Frog (Ribbit)</label>
+		<label>Frog</label>
 		<description>For those who want a transport pod that doesn’t crash into the ground as a method of braking, this hunk of metal fitted with far too many thrusters will not only get you into situations but also back out of them. It is ridiculously wasteful in terms of fuel but it works incredibly well as an ambush vehicle, moving five times faster than drop pods. Earned its nickname as it can only move by launching itself into the stratosphere, thanks to oversized boosters.</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
 		

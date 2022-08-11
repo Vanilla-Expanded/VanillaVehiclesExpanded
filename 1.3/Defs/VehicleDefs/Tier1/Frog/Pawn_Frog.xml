@@ -42,6 +42,7 @@
 			<MoveSpeed LockSetting="True">0</MoveSpeed>
 			<CargoCapacity>240</CargoCapacity>
 			<RepairRate>1</RepairRate>
+			<FlightSpeed>40</FlightSpeed>
 		</vehicleStats>
 		
 		<drawProperties>
@@ -50,7 +51,6 @@
 		
 		<properties>
 			<visibility>5</visibility>
-			<defaultTerrainImpassable>true</defaultTerrainImpassable>
 			
 			<roles>
 				<li>
@@ -176,7 +176,6 @@
 				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
-				<flySpeed>40</flySpeed>
 				<controlInFlight>false</controlInFlight>
 				<reconDistance>0</reconDistance>
 				<launchProtocol Class="Vehicles.RocketTakeoff">
