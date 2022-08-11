@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Defs>	
-	<Vehicles.VehicleDef ParentName="BaseVehiclePawn">
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>Mule</defName>
 		<label>Mule</label>
 		<description>What is ostensibly a bunch of wooden planks nailed together attached to the end of an oldtimer sawn in half, the Mule is as stubborn as its namesake and will carry almost inadvisable amounts of cargo. Thanks to the relatively improved engine, it performs best when travelling over long distances rather than making shortstops. Don’t expect miracles if it’s cold or slightly steep and avoid potholes.</description>
@@ -37,6 +37,13 @@
 			<CargoCapacity>600</CargoCapacity>
 			<RepairRate>0.5</RepairRate>
 		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(DraftOn, DraftOff)</key>
+				<value>VVE_VehicleEngineMuscleCar</value>
+			</li>
+		</soundSustainersOnEvent>
 		
 		<properties>
 			<visibility>1.4</visibility>

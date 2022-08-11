@@ -28,8 +28,8 @@
 		<defName>Roadkill_MainTurret</defName>
 		<label>Main Turret</label>
 		<turretType>Rotatable</turretType>
-		<shotSound>Explosion_PirateCannon</shotSound> <!-- Needs New Sound -->
-		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		<shotSound>VVE_Shot_RoadkillCannonSound</shotSound>
+		<reloadSound>VVE_RoadkillReloadSound</reloadSound>
 		
 		<projectile>Bullet_Roadkill_MainTurret</projectile>
 		<reloadTimer>3.4</reloadTimer>

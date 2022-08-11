@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Defs>	
-	<Vehicles.VehicleDef ParentName="BaseVehiclePawn">
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>Traveller</defName>
 		<label>Traveller</label>
 		<description>For the connoisseur looking to become a road warrior, the Traveller is the ideal choice for those who are wanting to get to their destination fast and on a budget. While it isn’t the worst when it comes to off-roading, it is quite the gas-guzzler and performs best when driving on smooth asphalt. A nice cargo capacity but low passenger count makes it an ideal fast transport between pockets of civilization.</description>
@@ -37,6 +37,13 @@
 			<CargoCapacity>300</CargoCapacity>
 			<RepairRate>0.4</RepairRate>
 		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(DraftOn, DraftOff)</key>
+				<value>VVE_VehicleEngineMuscleCar</value>
+			</li>
+		</soundSustainersOnEvent>
 		
 		<properties>
 			<visibility>1.5</visibility>

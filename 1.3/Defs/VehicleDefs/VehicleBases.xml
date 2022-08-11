@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<Vehicles.VehicleDef Name = "VehiclePawn_Mechanical" ParentName = "BaseVehiclePawn" Abstract = "True">
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>PawnEntered</key>
+				<value>VVE_VehicleEnter</value>
+			</li>
+			<li>
+				<key>PawnExited</key>
+				<value>VVE_VehicleEnter</value>
+			</li>
+			<li>
+				<key>DraftOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>DraftOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+	</Vehicles.VehicleDef>
+	
+	<Vehicles.VehicleDef Name = "VehiclePawn_Armored" ParentName = "BaseVehiclePawn" Abstract = "True">
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>PawnEntered</key>
+				<value>VVE_VehicleEnterArmored</value>
+			</li>
+			<li>
+				<key>PawnExited</key>
+				<value>VVE_VehicleEnterArmored</value>
+			</li>
+			<li>
+				<key>DraftOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>DraftOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+	</Vehicles.VehicleDef>
+</Defs>

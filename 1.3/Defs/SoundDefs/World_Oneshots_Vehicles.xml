@@ -16,7 +16,7 @@
   </SoundDef>
 
   <SoundDef>
-    <defName>VVE_BulldogReloadSound </defName>  
+    <defName>VVE_BulldogReloadSound</defName>  
     <context>MapOnly</context>  
     <maxSimultaneous>1</maxSimultaneous>  
     <subSounds>
