@@ -1,8 +1,4 @@
-﻿using HarmonyLib;
-using RimWorld;
-using SmashTools;
-using System;
-using System.Linq;
+﻿using SmashTools;
 using UnityEngine;
 using Vehicles;
 using Verse;
@@ -10,46 +6,6 @@ using Verse.AI;
 
 namespace VanillaVehiclesExpanded
 {
-    [DefOf]
-    public static class VVE_DefOf
-    {
-        public static VehicleStatDef AccelerationRate;
-    }
-
-    [StaticConstructorOnStartup]
-    public static class Startup
-    {
-        static Startup()
-        {
-            new Harmony("VanillaVehiclesExpanded.Mod").PatchAll();
-        }
-    }
-
-    [HarmonyPatch(typeof(Vehicle_PathFollower), "StartPath")]
-    public static class Vehicle_PathFollower_StartPath_Patch
-    {
-        public static void Postfix(VehiclePawn ___vehicle)
-        {
-            var comp = ___vehicle.GetComp<CompVehicleMovementController>();
-            if (comp != null)
-            {
-                comp.StartMove();
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(Vehicle_PathFollower), "CostToPayThisTick")]
-    public static class Vehicle_PathFollower_CostToPayThisTick_Patch
-    {
-        public static void Postfix(ref float __result, VehiclePawn ___vehicle)
-        {
-            var comp = ___vehicle.GetComp<CompVehicleMovementController>();
-            if (comp != null)
-            {
-                __result *= comp.currentSpeed / comp.GetMoveSpeed();
-            }
-        }
-    }
     public class CompProperties_VehicleMovementController : VehicleCompProperties
     {
         public CompProperties_VehicleMovementController()
@@ -58,10 +14,7 @@ namespace VanillaVehiclesExpanded
         }
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
-    public class HotSwappableAttribute : Attribute
-    {
-    }
+    public enum MovementMode { Accelerate, MaxSpeed, Decelerate}
     [HotSwappable]
     public class CompVehicleMovementController : VehicleComp
     {
@@ -69,12 +22,15 @@ namespace VanillaVehiclesExpanded
         public float currentSpeed;
         public bool wasMoving;
         private float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
+
+        public MovementMode curMovementMode;
         public void StartMove()
         {
             if (wasMoving is false)
             {
                 currentSpeed = 0;
             }
+            curMovementMode = MovementMode.Accelerate;
             Log.Message("Starting move: " + currentSpeed + " - " + wasMoving);
         }
 
@@ -87,13 +43,14 @@ namespace VanillaVehiclesExpanded
                 var ticksToDestination = GetTicksToDestination();
                 if (Vehicle.vPather.curPath != null)
                 {
-                    //var firstNodeCost = CostToMoveIntoCell(Vehicle, Vehicle.Position, Vehicle.vPather.curPath.FirstNode);
-                    //ticksToDestination -= firstNodeCost - Vehicle.vPather.nextCellCostLeft;
+                    var firstNodeCost = CostToMoveIntoCell(Vehicle, Vehicle.Position, Vehicle.vPather.curPath.FirstNode);
+                    ticksToDestination -= firstNodeCost - Vehicle.vPather.nextCellCostLeft;
                 }
                 var decelerateInTicks = ticksToDestination - (currentSpeed / AccelerationRate);
                 var decelerateMultiplier = ticksToDestination / (currentSpeed / AccelerationRate);
-                if (decelerateInTicks <= 0 && currentSpeed > 0)
+                if (decelerateInTicks <= 10f && currentSpeed > 0)
                 {
+                    curMovementMode = MovementMode.Decelerate;
                     if (decelerateMultiplier <= 0.9f)
                     {
                         Log.Message("Handbraking");
@@ -103,13 +60,15 @@ namespace VanillaVehiclesExpanded
                     currentSpeed = Mathf.Max(0, currentSpeed - (AccelerationRate / decelerateMultiplier));
                     Log.Message("Deceleration: - currentSpeed: " + currentSpeed + " ticks left: " + ticksToDestination + " - decelerateInTicks: " + decelerateInTicks + " - decelerateMultiplier: " + decelerateMultiplier + " - next node cost left: " + Vehicle.vPather.nextCellCostLeft);
                 }
-                else if (GetMoveSpeed() > currentSpeed)
+                else if (curMovementMode != MovementMode.Decelerate && GetMoveSpeed() > currentSpeed)
                 {
+                    curMovementMode = MovementMode.Accelerate;
                     currentSpeed = Mathf.Min(currentSpeed + AccelerationRate, GetMoveSpeed());
                     Log.Message("Accelerate: - currentSpeed: " + currentSpeed + " ticks left: " + ticksToDestination + " - decelerateInTicks: " + decelerateInTicks + " - decelerateMultiplier: " + decelerateMultiplier + " - next node cost left: " + Vehicle.vPather.nextCellCostLeft);
                 }
                 else
                 {
+                    curMovementMode = MovementMode.MaxSpeed;
                     Log.Message("Max speed: - currentSpeed: " + currentSpeed + " ticks left: " + ticksToDestination + " - decelerateInTicks: " + decelerateInTicks + " - decelerateMultiplier: " + decelerateMultiplier + " - next node cost left: " + Vehicle.vPather.nextCellCostLeft);
                 }
             }
@@ -120,11 +79,19 @@ namespace VanillaVehiclesExpanded
             if (Vehicle.vPather.curPath != null)
             {
                 var prevCell = Vehicle.Position;
+                bool startCalculation = false;
                 var nodes = Vehicle.vPather.curPath.NodesReversed.ListFullCopy();
                 nodes.Reverse();
-                foreach (var cell in nodes.Where(x=> x != prevCell))
+                foreach (var cell in nodes)
                 {
-                    cost += CostToMoveIntoCell(Vehicle, prevCell, cell);
+                    if (startCalculation)
+                    {
+                        cost += CostToMoveIntoCell(Vehicle, prevCell, cell);
+                    }
+                    if (cell == Vehicle.Position)
+                    {
+                        startCalculation = true;
+                    }
                     prevCell = cell;
                 }
             }
@@ -199,6 +166,7 @@ namespace VanillaVehiclesExpanded
         {
             base.PostExposeData();
             Scribe_Values.Look(ref currentSpeed, "currentSpeed");
+            Scribe_Values.Look(ref curMovementMode, "curMovementMode");
         }
     }
 }
