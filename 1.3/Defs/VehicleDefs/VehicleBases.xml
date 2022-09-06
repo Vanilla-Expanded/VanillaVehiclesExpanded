@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-	<Vehicles.VehicleDef Name = "VehiclePawn_Mechanical" ParentName = "BaseVehiclePawn" Abstract = "True">
+
+	<Vehicles.VehicleDef Name = "VVE_VehiclePawn_Land" ParentName = "BaseVehiclePawn" Abstract = "True">
+		<vehicleStats>
+			<AccelerationRate>0.03</AccelerationRate>
+		</vehicleStats>
+		<comps>
+			<li Class="VanillaVehiclesExpanded.CompProperties_VehicleMovementController"></li>
+		</comps>
+	</Vehicles.VehicleDef>
+	
+	<Vehicles.VehicleDef Name = "VehiclePawn_Mechanical" ParentName = "VVE_VehiclePawn_Land" Abstract = "True">
 		<soundOneShotsOnEvent Inherit = "False">
 			<li>
 				<key>PawnEntered</key>
@@ -22,7 +32,7 @@
 		</soundOneShotsOnEvent>
 	</Vehicles.VehicleDef>
 	
-	<Vehicles.VehicleDef Name = "VehiclePawn_Armored" ParentName = "BaseVehiclePawn" Abstract = "True">
+	<Vehicles.VehicleDef Name = "VehiclePawn_Armored" ParentName = "VVE_VehiclePawn_Land" Abstract = "True">
 		<soundOneShotsOnEvent Inherit = "False">
 			<li>
 				<key>PawnEntered</key>
