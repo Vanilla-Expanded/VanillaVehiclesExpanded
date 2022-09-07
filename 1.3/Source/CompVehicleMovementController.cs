@@ -95,12 +95,13 @@ namespace VanillaVehiclesExpanded
             if (slowdownMultiplier >= 2f && deceleratePct > 1f)
             {
                 newSpeed /= slowdownMultiplier;
+                isScreeching = true;
                 Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
                 var damageAmount = Mathf.CeilToInt(slowdownMultiplier);
                 Log.Message("Damage: " + damageAmount);
                 var log = "slowdownMultiplier: " + slowdownMultiplier + " - (currentSpeed / AccelerationRate): " + (currentSpeed / AccelerationRate);
                 LogMode("Handbrake: " + log, pctPassed, deceleratePct);
-                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
+                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
                 //VehicleComponent component = Vehicle.statHandler.components.Where(component => !component.props.categories.Contains(VehicleStatDefOf.BodyIntegrity)).RandomOrDefault();
             }
             else
