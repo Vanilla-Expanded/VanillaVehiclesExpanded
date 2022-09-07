@@ -20,6 +20,42 @@ namespace VanillaVehiclesExpanded
 
     public enum MovementMode { Starting, Accelerate, CurrentSpeed, Decelerate}
 
+    public struct StartAndDestCells
+    {
+        public IntVec3 start;
+        public IntVec3 dest;
+        public override bool Equals(object obj)
+        {
+            if (obj is StartAndDestCells other)
+            {
+                return this == other;
+            }
+            return false;
+        }
+        public static bool operator ==(StartAndDestCells a, StartAndDestCells b)
+        {
+            if (a.start == b.start && a.dest == b.dest)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator !=(StartAndDestCells a, StartAndDestCells b)
+        {
+            if (a.start != b.start || a.dest != b.dest)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return (start + dest).GetHashCode();
+        }
+    }
+
     [HotSwappable]
     public class CompVehicleMovementController : VehicleComp
     {
@@ -30,6 +66,7 @@ namespace VanillaVehiclesExpanded
         public float curPaidPathCost;
         public bool isScreeching;
         private Sustainer sustainer;
+        private Dictionary<StartAndDestCells, PawnPath> savedPaths = new Dictionary<StartAndDestCells, PawnPath>();
         public float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
         public void StartMove()
         {
@@ -40,6 +77,7 @@ namespace VanillaVehiclesExpanded
             curMovementMode = MovementMode.Accelerate;
             curPaidPathCost = 0;
             isScreeching = false;
+            savedPaths.Clear();
         }
 
         public override void CompTick()
@@ -49,8 +87,9 @@ namespace VanillaVehiclesExpanded
             if (wasMoving && Vehicle.vPather.curPath != null)
             {
                 var moveSpeed = GetDefaultMoveSpeed();
-                var decelerateInPctOfPath = (moveSpeed / (AccelerationRate * 2f)) / Vehicle.vPather.curPath.TotalCost;
-                var pctOfPathPassed = (curPaidPathCost / Vehicle.vPather.curPath.TotalCost);
+                var totalCost = GetTotalCost();
+                var decelerateInPctOfPath = (moveSpeed / (AccelerationRate * 2f)) / totalCost;
+                var pctOfPathPassed = (curPaidPathCost / totalCost);
                 if (decelerateInPctOfPath > 1f)
                 {
                     if (pctOfPathPassed <= 0.5f && currentSpeed < moveSpeed && curMovementMode != MovementMode.Decelerate)
@@ -101,13 +140,13 @@ namespace VanillaVehiclesExpanded
                 Log.Message("Damage: " + damageAmount);
                 var log = "slowdownMultiplier: " + slowdownMultiplier + " - (currentSpeed / AccelerationRate): " + (currentSpeed / AccelerationRate);
                 //LogMode("Handbrake: " + log, pctPassed, deceleratePct);
-                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
+                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
                 //VehicleComponent component = Vehicle.statHandler.components.Where(component => !component.props.categories.Contains(VehicleStatDefOf.BodyIntegrity)).RandomOrDefault();
             }
             else
             {
                 //LogMode("Deceleration: ", pctPassed, deceleratePct);
-                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
+                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
             }
             newSpeed = Mathf.Max(1f, newSpeed);
             if (currentSpeed > newSpeed)
@@ -123,12 +162,12 @@ namespace VanillaVehiclesExpanded
                 curMovementMode = MovementMode.Accelerate;
                 currentSpeed = Mathf.Min(currentSpeed + AccelerationRate, moveSpeed);
                 //LogMode("Acceleration", pctPassed, deceleratePct);
-                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.5f, duration: 10000);
+                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.5f, duration: 10000);
             }
             else
             {
                 //LogMode("Cur speed", pctPassed, deceleratePct);
-                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.7f, duration: 10000);
+                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.7f, duration: 10000);
                 curMovementMode = MovementMode.CurrentSpeed;
             }
         }
@@ -138,17 +177,76 @@ namespace VanillaVehiclesExpanded
             Log.Message(logMode + ": currentSpeed: " + currentSpeed
                 + " - curPaidPathCost: " + curPaidPathCost + " - pctOfPathPassed: "
                 + pctPassed + " - decelerateInPctOfPath: " + deceleratePct + " - remaining ticks: " + GetTicksToDestination() +
-                " - TotalCost: " + Vehicle.vPather.curPath.TotalCost);
+                " - TotalCost: " + GetTotalCost());
         }
 
-        public float GetTicksToDestination()
+        private float GetTicksToDestination()
         {
             var cost = 0f;
-            if (Vehicle.vPather.curPath != null)
+            var path = Vehicle.vPather.curPath;
+            cost += GetPathCostIgnorePassedCells(path);
+            var pos = path.LastNode;
+            foreach (var queueJob in Vehicle.jobs.jobQueue)
+            {
+                if (queueJob.job.def == JobDefOf.Goto)
+                {
+                    path = GetPawnPath(pos, queueJob.job.targetA.Cell);
+                    if (path != null)
+                    {
+                        pos = path.LastNode;
+                        cost += GetPathCostIgnorePassedCells(path);
+                    }
+                }
+            }
+            return cost;
+        }
+        private float GetTotalCost()
+        {
+            var path = Vehicle.vPather.curPath;
+            var cost = path.TotalCost;
+            var pos = path.LastNode;
+            foreach (var queueJob in Vehicle.jobs.jobQueue)
+            {
+                if (queueJob.job.def == JobDefOf.Goto)
+                {
+                    path = GetPawnPath(pos, queueJob.job.targetA.Cell);
+                    if (path != null)
+                    {
+                        pos = path.LastNode;
+                        cost += path.TotalCost;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return cost;
+        }
+
+        private PawnPath GetPawnPath(IntVec3 start, IntVec3 dest)
+        {
+            var key = new StartAndDestCells { start = start, dest = dest };
+            if (!savedPaths.TryGetValue(key, out var path))
+            {
+                savedPaths[key] = path = Vehicle.Map.pathFinder.FindPath(start, dest, Vehicle, PathEndMode.OnCell);
+                Log.Message("Saved path: " + path);
+            }
+            else
+            {
+                Log.Message("Found path: " + path);
+            }
+            return path;
+        }
+
+        public float GetPathCostIgnorePassedCells(PawnPath path)
+        {
+            var cost = 0f;
+            if (path != null)
             {
                 var prevCell = Vehicle.Position;
                 bool startCalculation = false;
-                var nodes = Vehicle.vPather.curPath.NodesReversed.ListFullCopy();
+                var nodes = path.NodesReversed.ListFullCopy();
                 nodes.Reverse();
                 foreach (var cell in nodes)
                 {
@@ -165,7 +263,6 @@ namespace VanillaVehiclesExpanded
             }
             return cost;
         }
-
         private static int CostToMoveIntoCell(VehiclePawn vehicle, IntVec3 prevCell, IntVec3 c)
         {
             int num;
