@@ -100,13 +100,13 @@ namespace VanillaVehiclesExpanded
                 var damageAmount = Mathf.CeilToInt(slowdownMultiplier);
                 Log.Message("Damage: " + damageAmount);
                 var log = "slowdownMultiplier: " + slowdownMultiplier + " - (currentSpeed / AccelerationRate): " + (currentSpeed / AccelerationRate);
-                LogMode("Handbrake: " + log, pctPassed, deceleratePct);
+                //LogMode("Handbrake: " + log, pctPassed, deceleratePct);
                 //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
                 //VehicleComponent component = Vehicle.statHandler.components.Where(component => !component.props.categories.Contains(VehicleStatDefOf.BodyIntegrity)).RandomOrDefault();
             }
             else
             {
-                LogMode("Deceleration: ", pctPassed, deceleratePct);
+                //LogMode("Deceleration: ", pctPassed, deceleratePct);
                 //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
             }
             newSpeed = Mathf.Max(1f, newSpeed);

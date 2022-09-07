@@ -12,6 +12,10 @@ namespace VanillaVehiclesExpanded
     {
         public static VehicleStatDef AccelerationRate;
         public static SoundDef VVE_TiresScreech;
+        public static JobDef VVE_OpenGarage;
+        public static JobDef VVE_CloseGarage;
+        public static DesignationDef VVE_Open;
+        public static DesignationDef VVE_Close;
     }
 
     [StaticConstructorOnStartup]
