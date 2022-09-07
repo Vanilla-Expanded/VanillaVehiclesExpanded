@@ -2,14 +2,14 @@
 <Patch>
 	<Operation Class="PatchOperationSequence">
 		<operations>
-			<!--
+
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/Vehicles.VehicleStatDef[defName='MoveSpeed']/parts</xpath>
 				<value>
 					<li Class="VanillaVehiclesExpanded.VehicleStatPart_AccelerationRate"/>
 				</value>
 			</li>
-			-->
+
 		</operations>
 	</Operation>
 </Patch>

@@ -54,19 +54,21 @@
     <Compile Include="CompVehicleMovementController.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehicleStatPart_AccelerationRate.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
-      <Version>1.0.2</Version>
+      <Version>2.0.1</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.3.3326</Version>
+      <Version>1.3.3389</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <ExcludeAssets>runtime</ExcludeAssets>
-      <Version>2.2.1</Version>
+      <Version>2.2.2</Version>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
