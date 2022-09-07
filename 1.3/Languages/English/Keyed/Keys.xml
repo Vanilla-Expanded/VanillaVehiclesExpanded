@@ -1,4 +1,5 @@
 <LanguageData>
 	<VVE_StatsReport_AccelerationRate>Acceleration rate: {0}
 Current speed: {1} c/s</VVE_StatsReport_AccelerationRate>
+	<VVE_HandbrakeWarning>{VEHICLE_nameDef} will not have enough room to decelerate and will need to use the handbrake. This will cause damage to the tires.</VVE_HandbrakeWarning>
 </LanguageData>

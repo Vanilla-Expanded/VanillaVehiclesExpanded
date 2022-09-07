@@ -1,10 +1,12 @@
-﻿using SmashTools;
+﻿using RimWorld;
+using SmashTools;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Vehicles;
 using Verse;
 using Verse.AI;
+using Verse.Sound;
 
 namespace VanillaVehiclesExpanded
 {
@@ -25,9 +27,10 @@ namespace VanillaVehiclesExpanded
         public float currentSpeed;
         public bool wasMoving;
         public MovementMode curMovementMode;
-        public List<float> recordedSpeeds = new List<float>();
+        public float curPaidPathCost;
+        public bool isScreeching;
+        private Sustainer sustainer;
         public float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
-
         public void StartMove()
         {
             if (wasMoving is false)
@@ -35,70 +38,106 @@ namespace VanillaVehiclesExpanded
                 currentSpeed = 0;
             }
             curMovementMode = MovementMode.Accelerate;
-            recordedSpeeds.Clear();
-            Log.Message("Starting move: " + currentSpeed + " - " + wasMoving);
+            curPaidPathCost = 0;
+            isScreeching = false;
         }
 
         public override void CompTick()
         {
             base.CompTick();
             wasMoving = Vehicle.vPather.Moving;
-            if (wasMoving)
+            if (wasMoving && Vehicle.vPather.curPath != null)
             {
-                var ticksToDestination = GetTicksToDestination();
-                if (Vehicle.vPather.curPath != null)
+                var moveSpeed = GetDefaultMoveSpeed();
+                var decelerateInPctOfPath = (moveSpeed / (AccelerationRate * 2f)) / Vehicle.vPather.curPath.TotalCost;
+                var pctOfPathPassed = (curPaidPathCost / Vehicle.vPather.curPath.TotalCost);
+                if (decelerateInPctOfPath > 1f)
                 {
-                    var firstNodeCost = CostToMoveIntoCell(Vehicle, Vehicle.Position, Vehicle.vPather.curPath.FirstNode);
-                    ticksToDestination -= firstNodeCost - Vehicle.vPather.nextCellCostLeft;
-                }
-                var averageSpeed = recordedSpeeds.Any() ? recordedSpeeds.Average() : currentSpeed;
-                var decelerateMultiplier = ticksToDestination / (averageSpeed / AccelerationRate);
-                var decelerateInTicks = ticksToDestination - (averageSpeed / (AccelerationRate));
-                //LogMode("Init", ticksToDestination, decelerateMultiplier, decelerateInTicks);
-                if ((decelerateInTicks <= 0f) && currentSpeed > 0)
-                {
-                    Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
-                    curMovementMode = MovementMode.Decelerate;
-                    var newSpeed = currentSpeed - (AccelerationRate);
-                    if (newSpeed <= 0.5f && Vehicle.vPather.nextCellCostLeft > 0)
+                    if (pctOfPathPassed <= 0.5f && currentSpeed < moveSpeed && curMovementMode != MovementMode.Decelerate)
                     {
-                        // do nothing
+                        SpeedUp(moveSpeed, decelerateInPctOfPath, pctOfPathPassed);
                     }
                     else
                     {
-                        currentSpeed = Mathf.Max(0, newSpeed);
+                        Slowdown(decelerateInPctOfPath, pctOfPathPassed);
                     }
-                    if (decelerateMultiplier <= 0.9f)
-                    {
-                        LogMode("Handbraking", ticksToDestination, decelerateMultiplier, decelerateInTicks);
-                        //Find.TickManager.CurTimeSpeed = TimeSpeed.Paused;
-                    }
-                    else
-                    { 
-                        LogMode("Deceleration", ticksToDestination, decelerateMultiplier, decelerateInTicks); 
-                    }
-                }
-                else if (curMovementMode != MovementMode.Decelerate && GetMoveSpeed() > currentSpeed && decelerateInTicks > 60)
-                {
-                    curMovementMode = MovementMode.Accelerate;
-                    currentSpeed = Mathf.Min(currentSpeed + AccelerationRate, GetMoveSpeed());
-                    LogMode("Acceleration", ticksToDestination, decelerateMultiplier, decelerateInTicks);
-                    Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.5f, duration: 10000);
                 }
                 else
                 {
-                    Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.7f, duration: 10000);
-                    LogMode("Cur speed intact", ticksToDestination, decelerateMultiplier, decelerateInTicks);
-                    curMovementMode = MovementMode.CurrentSpeed;
+                    if (pctOfPathPassed <= 1f - decelerateInPctOfPath && curMovementMode != MovementMode.Decelerate)
+                    {
+                        SpeedUp(moveSpeed, decelerateInPctOfPath, pctOfPathPassed);
+                    }
+                    else
+                    {
+                        Slowdown(decelerateInPctOfPath, pctOfPathPassed);
+                    }
                 }
-                recordedSpeeds.Add(currentSpeed);
+
+                if (isScreeching)
+                {
+                    if (sustainer == null || sustainer.Ended)
+                    {
+                        sustainer = VVE_DefOf.VVE_TiresScreech.TrySpawnSustainer(SoundInfo.InMap(parent));
+                    }
+                    sustainer.Maintain();
+                }
             }
             Log.ResetMessageCount();
         }
 
-        private void LogMode(string logMode, float ticksToDestination, float decelerateMultiplier, float decelerateInTicks)
+        private void Slowdown(float deceleratePct, float pctPassed)
         {
-            Log.Message(logMode + ": currentSpeed: " + currentSpeed + " average speed: " + (recordedSpeeds.Any() ? recordedSpeeds.Average() : 0) + " move speed: " + GetMoveSpeed() + " ticks left: " + ticksToDestination + " - decelerateInTicks: " + decelerateInTicks + " - decelerateMultiplier: " + decelerateMultiplier + " - next node cost left: " + Vehicle.vPather.nextCellCostLeft + " - Vehicle.vPather.curPath: " + Vehicle.vPather.curPath);
+            curMovementMode = MovementMode.Decelerate;
+            var newSpeed = currentSpeed - AccelerationRate;
+            var remainingArrivalTicks = GetTicksToDestination();
+            var slowdownMultiplier = (currentSpeed / (AccelerationRate * 2f)) / remainingArrivalTicks;
+            if (slowdownMultiplier >= 2f && deceleratePct > 1f)
+            {
+                newSpeed /= slowdownMultiplier;
+                Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
+                var damageAmount = Mathf.CeilToInt(slowdownMultiplier);
+                Log.Message("Damage: " + damageAmount);
+                var log = "slowdownMultiplier: " + slowdownMultiplier + " - (currentSpeed / AccelerationRate): " + (currentSpeed / AccelerationRate);
+                LogMode("Handbrake: " + log, pctPassed, deceleratePct);
+                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
+                //VehicleComponent component = Vehicle.statHandler.components.Where(component => !component.props.categories.Contains(VehicleStatDefOf.BodyIntegrity)).RandomOrDefault();
+            }
+            else
+            {
+                LogMode("Deceleration: ", pctPassed, deceleratePct);
+                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
+            }
+            newSpeed = Mathf.Max(1f, newSpeed);
+            if (currentSpeed > newSpeed)
+            {
+                currentSpeed = newSpeed;
+            }
+        }
+
+        private void SpeedUp(float moveSpeed, float deceleratePct, float pctPassed)
+        {
+            if (moveSpeed > currentSpeed)
+            {
+                curMovementMode = MovementMode.Accelerate;
+                currentSpeed = Mathf.Min(currentSpeed + AccelerationRate, moveSpeed);
+                //LogMode("Acceleration", pctPassed, deceleratePct);
+                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.5f, duration: 10000);
+            }
+            else
+            {
+                //LogMode("Cur speed", pctPassed, deceleratePct);
+                //Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.7f, duration: 10000);
+                curMovementMode = MovementMode.CurrentSpeed;
+            }
+        }
+
+        private void LogMode(string logMode, float pctPassed, float deceleratePct)
+        {
+            Log.Message(logMode + ": currentSpeed: " + currentSpeed
+                + " - curPaidPathCost: " + curPaidPathCost + " - pctOfPathPassed: "
+                + pctPassed + " - decelerateInPctOfPath: " + deceleratePct + " - remaining ticks: " + GetTicksToDestination() +
+                " - TotalCost: " + Vehicle.vPather.curPath.TotalCost);
         }
 
         public float GetTicksToDestination()
@@ -129,7 +168,6 @@ namespace VanillaVehiclesExpanded
         private static int CostToMoveIntoCell(VehiclePawn vehicle, IntVec3 prevCell, IntVec3 c)
         {
             int num;
-
             VehicleStatPart_AccelerationRate.modifyValue = true;
             if (c.x == prevCell.x || c.z == prevCell.z)
             {
@@ -190,21 +228,18 @@ namespace VanillaVehiclesExpanded
             }
             return Mathf.Max(num, 1);
         }
-        public float GetMoveSpeed()
+        public float GetDefaultMoveSpeed()
         {
             return Vehicle.GetStatValue(VehicleStatDefOf.MoveSpeed);
         }
         public override void PostExposeData()
         {
             base.PostExposeData();
+            Scribe_Values.Look(ref curPaidPathCost, "curPaidPathCost");
             Scribe_Values.Look(ref wasMoving, "wasMoving");
             Scribe_Values.Look(ref currentSpeed, "currentSpeed");
             Scribe_Values.Look(ref curMovementMode, "curMovementMode");
-            Scribe_Collections.Look(ref recordedSpeeds, "recordedSpeeds", LookMode.Value);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit)
-            {
-                recordedSpeeds ??= new List<float>();
-            }
+            Scribe_Values.Look(ref isScreeching, "isScreeching");
         }
     }
 }

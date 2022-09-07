@@ -11,6 +11,7 @@ namespace VanillaVehiclesExpanded
     public static class VVE_DefOf
     {
         public static VehicleStatDef AccelerationRate;
+        public static SoundDef VVE_TiresScreech;
     }
 
     [StaticConstructorOnStartup]
@@ -43,7 +44,8 @@ namespace VanillaVehiclesExpanded
             var comp = ___vehicle.GetComp<CompVehicleMovementController>();
             if (comp != null)
             {
-                __result *= comp.currentSpeed / comp.GetMoveSpeed();
+                __result *= comp.currentSpeed / comp.GetDefaultMoveSpeed();
+                comp.curPaidPathCost += __result;
             }
         }
     }
