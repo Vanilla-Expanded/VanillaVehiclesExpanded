@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="DoorBase" Name="VVE_GarageDoorBase">
+		<defName>VVE_GarageDoor</defName>
+		<label>garage door (1x4)</label>
+		<description>Divides rooms. Powered operation allows people to open it, letting vehicles through.</description>
+		<thingClass>VanillaVehiclesExpanded.GarageDoor</thingClass>
+		<passability>Impassable</passability>
+		<rotatable>True</rotatable>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<statBases>
+			<WorkToBuild>4000</WorkToBuild>
+			<MaxHitPoints>640</MaxHitPoints>
+			<Flammability>1</Flammability>
+		</statBases>
+		<size>(4, 1)</size>
+		<graphicData>
+			<texPath>Things/Building/Structure/GarageDoor4x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4, 1)</drawSize>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Structure/GarageDoor4x1_MenuIcon</uiIconPath>
+		<costList>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		<costStuffCount>100</costStuffCount>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Styleable"/>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	<ThingDef ParentName="VVE_GarageDoorBase">
+		<defName>VVE_GarageDoorOpened</defName>
+		<passability>Standable</passability>
+		<designationCategory IsNull="True"></designationCategory>
+		<researchPrerequisites IsNull="True"></researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="VVE_GarageDoorBase" Name="VVE_GarageDoorLargeBase">
+		<defName>VVE_GarageDoorLarge</defName>
+		<label>garage door (1x5)</label>
+		<statBases>
+			<WorkToBuild>4250</WorkToBuild>
+			<MaxHitPoints>700</MaxHitPoints>
+		</statBases>
+		<size>(5, 1)</size>
+		<graphicData>
+			<texPath>Things/Building/Structure/GarageDoor5x1_Mover</texPath>
+			<drawSize>(5, 1)</drawSize>
+		</graphicData>
+		<costList Inherit="False">
+			<ComponentIndustrial>10</ComponentIndustrial>
+		</costList>
+		<costStuffCount>125</costStuffCount>
+	</ThingDef>
+	
+	<ThingDef ParentName="VVE_GarageDoorLargeBase">
+		<defName>VVE_GarageDoorLargeOpened</defName>
+		<passability>Standable</passability>
+		<designationCategory IsNull="True"></designationCategory>
+		<researchPrerequisites IsNull="True"></researchPrerequisites>
+	</ThingDef>
+</Defs>

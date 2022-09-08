@@ -1,0 +1,9 @@
+<LanguageData>
+	<VVE_StatsReport_AccelerationRate>Acceleration rate: {0}
+Current speed: {1} c/s</VVE_StatsReport_AccelerationRate>
+	<VVE_HandbrakeWarning>{VEHICLE_nameDef} will not have enough room to decelerate and will need to use the handbrake. This will cause damage to the tires.</VVE_HandbrakeWarning>
+	<VVE_Open>Open</VVE_Open>
+	<VVE_Close>Close</VVE_Close>
+	<VVE_OpenDescription>Designate the garage door to be opened.</VVE_OpenDescription>
+	<VVE_CloseDescription>Designate the garage door to be closed.</VVE_CloseDescription>
+</LanguageData>
