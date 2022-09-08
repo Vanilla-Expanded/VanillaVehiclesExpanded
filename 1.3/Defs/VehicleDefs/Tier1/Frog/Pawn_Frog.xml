@@ -12,6 +12,9 @@
 			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(3,3)</drawSize>
 			<drawRotated>false</drawRotated>
+			<color>(138, 100, 15)</color>
+			<colorTwo>(75, 40, 15)</colorTwo>
+			<colorThree>(100, 75, 30)</colorThree>
 		</graphicData>
 		
 		<fillPercent>1</fillPercent>
@@ -86,11 +89,15 @@
 				<health>30</health>
 				<armor>0.15</armor>
 				
-				<explosionProperties>
-					<chance>0.25</chance>
-					<radius>3</radius>
-					<damageDef>Bomb</damageDef>
-				</explosionProperties>
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
 				
 				<hitbox>
 					<side>Body</side>
@@ -177,7 +184,6 @@
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
 				<controlInFlight>false</controlInFlight>
-				<reconDistance>0</reconDistance>
 				<launchProtocol Class="Vehicles.RocketTakeoff">
 					<movementType>Decelerate</movementType>
 					<rocketTiltRate>0.025</rocketTiltRate>

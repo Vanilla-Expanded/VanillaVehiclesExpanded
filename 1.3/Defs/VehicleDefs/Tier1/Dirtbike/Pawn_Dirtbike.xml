@@ -12,6 +12,9 @@
 			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(2,2)</drawSize>
 			<drawOffset>(0,0,0.25)</drawOffset>
+			<color>(150, 10, 0)</color>
+			<colorTwo>(30, 50, 80)</colorTwo>
+			<colorThree>(200, 200, 200)</colorThree>
 		</graphicData>
 		
 		<fillPercent>0.2</fillPercent>

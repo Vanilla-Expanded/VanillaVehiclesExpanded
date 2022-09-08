@@ -11,6 +11,9 @@
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(3,5)</drawSize>
+			<color>(130, 130, 130)</color>
+			<colorTwo>(130, 30, 30)</colorTwo>
+			<colorThree>(30, 15, 20)</colorThree>
 		</graphicData>
 		
 		<fillPercent>1</fillPercent>
@@ -106,11 +109,15 @@
 				<health>50</health>
 				<efficiencyWeight>10</efficiencyWeight>
 				
-				<explosionProperties>
-					<chance>0.25</chance>
-					<radius>3</radius>
-					<damageDef>Bomb</damageDef>
-				</explosionProperties>
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
 				
 				<hitbox>
 					<cells>

@@ -16,7 +16,7 @@
 			<damageDef>Bomb</damageDef>
 			<!-- damage amount is the damage def default -->
 			<speed>70</speed>
-			<explosionRadius>3.9</explosionRadius>
+			<explosionRadius>2.9</explosionRadius>
 			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
 			<soundExplode>MortarBomb_Explode</soundExplode>
 			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
@@ -39,21 +39,21 @@
 		<genericAmmo>true</genericAmmo>
 		
 		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
-		<projectileOffset>4.5</projectileOffset>
+		<projectileOffset>2.5</projectileOffset>
 		<hitFlags>IntendedTarget</hitFlags>
 		<maxRange>32.9</maxRange>
-		<minRange>3</minRange>
+		<minRange>5</minRange>
 		
 		<recoil>
-			<distanceTotal>0.7</distanceTotal>
+			<distanceTotal>0.45</distanceTotal>
 			<distancePerTick>0.15</distancePerTick>
 			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
 		</recoil>
 		
 		<vehicleRecoil>
-			<distanceTotal>0.35</distanceTotal>
-			<distancePerTick>0.15</distancePerTick>
-			<speedMultiplierPostRecoil>0.75</speedMultiplierPostRecoil>
+			<distanceTotal>0.1</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
 		</vehicleRecoil>
 		
 		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
