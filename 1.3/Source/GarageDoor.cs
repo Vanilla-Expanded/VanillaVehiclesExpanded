@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace VanillaVehiclesExpanded
 {
@@ -172,11 +173,13 @@ namespace VanillaVehiclesExpanded
         {
             base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Open)?.Delete();
             tickOpening = Find.TickManager.TicksGame + WorkSpeedTicks;
+            def.building.soundDoorOpenPowered.PlayOneShot(new TargetInfo(base.Position, base.Map));
         }
 
         public void StartClosing()
         {
             base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Close)?.Delete();
+            def.building.soundDoorClosePowered.PlayOneShot(new TargetInfo(base.Position, base.Map));
             tickClosing = Find.TickManager.TicksGame + WorkSpeedTicks;
         }
 

@@ -122,6 +122,10 @@ namespace VanillaVehiclesExpanded
                     sustainer.Maintain();
                 }
             }
+            else if (isScreeching)
+            {
+                isScreeching = false;
+            }
             Log.ResetMessageCount();
         }
 
@@ -176,44 +180,37 @@ namespace VanillaVehiclesExpanded
         {
             Log.Message(logMode + ": currentSpeed: " + currentSpeed
                 + " - curPaidPathCost: " + curPaidPathCost + " - pctOfPathPassed: "
-                + pctPassed + " - decelerateInPctOfPath: " + deceleratePct + " - remaining ticks: " + GetTicksToDestination() +
+                + pctPassed + " - decelerateInPctOfPath: " + deceleratePct + " - GetTicksToDestination: " + GetTicksToDestination() +
                 " - TotalCost: " + GetTotalCost());
         }
 
         private float GetTicksToDestination()
         {
-            var cost = 0f;
             var path = Vehicle.vPather.curPath;
-            cost += GetPathCostIgnorePassedCells(path);
-            var pos = path.LastNode;
-            foreach (var queueJob in Vehicle.jobs.jobQueue)
-            {
-                if (queueJob.job.def == JobDefOf.Goto)
-                {
-                    path = GetPawnPath(pos, queueJob.job.targetA.Cell);
-                    if (path != null)
-                    {
-                        pos = path.LastNode;
-                        cost += GetPathCostIgnorePassedCells(path);
-                    }
-                }
-            }
+            var cost = GetPathCost(path, ignorePassedCells: true);
+            cost += GetPathCostsFromQueuedJobs(path.LastNode);
             return cost;
         }
         private float GetTotalCost()
         {
             var path = Vehicle.vPather.curPath;
-            var cost = path.TotalCost;
-            var pos = path.LastNode;
+            var cost = GetPathCost(path, ignorePassedCells: false);
+            cost += GetPathCostsFromQueuedJobs(path.LastNode);
+            return cost;
+        }
+
+        private float GetPathCostsFromQueuedJobs(IntVec3 startPos)
+        {
+            float cost = 0f;
             foreach (var queueJob in Vehicle.jobs.jobQueue)
             {
                 if (queueJob.job.def == JobDefOf.Goto)
                 {
-                    path = GetPawnPath(pos, queueJob.job.targetA.Cell);
+                    var path = GetPawnPath(startPos, queueJob.job.targetA.Cell);
                     if (path != null)
                     {
-                        pos = path.LastNode;
-                        cost += path.TotalCost;
+                        startPos = path.LastNode;
+                        cost += GetPathCost(path, ignorePassedCells: false);
                     }
                 }
                 else
@@ -230,16 +227,11 @@ namespace VanillaVehiclesExpanded
             if (!savedPaths.TryGetValue(key, out var path))
             {
                 savedPaths[key] = path = Vehicle.Map.pathFinder.FindPath(start, dest, Vehicle, PathEndMode.OnCell);
-                Log.Message("Saved path: " + path);
-            }
-            else
-            {
-                Log.Message("Found path: " + path);
             }
             return path;
         }
 
-        public float GetPathCostIgnorePassedCells(PawnPath path)
+        public float GetPathCost(PawnPath path, bool ignorePassedCells)
         {
             var cost = 0f;
             if (path != null)
@@ -250,7 +242,7 @@ namespace VanillaVehiclesExpanded
                 nodes.Reverse();
                 foreach (var cell in nodes)
                 {
-                    if (startCalculation)
+                    if (startCalculation || !ignorePassedCells)
                     {
                         cost += CostToMoveIntoCell(Vehicle, prevCell, cell);
                     }
@@ -266,7 +258,6 @@ namespace VanillaVehiclesExpanded
         private static int CostToMoveIntoCell(VehiclePawn vehicle, IntVec3 prevCell, IntVec3 c)
         {
             int num;
-            VehicleStatPart_AccelerationRate.modifyValue = true;
             if (c.x == prevCell.x || c.z == prevCell.z)
             {
                 num = vehicle.TicksPerMoveCardinal;
@@ -275,8 +266,6 @@ namespace VanillaVehiclesExpanded
             {
                 num = vehicle.TicksPerMoveDiagonal;
             }
-            VehicleStatPart_AccelerationRate.modifyValue = false;
-
             num += vehicle.Map.GetCachedMapComponent<VehicleMapping>()[vehicle.VehicleDef].VehiclePathGrid.CalculatedCostAt(c);
             Building edifice = c.GetEdifice(vehicle.Map);
             if (edifice != null)
