@@ -39,9 +39,10 @@
 		</statBases>
 		
 		<vehicleStats>
-			<MoveSpeed>6.0</MoveSpeed>
+			<MoveSpeed>12.0</MoveSpeed>
 			<CargoCapacity>0</CargoCapacity>
 			<RepairRate>1</RepairRate>
+			<AccelerationRate>0.08</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
