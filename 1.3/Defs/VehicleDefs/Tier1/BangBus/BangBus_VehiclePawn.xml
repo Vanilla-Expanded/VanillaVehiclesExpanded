@@ -144,7 +144,9 @@
 				<key>FrontLeftWheel</key>
 				<label>Front Left Wheel</label>
 				<health>30</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
@@ -160,7 +162,9 @@
 				<key>FrontRightWheel</key>
 				<label>Front Right Wheel</label>
 				<health>30</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
@@ -176,7 +180,9 @@
 				<key>BackLeftWheel</key>
 				<label>Back Left Wheel</label>
 				<health>30</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
@@ -192,7 +198,9 @@
 				<key>BackRightWheel</key>
 				<label>Back Right Wheel</label>
 				<health>30</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>

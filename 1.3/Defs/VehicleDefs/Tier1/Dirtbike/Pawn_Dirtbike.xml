@@ -126,7 +126,9 @@
 				<key>FrontWheel</key>
 				<label>Front Wheel</label>
 				<health>20</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
@@ -135,7 +137,9 @@
 				<key>BackWheel</key>
 				<label>Back Wheel</label>
 				<health>20</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
@@ -144,7 +148,9 @@
 				<key>Engine</key>
 				<label>Engine</label>
 				<health>25</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
