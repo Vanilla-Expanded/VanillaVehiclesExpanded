@@ -178,7 +178,11 @@ namespace VanillaVehiclesExpanded
                 sbLog += ": slowdownMultiplier: " + slowdownMultiplier + " - (currentSpeed / AccelerationRate): " + (currentSpeed / AccelerationRate);
                 LogMode("Handbrake: " + sbLog, pctPassed, deceleratePct);
                 Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
-                //VehicleComponent component = Vehicle.statHandler.components.Where(x => x.props.tags
+                var components = Vehicle.statHandler.components.Where(x => x.props.tags != null && x.props.tags.Contains("Wheel"));
+                foreach (var component in components)
+                {
+                    component.TakeDamage(Vehicle, new DamageInfo(DamageDefOf.Scratch, damageAmount), IntVec3.Invalid);
+                }
                 handbrakeApplied = true;
             }
             else
