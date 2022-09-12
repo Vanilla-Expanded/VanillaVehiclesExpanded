@@ -79,7 +79,6 @@ namespace VanillaVehiclesExpanded
         public bool handbrakeApplied;
         private Sustainer screechingSustainer;
         private Dictionary<StartAndDestCells, PawnPath> savedPaths = new Dictionary<StartAndDestCells, PawnPath>();
-        private List<float> speedRecords = new List<float>();
         public float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
         public void StartMove()
         {
@@ -91,8 +90,6 @@ namespace VanillaVehiclesExpanded
             curPaidPathCost = 0;
             handbrakeApplied = false;
             savedPaths.Clear();
-            speedRecords.Clear();
-            Log.Message(Vehicle + " started move");
         }
 
         public override void CompTick()
@@ -104,8 +101,6 @@ namespace VanillaVehiclesExpanded
                 var moveSpeed = GetDefaultMoveSpeed();
                 var totalCost = GetPathCost(false).cost;
                 var decelerateMultiplier = 4f;
-                //var decelerateInPctOfPath = ((speedRecords.Any() ? speedRecords.Average() : currentSpeed) 
-                //    / (AccelerationRate * decelerateMultiplier)) / totalCost;
                 var decelerateInPctOfPath = (moveSpeed / (AccelerationRate * decelerateMultiplier)) / totalCost;
 
                 var pctOfPathPassed = (curPaidPathCost / totalCost);
@@ -140,7 +135,6 @@ namespace VanillaVehiclesExpanded
                     }
                     screechingSustainer.Maintain();
                 }
-                speedRecords.Add(currentSpeed);
             }
             else if (isScreeching)
             {
@@ -150,7 +144,6 @@ namespace VanillaVehiclesExpanded
                     screechingSustainer.End();
                 }
             }
-            Log.ResetMessageCount();
         }
 
         private void Slowdown(float deceleratePct, float pctPassed)
@@ -165,19 +158,13 @@ namespace VanillaVehiclesExpanded
             var check = currentSpeed / remainingArrivalTicks;
             accelerateRateAdjusted = Mathf.Min(accelerateRateAdjusted, check);
             var newSpeed = currentSpeed - accelerateRateAdjusted;
-            var sbLog = "accelerateRateAdjusted: " + accelerateRateAdjusted + " - AccelerationRate * decelerateMultiplier: " 
-                + (AccelerationRate * decelerateMultiplier) + " - check: " + (check);
             var slowdownMultiplier = (currentSpeed / (AccelerationRate * decelerateMultiplier)) / remainingArrivalTicks;
-            if (handbrakeApplied is false && slowdownMultiplier >= 2f && deceleratePct > 1f)
+            if (handbrakeApplied is false && slowdownMultiplier >= 2f && deceleratePct > 1f && currentSpeed >= 3f)
             {
                 newSpeed /= slowdownMultiplier;
                 isScreeching = true;
                 Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
                 var damageAmount = Mathf.CeilToInt(slowdownMultiplier);
-                Log.Message("Damage: " + damageAmount);
-                sbLog += ": slowdownMultiplier: " + slowdownMultiplier + " - (currentSpeed / AccelerationRate): " + (currentSpeed / AccelerationRate);
-                LogMode("Handbrake: " + sbLog, pctPassed, deceleratePct);
-                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
                 var components = Vehicle.statHandler.components.Where(x => x.props.tags != null && x.props.tags.Contains("Wheel"));
                 foreach (var component in components)
                 {
@@ -185,11 +172,7 @@ namespace VanillaVehiclesExpanded
                 }
                 handbrakeApplied = true;
             }
-            else
-            {
-                LogMode("Deceleration: " + sbLog, pctPassed, deceleratePct);
-                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.1f, duration: 10000);
-            }
+
             newSpeed = Mathf.Max(1f, newSpeed);
             if (currentSpeed > newSpeed)
             {
@@ -203,24 +186,13 @@ namespace VanillaVehiclesExpanded
             {
                 curMovementMode = MovementMode.Accelerate;
                 currentSpeed = Mathf.Min(currentSpeed + AccelerationRate, moveSpeed);
-                LogMode("Acceleration", pctPassed, deceleratePct);
-                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.5f, duration: 10000);
             }
             else
             {
-                LogMode("Cur speed", pctPassed, deceleratePct);
-                Vehicle.Map.debugDrawer.FlashCell(Vehicle.Position, 0.7f, duration: 10000);
                 curMovementMode = MovementMode.CurrentSpeed;
             }
         }
 
-        private void LogMode(string logMode, float pctPassed, float deceleratePct)
-        {
-            Log.Message(logMode + " cur position: " + Vehicle.Position +  " - currentSpeed: " + currentSpeed
-                + " - curPaidPathCost: " + curPaidPathCost + " - pctOfPathPassed: "
-                + pctPassed + " - decelerateInPctOfPath: " + deceleratePct + " - GetTicksToDestination: " + GetPathCost(true) +
-                " - TotalCost: " + GetPathCost(false));
-        }
         private PathCostResult GetPathCost(bool ignorePassedCells)
         {
             var path = Vehicle.vPather.curPath;
@@ -364,11 +336,6 @@ namespace VanillaVehiclesExpanded
             Scribe_Values.Look(ref curMovementMode, "curMovementMode");
             Scribe_Values.Look(ref isScreeching, "isScreeching");
             Scribe_Values.Look(ref handbrakeApplied, "handbrakeApplied");
-            Scribe_Collections.Look(ref speedRecords, "speedRecords");
-            if (Scribe.mode == LoadSaveMode.PostLoadInit)
-            {
-                speedRecords ??= new List<float>();
-            }
         }
     }
 }
