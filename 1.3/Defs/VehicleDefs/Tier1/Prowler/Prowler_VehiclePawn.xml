@@ -28,14 +28,14 @@
 		<vehicleType>Land</vehicleType>
 		
 		<statBases>
-			<Mass>100</Mass>
 			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.44</ArmorRating_Sharp>
-			<MarketValue>69420</MarketValue>
 			<Flammability>0.5</Flammability>
 		</statBases>
 		
 		<vehicleStats>
+			<Mass>100</Mass>
+			<MarketValue>69420</MarketValue>
 			<MoveSpeed>5.5</MoveSpeed>
 			<CargoCapacity>220</CargoCapacity>
 			<RepairRate>1</RepairRate>
@@ -50,8 +50,6 @@
 		
 		<properties>
 			<visibility>1.5</visibility>
-			
-			<customHillinessCosts AssignDefaults = "1.5"/>
 			
 			<roles>
 				<li>

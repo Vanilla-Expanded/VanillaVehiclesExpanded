@@ -28,14 +28,14 @@
 		<vehicleType>Land</vehicleType>
 		
 		<statBases>
-			<Mass>240</Mass>
 			<ArmorRating_Blunt>0.24</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
-			<MarketValue>69420</MarketValue>
 			<Flammability>0.5</Flammability>
 		</statBases>
 		
 		<vehicleStats>
+			<Mass>240</Mass>
+			<MarketValue>69420</MarketValue>
 			<MoveSpeed>5</MoveSpeed>
 			<CargoCapacity>600</CargoCapacity>
 			<RepairRate>0.5</RepairRate>

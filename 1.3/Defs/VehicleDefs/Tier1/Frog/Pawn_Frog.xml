@@ -34,14 +34,14 @@
 		<vehicleType>Air</vehicleType>
 		
 		<statBases>
-			<Mass>80</Mass>
 			<ArmorRating_Blunt>0.24</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.48</ArmorRating_Sharp>
-			<MarketValue>69420</MarketValue>
 			<Flammability>0.5</Flammability>
 		</statBases>
 		
 		<vehicleStats>
+			<Mass>80</Mass>
+			<MarketValue>69420</MarketValue>
 			<MoveSpeed LockSetting="True">0</MoveSpeed>
 			<CargoCapacity>240</CargoCapacity>
 			<RepairRate>1</RepairRate>
