@@ -39,9 +39,10 @@
 		<vehicleStats>
 			<Mass>30</Mass>
 			<MarketValue>69420</MarketValue>
-			<MoveSpeed>6.0</MoveSpeed>
+			<MoveSpeed>12</MoveSpeed>
 			<CargoCapacity>0</CargoCapacity>
 			<RepairRate>1</RepairRate>
+			<AccelerationRate>0.08</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
@@ -125,7 +126,9 @@
 				<key>FrontWheel</key>
 				<label>Front Wheel</label>
 				<health>20</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
@@ -134,7 +137,9 @@
 				<key>BackWheel</key>
 				<label>Back Wheel</label>
 				<health>20</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
@@ -143,7 +148,9 @@
 				<key>Engine</key>
 				<label>Engine</label>
 				<health>25</health>
-				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>

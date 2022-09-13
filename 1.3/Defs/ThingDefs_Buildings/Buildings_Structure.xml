@@ -62,6 +62,7 @@
 			<texPath>Things/Building/Structure/GarageDoor5x1_Mover</texPath>
 			<drawSize>(5, 1)</drawSize>
 		</graphicData>
+		<uiIconPath>Things/Building/Structure/GarageDoor5x1_MenuIcon</uiIconPath>
 		<costList Inherit="False">
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>

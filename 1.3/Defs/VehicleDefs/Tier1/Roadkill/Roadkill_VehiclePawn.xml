@@ -36,9 +36,10 @@
 		<vehicleStats>
 			<Mass>300</Mass>
 			<MarketValue>69420</MarketValue>
-			<MoveSpeed>3.3</MoveSpeed>
+			<MoveSpeed>6.6</MoveSpeed>
 			<CargoCapacity>60</CargoCapacity>
 			<RepairRate>0.2</RepairRate>
+			<AccelerationRate>0.04</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
