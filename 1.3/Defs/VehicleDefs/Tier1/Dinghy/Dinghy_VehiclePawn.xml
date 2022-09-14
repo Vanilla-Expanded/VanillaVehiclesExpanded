@@ -9,6 +9,7 @@
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Boat/Tier1_Boat</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(3,5)</drawSize>
 		</graphicData>
 		
