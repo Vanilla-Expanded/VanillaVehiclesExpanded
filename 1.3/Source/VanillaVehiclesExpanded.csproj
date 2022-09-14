@@ -56,7 +56,6 @@
     <Compile Include="JobDriver_GarageControlBase.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VehicleStatPart_AccelerationRate.cs" />
     <Compile Include="WorkGiver_ManageGarage.cs" />
   </ItemGroup>
   <ItemGroup>
