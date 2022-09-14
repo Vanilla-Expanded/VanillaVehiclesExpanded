@@ -2,7 +2,7 @@
 
 <Defs>
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
-		<defName>Dirtbike_Blueprint</defName>
+		<defName>VVE_Dirtbike_Blueprint</defName>
 		<label>Dirtbike</label>
 		<description>A nice, small, almost portable piece of transportation, the Dirtbike can get you, and only you, to your destination both quickly and quietly. Performs equally well in practically any terrain other than the cold, it’s the ideal choice when you need to travel a long distance off the beaten path. Don’t expect it to carry anything and an ambitious trek can leave you stranded.</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
@@ -36,6 +36,6 @@
 		</costList>
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-		<thingToSpawn>Dirtbike</thingToSpawn>
+		<thingToSpawn>VVE_Dirtbike</thingToSpawn>
 	</Vehicles.VehicleBuildDef>
 </Defs>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseSeaVehicle">
+		<defName>VVE_Dinghy</defName>
+		<label>Dinghy</label>
+		<description>A very basic motorised boat, the Dingy is an incredibly cheap and discrete method of transportation over water. Has a good cargo capacity, however it is likely to get frozen solid in the winter times and moves slowly on rivers. The exposed rear-mounted engine is vulnerable to attacks and the hull plating should not be expected to wither projectile weapons.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Boat/Tier1_Boat</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<drawSize>(3,5)</drawSize>
+		</graphicData>
+		
+		<fillPercent>1</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>VVE_Dinghy_Blueprint</buildDef>
+		
+		<size>(2,4)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Sea</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.36</ArmorRating_Sharp>
+			<MarketValue>1000</MarketValue>
+			<Flammability>1</Flammability>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>80</Mass>
+			<MoveSpeed>7</MoveSpeed>
+			<CargoCapacity>250</CargoCapacity>
+			<RepairRate>1</RepairRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(DraftOn, DraftOff)</key>
+				<value>VVE_VehicleEngineBuggy</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<properties>
+			<fishing>true</fishing>
+			<wakeMultiplier>1.5</wakeMultiplier>
+			<wakeSpeed>1</wakeSpeed>
+			
+			<visibility>0.25</visibility>
+			
+			<worldSpeedMultiplier>1</worldSpeedMultiplier>
+			<winterPathCostMultiplier>5</winterPathCostMultiplier>
+			
+			<roles>
+				<li>
+					<key>driver</key>
+					<label>Driver</label>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<hitbox>
+						<side>Back</side>
+					</hitbox>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>4</slots>
+					<hitbox>
+						<side>BodyNoOverlap</side>
+						<noOverlapWith>
+							<li>Back</li>
+						</noOverlapWith>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Hull</key>
+				<label>Hull</label>
+				<health>100</health>
+				<armor>.1</armor>
+				<efficiencyWeight>10</efficiencyWeight>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>50</health>
+				<armor>0</armor>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftSidePanel</key>
+				<label>Left Side Panel</label>
+				<health>80</health>
+				<armor>0</armor>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightSidePanel</key>
+				<label>Right Side Panel</label>
+				<health>80</health>
+				<armor>0</armor>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+		</components>
+	</Vehicles.VehicleDef>
+</Defs>

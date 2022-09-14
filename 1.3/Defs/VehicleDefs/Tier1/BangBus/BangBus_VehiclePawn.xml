@@ -2,7 +2,7 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
-		<defName>BangBus</defName>
+		<defName>VVE_BangBus</defName>
 		<label>Bang Bus</label>
 		<description>A possible health warning for when too many people get together and travel long distances in a tight space, the Bangbus is a rickety pile of scrap that can hold an entire squad of raiders. Earning its name from the incredibly loud backfire when the engine stalls, this is not something you want to take anywhere away from roads and especially not in the winter time. While it can’t hold much in the way of cargo, it is a terrific passenger transport with a high mileage considering it’s largely made from corrugated steel.</description>
 		
@@ -18,7 +18,7 @@
 		
 		<fillPercent>0.8</fillPercent>
 		
-		<buildDef>BangBus_Blueprint</buildDef>
+		<buildDef>VVE_BangBus_Blueprint</buildDef>
 		
 		<size>(2,4)</size>
 		
@@ -52,8 +52,6 @@
 		<properties>
 			<visibility>1.4</visibility>
 			<winterPathCostMultiplier>3.25</winterPathCostMultiplier>
-			
-			<customHillinessCosts AssignDefaults = "2"/>
 			
 			<roles>
 				<li>

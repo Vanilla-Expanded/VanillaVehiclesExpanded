@@ -2,7 +2,7 @@
 
 <Defs>
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
-		<defName>Roadkill_Blueprint</defName>
+		<defName>VVE_Roadkill_Blueprint</defName>
 		<label>Roadkill</label>
 		<description>Calling back to an age of this planet’s history when mass-produced armoured units were needed to bolster a dwindling infantry force, the Roadkill is extremely simple, reliable and easy to assemble. They are very loud and vulnerable at the rear, while also being ridiculously thirsty and suited for short-range engagements. Are they accurate? No. Are they fast? Also no. A chore to repair? Yes, as the idea is not to maintain it but to assemble it on-site and leave it once it’s served its purpose.</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
@@ -37,6 +37,6 @@
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
-		<thingToSpawn>Roadkill</thingToSpawn>
+		<thingToSpawn>VVE_Roadkill</thingToSpawn>
 	</Vehicles.VehicleBuildDef>
 </Defs>

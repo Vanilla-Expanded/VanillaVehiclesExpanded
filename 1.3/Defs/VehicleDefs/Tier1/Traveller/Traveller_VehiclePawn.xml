@@ -2,7 +2,7 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
-		<defName>Traveller</defName>
+		<defName>VVE_Traveller</defName>
 		<label>Traveller</label>
 		<description>For the connoisseur looking to become a road warrior, the Traveller is the ideal choice for those who are wanting to get to their destination fast and on a budget. While it isn’t the worst when it comes to off-roading, it is quite the gas-guzzler and performs best when driving on smooth asphalt. A nice cargo capacity but low passenger count makes it an ideal fast transport between pockets of civilization.</description>
 		
@@ -18,7 +18,7 @@
 		
 		<fillPercent>0.8</fillPercent>
 		
-		<buildDef>Traveller_Blueprint</buildDef>
+		<buildDef>VVE_Traveller_Blueprint</buildDef>
 		
 		<size>(2,4)</size>
 		
@@ -52,8 +52,6 @@
 		<properties>
 			<visibility>1.5</visibility>
 			<winterPathCostMultiplier>3.25</winterPathCostMultiplier>
-			
-			<customHillinessCosts AssignDefaults = "1.5"/>
 			
 			<roles>
 				<li>

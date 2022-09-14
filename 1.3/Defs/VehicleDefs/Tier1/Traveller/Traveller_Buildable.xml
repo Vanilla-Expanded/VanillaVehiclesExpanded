@@ -2,7 +2,7 @@
 
 <Defs>
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
-		<defName>Traveller_Blueprint</defName>
+		<defName>VVE_Traveller_Blueprint</defName>
 		<label>Traveller</label>
 		<description>For the connoisseur looking to become a road warrior, the Traveller is the ideal choice for those who are wanting to get to their destination fast and on a budget. While it isn’t the worst when it comes to off-roading, it is quite the gas-guzzler and performs best when driving on smooth asphalt. A nice cargo capacity but low passenger count makes it an ideal fast transport between pockets of civilization.</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
@@ -36,6 +36,6 @@
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
-		<thingToSpawn>Traveller</thingToSpawn>
+		<thingToSpawn>VVE_Traveller</thingToSpawn>
 	</Vehicles.VehicleBuildDef>
 </Defs>

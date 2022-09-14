@@ -2,7 +2,7 @@
 
 <Defs>
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
-		<defName>Prowler_Blueprint</defName>
+		<defName>VVE_Prowler_Blueprint</defName>
 		<label>Prowler</label>
 		<description>An incredibly basic off-road explorer, the Prowler gets you where you need to be without the need for roads. In fact, it does even better when it launches itself across steep terrain, which tends to draw attention. Very respectable cargo capacity and fuel efficiency for such a hodgepodge design. It won’t get you anywhere fast but if that place is somewhere far away from civilization, it’ll get you there faster than the rest.</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
@@ -36,6 +36,6 @@
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
-		<thingToSpawn>Prowler</thingToSpawn>
+		<thingToSpawn>VVE_Prowler</thingToSpawn>
 	</Vehicles.VehicleBuildDef>
 </Defs>

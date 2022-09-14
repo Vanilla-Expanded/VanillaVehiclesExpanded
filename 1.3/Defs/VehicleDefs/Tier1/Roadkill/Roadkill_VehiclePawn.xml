@@ -2,7 +2,7 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Armored">
-		<defName>Roadkill</defName>
+		<defName>VVE_Roadkill</defName>
 		<label>Roadkill</label>
 		<description>Calling back to an age of this planet’s history when mass-produced armoured units were needed to bolster a dwindling infantry force, the Roadkill is extremely simple, reliable and easy to assemble. They are very loud and vulnerable at the rear, while also being ridiculously thirsty and suited for short-range engagements. Are they accurate? No. Are they fast? Also no. A chore to repair? Yes, as the idea is not to maintain it but to assemble it on-site and leave it once it’s served its purpose.</description>
 		
@@ -18,7 +18,7 @@
 		
 		<fillPercent>1</fillPercent>
 		
-		<buildDef>Roadkill_Blueprint</buildDef>
+		<buildDef>VVE_Roadkill_Blueprint</buildDef>
 		
 		<size>(3,3)</size>
 		
@@ -67,21 +67,6 @@
 					
 					<handlingTypes>
 						<li>Movement</li>
-					</handlingTypes>
-					
-					<hitbox>
-						<cells>
-							<li>(0, 1)</li>
-						</cells>
-					</hitbox>
-				</li>
-				<li>
-					<key>gunner</key>
-					<label>Gunner</label>
-					<slots>1</slots>
-					<slotsToOperate>1</slotsToOperate>
-					
-					<handlingTypes>
 						<li>Cannon</li>
 					</handlingTypes>
 					
@@ -91,7 +76,7 @@
 					
 					<hitbox>
 						<cells>
-							<li>(0, 0)</li>
+							<li>(0, 1)</li>
 						</cells>
 					</hitbox>
 				</li>

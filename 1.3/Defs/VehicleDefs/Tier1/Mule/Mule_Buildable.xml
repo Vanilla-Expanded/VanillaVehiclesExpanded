@@ -2,7 +2,7 @@
 
 <Defs>
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
-		<defName>Mule_Blueprint</defName>
+		<defName>VVE_Mule_Blueprint</defName>
 		<label>Mule</label>
 		<description>What is ostensibly a bunch of wooden planks nailed together attached to the end of an oldtimer sawn in half, the Mule is as stubborn as its namesake and will carry almost inadvisable amounts of cargo. Thanks to the relatively improved engine, it performs best when travelling over long distances rather than making shortstops. Don’t expect miracles if it’s cold or slightly steep and avoid potholes.</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
@@ -37,6 +37,6 @@
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
-		<thingToSpawn>Mule</thingToSpawn>
+		<thingToSpawn>VVE_Mule</thingToSpawn>
 	</Vehicles.VehicleBuildDef>
 </Defs>

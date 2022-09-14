@@ -2,7 +2,7 @@
 
 <Defs>
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
-		<defName>BangBus_Blueprint</defName>
+		<defName>VVE_BangBus_Blueprint</defName>
 		<label>Bang Bus</label>
 		<description>A possible health warning for when too many people get together and travel long distances in a tight space, the Bangbus is a rickety pile of scrap that can hold an entire squad of raiders. Earning its name from the incredibly loud backfire when the engine stalls, this is not something you want to take anywhere away from roads and especially not in the winter time. While it can’t hold much in the way of cargo, it is a terrific passenger transport with a high mileage considering it’s largely made from corrugated steel.</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
@@ -37,6 +37,6 @@
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
-		<thingToSpawn>BangBus</thingToSpawn>
+		<thingToSpawn>VVE_BangBus</thingToSpawn>
 	</Vehicles.VehicleBuildDef>
 </Defs>

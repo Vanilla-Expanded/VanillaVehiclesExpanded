@@ -2,7 +2,7 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
-		<defName>Dirtbike</defName>
+		<defName>VVE_Dirtbike</defName>
 		<label>Dirtbike</label>
 		<description>A nice, small, almost portable piece of transportation, the Dirtbike can get you, and only you, to your destination both quickly and quietly. Performs equally well in practically any terrain other than the cold, it’s the ideal choice when you need to travel a long distance off the beaten path. Don’t expect it to carry anything and an ambitious trek can leave you stranded.</description>
 		
@@ -20,7 +20,7 @@
 		<fillPercent>0.2</fillPercent>
 		
 		<nameable>false</nameable>
-		<buildDef>Dirtbike_Blueprint</buildDef>
+		<buildDef>VVE_Dirtbike_Blueprint</buildDef>
 		
 		<size>(1,1)</size>
 		<uiIconScale>1</uiIconScale>
