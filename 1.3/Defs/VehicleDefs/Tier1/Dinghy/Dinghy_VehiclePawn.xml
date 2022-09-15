@@ -46,6 +46,17 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>DraftOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>DraftOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+		
 		<properties>
 			<fishing>true</fishing>
 			<wakeMultiplier>1.5</wakeMultiplier>
@@ -54,7 +65,7 @@
 			<visibility>0.25</visibility>
 			
 			<worldSpeedMultiplier>1</worldSpeedMultiplier>
-			<winterPathCostMultiplier>5</winterPathCostMultiplier>
+			<winterSpeedMultiplier>5</winterSpeedMultiplier>
 			
 			<roles>
 				<li>

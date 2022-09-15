@@ -52,6 +52,17 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>DraftOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>DraftOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+		
 		<drawProperties>
 			<displayOffsetNorth>(0, -0.2)</displayOffsetNorth>
 			<displayOffsetEast>(-0.05, -0.2)</displayOffsetEast>
@@ -62,7 +73,7 @@
 			<diagonalRotation>false</diagonalRotation>
 			<visibility>0.4</visibility>
 			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
-			<winterPathCostMultiplier>3.25</winterPathCostMultiplier>
+			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
 			
 			<customSnowCosts>

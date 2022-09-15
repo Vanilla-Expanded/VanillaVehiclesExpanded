@@ -51,7 +51,7 @@
 		
 		<properties>
 			<visibility>1.4</visibility>
-			<winterPathCostMultiplier>3.25</winterPathCostMultiplier>
+			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
 			
 			<roles>
 				<li>
