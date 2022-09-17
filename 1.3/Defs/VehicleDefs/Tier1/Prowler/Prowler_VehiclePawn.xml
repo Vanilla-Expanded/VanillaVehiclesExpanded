@@ -31,11 +31,11 @@
 			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.44</ArmorRating_Sharp>
 			<Flammability>0.5</Flammability>
+			<MarketValue>1490</MarketValue>
 		</statBases>
 		
 		<vehicleStats>
 			<Mass>100</Mass>
-			<MarketValue>69420</MarketValue>
 			<MoveSpeed>11</MoveSpeed>
 			<CargoCapacity>220</CargoCapacity>
 			<RepairRate>1</RepairRate>

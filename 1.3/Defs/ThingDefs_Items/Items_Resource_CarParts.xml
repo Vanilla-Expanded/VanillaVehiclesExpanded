@@ -57,13 +57,14 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <MarketValue>325</MarketValue>
       <Mass>18</Mass>
-	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+	  <WorkToMake>5000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>1</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>40</Steel>
+      <Silver>4</Silver>
+      <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
   </ThingDef>
   
@@ -76,13 +77,13 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <MarketValue>95</MarketValue>
       <Mass>4</Mass>
-	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+	  <WorkToMake>3000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>1</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>10</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
   </ThingDef>
   
@@ -95,13 +96,12 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <MarketValue>80</MarketValue>
       <Mass>7</Mass>
-	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+	  <WorkToMake>1000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>1</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>40</Steel>
     </costList>
   </ThingDef>
   
@@ -114,12 +114,13 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <MarketValue>90</MarketValue>
       <Mass>8</Mass>
-	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+	  <WorkToMake>2000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>1</Steel>
+      <Steel>20</Steel>
+      <Silver>1</Silver>
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
   </ThingDef>
@@ -133,13 +134,13 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>100</MarketValue> <!-- placeholder -->
+      <MarketValue>75</MarketValue>
       <Mass>10</Mass>
-	  <WorkToMake>1000</WorkToMake> <!-- placeholder -->
+	  <WorkToMake>8000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>1</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>25</Steel>
+      <Chemfuel>10</Chemfuel>
     </costList>
   </ThingDef>
   
