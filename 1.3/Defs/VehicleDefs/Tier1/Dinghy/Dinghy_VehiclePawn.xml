@@ -82,17 +82,144 @@
 					<hitbox>
 						<side>Back</side>
 					</hitbox>
+					
+					<pawnRenderer>
+						<layer>2</layer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(-0.45,0,-0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(0.5,0,0.9)</drawOffsetSouth>
+						<drawOffsetEast>(-2,0,-0.5)</drawOffsetEast>
+					</pawnRenderer>
 				</li>
 				<li>
-					<key>passenger</key>
-					<label>Passenger</label>
-					<slots>4</slots>
+					<key>Passenger_BottomRight</key>
+					<label>Passenger 1</label>
+					<slots>1</slots>
+					
 					<hitbox>
 						<side>BodyNoOverlap</side>
 						<noOverlapWith>
 							<li>Back</li>
 						</noOverlapWith>
 					</hitbox>
+					
+					<pawnRenderer>
+						<layer>2</layer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_MiddleLeft</key>
+					<label>Passenger 2</label>
+					<slots>1</slots>
+					
+					<hitbox>
+						<side>BodyNoOverlap</side>
+						<noOverlapWith>
+							<li>Back</li>
+						</noOverlapWith>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layer>2</layer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_MiddleRight</key>
+					<label>Passenger 3</label>
+					<slots>1</slots>
+					
+					<hitbox>
+						<side>BodyNoOverlap</side>
+						<noOverlapWith>
+							<li>Back</li>
+						</noOverlapWith>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layer>2</layer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_TopLeft</key>
+					<label>Passenger 4</label>
+					<slots>1</slots>
+					
+					<hitbox>
+						<side>BodyNoOverlap</side>
+						<noOverlapWith>
+							<li>Back</li>
+						</noOverlapWith>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layer>2</layer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_TopRight</key>
+					<label>Passenger 5</label>
+					<slots>1</slots>
+					
+					<hitbox>
+						<side>BodyNoOverlap</side>
+						<noOverlapWith>
+							<li>Back</li>
+						</noOverlapWith>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layer>2</layer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+					</pawnRenderer>
 				</li>
 			</roles>
 		</properties>
@@ -148,5 +275,14 @@
 				</hitbox>
 			</li>
 		</components>
+		
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<fuelConsumptionRate>8</fuelConsumptionRate>
+				<fuelCapacity>40</fuelCapacity>
+				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
+			</li>
+		</comps>
 	</Vehicles.VehicleDef>
 </Defs>
