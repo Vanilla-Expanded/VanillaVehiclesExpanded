@@ -84,16 +84,12 @@
 					</hitbox>
 					
 					<pawnRenderer>
-						<layer>2</layer>
-						<layerNorth>2</layerNorth>
-						<layerSouth>2</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleNorthEast>0</angleNorthEast>
-						<angleSouthEast>0</angleSouthEast>
-						<drawOffsetNorth>(-0.45,0,-0.75)</drawOffsetNorth>
-						<drawOffsetSouth>(0.5,0,0.9)</drawOffsetSouth>
-						<drawOffsetEast>(-2,0,-0.5)</drawOffsetEast>
+						<layer>3</layer>
+						<layerNorth>3</layerNorth>
+						<layerSouth>1</layerSouth>
+						<drawOffsetNorth>(-0.45, 0, -0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(0.45, 0, 1.2)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5,0, -0.1)</drawOffsetEast>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -109,16 +105,12 @@
 					</hitbox>
 					
 					<pawnRenderer>
-						<layer>2</layer>
-						<layerNorth>2</layerNorth>
+						<layer>3</layer>
+						<layerNorth>3</layerNorth>
 						<layerSouth>2</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleNorthEast>0</angleNorthEast>
-						<angleSouthEast>0</angleSouthEast>
-						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
-						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
-						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+						<drawOffsetNorth>(0.4, 0, -0.65)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.45, 0, 1.2)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5, 0, 0.6)</drawOffsetEast>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -136,14 +128,10 @@
 					<pawnRenderer>
 						<layer>2</layer>
 						<layerNorth>2</layerNorth>
-						<layerSouth>2</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleNorthEast>0</angleNorthEast>
-						<angleSouthEast>0</angleSouthEast>
-						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
-						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
-						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+						<layerSouth>1</layerSouth>
+						<drawOffsetNorth>(-0.45, 0, 0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(0.45, 0, 0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0.35, 0, -0.1)</drawOffsetEast>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -162,13 +150,9 @@
 						<layer>2</layer>
 						<layerNorth>2</layerNorth>
 						<layerSouth>2</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleNorthEast>0</angleNorthEast>
-						<angleSouthEast>0</angleSouthEast>
-						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
-						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
-						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+						<drawOffsetNorth>(0.5, 0, 0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.45, 0, 0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0.35, 0, 0.6)</drawOffsetEast>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -184,16 +168,12 @@
 					</hitbox>
 					
 					<pawnRenderer>
-						<layer>2</layer>
-						<layerNorth>2</layerNorth>
-						<layerSouth>2</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleNorthEast>0</angleNorthEast>
-						<angleSouthEast>0</angleSouthEast>
-						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
-						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
-						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>1</layerSouth>
+						<drawOffsetNorth>(-0.45, 0, 1.1)</drawOffsetNorth>
+						<drawOffsetSouth>(0.4, 0, -0.5)</drawOffsetSouth>
+						<drawOffsetEast>(1.3, 0, 0.5)</drawOffsetEast>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -209,16 +189,12 @@
 					</hitbox>
 					
 					<pawnRenderer>
-						<layer>2</layer>
-						<layerNorth>2</layerNorth>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
 						<layerSouth>2</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleNorthEast>0</angleNorthEast>
-						<angleSouthEast>0</angleSouthEast>
-						<drawOffsetNorth>(0.5,0,-0.75)</drawOffsetNorth>
-						<drawOffsetSouth>(-0.45,0,0.9)</drawOffsetSouth>
-						<drawOffsetEast>(-0.5,0,-0.1)</drawOffsetEast>
+						<drawOffsetNorth>(0.5, 0, 1.1)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.4, 0, -0.5)</drawOffsetSouth>
+						<drawOffsetEast>(1.3, 0, 0.1)</drawOffsetEast>
 					</pawnRenderer>
 				</li>
 			</roles>
