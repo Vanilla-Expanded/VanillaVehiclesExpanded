@@ -17,6 +17,9 @@
 		
 		<hitFlags>IntendedTarget</hitFlags>
 		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2</rotationSpeed>
+		
 		<projectileOffset>2.1</projectileOffset>
 		<projectileShifting>
 			<li>0.2</li>
