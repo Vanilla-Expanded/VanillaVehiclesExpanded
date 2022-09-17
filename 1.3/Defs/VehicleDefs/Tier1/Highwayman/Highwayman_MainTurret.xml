@@ -30,9 +30,9 @@
 		<maxRange>28.9</maxRange>
 		
 		<recoil>
-			<distanceTotal>0.3</distanceTotal>
-			<distancePerTick>0.1</distancePerTick>
-			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
+			<distanceTotal>0.15</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
 		</recoil>
 		
 		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
