@@ -2,25 +2,22 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Armored">
-		<defName>VVE_Roadkill</defName>
-		<label>Roadkill</label>
-		<description>Calling back to an age of this planet’s history when mass-produced armoured units were needed to bolster a dwindling infantry force, the Roadkill is extremely simple, reliable and easy to assemble. They are very loud and vulnerable at the rear, while also being ridiculously thirsty and suited for short-range engagements. Are they accurate? No. Are they fast? Also no. A chore to repair? Yes, as the idea is not to maintain it but to assemble it on-site and leave it once it’s served its purpose.</description>
+		<defName>VVE_Highwayman</defName>
+		<label>Highwayman</label>
+		<description>A basic infantry fighting vehicle, the Highwayman is the cheapest weaponized option for transporting three people. Hardened against small-arms fire but very vulnerable at the rear, intended to provide mobile fire support for infantry and travel quickly along paved roads.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances, however it’s also less fuel efficient on the world map.</description>
 		
 		<graphicData>
-			<texPath>Things/Vehicles/Tier1/Tier1_Tank/Tier1_Tank</texPath>
+			<texPath>Things/Vehicles/Tier1/Tier1_APC/Tier1_APC</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
-			<drawSize>(4,4)</drawSize>
-			<color>(155, 155, 155)</color>
-			<colorTwo>(65, 75, 80)</colorTwo>
-			<colorThree>(45, 50, 45)</colorThree>
+			<drawSize>(3,5)</drawSize>
 		</graphicData>
 		
 		<fillPercent>1</fillPercent>
 		
-		<buildDef>VVE_Roadkill_Blueprint</buildDef>
+		<buildDef>VVE_Highwayman_Blueprint</buildDef>
 		
-		<size>(3,3)</size>
+		<size>(2,4)</size>
 		
 		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Combat</vehicleCategory>
@@ -34,28 +31,28 @@
 		</statBases>
 		
 		<vehicleStats>
-			<Mass>300</Mass>
+			<Mass>220</Mass>
 			<MarketValue>69420</MarketValue>
-			<MoveSpeed>6.6</MoveSpeed>
-			<CargoCapacity>60</CargoCapacity>
-			<RepairRate>0.2</RepairRate>
-			<AccelerationRate>0.04</AccelerationRate>
+			<MoveSpeed>9.2</MoveSpeed>
+			<CargoCapacity>180</CargoCapacity>
+			<RepairRate>0.5</RepairRate>
+			<AccelerationRate>0.06</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
 			<li>
 				<key>(DraftOn, DraftOff)</key>
-				<value>VVE_VehicleEngineHeavy</value>
+				<value>VVE_VehicleEngineMuscleCar</value>
 			</li>
 		</soundSustainersOnEvent>
 		
 		<properties>
-			<visibility>3</visibility>
-			
-			<customRoadCosts AssignDefaults = "0.8"/>
+			<visibility>1.5</visibility>
+			<worldSpeedMultiplier>1</worldSpeedMultiplier>
+			<winterSpeedMultiplier>1.5</winterSpeedMultiplier>
 			
 			<vehicleJobLimitations>
-				<li>(RepairVehicle, 3)</li>
+				<li>(RepairVehicle, 2)</li>
 			</vehicleJobLimitations>
 			
 			<roles>
@@ -67,6 +64,19 @@
 					
 					<handlingTypes>
 						<li>Movement</li>
+					</handlingTypes>
+					
+					<hitbox>
+						<side>Front</side>
+					</hitbox>
+				</li>
+				<li>
+					<key>gunner</key>
+					<label>Gunner</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<handlingTypes>
 						<li>Cannon</li>
 					</handlingTypes>
 					
@@ -76,7 +86,20 @@
 					
 					<hitbox>
 						<cells>
-							<li>(0, 1)</li>
+							<li>(-1, 0)</li>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>1</slots>
+					
+					<hitbox>
+						<cells>
+							<li>(-1, 0)</li>
+							<li>(0, 0)</li>
 						</cells>
 					</hitbox>
 				</li>
@@ -115,8 +138,26 @@
 				</reactors>
 				
 				<hitbox>
+					<side>Front</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontLeftWheel</key>
+				<label>Front Left Wheel</label>
+				<health>50</health>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, -1)</li>
+						<li>(-1, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -125,12 +166,19 @@
 				</categories>
 			</li>
 			<li>
-				<key>LeftTrack</key>
-				<label>Left Track</label>
-				<health>140</health>
+				<key>FrontRightWheel</key>
+				<label>Front Right Wheel</label>
+				<health>50</health>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
-					<side>Left</side>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(0, 1)</li>
+					</cells>
 				</hitbox>
 				
 				<categories>
@@ -138,12 +186,19 @@
 				</categories>
 			</li>
 			<li>
-				<key>RightTrack</key>
-				<label>Right Track</label>
-				<health>140</health>
+				<key>BackLeftWheel</key>
+				<label>Back Left Wheel</label>
+				<health>50</health>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
-					<side>Right</side>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, -2)</li>
+					</cells>
 				</hitbox>
 				
 				<categories>
@@ -151,9 +206,29 @@
 				</categories>
 			</li>
 			<li>
-				<key>FrontLeftDriveSprocket</key>
-				<label>Front Left Drive Sprocket</label>
-				<health>20</health>
+				<key>BackRightWheel</key>
+				<label>Back Right Wheel</label>
+				<health>50</health>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontLeftSuspension</key>
+				<label>Front Left Suspension</label>
+				<health>30</health>
 				
 				<hitbox>
 					<cells>
@@ -166,13 +241,13 @@
 				</categories>
 			</li>
 			<li>
-				<key>FrontRightDriveSprocket</key>
-				<label>Front Right Drive Sprocket</label>
-				<health>20</health>
+				<key>FrontRightSuspension</key>
+				<label>Front Right Suspension</label>
+				<health>30</health>
 				
 				<hitbox>
 					<cells>
-						<li>(1, 1)</li>
+						<li>(0, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -181,13 +256,13 @@
 				</categories>
 			</li>
 			<li>
-				<key>BackLeftDriveSprocket</key>
-				<label>Back Left Drive Sprocket</label>
-				<health>20</health>
+				<key>BackLeftSuspension</key>
+				<label>Back Left Suspension</label>
+				<health>30</health>
 				
 				<hitbox>
 					<cells>
-						<li>(-1, -1)</li>
+						<li>(-1, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -196,13 +271,13 @@
 				</categories>
 			</li>
 			<li>
-				<key>BackRightDriveSprocket</key>
-				<label>Back Right Drive Sprocket</label>
-				<health>20</health>
+				<key>BackRightSuspension</key>
+				<label>Back Right Suspension</label>
+				<health>30</health>
 				
 				<hitbox>
 					<cells>
-						<li>(1, -1)</li>
+						<li>(0, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -216,32 +291,12 @@
 				<health>45</health>
 				
 				<hitbox>
-					<cells>
-						<li>(0, 1)</li>
-					</cells>
+					<side>Front</side>
 				</hitbox>
 				
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
-			</li>
-			<li>
-				<key>LeftArmorPlating</key>
-				<label>Left Armor Plating</label>
-				<health>100</health>
-				
-				<hitbox>
-					<side>Left</side>
-				</hitbox>
-			</li>
-			<li>
-				<key>RightArmorPlating</key>
-				<label>Right Armor Plating</label>
-				<health>100</health>
-				
-				<hitbox>
-					<side>Right</side>
-				</hitbox>
 			</li>
 			<li>
 				<key>FrontArmorPlating</key>
@@ -253,15 +308,52 @@
 				</hitbox>
 			</li>
 			<li>
+				<key>LeftArmorPlating</key>
+				<label>Left Armor Plating</label>
+				<health>80</health>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightArmorPlating</key>
+				<label>Right Armor Plating</label>
+				<health>80</health>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
 				<key>Chemtank</key>
 				<label>Chemtank</label>
-				<health>60</health>
+				<health>40</health>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
 				
 				<hitbox>
 					<cells>
+						<li>(-1, -1)</li>
 						<li>(0, -1)</li>
 					</cells>
 				</hitbox>
+			</li>
+			<li>
+				<key>FrontBumper</key>
+				<label>Front Bumper</label>
+				<health>20</health>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>Upholstery</key>
+				<label>Upholstery</label>
+				<health>30</health>
 			</li>
 			<li>
 				<key>Dashboard</key>
@@ -269,8 +361,8 @@
 				<health>45</health>
 			</li>
 			<li>
-				<key>SteeringApparatus</key>
-				<label>Steering Apparatus</label>
+				<key>SteeringWheel</key>
+				<label>Steering Wheel</label>
 				<health>20</health>
 			</li>
 			<li>
@@ -281,7 +373,7 @@
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
-				<health>100</health>
+				<health>85</health>
 			</li>
 		</components>
 
@@ -289,33 +381,20 @@
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
 				<leakDef>Filth_Fuel</leakDef>
-				<fuelConsumptionRate>28.5</fuelConsumptionRate>
-				<fuelConsumptionWorldMultiplier>1.2</fuelConsumptionWorldMultiplier>
-				<fuelCapacity>60</fuelCapacity>
+				<fuelConsumptionRate>24.5</fuelConsumptionRate>
+				<fuelConsumptionWorldMultiplier>0.8</fuelConsumptionWorldMultiplier>
+				<fuelCapacity>80</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleTurrets">
 				<turrets>
 					<li>
-						<turretDef>Roadkill_MainTurret</turretDef>
+						<turretDef>Highwayman_MainTurret</turretDef>
 						
-						<renderProperties>
-							<north>(0, 0.45)</north>
-							<south>(0, 0.35)</south>
-							<east>(0.05, 0.4)</east>
-						</renderProperties>
-						
-						<uiRenderProperties>
-							<north>(0, -15)</north>
-							<east>(1, -15)</east>
-							<south>(0, -13)</south>
-						</uiRenderProperties>
-						
-						<gizmoLabel>Main Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
+						<gizmoLabel>Cannon</gizmoLabel>
 						
 						<angleRestricted/>
-						<aimPieOffset>(0, 1.5)</aimPieOffset>
+						<aimPieOffset>(0, 0.65)</aimPieOffset>
 						
 						<key>mainTurret</key>
 					</li>
