@@ -138,7 +138,10 @@
 				</reactors>
 				
 				<hitbox>
-					<side>Front</side>
+					<cells>
+						<li>(-1, -1)</li>
+						<li>(0, -1)</li>
+					</cells>
 				</hitbox>
 				
 				<categories>
@@ -392,9 +395,9 @@
 						<turretDef>Highwayman_MainTurret</turretDef>
 						
 						<renderProperties>
-							<north>(0, 0.45)</north>
-							<south>(0, 0.35)</south>
-							<east>(0.05, 0.4)</east>
+							<north>(0, 0.85)</north>
+							<south>(0, 0.5)</south>
+							<east>(0.1, 0.5)</east>
 						</renderProperties>
 						
 						<uiRenderProperties>
