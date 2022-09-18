@@ -92,6 +92,31 @@ namespace VanillaVehiclesExpanded
             savedPaths.Clear();
         }
 
+        //public string deceleratePctStr;
+        //public string slowdownMultiplierStr;
+        //public string slowdownCheckStr;
+        //public string accelerateRateAdjustedStr;
+        //public string pctOfPathPassedStr;
+        //public string decelerateInPctOfPathStr;
+        //public override string CompInspectStringExtra()
+        //{
+        //    var sb = new StringBuilder(base.CompInspectStringExtra());
+        //    if (Prefs.DevMode)
+        //    {
+        //        sb.AppendLine("Default speed: " + GetDefaultMoveSpeed());
+        //        sb.AppendLine("Current speed: " + currentSpeed);
+        //        sb.AppendLine("Current movement mode: " + curMovementMode);
+        //        sb.AppendLine("Decelerate: " + deceleratePctStr);
+        //        sb.AppendLine("accelerateRateAdjustedStr: " + accelerateRateAdjustedStr);
+        //        sb.AppendLine("slowdownCheckStr: " + slowdownCheckStr);
+        //        sb.AppendLine("pctOfPathPassed: " + pctOfPathPassedStr);
+        //        sb.AppendLine("decelerateInPctOfPathStr: " + decelerateInPctOfPathStr);
+        //        sb.AppendLine("Slowdown multiplier: " + slowdownMultiplierStr);
+        //        sb.AppendLine("Handbrake applied: " + handbrakeApplied);
+        //    }
+        //    return sb.ToString().TrimEndNewlines();
+        //}
+
         public override void CompTick()
         {
             base.CompTick();
@@ -104,16 +129,11 @@ namespace VanillaVehiclesExpanded
                 var decelerateInPctOfPath = (moveSpeed / (AccelerationRate * decelerateMultiplier)) / totalCost;
 
                 var pctOfPathPassed = (curPaidPathCost / totalCost);
+                //pctOfPathPassedStr = pctOfPathPassed.ToString();
+                //decelerateInPctOfPathStr = decelerateInPctOfPath.ToString();
                 if (decelerateInPctOfPath > 1f)
                 {
-                    if (pctOfPathPassed <= 0.5f && curMovementMode != MovementMode.Decelerate)
-                    {
-                        SpeedUp(moveSpeed, decelerateInPctOfPath, pctOfPathPassed);
-                    }
-                    else
-                    {
-                        Slowdown(decelerateInPctOfPath, pctOfPathPassed);
-                    }
+                    Slowdown(decelerateInPctOfPath, pctOfPathPassed);
                 }
                 else
                 {
@@ -156,9 +176,13 @@ namespace VanillaVehiclesExpanded
             var targetSpeed = 1f;
             var diff = currentSpeed - targetSpeed;
             var check = currentSpeed / remainingArrivalTicks;
+            //accelerateRateAdjustedStr = accelerateRateAdjusted.ToString();
             accelerateRateAdjusted = Mathf.Min(accelerateRateAdjusted, check);
+            //slowdownCheckStr = check.ToString();
             var newSpeed = currentSpeed - accelerateRateAdjusted;
             var slowdownMultiplier = (currentSpeed / (AccelerationRate * decelerateMultiplier)) / remainingArrivalTicks;
+            //deceleratePctStr = deceleratePct.ToString();
+            //slowdownMultiplierStr = slowdownMultiplier.ToString();
             if (handbrakeApplied is false && slowdownMultiplier >= 2f && deceleratePct > 1f && currentSpeed >= 3f)
             {
                 newSpeed /= slowdownMultiplier;
