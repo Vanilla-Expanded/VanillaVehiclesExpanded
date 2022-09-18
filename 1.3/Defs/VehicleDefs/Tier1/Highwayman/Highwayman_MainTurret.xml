@@ -26,7 +26,6 @@
 			<li>-0.2</li>
 		</projectileShifting>
 		
-		<minRange>1</minRange>
 		<maxRange>28.9</maxRange>
 		
 		<recoil>
