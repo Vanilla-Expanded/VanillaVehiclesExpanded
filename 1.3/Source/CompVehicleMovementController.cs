@@ -78,6 +78,8 @@ namespace VanillaVehiclesExpanded
         public bool isScreeching;
         public bool handbrakeApplied;
         private Sustainer screechingSustainer;
+        private float prevPctOfPathPassed;
+        private float curPctOfPathPassed;
         private Dictionary<StartAndDestCells, PawnPath> savedPaths = new Dictionary<StartAndDestCells, PawnPath>();
         public float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
         public void StartMove()
@@ -90,13 +92,14 @@ namespace VanillaVehiclesExpanded
             curPaidPathCost = 0;
             handbrakeApplied = false;
             savedPaths.Clear();
+            curPctOfPathPassed = 0;
         }
 
-        //public string deceleratePctStr;
         //public string slowdownMultiplierStr;
         //public string slowdownCheckStr;
         //public string accelerateRateAdjustedStr;
-        //public string pctOfPathPassedStr;
+        //public string prevPctOfPathPassedStr;
+        //public string curPctOfPathPassedStr;
         //public string decelerateInPctOfPathStr;
         //public override string CompInspectStringExtra()
         //{
@@ -106,10 +109,10 @@ namespace VanillaVehiclesExpanded
         //        sb.AppendLine("Default speed: " + GetDefaultMoveSpeed());
         //        sb.AppendLine("Current speed: " + currentSpeed);
         //        sb.AppendLine("Current movement mode: " + curMovementMode);
-        //        sb.AppendLine("Decelerate: " + deceleratePctStr);
+        //        sb.AppendLine("curPctOfPathPassedStr: " + curPctOfPathPassedStr);
+        //        sb.AppendLine("prevPctOfPathPassedStr: " + prevPctOfPathPassedStr);
         //        sb.AppendLine("accelerateRateAdjustedStr: " + accelerateRateAdjustedStr);
         //        sb.AppendLine("slowdownCheckStr: " + slowdownCheckStr);
-        //        sb.AppendLine("pctOfPathPassed: " + pctOfPathPassedStr);
         //        sb.AppendLine("decelerateInPctOfPathStr: " + decelerateInPctOfPathStr);
         //        sb.AppendLine("Slowdown multiplier: " + slowdownMultiplierStr);
         //        sb.AppendLine("Handbrake applied: " + handbrakeApplied);
@@ -127,26 +130,41 @@ namespace VanillaVehiclesExpanded
                 var totalCost = GetPathCost(false).cost;
                 var decelerateMultiplier = 4f;
                 var decelerateInPctOfPath = (moveSpeed / (AccelerationRate * decelerateMultiplier)) / totalCost;
-
-                var pctOfPathPassed = (curPaidPathCost / totalCost);
-                //pctOfPathPassedStr = pctOfPathPassed.ToString();
+                curPctOfPathPassed = (curPaidPathCost / totalCost);
+                //curPctOfPathPassedStr = curPctOfPathPassed.ToString();
+                //prevPctOfPathPassedStr = prevPctOfPathPassed.ToString();
                 //decelerateInPctOfPathStr = decelerateInPctOfPath.ToString();
                 if (decelerateInPctOfPath > 1f)
                 {
-                    Slowdown(decelerateInPctOfPath, pctOfPathPassed);
-                }
-                else
-                {
-                    if (pctOfPathPassed <= 1f - decelerateInPctOfPath && curMovementMode != MovementMode.Decelerate)
+                    if (prevPctOfPathPassed > curPctOfPathPassed)
                     {
-                        SpeedUp(moveSpeed, decelerateInPctOfPath, pctOfPathPassed);
+                        Slowdown(decelerateInPctOfPath);
                     }
                     else
                     {
-                        Slowdown(decelerateInPctOfPath, pctOfPathPassed);
+                        if (curPctOfPathPassed <= 0.5f && curMovementMode != MovementMode.Decelerate)
+                        {
+                            SpeedUp(moveSpeed);
+                        }
+                        else
+                        {
+                            Slowdown(decelerateInPctOfPath);
+                        }
+                    }
+                }
+                else
+                {
+                    if (curPctOfPathPassed <= 1f - decelerateInPctOfPath && curMovementMode != MovementMode.Decelerate)
+                    {
+                        SpeedUp(moveSpeed);
+                    }
+                    else
+                    {
+                        Slowdown(decelerateInPctOfPath);
                     }
                 }
 
+                prevPctOfPathPassed = curPctOfPathPassed;
                 if (isScreeching)
                 {
                     if (screechingSustainer == null || screechingSustainer.Ended)
@@ -156,19 +174,26 @@ namespace VanillaVehiclesExpanded
                     screechingSustainer.Maintain();
                 }
             }
-            else if (isScreeching)
+            else
             {
-                isScreeching = false;
-                if (screechingSustainer != null && !screechingSustainer.Ended)
+                if (wasMoving is false)
                 {
-                    screechingSustainer.End();
+                    prevPctOfPathPassed = 0;
+                }
+
+                if (isScreeching)
+                {
+                    isScreeching = false;
+                    if (screechingSustainer != null && !screechingSustainer.Ended)
+                    {
+                        screechingSustainer.End();
+                    }
                 }
             }
         }
 
-        private void Slowdown(float deceleratePct, float pctPassed)
+        private void Slowdown(float deceleratePct)
         {
-            curMovementMode = MovementMode.Decelerate;
             var decelerateMultiplier = 4f;
             var result = GetPathCost(true);
             var remainingArrivalTicks = result.cost;
@@ -181,9 +206,8 @@ namespace VanillaVehiclesExpanded
             //slowdownCheckStr = check.ToString();
             var newSpeed = currentSpeed - accelerateRateAdjusted;
             var slowdownMultiplier = (currentSpeed / (AccelerationRate * decelerateMultiplier)) / remainingArrivalTicks;
-            //deceleratePctStr = deceleratePct.ToString();
             //slowdownMultiplierStr = slowdownMultiplier.ToString();
-            if (handbrakeApplied is false && slowdownMultiplier >= 2f && deceleratePct > 1f && currentSpeed >= 3f)
+            if (handbrakeApplied is false && slowdownMultiplier >= 2f && deceleratePct > 1f && currentSpeed >= 3f && Vehicle.vPather.curPath.NodesConsumedCount < 2)
             {
                 newSpeed /= slowdownMultiplier;
                 isScreeching = true;
@@ -202,9 +226,10 @@ namespace VanillaVehiclesExpanded
             {
                 currentSpeed = newSpeed;
             }
+            curMovementMode = MovementMode.Decelerate;
         }
 
-        private void SpeedUp(float moveSpeed, float deceleratePct, float pctPassed)
+        private void SpeedUp(float moveSpeed)
         {
             if (moveSpeed > currentSpeed)
             {
@@ -360,6 +385,8 @@ namespace VanillaVehiclesExpanded
             Scribe_Values.Look(ref curMovementMode, "curMovementMode");
             Scribe_Values.Look(ref isScreeching, "isScreeching");
             Scribe_Values.Look(ref handbrakeApplied, "handbrakeApplied");
+            Scribe_Values.Look(ref curPctOfPathPassed, "curPctOfPathPassed");
+            Scribe_Values.Look(ref prevPctOfPathPassed, "prevPctOfPathPassed");
         }
     }
 }
