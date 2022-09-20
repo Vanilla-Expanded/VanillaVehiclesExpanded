@@ -111,24 +111,10 @@
 		
 		<components>
 			<li>
-				<key>Body</key>
-				<label>Body</label>
-				<health>250</health>
-				<armor>4</armor>
-				
-				<hitbox>
-					<side>BodyNoOverlap</side>
-				</hitbox>
-				
-				<categories>
-					<li>BodyIntegrity</li>
-				</categories>
-			</li>
-			<li>
 				<key>Engine</key>
 				<label>Engine</label>
 				<health>75</health>
-				<efficiencyWeight>10</efficiencyWeight>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
@@ -156,6 +142,11 @@
 				<label>Front Left Wheel</label>
 				<health>50</health>
 				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+					
 				<tags>
 					<li>Wheel</li>
 				</tags>
@@ -176,6 +167,11 @@
 				<label>Front Right Wheel</label>
 				<health>50</health>
 				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+					
 				<tags>
 					<li>Wheel</li>
 				</tags>
@@ -196,6 +192,11 @@
 				<label>Back Left Wheel</label>
 				<health>50</health>
 				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
 				<tags>
 					<li>Wheel</li>
 				</tags>
@@ -215,6 +216,11 @@
 				<key>BackRightWheel</key>
 				<label>Back Right Wheel</label>
 				<health>50</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
 				
 				<tags>
 					<li>Wheel</li>
@@ -309,6 +315,11 @@
 				<label>Front Armor Plating</label>
 				<health>100</health>
 				
+				<armor>
+					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+				</armor>
+				
 				<hitbox>
 					<side>Front</side>
 				</hitbox>
@@ -318,6 +329,11 @@
 				<label>Left Armor Plating</label>
 				<health>80</health>
 				
+				<armor>
+					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+				</armor>
+				
 				<hitbox>
 					<side>Left</side>
 				</hitbox>
@@ -326,6 +342,11 @@
 				<key>RightArmorPlating</key>
 				<label>Right Armor Plating</label>
 				<health>80</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+				</armor>
 				
 				<hitbox>
 					<side>Right</side>
@@ -380,6 +401,11 @@
 				<key>Roof</key>
 				<label>Roof</label>
 				<health>85</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+				</armor>
 			</li>
 		</components>
 

@@ -97,11 +97,16 @@
 					<label>Rider</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
+					<exposed>true</exposed>
 					
 					<hitbox>
 						<side>Body</side>
 					</hitbox>
 					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				
 					<pawnRenderer>
 						<layer>1</layer>
 						<layerNorth>1</layerNorth>
@@ -120,26 +125,19 @@
 		
 		<components>
 			<li>
-				<key>Body</key>
-				<label>Body</label>
-				<health>50</health>
-				<armor>0.05</armor>
-				
-				<hitbox>
-					<side>Body</side>
-				</hitbox>
-				
-				<categories>
-					<li>BodyIntegrity</li>
-				</categories>
-			</li>
-			<li>
 				<key>FrontWheel</key>
 				<label>Front Wheel</label>
 				<health>20</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
 				<tags>
 					<li>Wheel</li>
 				</tags>
+				
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
@@ -148,9 +146,16 @@
 				<key>BackWheel</key>
 				<label>Back Wheel</label>
 				<health>20</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
 				<tags>
 					<li>Wheel</li>
 				</tags>
+				
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>
@@ -159,6 +164,8 @@
 				<key>Engine</key>
 				<label>Engine</label>
 				<health>25</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				
 				<categories>
 					<li>MoveSpeed</li>
 				</categories>

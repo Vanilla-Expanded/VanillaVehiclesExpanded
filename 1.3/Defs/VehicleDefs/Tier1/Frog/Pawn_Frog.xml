@@ -61,33 +61,24 @@
 					<label>Operator</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
+					
 					<hitbox>
 						<side>Body</side>
 					</hitbox>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
 				</li>
 			</roles>
 		</properties>
 		
 		<components>
 			<li>
-				<key>Body</key>
-				<label>Body</label>
-				<health>400</health>
-				<armor>1.75</armor>
-				
-				<hitbox>
-					<side>Body</side>
-				</hitbox>
-				
-				<categories>
-					<li>BodyIntegrity</li>
-				</categories>
-			</li>
-			<li>
 				<key>Engine</key>
 				<label>Engine</label>
 				<health>30</health>
-				<armor>0.15</armor>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
@@ -113,7 +104,6 @@
 				<key>FirstThruster</key>
 				<label>First Thruster</label>
 				<health>30</health>
-				<armor>0.15</armor>
 				
 				<hitbox>
 					<side>Body</side>
@@ -129,7 +119,6 @@
 				<key>SecondThruster</key>
 				<label>Second Thruster</label>
 				<health>30</health>
-				<armor>0.15</armor>
 				
 				<hitbox>
 					<side>Body</side>
@@ -145,7 +134,6 @@
 				<key>ThirdThruster</key>
 				<label>Third Thruster</label>
 				<health>30</health>
-				<armor>0.15</armor>
 				
 				<hitbox>
 					<side>Body</side>
@@ -156,11 +144,11 @@
 					<li>FlightControl</li>
 					<li>FlightSpeed</li>
 				</categories>
-			</li><li>
+			</li>
+			<li>
 				<key>Stabilizers</key>
 				<label>Stabilizers</label>
 				<health>20</health>
-				<armor>0.15</armor>
 				
 				<hitbox>
 					<side>Body</side>

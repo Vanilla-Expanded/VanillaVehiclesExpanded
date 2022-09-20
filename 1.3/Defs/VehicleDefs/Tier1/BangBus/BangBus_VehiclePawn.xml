@@ -59,9 +59,11 @@
 					<label>Driver</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
+					
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
+					
 					<hitbox>
 						<cells>
 							<li>(-1, 1)</li>
@@ -73,6 +75,7 @@
 					<key>passenger_shotgun</key>
 					<label>Shotgun</label>
 					<slots>1</slots>
+					
 					<hitbox>
 						<cells>
 							<li>(-1, 1)</li>
@@ -84,6 +87,7 @@
 					<key>passenger_rear</key>
 					<label>Rear Passenger</label>
 					<slots>4</slots>
+					
 					<hitbox>
 						<cells>
 							<li>(-1, 1)</li>
@@ -98,24 +102,10 @@
 		
 		<components>
 			<li>
-				<key>Body</key>
-				<label>Body</label>
-				<health>250</health>
-				<armor>4</armor>
-				
-				<hitbox>
-					<side>BodyNoOverlap</side>
-				</hitbox>
-				
-				<categories>
-					<li>BodyIntegrity</li>
-				</categories>
-			</li>
-			<li>
 				<key>Engine</key>
 				<label>Engine</label>
 				<health>50</health>
-				<efficiencyWeight>10</efficiencyWeight>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
@@ -142,9 +132,16 @@
 				<key>FrontLeftWheel</key>
 				<label>Front Left Wheel</label>
 				<health>30</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
 				<tags>
 					<li>Wheel</li>
 				</tags>
+				
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
@@ -160,27 +157,41 @@
 				<key>FrontRightWheel</key>
 				<label>Front Right Wheel</label>
 				<health>30</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
 				<tags>
 					<li>Wheel</li>
 				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
 						<li>(0, 1)</li>
 					</cells>
 				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-				</categories>
 			</li>
 			<li>
 				<key>BackLeftWheel</key>
 				<label>Back Left Wheel</label>
 				<health>30</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
 				<tags>
 					<li>Wheel</li>
 				</tags>
+				
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
@@ -196,9 +207,16 @@
 				<key>BackRightWheel</key>
 				<label>Back Right Wheel</label>
 				<health>30</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
 				<tags>
 					<li>Wheel</li>
 				</tags>
+				
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
@@ -215,35 +233,39 @@
 				<label>Front Left Suspension</label>
 				<health>20</health>
 				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
 				<hitbox>
 					<cells>
 						<li>(-1, 1)</li>
 					</cells>
 				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-				</categories>
 			</li>
 			<li>
 				<key>FrontRightSuspension</key>
 				<label>Front Right Suspension</label>
 				<health>20</health>
 				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
 				<hitbox>
 					<cells>
 						<li>(0, 1)</li>
 					</cells>
 				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-				</categories>
 			</li>
 			<li>
 				<key>Gearbox</key>
 				<label>Gearbox</label>
 				<health>45</health>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
 				
 				<hitbox>
 					<cells>
@@ -251,15 +273,16 @@
 						<li>(0, 1)</li>
 					</cells>
 				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-				</categories>
 			</li>
 			<li>
 				<key>LeftSidePanel</key>
 				<label>Left Side Panel</label>
 				<health>90</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0.62</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+				</armor>
 				
 				<hitbox>
 					<side>Left</side>
@@ -269,6 +292,11 @@
 				<key>RightSidePanel</key>
 				<label>Right Side Panel</label>
 				<health>90</health>
+				
+				<armor>
+					<ArmorRating_Blunt>0.62</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+				</armor>
 				
 				<hitbox>
 					<side>Right</side>
