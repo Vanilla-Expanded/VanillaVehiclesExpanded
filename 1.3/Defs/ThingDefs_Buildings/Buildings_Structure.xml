@@ -42,7 +42,7 @@
 	<ThingDef ParentName="VVE_GarageDoorAbstract" Name="VVE_GarageDoorBase">
 		<defName>VVE_GarageDoor</defName>
 		<label>garage door (1x4)</label>
-		<description>Divides rooms. Powered operation allows people to open it, letting vehicles through.</description>
+		<description>Divides rooms. Manual operation allows people to open it, letting vehicles through.</description>
 		<thingClass>VanillaVehiclesExpanded.GarageDoor</thingClass>
 		<passability>Impassable</passability>
 		<defaultPlacingRot>South</defaultPlacingRot>
@@ -66,10 +66,6 @@
 		</costList>
 		<costStuffCount>100</costStuffCount>
 		<comps>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>100</basePowerConsumption>
-			</li>
 			<li Class="CompProperties_Breakdownable"/>
 			<li Class="CompProperties_Styleable"/>
 		</comps>

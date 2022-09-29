@@ -4,12 +4,12 @@
   <ResearchProjectDef>
     <defName>VVE_BasicVehicles</defName>
     <label>basic vehicles</label>
-    <description>Text.todo</description>
+    <description>Learn to construct basic, inefficient vehicles, from prowler buggy to roadkill single-person tanks.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
-    <!-- <prerequisites>
-      <li>Machining</li>
-    </prerequisites> -->
+	<prerequisites>
+      <li>BiofuelRefining</li>
+    </prerequisites>
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.65</researchViewY>
 	<tab>VanillaExpanded</tab>

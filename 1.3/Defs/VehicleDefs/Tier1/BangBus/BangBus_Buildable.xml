@@ -38,5 +38,7 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
 		<thingToSpawn>VVE_BangBus</thingToSpawn>
+		
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
 	</Vehicles.VehicleBuildDef>
 </Defs>

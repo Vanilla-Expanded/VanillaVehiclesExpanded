@@ -360,7 +360,7 @@
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
-				<fuelConsumptionRate>12.5</fuelConsumptionRate>
+				<fuelConsumptionRate>18.5</fuelConsumptionRate>
 				<fuelCapacity>60</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
