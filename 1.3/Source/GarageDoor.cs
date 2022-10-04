@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -9,16 +8,14 @@ namespace VanillaVehiclesExpanded
     [HotSwappable]
     public class GarageDoor : Building
     {
-        public CompPowerTrader compPower;
         public bool opened;
         public int tickOpening;
         public int tickClosing;
-        public static List<GarageDoor> garageDoors = new List<GarageDoor>();
+        public static List<GarageDoor> garageDoors = new();
         public int WorkSpeedTicks => 120;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            compPower = this.TryGetComp<CompPowerTrader>();
             garageDoors.Add(this);
         }
 
@@ -29,11 +26,12 @@ namespace VanillaVehiclesExpanded
         }
         public override void Draw()
         {
-            Vector3 drawPos = DrawPos;
+            var oldDrawSize = def.graphicData.drawSize;
+            var drawPos = DrawPos;
             drawPos.y = AltitudeLayer.DoorMoveable.AltitudeFor();
-            var size = def.graphicData.drawSize;
-            var openProgress = OpenProgress();
-            size.y += (openProgress * 0.7f);
+            var size = def.graphicData.drawSize = new Vector3(def.size.x, def.size.z, 0);
+            float openProgress = OpenProgress();
+            size.y += openProgress * 0.7f;
             if (Rotation == Rot4.South)
             {
                 drawPos.z += openProgress;
@@ -51,10 +49,11 @@ namespace VanillaVehiclesExpanded
                 drawPos.x -= openProgress;
             }
 
-            Graphics.DrawMesh(MeshPool.GridPlane(size), drawPos, this.Rotation.AsQuat, def.graphicData
+            Graphics.DrawMesh(MeshPool.GridPlane(size), drawPos, Rotation.AsQuat, def.graphicData
                 .GraphicColoredFor(this).MatAt(base.Rotation, this), 0);
             Graphic.ShadowGraphic?.DrawWorker(drawPos, base.Rotation, def, this, 0f);
             Comps_PostDraw();
+            def.graphicData.drawSize = oldDrawSize;
         }
 
         public override Color DrawColor
@@ -62,7 +61,7 @@ namespace VanillaVehiclesExpanded
             get
             {
                 var color = base.DrawColor;
-                var openProgress = OpenProgress();
+                float openProgress = OpenProgress();
                 color.a /= openProgress + 1;
                 return color;
             }
@@ -70,7 +69,7 @@ namespace VanillaVehiclesExpanded
 
         public float OpenProgress()
         {
-            if (this.opened)
+            if (opened)
             {
                 return 1f;
             }
@@ -89,13 +88,13 @@ namespace VanillaVehiclesExpanded
             base.Tick();
             if (tickOpening > 0 && Find.TickManager.TicksGame >= tickOpening)
             {
-                var openGarage = ThingMaker.MakeThing(ThingDef.Named(this.def.defName + "Opened"), this.Stuff) as GarageDoor;
+                var openGarage = ThingMaker.MakeThing(ThingDef.Named(def.defName + "Opened"), Stuff) as GarageDoor;
                 openGarage.opened = true;
                 SpawnGarage(openGarage);
             }
             else if (tickClosing > 0 && Find.TickManager.TicksGame >= tickClosing)
             {
-                var closedGarage = ThingMaker.MakeThing(ThingDef.Named(this.def.defName.Replace("Opened", "")), this.Stuff) as GarageDoor;
+                var closedGarage = ThingMaker.MakeThing(ThingDef.Named(def.defName.Replace("Opened", "")), Stuff) as GarageDoor;
                 closedGarage.opened = false;
                 SpawnGarage(closedGarage);
             }
@@ -103,16 +102,13 @@ namespace VanillaVehiclesExpanded
 
         private void SpawnGarage(GarageDoor newGarage)
         {
-            var wasSelected = Find.Selector.IsSelected(this);
-            newGarage.HitPoints = this.HitPoints;
-            newGarage.SetFaction(this.Faction);
-            var pos = this.Position;
-            var map = this.Map;
-            this.Destroy();
-            GenSpawn.Spawn(newGarage, pos, map, this.Rotation);
-            newGarage.compPower.PowerOn = true;
-            newGarage.compPower.SetUpPowerVars();
-            PowerConnectionMaker.TryConnectToAnyPowerNet(newGarage.compPower);
+            bool wasSelected = Find.Selector.IsSelected(this);
+            newGarage.HitPoints = HitPoints;
+            newGarage.SetFaction(Faction);
+            var pos = Position;
+            var map = Map;
+            Destroy();
+            GenSpawn.Spawn(newGarage, pos, map, Rotation);
             if (wasSelected)
             {
                 Find.Selector.Select(newGarage);
@@ -130,18 +126,14 @@ namespace VanillaVehiclesExpanded
                     icon = ContentFinder<Texture2D>.Get("Things/Building/Structure/GarageDoor_Open"),
                     action = delegate
                     {
-                        Designation designation = this.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Open);
+                        var designation = Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Open);
                         if (designation == null)
                         {
-                            this.Map.designationManager.AddDesignation(new Designation(this, VVE_DefOf.VVE_Open));
+                            Map.designationManager.AddDesignation(new Designation(this, VVE_DefOf.VVE_Open));
                         }
                         base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Close)?.Delete();
                     }
                 };
-                if (compPower.PowerOn is false)
-                {
-                    openButton.Disable("NoPower".Translate());
-                }
                 yield return openButton;
             }
             else
@@ -153,18 +145,14 @@ namespace VanillaVehiclesExpanded
                     icon = ContentFinder<Texture2D>.Get("Things/Building/Structure/GarageDoor_Close"),
                     action = delegate
                     {
-                        Designation designation = this.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Close);
+                        var designation = Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Close);
                         if (designation == null)
                         {
-                            this.Map.designationManager.AddDesignation(new Designation(this, VVE_DefOf.VVE_Close));
+                            Map.designationManager.AddDesignation(new Designation(this, VVE_DefOf.VVE_Close));
                         }
                         base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Open)?.Delete();
                     }
                 };
-                if (compPower.PowerOn is false)
-                {
-                    closeButton.Disable("NoPower".Translate());
-                }
                 yield return closeButton;
             }
         }

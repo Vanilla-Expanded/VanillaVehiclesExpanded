@@ -15,7 +15,7 @@ namespace VanillaVehiclesExpanded
         }
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
-            foreach (var garageDoor in GarageDoor.garageDoors.Where(x => x.Map == pawn.Map && x.compPower.PowerOn && HasJobOnThing(pawn, x)))
+            foreach (var garageDoor in GarageDoor.garageDoors.Where(x => x?.Map == pawn.Map && HasJobOnThing(pawn, x)))
             {
                 yield return garageDoor;
             }

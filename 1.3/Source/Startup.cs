@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System;
-using System.Linq;
 using Vehicles;
 using Verse;
 
@@ -54,6 +53,25 @@ namespace VanillaVehiclesExpanded
         }
     }
 
+    [HarmonyPatch(typeof(Components), "DraftedVehiclesCanMove")]
+    public static class Components_DraftedVehiclesCanMove_Patch
+    {
+        public static void Prefix(Pawn_DraftController __0, bool value)
+        {
+            if (__0.pawn is VehiclePawn vehicle && !value)
+            {
+                var comp = vehicle.GetComp<CompVehicleMovementController>();
+                if (comp != null)
+                {
+                    float moveSpeed = comp.GetDefaultMoveSpeed();
+                    float totalCost = comp.GetPathCost(false).cost;
+                    float decelerateMultiplier = 4f;
+                    float decelerateInPctOfPath = moveSpeed / (comp.AccelerationRate * decelerateMultiplier) / totalCost;
+                    comp.Slowdown(decelerateInPctOfPath, stopImmediately: true);
+                }
+            }
+        }
+    }
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
     public class HotSwappableAttribute : Attribute

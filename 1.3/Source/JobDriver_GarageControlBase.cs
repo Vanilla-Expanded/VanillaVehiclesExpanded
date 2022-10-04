@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Verse;
 using Verse.AI;
 
 namespace VanillaVehiclesExpanded
@@ -15,15 +14,17 @@ namespace VanillaVehiclesExpanded
         public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedOrNull(TargetIndex.A);
-            this.FailOn(() => (FailCondition()));
+            this.FailOn(() => FailCondition());
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             yield return Toils_General.Wait(15).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-            Toil finalize = new Toil();
-            finalize.initAction = delegate
+            var finalize = new Toil
+            {
+                initAction = delegate
             {
                 DoWork();
+            },
+                defaultCompleteMode = ToilCompleteMode.Instant
             };
-            finalize.defaultCompleteMode = ToilCompleteMode.Instant;
             yield return finalize;
         }
 
@@ -41,7 +42,7 @@ namespace VanillaVehiclesExpanded
 
         public override bool FailCondition()
         {
-            return base.Map.designationManager.DesignationOn(base.TargetThingA, VVE_DefOf.VVE_Open) is null || GarageDoor.compPower.PowerOn is false;
+            return base.Map.designationManager.DesignationOn(base.TargetThingA, VVE_DefOf.VVE_Open) is null;
         }
     }
 
@@ -54,7 +55,7 @@ namespace VanillaVehiclesExpanded
 
         public override bool FailCondition()
         {
-            return base.Map.designationManager.DesignationOn(base.TargetThingA, VVE_DefOf.VVE_Close) is null || GarageDoor.compPower.PowerOn is false;
+            return base.Map.designationManager.DesignationOn(base.TargetThingA, VVE_DefOf.VVE_Close) is null;
         }
     }
 }
