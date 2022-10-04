@@ -115,6 +115,7 @@
 				<label>Engine</label>
 				<health>75</health>
 				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
@@ -141,6 +142,7 @@
 				<key>FrontLeftWheel</key>
 				<label>Front Left Wheel</label>
 				<health>50</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -166,6 +168,7 @@
 				<key>FrontRightWheel</key>
 				<label>Front Right Wheel</label>
 				<health>50</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -191,6 +194,7 @@
 				<key>BackLeftWheel</key>
 				<label>Back Left Wheel</label>
 				<health>50</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -216,6 +220,7 @@
 				<key>BackRightWheel</key>
 				<label>Back Right Wheel</label>
 				<health>50</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -241,6 +246,7 @@
 				<key>FrontLeftSuspension</key>
 				<label>Front Left Suspension</label>
 				<health>30</health>
+				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
@@ -256,6 +262,7 @@
 				<key>FrontRightSuspension</key>
 				<label>Front Right Suspension</label>
 				<health>30</health>
+				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
@@ -271,6 +278,7 @@
 				<key>BackLeftSuspension</key>
 				<label>Back Left Suspension</label>
 				<health>30</health>
+				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
@@ -286,6 +294,7 @@
 				<key>BackRightSuspension</key>
 				<label>Back Right Suspension</label>
 				<health>30</health>
+				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
@@ -301,6 +310,7 @@
 				<key>Gearbox</key>
 				<label>Gearbox</label>
 				<health>45</health>
+				<depth>Internal</depth>
 				
 				<hitbox>
 					<side>Front</side>
@@ -314,6 +324,7 @@
 				<key>FrontArmorPlating</key>
 				<label>Front Armor Plating</label>
 				<health>100</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
@@ -328,6 +339,7 @@
 				<key>LeftArmorPlating</key>
 				<label>Left Armor Plating</label>
 				<health>80</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
@@ -342,6 +354,7 @@
 				<key>RightArmorPlating</key>
 				<label>Right Armor Plating</label>
 				<health>80</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
@@ -356,6 +369,7 @@
 				<key>Chemtank</key>
 				<label>Chemtank</label>
 				<health>40</health>
+				<depth>Internal</depth>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_FuelLeak"/>
@@ -372,6 +386,7 @@
 				<key>FrontBumper</key>
 				<label>Front Bumper</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<side>Front</side>
@@ -381,26 +396,31 @@
 				<key>Upholstery</key>
 				<label>Upholstery</label>
 				<health>30</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Dashboard</key>
 				<label>Dashboard</label>
 				<health>45</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>SteeringWheel</key>
 				<label>Steering Wheel</label>
 				<health>20</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Alternator</key>
 				<label>Alternator</label>
 				<health>20</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
 				<health>85</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>

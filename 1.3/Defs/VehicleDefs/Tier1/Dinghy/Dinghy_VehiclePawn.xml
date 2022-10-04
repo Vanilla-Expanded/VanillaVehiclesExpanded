@@ -254,6 +254,7 @@
 				<label>Engine</label>
 				<health>50</health>
 				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
 				
 				<categories>
 					<li>MoveSpeed</li>
@@ -267,6 +268,7 @@
 				<key>LeftSidePanel</key>
 				<label>Left Side Panel</label>
 				<health>80</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<side>Left</side>
@@ -276,6 +278,7 @@
 				<key>RightSidePanel</key>
 				<label>Right Side Panel</label>
 				<health>80</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<side>Right</side>

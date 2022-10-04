@@ -128,6 +128,7 @@
 				<key>FrontWheel</key>
 				<label>Front Wheel</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -146,6 +147,7 @@
 				<key>BackWheel</key>
 				<label>Back Wheel</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -165,6 +167,7 @@
 				<label>Engine</label>
 				<health>25</health>
 				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
 				
 				<categories>
 					<li>MoveSpeed</li>
@@ -174,6 +177,7 @@
 				<key>FrontSuspension</key>
 				<label>Front Suspension</label>
 				<health>10</health>
+				<depth>External</depth>
 				
 				<categories>
 					<li>MoveSpeed</li>
@@ -183,6 +187,7 @@
 				<key>BackSuspension</key>
 				<label>Back Suspension</label>
 				<health>10</health>
+				<depth>External</depth>
 				
 				<categories>
 					<li>MoveSpeed</li>

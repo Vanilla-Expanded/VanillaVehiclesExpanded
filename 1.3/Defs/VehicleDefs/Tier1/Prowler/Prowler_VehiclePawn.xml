@@ -79,6 +79,7 @@
 				<label>Engine</label>
 				<health>50</health>
 				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
@@ -105,6 +106,7 @@
 				<key>FrontLeftWheel</key>
 				<label>Front Left Wheel</label>
 				<health>30</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -130,6 +132,7 @@
 				<key>FrontRightWheel</key>
 				<label>Front Right Wheel</label>
 				<health>30</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -155,6 +158,7 @@
 				<key>BackLeftWheel</key>
 				<label>Back Left Wheel</label>
 				<health>30</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -180,6 +184,7 @@
 				<key>BackRightWheel</key>
 				<label>Back Right Wheel</label>
 				<health>30</health>
+				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
@@ -205,6 +210,7 @@
 				<key>FrontLeftSuspension</key>
 				<label>Front Left Suspension</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<cells>
@@ -220,6 +226,7 @@
 				<key>FrontRightSuspension</key>
 				<label>Front Right Suspension</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<cells>
@@ -235,6 +242,7 @@
 				<key>BackLeftSuspension</key>
 				<label>Back Left Suspension</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<cells>
@@ -250,6 +258,7 @@
 				<key>BackRightSuspension</key>
 				<label>Back Right Suspension</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<cells>
@@ -265,6 +274,7 @@
 				<key>Gearbox</key>
 				<label>Gearbox</label>
 				<health>45</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<cells>
@@ -281,6 +291,7 @@
 				<key>LeftSidePanel</key>
 				<label>Left Side Panel</label>
 				<health>30</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<side>Left</side>
@@ -290,6 +301,7 @@
 				<key>RightSidePanel</key>
 				<label>Right Side Panel</label>
 				<health>30</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<side>Right</side>
@@ -299,6 +311,7 @@
 				<key>Chemtank</key>
 				<label>Chemtank</label>
 				<health>30</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<cells>
@@ -311,6 +324,7 @@
 				<key>FrontBumper</key>
 				<label>Front Bumper</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<side>Front</side>
@@ -320,6 +334,7 @@
 				<key>RearBumper</key>
 				<label>Rear Bumper</label>
 				<health>20</health>
+				<depth>External</depth>
 				
 				<hitbox>
 					<side>Back</side>
@@ -329,31 +344,37 @@
 				<key>Upholstery</key>
 				<label>Upholstery</label>
 				<health>30</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Dashboard</key>
 				<label>Dashboard</label>
 				<health>30</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>SteeringWheel</key>
 				<label>Steering Wheel</label>
 				<health>20</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Alternator</key>
 				<label>Alternator</label>
 				<health>20</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Hood</key>
 				<label>Hood</label>
 				<health>30</health>
+				<depth>External</depth>
 			</li>
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
 				<health>30</health>
+				<depth>External</depth>
 			</li>
 		</components>
 
