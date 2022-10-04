@@ -134,9 +134,9 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>75</MarketValue>
+      <MarketValue>70</MarketValue>
       <Mass>10</Mass>
-	  <WorkToMake>8000</WorkToMake>
+	  <WorkToMake>100</WorkToMake>
     </statBases>
     <costList>
       <Steel>25</Steel>

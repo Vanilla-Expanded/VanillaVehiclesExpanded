@@ -38,5 +38,7 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
 		<thingToSpawn>VVE_Mule</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 	</Vehicles.VehicleBuildDef>
 </Defs>

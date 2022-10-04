@@ -37,5 +37,7 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
 		<thingToSpawn>VVE_Prowler</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 	</Vehicles.VehicleBuildDef>
 </Defs>

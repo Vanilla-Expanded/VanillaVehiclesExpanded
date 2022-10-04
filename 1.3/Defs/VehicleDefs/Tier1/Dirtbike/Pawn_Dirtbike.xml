@@ -40,7 +40,7 @@
 		<vehicleStats>
 			<Mass>30</Mass>
 			<MoveSpeed>12</MoveSpeed>
-			<CargoCapacity>0</CargoCapacity>
+			<CargoCapacity>10</CargoCapacity>
 			<RepairRate>1</RepairRate>
 			<AccelerationRate>0.08</AccelerationRate>
 		</vehicleStats>
