@@ -2,7 +2,6 @@
 using SmashTools;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
 using Vehicles;
 using Verse;
@@ -15,11 +14,11 @@ namespace VanillaVehiclesExpanded
     {
         public CompProperties_VehicleMovementController()
         {
-            this.compClass = typeof(CompVehicleMovementController);
+            compClass = typeof(CompVehicleMovementController);
         }
     }
 
-    public enum MovementMode { Starting, Accelerate, CurrentSpeed, Decelerate}
+    public enum MovementMode { Starting, Accelerate, CurrentSpeed, Decelerate }
 
     public struct StartAndDestCells
     {
@@ -56,7 +55,6 @@ namespace VanillaVehiclesExpanded
             return (start + dest).GetHashCode();
         }
     }
-
     public struct PathCostResult
     {
         public float cost;
@@ -70,7 +68,7 @@ namespace VanillaVehiclesExpanded
     [HotSwappable]
     public class CompVehicleMovementController : VehicleComp
     {
-        public VehiclePawn Vehicle => this.parent as VehiclePawn;
+        public VehiclePawn Vehicle => parent as VehiclePawn;
         public float currentSpeed;
         public bool wasMoving;
         public MovementMode curMovementMode;
@@ -80,7 +78,7 @@ namespace VanillaVehiclesExpanded
         private Sustainer screechingSustainer;
         private float prevPctOfPathPassed;
         private float curPctOfPathPassed;
-        private Dictionary<StartAndDestCells, PawnPath> savedPaths = new Dictionary<StartAndDestCells, PawnPath>();
+        private Dictionary<StartAndDestCells, PawnPath> savedPaths = new();
         public float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
         public void StartMove()
         {
@@ -126,11 +124,11 @@ namespace VanillaVehiclesExpanded
             wasMoving = Vehicle.vPather.Moving;
             if (wasMoving && Vehicle.vPather.curPath != null)
             {
-                var moveSpeed = GetDefaultMoveSpeed();
-                var totalCost = GetPathCost(false).cost;
-                var decelerateMultiplier = 4f;
-                var decelerateInPctOfPath = (moveSpeed / (AccelerationRate * decelerateMultiplier)) / totalCost;
-                curPctOfPathPassed = (curPaidPathCost / totalCost);
+                float moveSpeed = GetDefaultMoveSpeed();
+                float totalCost = GetPathCost(false).cost;
+                float decelerateMultiplier = 4f;
+                float decelerateInPctOfPath = moveSpeed / (AccelerationRate * decelerateMultiplier) / totalCost;
+                curPctOfPathPassed = curPaidPathCost / totalCost;
                 //curPctOfPathPassedStr = curPctOfPathPassed.ToString();
                 //prevPctOfPathPassedStr = prevPctOfPathPassed.ToString();
                 //decelerateInPctOfPathStr = decelerateInPctOfPath.ToString();
@@ -192,27 +190,27 @@ namespace VanillaVehiclesExpanded
             }
         }
 
-        private void Slowdown(float deceleratePct)
+        public void Slowdown(float deceleratePct, bool stopImmediately = false)
         {
-            var decelerateMultiplier = 4f;
-            var result = GetPathCost(true);
-            var remainingArrivalTicks = result.cost;
-            var accelerateRateAdjusted = AccelerationRate * decelerateMultiplier;
-            var targetSpeed = 1f;
-            var diff = currentSpeed - targetSpeed;
-            var check = currentSpeed / remainingArrivalTicks;
+            float decelerateMultiplier = 4f;
+            float remainingArrivalTicks = stopImmediately ? 10 : GetPathCost(true).cost;
+            float accelerateRateAdjusted = AccelerationRate * decelerateMultiplier;
+            float targetSpeed = 1f;
+            float diff = currentSpeed - targetSpeed;
+            float check = currentSpeed / remainingArrivalTicks;
             //accelerateRateAdjustedStr = accelerateRateAdjusted.ToString();
             accelerateRateAdjusted = Mathf.Min(accelerateRateAdjusted, check);
             //slowdownCheckStr = check.ToString();
-            var newSpeed = currentSpeed - accelerateRateAdjusted;
-            var slowdownMultiplier = (currentSpeed / (AccelerationRate * decelerateMultiplier)) / remainingArrivalTicks;
+            float newSpeed = currentSpeed - accelerateRateAdjusted;
+            float slowdownMultiplier = currentSpeed / (AccelerationRate * decelerateMultiplier) / remainingArrivalTicks;
             //slowdownMultiplierStr = slowdownMultiplier.ToString();
-            if (handbrakeApplied is false && slowdownMultiplier >= 2f && deceleratePct > 1f && currentSpeed >= 3f && Vehicle.vPather.curPath.NodesConsumedCount < 2)
+            //Log.Message(handbrakeApplied + " - " + slowdownMultiplier + " - " + deceleratePct + " - " + currentSpeed + " - " + Vehicle.vPather.curPath.NodesConsumedCount);
+            if (handbrakeApplied is false && slowdownMultiplier >= 2f && currentSpeed >= 3f && (stopImmediately || (deceleratePct > 1f && Vehicle.vPather.curPath.NodesConsumedCount < 2)))
             {
                 newSpeed /= slowdownMultiplier;
                 isScreeching = true;
                 Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
-                var damageAmount = Mathf.CeilToInt(slowdownMultiplier);
+                int damageAmount = Mathf.CeilToInt(slowdownMultiplier);
                 var components = Vehicle.statHandler.components.Where(x => x.props.tags != null && x.props.tags.Contains("Wheel"));
                 foreach (var component in components)
                 {
@@ -241,8 +239,7 @@ namespace VanillaVehiclesExpanded
                 curMovementMode = MovementMode.CurrentSpeed;
             }
         }
-
-        private PathCostResult GetPathCost(bool ignorePassedCells)
+        public PathCostResult GetPathCost(bool ignorePassedCells)
         {
             var path = Vehicle.vPather.curPath;
             var result = GetPathCost(path, ignorePassedCells);
@@ -324,7 +321,7 @@ namespace VanillaVehiclesExpanded
                 num = vehicle.TicksPerMoveDiagonal;
             }
             num += vehicle.Map.GetCachedMapComponent<VehicleMapping>()[vehicle.VehicleDef].VehiclePathGrid.CalculatedCostAt(c);
-            Building edifice = c.GetEdifice(vehicle.Map);
+            var edifice = c.GetEdifice(vehicle.Map);
             if (edifice != null)
             {
                 num += edifice.PathWalkCostFor(vehicle);
@@ -335,7 +332,7 @@ namespace VanillaVehiclesExpanded
             }
             if (vehicle.CurJob != null)
             {
-                Pawn locomotionUrgencySameAs = vehicle.jobs.curDriver.locomotionUrgencySameAs;
+                var locomotionUrgencySameAs = vehicle.jobs.curDriver.locomotionUrgencySameAs;
                 if (locomotionUrgencySameAs is VehiclePawn locomotionVehicle && locomotionUrgencySameAs != vehicle && locomotionUrgencySameAs.Spawned)
                 {
                     int num2 = CostToMoveIntoCell(locomotionVehicle, prevCell, c);

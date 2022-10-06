@@ -18,7 +18,7 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<useStuffTerrainAffordance>true</useStuffTerrainAffordance>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>Structure</designationCategory>
+		<designationCategory>VVE_Vehicles</designationCategory>
 		<holdsRoof>true</holdsRoof>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<blockLight>true</blockLight>
@@ -55,7 +55,7 @@
 		<graphicData>
 			<texPath>Things/Building/Structure/GarageDoor4x1_Mover</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(4, 1)</drawSize>
+			<drawSize>(1, 1)</drawSize>
 			<damageData>
 				<enabled>false</enabled>
 			</damageData>
@@ -93,7 +93,7 @@
 		<size>(5, 1)</size>
 		<graphicData>
 			<texPath>Things/Building/Structure/GarageDoor5x1_Mover</texPath>
-			<drawSize>(5, 1)</drawSize>
+			<drawSize>(1, 1)</drawSize>
 		</graphicData>
 		<uiIconPath>Things/Building/Structure/GarageDoor5x1_MenuIcon</uiIconPath>
 		<costList Inherit="False">
