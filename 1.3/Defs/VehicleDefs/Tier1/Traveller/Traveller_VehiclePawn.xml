@@ -52,6 +52,7 @@
 		<properties>
 			<visibility>1.5</visibility>
 			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
+			<offRoadMultiplier>1.2</offRoadMultiplier>
 			
 			<roles>
 				<li>

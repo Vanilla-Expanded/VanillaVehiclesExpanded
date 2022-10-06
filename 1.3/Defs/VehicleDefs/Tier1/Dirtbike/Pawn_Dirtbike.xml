@@ -75,6 +75,7 @@
 			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
 			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+			<offRoadMultiplier>0.8</offRoadMultiplier>
 			
 			<customSnowCosts>
 				<li>

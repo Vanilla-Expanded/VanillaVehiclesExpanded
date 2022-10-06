@@ -48,6 +48,17 @@
 			<FlightSpeed>40</FlightSpeed>
 		</vehicleStats>
 		
+		<soundOneShotsOnEvent>
+			<li>
+				<key>AerialLaunch</key>
+				<value>DropPod_Leaving</value>
+			</li>
+			<li>
+				<key>AerialLanding</key>
+				<value>DropPod_Fall</value>
+			</li>
+		</soundOneShotsOnEvent>
+		
 		<drawProperties>
 			<displayRotation>North</displayRotation>
 		</drawProperties>
