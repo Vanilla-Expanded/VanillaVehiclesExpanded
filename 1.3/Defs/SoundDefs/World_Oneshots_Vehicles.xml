@@ -37,8 +37,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>RoadkillCannon_Shot</clipFolderPath>
+          <li Class="AudioGrain_Clip">
+            <clipPath>RoadkillCannon_Shot</clipPath>
           </li>
         </grains>      
         <volumeRange>40~40</volumeRange>
@@ -53,8 +53,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>BulldogCannon_Shot</clipFolderPath>
+          <li Class="AudioGrain_Clip">
+            <clipPath>BulldogCannon_Shot</clipPath>
           </li>
         </grains>      
         <volumeRange>40~40</volumeRange>
@@ -69,8 +69,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>CarDoor_Closing</clipFolderPath>
+          <li Class="AudioGrain_Clip">
+            <clipPath>CarDoor_Closing</clipPath>
           </li>
         </grains>      
         <volumeRange>40~40</volumeRange>
@@ -85,8 +85,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ArmoredDoor_Closing</clipFolderPath>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ArmoredDoor_Closing</clipPath>
           </li>
         </grains>      
         <volumeRange>40~40</volumeRange>
@@ -101,8 +101,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>VehicleStart</clipFolderPath>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleStart</clipPath>
           </li>
         </grains>      
         <volumeRange>40~40</volumeRange>
