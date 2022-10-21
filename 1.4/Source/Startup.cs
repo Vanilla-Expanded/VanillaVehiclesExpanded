@@ -61,7 +61,7 @@ namespace VanillaVehiclesExpanded
             if (__0.pawn is VehiclePawn vehicle && !value)
             {
                 var comp = vehicle.GetComp<CompVehicleMovementController>();
-                if (comp != null)
+                if (comp != null && vehicle.vPather.Moving)
                 {
                     float moveSpeed = comp.GetDefaultMoveSpeed();
                     float totalCost = comp.GetPathCost(false).cost;

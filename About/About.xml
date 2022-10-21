@@ -10,7 +10,7 @@ Vehicles come separated into many different categories and tiers, contributing t
 This mod utilises the paint job system added in Vehicles framework, allowing you to fully customize the pattern and colors of each of your vehicles. Whether you want a camouflaged armored division, or a pink bomber wing, this mod has it all.</description>
     <packageId>OskarPotocki.VanillaVehiclesExpanded</packageId>
     <supportedVersions>
-		<li>1.3</li>
+		<li>1.4</li>
     </supportedVersions>
     <modDependencies>
 		<li>

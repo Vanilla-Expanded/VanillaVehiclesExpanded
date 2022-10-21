@@ -59,8 +59,10 @@
 		
 		<properties>
 			<fishing>true</fishing>
-			<wakeMultiplier>1.5</wakeMultiplier>
-			<wakeSpeed>1</wakeSpeed>
+			
+			<track Class = "Vehicles.VehicleTrack_Wake">
+				<speed>1</speed>
+			</track>
 			
 			<visibility>0.25</visibility>
 			
