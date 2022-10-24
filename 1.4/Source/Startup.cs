@@ -58,7 +58,7 @@ namespace VanillaVehiclesExpanded
     {
         public static void Prefix(Pawn_DraftController __0, bool value)
         {
-            if (__0.pawn is VehiclePawn vehicle && !value)
+            if (__0.pawn is VehiclePawn vehicle && !value && vehicle.vPather?.curPath != null)
             {
                 var comp = vehicle.GetComp<CompVehicleMovementController>();
                 if (comp != null && vehicle.vPather.Moving)
