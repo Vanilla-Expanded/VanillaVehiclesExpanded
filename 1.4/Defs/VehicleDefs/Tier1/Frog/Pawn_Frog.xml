@@ -194,6 +194,8 @@
 					<thrusterSize>0.5~1.25</thrusterSize>
 					<dustSize>0.5~1.5</dustSize>
 					<burnRadius>2</burnRadius>
+					<maxFlightNodes>1</maxFlightNodes>
+					
 					<launchProperties>
 						<speed>0.1</speed>
 						<maxTicks>500</maxTicks>
@@ -224,6 +226,7 @@
 							</li>
 						</additionalLaunchTextures>
 					</launchProperties>
+					
 					<landingProperties>
 						<speed>0.3</speed>
 						<maxTicks>500</maxTicks>
