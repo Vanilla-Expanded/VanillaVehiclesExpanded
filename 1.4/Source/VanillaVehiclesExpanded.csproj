@@ -51,8 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blueprint_GarageDoor.cs" />
     <Compile Include="CompVehicleMovementController.cs" />
     <Compile Include="GarageDoor.cs" />
+    <Compile Include="GhostDrawer_DrawGhostThing_Patch.cs" />
     <Compile Include="JobDriver_GarageControlBase.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

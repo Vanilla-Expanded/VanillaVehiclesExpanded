@@ -26,10 +26,11 @@ namespace VanillaVehiclesExpanded
         }
         public override void Draw()
         {
+            Log.Message("DRAWING");
             var oldDrawSize = def.graphicData.drawSize;
             var drawPos = DrawPos;
-            drawPos.y = AltitudeLayer.DoorMoveable.AltitudeFor();
-            var size = def.graphicData.drawSize = new Vector3(def.size.x, def.size.z, 0);
+            drawPos.y += 5f;
+            var size = def.graphicData.drawSize = new Vector2(def.size.x, def.size.z);
             float openProgress = OpenProgress();
             size.y += openProgress * 0.7f;
             if (Rotation == Rot4.South)
