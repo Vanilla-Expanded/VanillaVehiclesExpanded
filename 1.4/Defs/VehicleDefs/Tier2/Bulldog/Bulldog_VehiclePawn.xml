@@ -2,15 +2,15 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Armored">
-		<defName>VVE_Roadkill</defName>
-		<label>Roadkill</label>
-		<description>Calling back to an age of this planet’s history when mass-produced armoured units were needed to bolster a dwindling infantry force, the Roadkill is extremely simple, reliable and easy to assemble. They are very loud and vulnerable at the rear, while also being ridiculously thirsty and suited for short-range engagements. Are they accurate? No. Are they fast? Also no. A chore to repair? Yes, as the idea is not to maintain it but to assemble it on-site and leave it once it’s served its purpose.</description>
+		<defName>VVE_Bulldog</defName>
+		<label>Bulldog</label>
+		<description>A general main battle tank, the Bulldog is an improved combat vehicle that performs well in any engagement. Performs better in less favourable terrain with all sides armoured, the thinnest plating being at the rear near the engine.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency and is quite visible, which is still an improvement over the tier 1 tank.</description>
 		
 		<graphicData>
-			<texPath>Things/Vehicles/Tier1/Tier1_Tank/Tier1_Tank</texPath>
+			<texPath>Things/Vehicles/Tier2/Tier2_Tank/Tier2_Tank</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
-			<drawSize>(4,4)</drawSize>
+			<drawSize>(4, 6)</drawSize>
 			<color>(155, 155, 155)</color>
 			<colorTwo>(65, 75, 80)</colorTwo>
 			<colorThree>(45, 50, 45)</colorThree>
@@ -18,9 +18,9 @@
 		
 		<fillPercent>1</fillPercent>
 		
-		<buildDef>VVE_Roadkill_Blueprint</buildDef>
+		<buildDef>VVE_Bulldog_Blueprint</buildDef>
 		
-		<size>(3,3)</size>
+		<size>(3, 5)</size>
 		
 		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Combat</vehicleCategory>
@@ -28,18 +28,18 @@
 		<vehicleType>Land</vehicleType>
 		
 		<statBases>
-			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.58</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.48</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
 			<Flammability>0.5</Flammability>
-			<MarketValue>2880</MarketValue>
+			<MarketValue>2240</MarketValue>
 		</statBases>
 		
 		<vehicleStats>
-			<Mass>300</Mass>
-			<MoveSpeed>6.6</MoveSpeed>
-			<CargoCapacity>60</CargoCapacity>
-			<RepairRate>0.2</RepairRate>
-			<AccelerationRate>0.04</AccelerationRate>
+			<Mass>450</Mass>
+			<MoveSpeed>7.2</MoveSpeed>
+			<CargoCapacity>100</CargoCapacity>
+			<RepairRate>0.3</RepairRate>
+			<AccelerationRate>0.06</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
@@ -50,9 +50,7 @@
 		</soundSustainersOnEvent>
 		
 		<properties>
-			<visibility>3</visibility>
-			
-			<customRoadCosts AssignDefaults = "0.8"/>
+			<visibility>2.5</visibility>
 			
 			<vehicleJobLimitations>
 				<li>(RepairVehicle, 3)</li>
@@ -67,18 +65,21 @@
 					
 					<handlingTypes>
 						<li>Movement</li>
+					</handlingTypes>
+				</li>
+				<li>
+					<key>gunner</key>
+					<label>Gunner</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<handlingTypes>
 						<li>Cannon</li>
 					</handlingTypes>
 					
 					<turretIds>
 						<li>mainTurret</li>
 					</turretIds>
-					
-					<hitbox>
-						<cells>
-							<li>(0, 1)</li>
-						</cells>
-					</hitbox>
 				</li>
 			</roles>
 		</properties>
@@ -87,7 +88,7 @@
 			<li>
 				<key>Engine</key>
 				<label>Engine</label>
-				<health>75</health>
+				<health>100</health>
 				<priorityStatEfficiency>true</priorityStatEfficiency>
 				<depth>External</depth>
 				
@@ -98,12 +99,12 @@
 						<radius>3</radius>
 						<damageDef>Bomb</damageDef>
 					</li>
-					<li Class = "Vehicles.Reactor_FuelLeak"/>
 				</reactors>
 				
 				<hitbox>
 					<cells>
 						<li>(0, -1)</li>
+						<li>(0, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -114,10 +115,15 @@
 			<li>
 				<key>LeftTrack</key>
 				<label>Left Track</label>
-				<health>140</health>
+				<health>180</health>
 				<depth>External</depth>
 				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
 				<hitbox>
+					<fallthrough>false</fallthrough>
 					<side>Left</side>
 				</hitbox>
 				
@@ -128,10 +134,15 @@
 			<li>
 				<key>RightTrack</key>
 				<label>Right Track</label>
-				<health>140</health>
+				<health>180</health>
 				<depth>External</depth>
+					
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
+					<fallthrough>false</fallthrough>
 					<side>Right</side>
 				</hitbox>
 				
@@ -142,12 +153,17 @@
 			<li>
 				<key>FrontLeftDriveSprocket</key>
 				<label>Front Left Drive Sprocket</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>External</depth>
 				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
 				<hitbox>
+					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(-1, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -158,10 +174,15 @@
 			<li>
 				<key>FrontRightDriveSprocket</key>
 				<label>Front Right Drive Sprocket</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>External</depth>
 				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
 				<hitbox>
+					<fallthrough>false</fallthrough>
 					<cells>
 						<li>(1, 1)</li>
 					</cells>
@@ -174,12 +195,17 @@
 			<li>
 				<key>BackLeftDriveSprocket</key>
 				<label>Back Left Drive Sprocket</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>External</depth>
 				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
 				<hitbox>
+					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, -1)</li>
+						<li>(-1, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -190,12 +216,17 @@
 			<li>
 				<key>BackRightDriveSprocket</key>
 				<label>Back Right Drive Sprocket</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>External</depth>
 				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
 				<hitbox>
+					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(1, -1)</li>
+						<li>(1, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -206,7 +237,7 @@
 			<li>
 				<key>Gearbox</key>
 				<label>Gearbox</label>
-				<health>45</health>
+				<health>50</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
@@ -220,14 +251,29 @@
 				</categories>
 			</li>
 			<li>
-				<key>LeftArmorPlating</key>
-				<label>Left Armor Plating</label>
-				<health>100</health>
+				<key>FrontArmorPlating</key>
+				<label>Front Armor Plating</label>
+				<health>200</health>
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.76</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.44</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.92</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftArmorPlating</key>
+				<label>Left Armor Plating</label>
+				<health>200</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.92</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
 				</armor>
 				
 				<hitbox>
@@ -237,12 +283,12 @@
 			<li>
 				<key>RightArmorPlating</key>
 				<label>Right Armor Plating</label>
-				<health>100</health>
+				<health>200</health>
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.76</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.44</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.92</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
 				</armor>
 				
 				<hitbox>
@@ -250,25 +296,24 @@
 				</hitbox>
 			</li>
 			<li>
-				<key>FrontArmorPlating</key>
-				<label>Front Armor Plating</label>
-				<health>100</health>
+				<key>BackArmorPlating</key>
+				<label>Rear Armor Plating</label>
+				<health>200</health>
 				<depth>External</depth>
 				
-				<armor>
-					<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.48</ArmorRating_Sharp>
-				</armor>
-				
 				<hitbox>
-					<side>Front</side>
+					<side>Back</side>
 				</hitbox>
 			</li>
 			<li>
 				<key>Chemtank</key>
 				<label>Chemtank</label>
-				<health>60</health>
+				<health>80</health>
 				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
 				
 				<hitbox>
 					<cells>
@@ -279,30 +324,33 @@
 			<li>
 				<key>Dashboard</key>
 				<label>Dashboard</label>
-				<health>45</health>
+				<health>50</health>
 				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>SteeringApparatus</key>
 				<label>Steering Apparatus</label>
-				<health>20</health>
+				<health>40</health>
 				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>Alternator</key>
 				<label>Alternator</label>
-				<health>20</health>
+				<health>50</health>
 				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
-				<health>100</health>
+				<health>120</health>
 				<depth>External</depth>
+				<hitWeight>10</hitWeight>
 				
 				<armor>
-					<ArmorRating_Blunt>0.76</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.44</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.92</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
 				</armor>
 			</li>
 		</components>
@@ -311,33 +359,31 @@
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
 				<leakDef>Filth_Fuel</leakDef>
-				<fuelConsumptionRate>28.5</fuelConsumptionRate>
-				<fuelConsumptionWorldMultiplier>1.2</fuelConsumptionWorldMultiplier>
-				<fuelCapacity>60</fuelCapacity>
+				<fuelConsumptionRate>24</fuelConsumptionRate>
+				<fuelCapacity>75</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleTurrets">
 				<turrets>
 					<li>
-						<turretDef>Roadkill_MainTurret</turretDef>
+						<turretDef>Bulldog_MainTurret</turretDef>
 						
 						<renderProperties>
-							<north>(0, 0.45)</north>
-							<south>(0, 0.25)</south>
-							<east>(0.05, 0.35)</east>
+							<north>(0, 0.55)</north>
+							<south>(0, 0.45)</south>
+							<east>(0.125, 0.625)</east>
 						</renderProperties>
 						
 						<uiRenderProperties>
-							<north>(0, -0.1)</north>
-							<east>(0, -0.1)</east>
-							<south>(0, -0.05)</south>
+							<north>(0, -0.185)</north>
+							<east>(0.03, -0.11)</east>
+							<south>(0, -0.1)</south>
 						</uiRenderProperties>
 						
-						<gizmoLabel>Main Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
+						<gizmoLabel>Cannon</gizmoLabel>
 						
 						<angleRestricted/>
-						<aimPieOffset>(0, 1.5)</aimPieOffset>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
 						
 						<key>mainTurret</key>
 					</li>

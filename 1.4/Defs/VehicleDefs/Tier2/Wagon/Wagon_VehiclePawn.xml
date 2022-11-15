@@ -2,12 +2,12 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
-		<defName>VVE_Traveller</defName>
-		<label>Traveller</label>
-		<description>For the connoisseur looking to become a road warrior, the Traveller is the ideal choice for those who are wanting to get to their destination fast and on a budget. While it isn’t the worst when it comes to off-roading, it is quite the gas-guzzler and performs best when driving on smooth asphalt. A nice cargo capacity but low passenger count makes it an ideal fast transport between pockets of civilization.</description>
+		<defName>VVE_Wagon</defName>
+		<label>Wagon</label>
+		<description>TODO</description>
 		
 		<graphicData>
-			<texPath>Things/Vehicles/Tier1/Tier1_Traveller/Tier1_Traveller</texPath>
+			<texPath>Things/Vehicles/Tier2/Tier2_FamilyCar/Tier2_FamilyCar</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(3,5)</drawSize>
@@ -28,31 +28,30 @@
 		<vehicleType>Land</vehicleType>
 		
 		<statBases>
-			<ArmorRating_Blunt>0.24</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.48</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.28</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
 			<Flammability>0.5</Flammability>
 			<MarketValue>1650</MarketValue>
 		</statBases>
 		
 		<vehicleStats>
-			<Mass>180</Mass>
-			<MoveSpeed>12.8</MoveSpeed>
-			<CargoCapacity>300</CargoCapacity>
-			<RepairRate>0.4</RepairRate>
-			<AccelerationRate>0.10</AccelerationRate>
+			<Mass>210</Mass>
+			<MoveSpeed>12.4</MoveSpeed>
+			<CargoCapacity>320</CargoCapacity>
+			<RepairRate>0.8</RepairRate>
+			<AccelerationRate>0.1</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
 			<li>
 				<key>(DraftOn, DraftOff)</key>
-				<value>VVE_VehicleEngineMuscleCar</value>
+				<value>VVE_VehicleEngineCar</value>
 			</li>
 		</soundSustainersOnEvent>
 		
 		<properties>
-			<visibility>1.5</visibility>
+			<visibility>1.0</visibility>
 			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
-			<offRoadMultiplier>1.2</offRoadMultiplier>
 			
 			<roles>
 				<li>
@@ -60,9 +59,11 @@
 					<label>Driver</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
+					
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
+					
 					<hitbox>
 						<cells>
 							<li>(0, 1)</li>
@@ -72,10 +73,13 @@
 				<li>
 					<key>passenger</key>
 					<label>Passenger</label>
-					<slots>1</slots>
+					<slots>3</slots>
+					
 					<hitbox>
 						<cells>
 							<li>(1, 1)</li>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
 						</cells>
 					</hitbox>
 				</li>
@@ -101,8 +105,8 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 1)</li>
-						<li>(0, 1)</li>
+						<li>(0, 2)</li>
+						<li>(1, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -113,7 +117,7 @@
 			<li>
 				<key>FrontLeftWheel</key>
 				<label>Front Left Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
@@ -128,7 +132,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -139,7 +143,7 @@
 			<li>
 				<key>FrontRightWheel</key>
 				<label>Front Right Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
@@ -154,7 +158,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -165,7 +169,7 @@
 			<li>
 				<key>BackLeftWheel</key>
 				<label>Back Left Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
@@ -180,7 +184,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, -2)</li>
+						<li>(0, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -191,7 +195,7 @@
 			<li>
 				<key>BackRightWheel</key>
 				<label>Back Right Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
@@ -206,7 +210,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, -2)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -217,12 +221,12 @@
 			<li>
 				<key>FrontLeftSuspension</key>
 				<label>Front Left Suspension</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -233,12 +237,12 @@
 			<li>
 				<key>FrontRightSuspension</key>
 				<label>Front Right Suspension</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -249,12 +253,12 @@
 			<li>
 				<key>BackLeftSuspension</key>
 				<label>Back Left Suspension</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(-1, -2)</li>
+						<li>(0, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -265,12 +269,12 @@
 			<li>
 				<key>BackRightSuspension</key>
 				<label>Back Right Suspension</label>
-				<health>20</health>
+				<health>25</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(0, -2)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -286,8 +290,8 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 0)</li>
-						<li>(0, 0)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -298,7 +302,7 @@
 			<li>
 				<key>LeftSidePanel</key>
 				<label>Left Side Panel</label>
-				<health>30</health>
+				<health>50</health>
 				<depth>External</depth>
 				
 				<hitbox>
@@ -308,7 +312,7 @@
 			<li>
 				<key>RightSidePanel</key>
 				<label>Right Side Panel</label>
-				<health>30</health>
+				<health>50</health>
 				<depth>External</depth>
 				
 				<hitbox>
@@ -318,7 +322,7 @@
 			<li>
 				<key>Chemtank</key>
 				<label>Chemtank</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>Internal</depth>
 				
 				<reactors>
@@ -327,15 +331,15 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, -2)</li>
-						<li>(0, -2)</li>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 			</li>
 			<li>
 				<key>FrontBumper</key>
 				<label>Front Bumper</label>
-				<health>20</health>
+				<health>30</health>
 				<depth>External</depth>
 				
 				<hitbox>
@@ -345,7 +349,7 @@
 			<li>
 				<key>RearBumper</key>
 				<label>Rear Bumper</label>
-				<health>20</health>
+				<health>30</health>
 				<depth>External</depth>
 				
 				<hitbox>
@@ -357,12 +361,14 @@
 				<label>Upholstery</label>
 				<health>30</health>
 				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>Dashboard</key>
 				<label>Dashboard</label>
 				<health>45</health>
 				<depth>Internal</depth>
+				<hitWeight>2</hitWeight>
 			</li>
 			<li>
 				<key>SteeringWheel</key>
@@ -373,28 +379,31 @@
 			<li>
 				<key>Alternator</key>
 				<label>Alternator</label>
-				<health>20</health>
+				<health>30</health>
 				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Hood</key>
 				<label>Hood</label>
-				<health>45</health>
+				<health>50</health>
 				<depth>External</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
-				<health>45</health>
+				<health>50</health>
 				<depth>External</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 		</components>
 
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
-				<fuelConsumptionRate>22.5</fuelConsumptionRate>
+				<fuelConsumptionRate>18.5</fuelConsumptionRate>
 				<fuelCapacity>80</fuelCapacity>
+				<fuelConsumptionWorldMultiplier>0.5</fuelConsumptionWorldMultiplier>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
+		<defName>VVE_Charley</defName>
+		<label>Charley</label>
+		<description>TODO</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Motorbike/Tier2_Motorbike</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<drawOffset>(0,0,0.25)</drawOffset>
+			<color>(150, 10, 0)</color>
+			<colorTwo>(30, 50, 80)</colorTwo>
+			<colorThree>(200, 200, 200)</colorThree>
+		</graphicData>
+		
+		<fillPercent>0.2</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>VVE_Charley_Blueprint</buildDef>
+		
+		<size>(1,1)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+			<Flammability>0.5</Flammability>
+			<MarketValue>875</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>50</Mass>
+			<MoveSpeed>12.8</MoveSpeed>
+			<CargoCapacity>60</CargoCapacity>
+			<RepairRate>0.8</RepairRate>
+			<AccelerationRate>0.08</AccelerationRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(DraftOn, DraftOff)</key>
+				<value>VVE_VehicleEngineMuscleCar</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>DraftOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>DraftOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+		
+		<drawProperties>
+			<displayOffsetNorth>(0, -0.2)</displayOffsetNorth>
+			<displayOffsetEast>(-0.05, -0.2)</displayOffsetEast>
+			<displayOffsetSouth>(0, -0.2)</displayOffsetSouth>
+		</drawProperties>
+		
+		<properties>
+			<diagonalRotation>false</diagonalRotation>
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+			
+			<visibility>0.3</visibility>
+			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
+			<offRoadMultiplier>0.8</offRoadMultiplier>
+			
+			<customSnowCosts>
+				<li>
+					<key>Thin</key>
+					<value>8</value>
+				</li>
+				<li>
+					<key>Medium</key>
+					<value>16</value>
+				</li>
+				<li>
+					<key>Thick</key>
+					<value>24</value>
+				</li>
+			</customSnowCosts>
+			
+			<roles>
+				<li>
+					<key>rider</key>
+					<label>Rider</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<side>Body</side>
+					</hitbox>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>-1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0,0,0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(0,0,0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0,0,0.25)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>FrontWheel</key>
+				<label>Front Wheel</label>
+				<health>25</health>
+				<depth>External</depth>
+				<hitWeight>5</hitWeight>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackWheel</key>
+				<label>Back Wheel</label>
+				<health>25</health>
+				<depth>External</depth>
+				<hitWeight>5</hitWeight>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>50</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				<hitWeight>4</hitWeight>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontSuspension</key>
+				<label>Front Suspension</label>
+				<health>20</health>
+				<depth>External</depth>
+				<hitWeight>2</hitWeight>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackSuspension</key>
+				<label>Back Suspension</label>
+				<health>20</health>
+				<depth>External</depth>
+				<hitWeight>2</hitWeight>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+		</components>
+
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<fuelConsumptionRate>14.5</fuelConsumptionRate>
+				<fuelCapacity>50</fuelCapacity>
+				<fuelConsumptionWorldMultiplier>0.8</fuelConsumptionWorldMultiplier>
+				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

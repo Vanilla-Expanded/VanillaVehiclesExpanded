@@ -62,13 +62,6 @@
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
-					
-					<hitbox>
-						<cells>
-							<li>(-1, 0)</li>
-							<li>(0, 0)</li>
-						</cells>
-					</hitbox>
 				</li>
 			</roles>
 		</properties>
@@ -88,13 +81,12 @@
 						<radius>3</radius>
 						<damageDef>Bomb</damageDef>
 					</li>
-					<li Class = "Vehicles.Reactor_FuelLeak"/>
 				</reactors>
 				
 				<hitbox>
 					<cells>
-						<li>(-1, -1)</li>
 						<li>(0, -1)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -120,7 +112,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -146,7 +138,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -172,7 +164,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, -1)</li>
+						<li>(0, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -198,7 +190,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, -1)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -214,7 +206,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -230,7 +222,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -246,7 +238,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, -1)</li>
+						<li>(0, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -262,7 +254,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(0, -1)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -278,8 +270,8 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 1)</li>
 						<li>(0, 1)</li>
+						<li>(1, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -313,10 +305,14 @@
 				<health>30</health>
 				<depth>External</depth>
 				
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+				
 				<hitbox>
 					<cells>
-						<li>(-1, -1)</li>
 						<li>(0, -1)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 			</li>

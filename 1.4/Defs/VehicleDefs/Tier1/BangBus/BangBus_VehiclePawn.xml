@@ -65,10 +65,7 @@
 					</handlingTypes>
 					
 					<hitbox>
-						<cells>
-							<li>(-1, 1)</li>
-							<li>(0, 1)</li>
-						</cells>
+						<side>Front</side>
 					</hitbox>
 				</li>
 				<li>
@@ -77,10 +74,7 @@
 					<slots>1</slots>
 					
 					<hitbox>
-						<cells>
-							<li>(-1, 1)</li>
-							<li>(0, 1)</li>
-						</cells>
+						<side>Front</side>
 					</hitbox>
 				</li>
 				<li>
@@ -90,10 +84,10 @@
 					
 					<hitbox>
 						<cells>
-							<li>(-1, 1)</li>
+							<li>(0, 1)</li>
+							<li>(1, 1)</li>
 							<li>(0, 0)</li>
-							<li>(-1, -1)</li>
-							<li>(0, -1)</li>
+							<li>(1, 0)</li>
 						</cells>
 					</hitbox>
 				</li>
@@ -119,10 +113,7 @@
 				</reactors>
 				
 				<hitbox>
-					<cells>
-						<li>(-1, -2)</li>
-						<li>(0, -2)</li>
-					</cells>
+					<side>Back</side>
 				</hitbox>
 				
 				<categories>
@@ -147,7 +138,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -177,7 +168,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 2)</li>
 					</cells>
 				</hitbox>
 			</li>
@@ -199,7 +190,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, -2)</li>
+						<li>(0, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -225,7 +216,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, -2)</li>
+						<li>(1, -1)</li>
 					</cells>
 				</hitbox>
 				
@@ -245,7 +236,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 2)</li>
 					</cells>
 				</hitbox>
 			</li>
@@ -261,7 +252,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 2)</li>
 					</cells>
 				</hitbox>
 			</li>
@@ -276,10 +267,7 @@
 				</categories>
 				
 				<hitbox>
-					<cells>
-						<li>(-1, 1)</li>
-						<li>(0, 1)</li>
-					</cells>
+					<side>Front</side>
 				</hitbox>
 			</li>
 			<li>
@@ -319,10 +307,7 @@
 				<depth>Internal</depth>
 				
 				<hitbox>
-					<cells>
-						<li>(-1, -2)</li>
-						<li>(0, -2)</li>
-					</cells>
+					<side>Back</side>
 				</hitbox>
 			</li>
 			<li>

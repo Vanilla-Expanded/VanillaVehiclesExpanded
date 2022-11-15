@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-
 	<Vehicles.VehicleDef Name = "VVE_VehiclePawn_Land" ParentName = "BaseVehiclePawn" Abstract = "True">
 		<properties>
 			<worldSpeedMultiplier>1</worldSpeedMultiplier>
 		</properties>
+		
 		<vehicleStats>
 			<AccelerationRate>0.03</AccelerationRate>
 		</vehicleStats>
+		
 		<comps>
 			<li Class="VanillaVehiclesExpanded.CompProperties_VehicleMovementController"></li>
 		</comps>

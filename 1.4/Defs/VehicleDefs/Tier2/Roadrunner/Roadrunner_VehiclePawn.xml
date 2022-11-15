@@ -2,25 +2,25 @@
 
 <Defs>	
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
-		<defName>VVE_Traveller</defName>
-		<label>Traveller</label>
-		<description>For the connoisseur looking to become a road warrior, the Traveller is the ideal choice for those who are wanting to get to their destination fast and on a budget. While it isn’t the worst when it comes to off-roading, it is quite the gas-guzzler and performs best when driving on smooth asphalt. A nice cargo capacity but low passenger count makes it an ideal fast transport between pockets of civilization.</description>
+		<defName>VVE_Roadrunner</defName>
+		<label>Roadrunner</label>
+		<description>TODO</description>
 		
 		<graphicData>
-			<texPath>Things/Vehicles/Tier1/Tier1_Traveller/Tier1_Traveller</texPath>
+			<texPath>Things/Vehicles/Tier2/Tier2_Traveller/Tier2_Hauler</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
-			<drawSize>(3,5)</drawSize>
-			<color>(75, 85, 95)</color>
-			<colorTwo>(138, 85, 27)</colorTwo>
-			<colorThree>(105, 110, 120)</colorThree>
+			<drawSize>(3,6)</drawSize>
+			<color>(130, 130, 130)</color>
+			<colorTwo>(130, 30, 30)</colorTwo>
+			<colorThree>(30, 15, 20)</colorThree>
 		</graphicData>
 		
-		<fillPercent>0.8</fillPercent>
+		<fillPercent>1</fillPercent>
 		
-		<buildDef>VVE_Traveller_Blueprint</buildDef>
+		<buildDef>VVE_Roadrunner_Blueprint</buildDef>
 		
-		<size>(2,4)</size>
+		<size>(2,5)</size>
 		
 		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Transport</vehicleCategory>
@@ -31,15 +31,15 @@
 			<ArmorRating_Blunt>0.24</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.48</ArmorRating_Sharp>
 			<Flammability>0.5</Flammability>
-			<MarketValue>1650</MarketValue>
+			<MarketValue>2050</MarketValue>
 		</statBases>
 		
 		<vehicleStats>
-			<Mass>180</Mass>
-			<MoveSpeed>12.8</MoveSpeed>
-			<CargoCapacity>300</CargoCapacity>
-			<RepairRate>0.4</RepairRate>
-			<AccelerationRate>0.10</AccelerationRate>
+			<Mass>260</Mass>
+			<MoveSpeed>14.8</MoveSpeed>
+			<CargoCapacity>600</CargoCapacity>
+			<RepairRate>0.8</RepairRate>
+			<AccelerationRate>0.1</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
@@ -50,34 +50,21 @@
 		</soundSustainersOnEvent>
 		
 		<properties>
-			<visibility>1.5</visibility>
-			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
-			<offRoadMultiplier>1.2</offRoadMultiplier>
-			
 			<roles>
 				<li>
 					<key>driver</key>
 					<label>Driver</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
+					
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
-					<hitbox>
-						<cells>
-							<li>(0, 1)</li>
-						</cells>
-					</hitbox>
 				</li>
 				<li>
 					<key>passenger</key>
 					<label>Passenger</label>
 					<slots>1</slots>
-					<hitbox>
-						<cells>
-							<li>(1, 1)</li>
-						</cells>
-					</hitbox>
 				</li>
 			</roles>
 		</properties>
@@ -86,9 +73,9 @@
 			<li>
 				<key>Engine</key>
 				<label>Engine</label>
-				<health>50</health>
+				<health>60</health>
 				<priorityStatEfficiency>true</priorityStatEfficiency>
-				<depth>External</depth>
+				<depth>Internal</depth>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
@@ -100,10 +87,7 @@
 				</reactors>
 				
 				<hitbox>
-					<cells>
-						<li>(-1, 1)</li>
-						<li>(0, 1)</li>
-					</cells>
+					<side>Front</side>
 				</hitbox>
 				
 				<categories>
@@ -113,14 +97,14 @@
 			<li>
 				<key>FrontLeftWheel</key>
 				<label>Front Left Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
 					<ArmorRating_Blunt>0</ArmorRating_Blunt>
 					<ArmorRating_Sharp>0</ArmorRating_Sharp>
 				</armor>
-				
+					
 				<tags>
 					<li>Wheel</li>
 				</tags>
@@ -128,7 +112,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -139,7 +123,7 @@
 			<li>
 				<key>FrontRightWheel</key>
 				<label>Front Right Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
@@ -154,7 +138,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -165,7 +149,7 @@
 			<li>
 				<key>BackLeftWheel</key>
 				<label>Back Left Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
@@ -180,7 +164,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(-1, -2)</li>
+						<li>(0, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -191,7 +175,7 @@
 			<li>
 				<key>BackRightWheel</key>
 				<label>Back Right Wheel</label>
-				<health>30</health>
+				<health>40</health>
 				<depth>External</depth>
 				
 				<armor>
@@ -206,7 +190,7 @@
 				<hitbox>
 					<fallthrough>false</fallthrough>
 					<cells>
-						<li>(0, -2)</li>
+						<li>(1, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -217,12 +201,12 @@
 			<li>
 				<key>FrontLeftSuspension</key>
 				<label>Front Left Suspension</label>
-				<health>20</health>
+				<health>40</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -233,12 +217,12 @@
 			<li>
 				<key>FrontRightSuspension</key>
 				<label>Front Right Suspension</label>
-				<health>20</health>
+				<health>40</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(1, 2)</li>
 					</cells>
 				</hitbox>
 				
@@ -249,12 +233,12 @@
 			<li>
 				<key>BackLeftSuspension</key>
 				<label>Back Left Suspension</label>
-				<health>20</health>
+				<health>40</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(-1, -2)</li>
+						<li>(0, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -265,12 +249,12 @@
 			<li>
 				<key>BackRightSuspension</key>
 				<label>Back Right Suspension</label>
-				<health>20</health>
+				<health>40</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(0, -2)</li>
+						<li>(1, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -281,13 +265,13 @@
 			<li>
 				<key>Gearbox</key>
 				<label>Gearbox</label>
-				<health>45</health>
+				<health>55</health>
 				<depth>Internal</depth>
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 0)</li>
-						<li>(0, 0)</li>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -298,7 +282,7 @@
 			<li>
 				<key>LeftSidePanel</key>
 				<label>Left Side Panel</label>
-				<health>30</health>
+				<health>50</health>
 				<depth>External</depth>
 				
 				<hitbox>
@@ -308,7 +292,7 @@
 			<li>
 				<key>RightSidePanel</key>
 				<label>Right Side Panel</label>
-				<health>30</health>
+				<health>50</health>
 				<depth>External</depth>
 				
 				<hitbox>
@@ -318,7 +302,7 @@
 			<li>
 				<key>Chemtank</key>
 				<label>Chemtank</label>
-				<health>30</health>
+				<health>50</health>
 				<depth>Internal</depth>
 				
 				<reactors>
@@ -327,15 +311,15 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, -2)</li>
 						<li>(0, -2)</li>
+						<li>(1, -2)</li>
 					</cells>
 				</hitbox>
 			</li>
 			<li>
 				<key>FrontBumper</key>
 				<label>Front Bumper</label>
-				<health>20</health>
+				<health>50</health>
 				<depth>External</depth>
 				
 				<hitbox>
@@ -357,12 +341,14 @@
 				<label>Upholstery</label>
 				<health>30</health>
 				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>Dashboard</key>
 				<label>Dashboard</label>
-				<health>45</health>
+				<health>30</health>
 				<depth>Internal</depth>
+				<hitWeight>2</hitWeight>
 			</li>
 			<li>
 				<key>SteeringWheel</key>
@@ -373,28 +359,31 @@
 			<li>
 				<key>Alternator</key>
 				<label>Alternator</label>
-				<health>20</health>
+				<health>40</health>
 				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Hood</key>
 				<label>Hood</label>
-				<health>45</health>
+				<health>50</health>
 				<depth>External</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
-				<health>45</health>
+				<health>30</health>
 				<depth>External</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 		</components>
 
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
-				<fuelConsumptionRate>22.5</fuelConsumptionRate>
-				<fuelCapacity>80</fuelCapacity>
+				<fuelConsumptionRate>20.5</fuelConsumptionRate>
+				<fuelConsumptionWorldMultiplier>0.5</fuelConsumptionWorldMultiplier>
+				<fuelCapacity>120</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>
