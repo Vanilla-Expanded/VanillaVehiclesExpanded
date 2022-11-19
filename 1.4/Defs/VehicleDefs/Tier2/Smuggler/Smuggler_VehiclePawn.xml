@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
+		<defName>VVE_Smuggler</defName>
+		<label>Smuggler</label>
+		<description>A general-purpose aircraft, the Smuggler is an extremely fast and effective mode of transportation. While it is faster and can carry more cargo than helicopters, it requires a landing strip to both take off and land.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency on the world map but moves significantly faster in return.\n\nBeing a flying vehicle, it is extremely obvious when on the move.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Airplane/Tier2_Airplane</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(7, 7)</drawSize>
+			<color>(130, 130, 130)</color>
+			<colorTwo>(130, 30, 30)</colorTwo>
+			<colorThree>(30, 15, 20)</colorThree>
+		</graphicData>
+		
+		<fillPercent>0.7</fillPercent>
+		
+		<buildDef>VVE_Smuggler_Blueprint</buildDef>
+		
+		<size>(3, 6)</size>
+		
+		<canCaravan LockSetting="True">false</canCaravan>
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Air</vehicleType>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.26</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+			<Flammability>0.5</Flammability>
+			<MarketValue>2050</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>400</Mass>
+			<MoveSpeed>1.5</MoveSpeed>
+			<CargoCapacity>460</CargoCapacity>
+			<RepairRate>0.5</RepairRate>
+			<FlightSpeed>22</FlightSpeed>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(DraftOn, DraftOff)</key>
+				<value>VVE_VehicleRotorAirplane</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<properties>
+			<visibility>5</visibility>
+			<defaultBiomesImpassable>true</defaultBiomesImpassable>
+			
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>3</slots>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>80</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.15</chance>
+						<radius>1</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 3)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>LeftLandingWheel</key>
+				<label>Left Landing Wheel</label>
+				<health>30</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightLandingWheel</key>
+				<label>Right Landing Wheel</label>
+				<health>30</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>CentralLandingWheel</key>
+				<label>Central Landing Wheel</label>
+				<health>30</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>LeftHorizontalStabilizer</key>
+				<label>Left Horizontal Stabilizer</label>
+				<health>25</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(-1, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>FlightControl</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightHorizontalStabilizer</key>
+				<label>Right Horizontal Stabilizer</label>
+				<health>25</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>FlightControl</li>
+				</categories>
+			</li>
+			<li>
+				<key>FuelIntake</key>
+				<label>Fuel Intake</label>
+				<health>50</health>
+				<depth>Internal</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Transmission</key>
+				<label>Transmission</label>
+				<health>40</health>
+				<depth>Internal</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 3)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Rudder</key>
+				<label>Rudder</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>FlightControl</li>
+				</categories>
+			</li>
+			<li>
+				<key>Fuselage</key>
+				<label>Fuselage</label>
+				<health>200</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 3)</li>
+						<li>(0, 2)</li>
+						<li>(0, 1)</li>
+						<li>(0, 0)</li>
+						<li>(0, -1)</li>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>50</health>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftWing</key>
+				<label>Left Wing</label>
+				<health>100</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(-1, 2)</li>
+						<li>(-1, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>FlightControl</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightWing</key>
+				<label>Right Wing</label>
+				<health>100</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(1, 2)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>FlightControl</li>
+				</categories>
+			</li>
+			<li>
+				<key>Upholstery</key>
+				<label>Upholstery</label>
+				<health>30</health>
+				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
+			</li>
+			<li>
+				<key>Dashboard</key>
+				<label>Dashboard</label>
+				<health>30</health>
+				<depth>Internal</depth>
+				<hitWeight>2</hitWeight>
+			</li>
+			<li>
+				<key>Servos</key>
+				<label>Servos</label>
+				<health>20</health>
+				<depth>Internal</depth>
+				<hitWeight>4</hitWeight>
+			</li>
+		</components>
+
+		<comps>	
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<fuelConsumptionRate>22.5</fuelConsumptionRate>
+				<fuelCapacity>120</fuelCapacity>
+				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleLauncher">
+				<fuelConsumptionWorldMultiplier>50</fuelConsumptionWorldMultiplier>
+				<launchProtocol Class="Vehicles.DirectionalTakeoff">
+					<launchProperties>
+						<horizontal>
+							<maxTicks>600</maxTicks>
+						
+							<flipHorizontal>West</flipHorizontal>
+							<flipRotation>West</flipRotation>
+							
+							<restriction Class = "Vehicles.LaunchRestriction_Runway">
+								<width>(-2, 100)</width>
+								<height>(-3, 3)</height>
+								
+								<categories>
+									<Building>0.3</Building>
+									<Item>0.3</Item>
+								</categories>
+							</restriction>
+							
+							<rotationCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0.65, 0)</li>
+									<li>(0.8, 0)</li>
+									<li>(0.9, 0)</li>
+									<li>(1, -10)</li>
+								</points>
+							</rotationCurve>
+							
+							<xPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 0)</li>
+									<li>(0.25, 0)</li>
+									<li>(0.35, 0)</li>
+									<li>(0.5, 0)</li>
+									<li>(0.65, 100)</li>
+									<li>(0.8, 100)</li>
+									<li>(1, 250)</li>
+								</points>
+							</xPositionCurve>
+							
+							<zPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0.65, 0)</li>
+									<li>(0.8, 0)</li>
+									<li>(0.9, 0)</li>
+									<li>(0.95, 5)</li>
+									<li>(1, 15)</li>
+								</points>
+							</zPositionCurve>
+						</horizontal>
+						<vertical>
+							<maxTicks>600</maxTicks>
+							
+							<flipVertical>South</flipVertical>
+							
+							<restriction Class = "Vehicles.LaunchRestriction_Runway">
+								<width>(-3, 3)</width>
+								<height>(-2, 100)</height>
+								
+								<categories>
+									<Building>0.3</Building>
+									<Item>0.3</Item>
+								</categories>
+							</restriction>
+							
+							<zPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 0)</li>
+									<li>(0.25, 0)</li>
+									<li>(0.35, 0)</li>
+									<li>(0.5, 0)</li>
+									<li>(0.65, 100)</li>
+									<li>(0.8, 100)</li>
+									<li>(1, 250)</li>
+								</points>
+							</zPositionCurve>
+						</vertical>
+					</launchProperties>
+					<landingProperties>
+						<horizontal>
+							<maxTicks>600</maxTicks>
+							
+							<flipHorizontal>West</flipHorizontal>
+							<flipRotation>West</flipRotation>
+							
+							<restriction Class = "Vehicles.LaunchRestriction_Runway">
+								<width>(-100, 2)</width>
+								<height>(-3, 3)</height>
+								
+								<categories>
+									<Building>0.3</Building>
+									<Item>0.3</Item>
+								</categories>
+							</restriction>
+							
+							<rotationCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0.4, -5)</li>
+									<li>(0.6, 0)</li>
+									<li>(0.7, 0)</li>
+									<li>(0.8, 0)</li>
+								</points>
+							</rotationCurve>
+							
+							<xPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, -225)</li>
+									<li>(0.15, -160)</li>
+									<li>(0.41, -120)</li>
+									<li>(0.51, -40)</li>
+									<li>(0.75, 0)</li>
+									<li>(0.85, 0)</li>
+									<li>(1, 0)</li>
+								</points>
+							</xPositionCurve>
+							
+							<zPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 5)</li>
+									<li>(0.2, 0)</li>
+									<li>(0.3, 0)</li>
+									<li>(0.6, 0)</li>
+								</points>
+							</zPositionCurve>
+						</horizontal>
+						<vertical>
+							<maxTicks>600</maxTicks>
+							
+							<flipVertical>South</flipVertical>
+							
+							<restriction Class = "Vehicles.LaunchRestriction_Runway">
+								<width>(-3, 3)</width>
+								<height>(-100, 2)</height>
+								
+								<categories>
+									<Building>0.3</Building>
+									<Item>0.3</Item>
+								</categories>
+							</restriction>
+							
+							<zPositionCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, -225)</li>
+									<li>(0.15, -160)</li>
+									<li>(0.41, -120)</li>
+									<li>(0.51, -40)</li>
+									<li>(0.75, 0)</li>
+									<li>(0.85, 0)</li>
+									<li>(1, 0)</li>
+								</points>
+							</zPositionCurve>
+						</vertical>
+					</landingProperties>
+				</launchProtocol>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

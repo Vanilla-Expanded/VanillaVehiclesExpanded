@@ -45,7 +45,7 @@
 			<MoveSpeed LockSetting="True">0</MoveSpeed>
 			<CargoCapacity>240</CargoCapacity>
 			<RepairRate>1</RepairRate>
-			<FlightSpeed>40</FlightSpeed>
+			<FlightSpeed>50</FlightSpeed>
 		</vehicleStats>
 		
 		<soundOneShotsOnEvent>
@@ -53,11 +53,14 @@
 				<key>AerialLaunch</key>
 				<value>DropPod_Leaving</value>
 			</li>
+		</soundOneShotsOnEvent>
+		
+		<soundSustainersOnEvent>
 			<li>
-				<key>AerialLanding</key>
+				<key>(AerialLanding, Spawned)</key>
 				<value>DropPod_Fall</value>
 			</li>
-		</soundOneShotsOnEvent>
+		</soundSustainersOnEvent>
 		
 		<drawProperties>
 			<displayRotation>North</displayRotation>
@@ -182,8 +185,8 @@
 			
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
-				<fuelConsumptionRate>360</fuelConsumptionRate>
-				<fuelCapacity>120</fuelCapacity>
+				<fuelConsumptionRate>800</fuelConsumptionRate>
+				<fuelCapacity>160</fuelCapacity>
 				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
 			</li>
 			
@@ -273,10 +276,10 @@
 								<frequency Class="SmashTools.BezierCurve">
 									<points>
 										<li>(0, 100)</li>
-										<li>(0.3, 250)</li>
+										<li>(0.2, 250)</li>
+										<li>(0.3, 0)</li>
+										<li>(0.4, 0)</li>
 										<li>(0.5, 0)</li>
-										<li>(0.6, 0)</li>
-										<li>(0.7, 0)</li>
 									</points>
 								</frequency>
 								
@@ -311,7 +314,7 @@
 								<angle>145~215</angle>
 								<position>DrawPos</position>
 								<runOutOfStep>false</runOutOfStep>
-								<originOffset>(0, 0, 0.5)</originOffset>
+								<originOffset>(0, 0, -0.5)</originOffset>
 								
 								<frequency Class="SmashTools.BezierCurve">
 									<points>
@@ -353,7 +356,7 @@
 								<angle>175~185</angle>
 								<position>DrawPos</position>
 								<runOutOfStep>false</runOutOfStep>
-								<originOffset>(0, 0, 0.5)</originOffset>
+								<originOffset>(0, 0, -0.5)</originOffset>
 								
 								<frequency Class="SmashTools.BezierCurve">
 									<points>
@@ -531,63 +534,29 @@
 									</points>
 								</speed>
 							</li>
-							<!--
 							<li>
-								<def>RocketSmoke</def>
-								<angle>145~215</angle>
-								<position>DrawPos</position>
-								<runOutOfStep>false</runOutOfStep>
-								<originOffset>(0, 0, 0.5)</originOffset>
-								
-								<frequency Class="SmashTools.BezierCurve">
-									<points>
-										<li>(0, 0)</li>
-										<li>(0.1, 0)</li>
-										<li>(0.2, 0)</li>
-										<li>(0.5, 150)</li>
-										<li>(1, 0)</li>
-									</points>
-								</frequency>
-								
-								<rotationRate>
-									<points>
-										<li>(0, 3)</li>
-										<li>(1, 1)</li>
-									</points>
-								</rotationRate>
-								
-								<size Class="SmashTools.BezierCurve">
-									<points>
-										<li>(0, 5)</li>
-										<li>(0.25, 7)</li>
-										<li>(0.75, 7)</li>
-										<li>(1, 7)</li>
-									</points>
-								</size>
-								
-								<speed Class="SmashTools.BezierCurve">
-									<points>
-										<li>(0, 3)</li>
-										<li>(0.25, 2)</li>
-										<li>(0.75, 2)</li>
-										<li>(1, 2)</li>
-									</points>
-								</speed>
-							</li>
-							<li>
-								<def>RocketExhaust</def>
+								<def>RocketExhaust_Short</def>
 								<angle>175~185</angle>
 								<position>DrawPos</position>
 								<runOutOfStep>false</runOutOfStep>
-								<originOffset>(0, 0, 0.5)</originOffset>
-								
+								<originOffset>(0, 0, -2.5)</originOffset>
+								<!--
+								<drawOffset>
+									<points>
+										<li>(0, -2.5)</li>
+										<li>(0.2, -2.5)</li>
+										<li>(0.4, -2.5)</li>
+										<li>(0.65, -0.5)</li>
+									</points>
+								</drawOffset>
+								-->
 								<frequency Class="SmashTools.BezierCurve">
 									<points>
 										<li>(0, 250)</li>
 										<li>(0.2, 250)</li>
 										<li>(0.3, 250)</li>
 										<li>(0.4, 250)</li>
-										<li>(0.7, 0)</li>
+										<li>(0.75, 0)</li>
 									</points>
 								</frequency>
 								
@@ -602,18 +571,20 @@
 									<points>
 										<li>(0, 4)</li>
 										<li>(0.25, 6)</li>
+										<li>(0.5, 6)</li>
 										<li>(0.75, 6)</li>
-										<li>(1, 4)</li>
 									</points>
 								</size>
 								
-								<speed>
+								<speed Class="SmashTools.BezierCurve">
 									<points>
-										<li>(1, 1)</li>
+										<li>(0, 3)</li>
+										<li>(0.25, 3)</li>
+										<li>(0.5, 3)</li>
+										<li>(0.75, 1)</li>
 									</points>
 								</speed>
 							</li>
-							-->
 						</fleckData>
 						
 						<additionalTextures>

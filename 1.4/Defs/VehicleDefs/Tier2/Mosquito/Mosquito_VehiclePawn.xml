@@ -40,7 +40,7 @@
 			<MoveSpeed LockSetting = "True">0</MoveSpeed>
 			<CargoCapacity>100</CargoCapacity>
 			<RepairRate>1</RepairRate>
-			<FlightSpeed>40</FlightSpeed>
+			<FlightSpeed>10.5</FlightSpeed>
 		</vehicleStats>
 		
 		<drawProperties>
@@ -67,19 +67,21 @@
 				<li>
 					<key>pilot</key>
 					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
-					<slots>1</slots>
-					<slotsToOperate>1</slotsToOperate>
 				</li>
 				<li>
 					<key>passenger</key>
 					<label>Passenger</label>
+					<slots>3</slots>
+					
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
-					<slots>3</slots>
 				</li>
 			</roles>
 		</properties>
@@ -326,7 +328,6 @@
 				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
-				<fuelConsumptionWorldMultiplier>2</fuelConsumptionWorldMultiplier>
 				<launchProtocol Class="Vehicles.PropellerTakeoff">
 					<launchProperties Class = "Vehicles.PropellerProtocolProperties">
 						<maxTicks>800</maxTicks>
