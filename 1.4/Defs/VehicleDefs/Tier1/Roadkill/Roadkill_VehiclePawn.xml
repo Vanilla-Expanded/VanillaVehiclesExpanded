@@ -328,9 +328,9 @@
 						</renderProperties>
 						
 						<uiRenderProperties>
-							<north>(0, -0.1)</north>
-							<east>(0, -0.1)</east>
-							<south>(0, -0.05)</south>
+							<north>(0, -0.115)</north>
+							<south>(0, -0.06)</south>
+							<east>(0.01, -0.09)</east>
 						</uiRenderProperties>
 						
 						<gizmoLabel>Main Turret</gizmoLabel>

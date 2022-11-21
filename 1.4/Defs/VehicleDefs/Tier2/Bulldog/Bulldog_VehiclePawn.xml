@@ -375,9 +375,9 @@
 						</renderProperties>
 						
 						<uiRenderProperties>
-							<north>(0, -0.185)</north>
-							<east>(0.03, -0.11)</east>
-							<south>(0, -0.1)</south>
+							<north>(0, -0.09)</north>
+							<south>(0, -0.07)</south>
+							<east>(0.02, -0.1)</east>
 						</uiRenderProperties>
 						
 						<gizmoLabel>Cannon</gizmoLabel>

@@ -77,20 +77,12 @@
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
 			<offRoadMultiplier>0.8</offRoadMultiplier>
 			
-			<customSnowCosts>
-				<li>
-					<key>Thin</key>
-					<value>8</value>
-				</li>
-				<li>
-					<key>Medium</key>
-					<value>16</value>
-				</li>
-				<li>
-					<key>Thick</key>
-					<value>24</value>
-				</li>
-			</customSnowCosts>
+			<customSnowCategoryTicks>
+				<Dusting>4</Dusting>
+				<Thin>8</Thin>
+				<Medium>16</Medium>
+				<Thick>24</Thick>
+			</customSnowCategoryTicks>
 			
 			<roles>
 				<li>
