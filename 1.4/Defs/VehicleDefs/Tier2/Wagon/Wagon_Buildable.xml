@@ -21,7 +21,7 @@
 		<size>(2,4)</size>
 		
 		<researchPrerequisites>
-			<li>VVE_BasicVehicles</li>
+			<li>VVE_ComplexVehicles</li>
 		</researchPrerequisites>
 		
 		<costList>

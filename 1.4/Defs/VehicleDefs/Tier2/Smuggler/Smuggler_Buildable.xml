@@ -22,7 +22,7 @@
 		<size>(3, 6)</size>
 		
 		<researchPrerequisites>
-			<li>VVE_BasicVehicles</li>
+			<li>VVE_AerialVehicles</li>
 		</researchPrerequisites>
 		
 		<costList>

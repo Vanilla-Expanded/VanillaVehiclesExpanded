@@ -22,7 +22,7 @@
 		<size>(3, 5)</size>
 		
 		<researchPrerequisites>
-			<li>VVE_BasicVehicles</li>
+			<li>VVE_CombatVehicles</li>
 		</researchPrerequisites>
 		
 		<costList>
