@@ -26,7 +26,6 @@ namespace VanillaVehiclesExpanded
         }
         public override void Draw()
         {
-            Log.Message("DRAWING");
             var oldDrawSize = def.graphicData.drawSize;
             var drawPos = DrawPos;
             drawPos.y += 5f;
@@ -118,7 +117,11 @@ namespace VanillaVehiclesExpanded
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            if (base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Open) is null && !opened)
+            var openDesignation = base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Open);
+            var closeDesignation = base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Close);
+            bool openDesignationOn = openDesignation != null;
+            bool closeDesignationOn = closeDesignation != null;
+            if (openDesignationOn is false && !opened)
             {
                 var openButton = new Command_Action
                 {
@@ -137,7 +140,20 @@ namespace VanillaVehiclesExpanded
                 };
                 yield return openButton;
             }
-            else
+            else if (openDesignationOn && !opened)
+            {
+                var cancelButton = new Command_Action
+                {
+                    defaultLabel = "Cancel".Translate(),
+                    icon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel"),
+                    action = delegate
+                    {
+                        base.Map.designationManager.RemoveDesignation(openDesignation);
+                    }
+                };
+                yield return cancelButton;
+            }
+            else if (closeDesignationOn is false && opened)
             {
                 var closeButton = new Command_Action
                 {
@@ -155,6 +171,19 @@ namespace VanillaVehiclesExpanded
                     }
                 };
                 yield return closeButton;
+            }
+            else if (closeDesignationOn && opened)
+            {
+                var cancelButton = new Command_Action
+                {
+                    defaultLabel = "Cancel".Translate(),
+                    icon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel"),
+                    action = delegate
+                    {
+                        base.Map.designationManager.RemoveDesignation(closeDesignation);
+                    }
+                };
+                yield return cancelButton;
             }
         }
 
