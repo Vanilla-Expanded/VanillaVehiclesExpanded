@@ -121,6 +121,9 @@ namespace VanillaVehiclesExpanded
         public override void CompTick()
         {
             base.CompTick();
+
+            if (!Vehicle.Spawned) return; //WorldPawns can tick.  If curPath was not cleared before ticking, exception will be thrown
+
             wasMoving = Vehicle.vPather.Moving;
             if (wasMoving && Vehicle.vPather.curPath != null)
             {

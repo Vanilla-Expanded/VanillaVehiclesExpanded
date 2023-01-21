@@ -12,7 +12,20 @@ namespace VanillaVehiclesExpanded
         public int tickOpening;
         public int tickClosing;
         public static List<GarageDoor> garageDoors = new();
+
         public int WorkSpeedTicks => 120;
+
+        public override Color DrawColor
+        {
+            get
+            {
+                var color = base.DrawColor;
+                float openProgress = OpenProgress();
+                color.a /= openProgress + 1;
+                return color;
+            }
+        }
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -24,9 +37,9 @@ namespace VanillaVehiclesExpanded
             base.DeSpawn(mode);
             garageDoors.Remove(this);
         }
+
         public override void Draw()
         {
-            Log.Message("DRAWING");
             var oldDrawSize = def.graphicData.drawSize;
             var drawPos = DrawPos;
             drawPos.y += 5f;
@@ -57,17 +70,6 @@ namespace VanillaVehiclesExpanded
             def.graphicData.drawSize = oldDrawSize;
         }
 
-        public override Color DrawColor
-        {
-            get
-            {
-                var color = base.DrawColor;
-                float openProgress = OpenProgress();
-                color.a /= openProgress + 1;
-                return color;
-            }
-        }
-
         public float OpenProgress()
         {
             if (opened)
@@ -84,6 +86,7 @@ namespace VanillaVehiclesExpanded
             }
             return 0f;
         }
+
         public override void Tick()
         {
             base.Tick();
