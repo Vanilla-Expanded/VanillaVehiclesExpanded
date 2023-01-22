@@ -592,11 +592,11 @@
 						
 						<zPositionVerticalCurve Class="SmashTools.BezierCurve">
 							<points>
-								<li>(0, 0)</li>
-								<li>(0.25, 0)</li>
-								<li>(0.5, -1)</li>
-								<li>(0.75, -15)</li>
-								<li>(1, -15)</li>
+								<li>(0, 15)</li>
+								<li>(0.25, 15)</li>
+								<li>(0.5, 14)</li>
+								<li>(0.75, 0)</li>
+								<li>(1, 0)</li>
 							</points>
 						</zPositionVerticalCurve>
 						

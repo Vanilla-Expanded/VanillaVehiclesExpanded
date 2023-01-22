@@ -374,7 +374,7 @@
 							<flipRotation>West</flipRotation>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-2, 100)</width>
+								<width>(-2, 40)</width>
 								<height>(-3, 3)</height>
 								
 								<categories>
@@ -421,7 +421,7 @@
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-3, 3)</width>
-								<height>(-2, 100)</height>
+								<height>(-2, 40)</height>
 								
 								<categories>
 									<Building>0.3</Building>
@@ -450,7 +450,7 @@
 							<flipRotation>West</flipRotation>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-100, 2)</width>
+								<width>(-40, 2)</width>
 								<height>(-3, 3)</height>
 								
 								<categories>
@@ -496,7 +496,7 @@
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-3, 3)</width>
-								<height>(-100, 2)</height>
+								<height>(-40, 2)</height>
 								
 								<categories>
 									<Building>0.3</Building>
