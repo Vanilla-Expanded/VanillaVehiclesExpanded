@@ -66,10 +66,6 @@
 			<ComponentIndustrial>8</ComponentIndustrial>
 		</costList>
 		<costStuffCount>100</costStuffCount>
-		<comps>
-			<li Class="CompProperties_Breakdownable"/>
-			<li Class="CompProperties_Styleable"/>
-		</comps>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
 			<li>VVE_BasicVehicles</li>
