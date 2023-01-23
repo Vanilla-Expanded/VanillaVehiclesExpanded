@@ -325,7 +325,6 @@
 				<fuelType>Chemfuel</fuelType> <!-- Must Include -->
 				<fuelConsumptionRate>24.5</fuelConsumptionRate>
 				<fuelCapacity>120</fuelCapacity>
-				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
 				<launchProtocol Class="Vehicles.PropellerTakeoff">

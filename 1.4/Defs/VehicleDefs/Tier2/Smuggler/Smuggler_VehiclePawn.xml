@@ -361,7 +361,6 @@
 				<fuelType>Chemfuel</fuelType>
 				<fuelConsumptionRate>22.5</fuelConsumptionRate>
 				<fuelCapacity>120</fuelCapacity>
-				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
 				<fuelConsumptionWorldMultiplier>50</fuelConsumptionWorldMultiplier>
@@ -374,7 +373,7 @@
 							<flipRotation>West</flipRotation>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-2, 40)</width>
+								<width>(-2, 30)</width>
 								<height>(-3, 3)</height>
 								
 								<categories>
@@ -421,7 +420,7 @@
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-3, 3)</width>
-								<height>(-2, 40)</height>
+								<height>(-2, 30)</height>
 								
 								<categories>
 									<Building>0.3</Building>
@@ -450,7 +449,7 @@
 							<flipRotation>West</flipRotation>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-40, 2)</width>
+								<width>(-30, 2)</width>
 								<height>(-3, 3)</height>
 								
 								<categories>
@@ -496,7 +495,7 @@
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-3, 3)</width>
-								<height>(-40, 2)</height>
+								<height>(-30, 2)</height>
 								
 								<categories>
 									<Building>0.3</Building>

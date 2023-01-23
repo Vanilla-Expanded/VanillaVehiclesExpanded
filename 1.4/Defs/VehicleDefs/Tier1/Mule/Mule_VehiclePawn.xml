@@ -389,7 +389,6 @@
 				<fuelConsumptionRate>18</fuelConsumptionRate>
 				<fuelConsumptionWorldMultiplier>0.5</fuelConsumptionWorldMultiplier>
 				<fuelCapacity>80</fuelCapacity>
-				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>

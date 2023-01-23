@@ -187,7 +187,6 @@
 				<fuelType>Chemfuel</fuelType>
 				<fuelConsumptionRate>800</fuelConsumptionRate>
 				<fuelCapacity>160</fuelCapacity>
-				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
 			</li>
 			
 			<li Class="Vehicles.CompProperties_VehicleLauncher">

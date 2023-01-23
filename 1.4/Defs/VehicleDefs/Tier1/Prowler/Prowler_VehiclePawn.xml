@@ -379,7 +379,6 @@
 				<fuelType>Chemfuel</fuelType>
 				<fuelConsumptionRate>18.5</fuelConsumptionRate>
 				<fuelCapacity>60</fuelCapacity>
-				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>

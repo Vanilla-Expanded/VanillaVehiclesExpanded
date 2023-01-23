@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Snatcher</defName>
 		<label>Snatcher</label>
-		<description>TODO</description>
+		<description>A general passenger transport, the Snatcher is a solid vehicle for transporting people to different locations. Best suited on flat roads and will seriously struggle in snow or on hills.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Van/Tier2_Van</texPath>
@@ -352,7 +352,6 @@
 				<fuelConsumptionRate>16.5</fuelConsumptionRate>
 				<fuelConsumptionWorldMultiplier>0.5</fuelConsumptionWorldMultiplier>
 				<fuelCapacity>120</fuelCapacity>
-				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>

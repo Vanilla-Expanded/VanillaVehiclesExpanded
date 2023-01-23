@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Wagon</defName>
 		<label>Wagon</label>
-		<description>TODO</description>
+		<description>A general all-rounder vehicle, the Wagon performs well in all categories with a good cargo and passenger capacity. Best suited on flat roads and will struggle somewhat on hills, snow or winter tiles.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_FamilyCar/Tier2_FamilyCar</texPath>
@@ -404,7 +404,6 @@
 				<fuelConsumptionRate>18.5</fuelConsumptionRate>
 				<fuelCapacity>80</fuelCapacity>
 				<fuelConsumptionWorldMultiplier>0.5</fuelConsumptionWorldMultiplier>
-				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>

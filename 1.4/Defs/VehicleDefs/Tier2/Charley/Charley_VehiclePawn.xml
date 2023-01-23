@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Charley</defName>
 		<label>Charley</label>
-		<description>TODO</description>
+		<description>A general motorcycle, the Charley is a very effective single-person vehicle with a small cargo capacity. Performs well on any road except during winter season or snowy terrain, or both, with an increased speed on the world map.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Motorbike/Tier2_Motorbike</texPath>
@@ -198,7 +198,6 @@
 				<fuelConsumptionRate>14.5</fuelConsumptionRate>
 				<fuelCapacity>50</fuelCapacity>
 				<fuelConsumptionWorldMultiplier>0.8</fuelConsumptionWorldMultiplier>
-				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>

@@ -361,7 +361,6 @@
 				<leakDef>Filth_Fuel</leakDef>
 				<fuelConsumptionRate>24</fuelConsumptionRate>
 				<fuelCapacity>75</fuelCapacity>
-				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleTurrets">
 				<turrets>

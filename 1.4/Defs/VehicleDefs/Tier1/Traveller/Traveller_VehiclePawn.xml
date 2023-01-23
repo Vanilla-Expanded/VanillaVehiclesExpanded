@@ -219,7 +219,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(-1, 1)</li>
+						<li>(0, 1)</li>
 					</cells>
 				</hitbox>
 				
@@ -392,7 +392,6 @@
 				<fuelType>Chemfuel</fuelType>
 				<fuelConsumptionRate>22.5</fuelConsumptionRate>
 				<fuelCapacity>80</fuelCapacity>
-				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>
