@@ -44,7 +44,7 @@
 		
 		<soundSustainersOnEvent>
 			<li>
-				<key>(DraftOn, DraftOff)</key>
+				<key>(IgnitionOn, IgnitionOff)</key>
 				<value>VVE_VehicleEngineCar</value>
 			</li>
 		</soundSustainersOnEvent>

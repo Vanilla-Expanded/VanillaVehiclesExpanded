@@ -26,11 +26,11 @@
 				<value>VVE_VehicleEnter</value>
 			</li>
 			<li>
-				<key>DraftOn</key>
+				<key>IgnitionOn</key>
 				<value>VVE_VehicleStart</value>
 			</li>
 			<li>
-				<key>DraftOff</key>
+				<key>IgnitionOff</key>
 				<value>VVE_VehicleStart</value>
 			</li>
 		</soundOneShotsOnEvent>
@@ -47,11 +47,11 @@
 				<value>VVE_VehicleEnterArmored</value>
 			</li>
 			<li>
-				<key>DraftOn</key>
+				<key>IgnitionOn</key>
 				<value>VVE_VehicleStart</value>
 			</li>
 			<li>
-				<key>DraftOff</key>
+				<key>IgnitionOff</key>
 				<value>VVE_VehicleStart</value>
 			</li>
 		</soundOneShotsOnEvent>

@@ -45,7 +45,7 @@
 		
 		<soundSustainersOnEvent>
 			<li>
-				<key>(DraftOn, DraftOff)</key>
+				<key>(IgnitionOn, IgnitionOff)</key>
 				<value>VVE_VehicleRotorAirplane</value>
 			</li>
 		</soundSustainersOnEvent>

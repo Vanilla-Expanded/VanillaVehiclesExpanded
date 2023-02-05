@@ -47,18 +47,18 @@
 		
 		<soundSustainersOnEvent>
 			<li>
-				<key>(DraftOn, DraftOff)</key>
+				<key>(IgnitionOn, IgnitionOff)</key>
 				<value>VVE_VehicleEngineBuggy</value>
 			</li>
 		</soundSustainersOnEvent>
 		
 		<soundOneShotsOnEvent Inherit = "False">
 			<li>
-				<key>DraftOn</key>
+				<key>IgnitionOn</key>
 				<value>VVE_VehicleStart</value>
 			</li>
 			<li>
-				<key>DraftOff</key>
+				<key>IgnitionOff</key>
 				<value>VVE_VehicleStart</value>
 			</li>
 		</soundOneShotsOnEvent>

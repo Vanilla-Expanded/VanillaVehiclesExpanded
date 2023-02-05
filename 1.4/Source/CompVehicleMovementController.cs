@@ -55,6 +55,7 @@ namespace VanillaVehiclesExpanded
             return (start + dest).GetHashCode();
         }
     }
+
     public struct PathCostResult
     {
         public float cost;
@@ -65,6 +66,7 @@ namespace VanillaVehiclesExpanded
             return "Cost: " + cost + " - cells: " + cells;
         }
     }
+
     [HotSwappable]
     public class CompVehicleMovementController : VehicleComp
     {
@@ -79,7 +81,9 @@ namespace VanillaVehiclesExpanded
         private float prevPctOfPathPassed;
         private float curPctOfPathPassed;
         private Dictionary<StartAndDestCells, PawnPath> savedPaths = new();
+
         public float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
+
         public void StartMove()
         {
             if (wasMoving is false)
