@@ -63,6 +63,10 @@
 			</li>
 		</soundOneShotsOnEvent>
 		
+		<race>
+			<baseBodySize>1</baseBodySize>
+		</race>
+		
 		<drawProperties>
 			<displayOffsetNorth>(0, -0.2)</displayOffsetNorth>
 			<displayOffsetEast>(-0.05, -0.2)</displayOffsetEast>
@@ -71,7 +75,6 @@
 		
 		<properties>
 			<diagonalRotation>false</diagonalRotation>
-			<visibility>0.4</visibility>
 			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
 			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>

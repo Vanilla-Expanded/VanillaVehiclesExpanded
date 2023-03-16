@@ -49,10 +49,15 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<race>
+			<baseBodySize>2.75</baseBodySize>
+		</race>
+		
 		<properties>
-			<visibility>1.5</visibility>
 			<worldSpeedMultiplier>1</worldSpeedMultiplier>
 			<winterSpeedMultiplier>1.5</winterSpeedMultiplier>
+			
+			<customRoadCosts AssignDefaults = "0.25"/>
 			
 			<vehicleJobLimitations>
 				<li>(RepairVehicle, 2)</li>
@@ -65,9 +70,7 @@
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
-					<handlingTypes>
-						<li>Movement</li>
-					</handlingTypes>
+					<handlingTypes>Movement</handlingTypes>
 					
 					<hitbox>
 						<side>Front</side>
@@ -79,9 +82,7 @@
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
-					<handlingTypes>
-						<li>Cannon</li>
-					</handlingTypes>
+					<handlingTypes>Turret</handlingTypes>
 					
 					<turretIds>
 						<li>mainTurret</li>
@@ -447,13 +448,7 @@
 							<east>(0.1, 0.5)</east>
 						</renderProperties>
 						
-						<uiRenderProperties>
-							<north>(0, -0.2)</north>
-							<south>(0, -0.117)</south>
-							<east>(0.035, -0.11)</east>
-						</uiRenderProperties>
-						
-						<gizmoLabel>Cannon</gizmoLabel>
+						<gizmoLabel>Main Turret</gizmoLabel>
 						
 						<angleRestricted/>
 						<aimPieOffset>(0, 0.65)</aimPieOffset>

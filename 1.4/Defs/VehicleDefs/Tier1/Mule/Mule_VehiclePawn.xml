@@ -49,12 +49,15 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<race>
+			<baseBodySize>3.5</baseBodySize>
+		</race>
+		
 		<properties>
-			<visibility>1.4</visibility>
 			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
 			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
 			
-			<customRoadCosts AssignDefaults = "0.6"/>
+			<customRoadCosts AssignDefaults = "0.3"/>
 			
 			<roles>
 				<li>

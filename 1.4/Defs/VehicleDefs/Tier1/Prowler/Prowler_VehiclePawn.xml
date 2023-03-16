@@ -49,9 +49,11 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<race>
+			<baseBodySize>2.5</baseBodySize>
+		</race>
+		
 		<properties>
-			<visibility>1.5</visibility>
-			
 			<roles>
 				<li>
 					<key>driver</key>

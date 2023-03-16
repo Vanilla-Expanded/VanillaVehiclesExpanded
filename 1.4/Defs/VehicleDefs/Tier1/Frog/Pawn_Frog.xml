@@ -62,13 +62,15 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<race>
+			<baseBodySize>1.5</baseBodySize>
+		</race>
+		
 		<drawProperties>
 			<displayRotation>North</displayRotation>
 		</drawProperties>
 		
 		<properties>
-			<visibility>5</visibility>
-			
 			<roles>
 				<li>
 					<key>Operator</key>

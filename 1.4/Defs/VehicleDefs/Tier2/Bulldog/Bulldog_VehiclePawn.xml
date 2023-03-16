@@ -49,8 +49,12 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<race>
+			<baseBodySize>4.5</baseBodySize>
+		</race>
+		
 		<properties>
-			<visibility>2.5</visibility>
+			<customRoadCosts AssignDefaults = "0.4" />
 			
 			<vehicleJobLimitations>
 				<li>(RepairVehicle, 3)</li>
@@ -73,9 +77,7 @@
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
-					<handlingTypes>
-						<li>Cannon</li>
-					</handlingTypes>
+					<handlingTypes>Turret</handlingTypes>
 					
 					<turretIds>
 						<li>mainTurret</li>
@@ -373,13 +375,7 @@
 							<east>(0.125, 0.625)</east>
 						</renderProperties>
 						
-						<uiRenderProperties>
-							<north>(0, -0.09)</north>
-							<south>(0, -0.07)</south>
-							<east>(0.02, -0.1)</east>
-						</uiRenderProperties>
-						
-						<gizmoLabel>Cannon</gizmoLabel>
+						<gizmoLabel>Main Turret</gizmoLabel>
 						
 						<angleRestricted/>
 						<aimPieOffset>(0, 2.55)</aimPieOffset>

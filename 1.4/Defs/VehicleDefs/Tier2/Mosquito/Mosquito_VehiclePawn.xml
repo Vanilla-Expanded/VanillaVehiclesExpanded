@@ -43,6 +43,10 @@
 			<FlightSpeed>10.5</FlightSpeed>
 		</vehicleStats>
 		
+		<race>
+			<baseBodySize>2.25</baseBodySize>
+		</race>
+		
 		<drawProperties>
 			<graphicOverlays>
 				<li>

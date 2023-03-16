@@ -57,14 +57,16 @@
 			</li>
 		</soundOneShotsOnEvent>
 		
+		<race>
+			<baseBodySize>2</baseBodySize>
+		</race>
+		
 		<properties>
 			<fishing>true</fishing>
 			
 			<track Class = "Vehicles.VehicleTrack_Wake">
 				<speed>1</speed>
 			</track>
-			
-			<visibility>0.25</visibility>
 			
 			<worldSpeedMultiplier>1</worldSpeedMultiplier>
 			<winterSpeedMultiplier>5</winterSpeedMultiplier>

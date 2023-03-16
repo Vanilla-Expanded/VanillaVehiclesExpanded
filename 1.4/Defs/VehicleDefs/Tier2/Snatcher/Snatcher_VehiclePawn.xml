@@ -49,7 +49,13 @@
 			</li>
 		</soundSustainersOnEvent>
 		
+		<race>
+			<baseBodySize>3.25</baseBodySize>
+		</race>
+		
 		<properties>
+			<customRoadCosts AssignDefaults = "0.25"/>
+			
 			<roles>
 				<li>
 					<key>driver</key>

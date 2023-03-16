@@ -48,10 +48,25 @@
 				<key>(IgnitionOn, IgnitionOff)</key>
 				<value>VVE_VehicleRotorAirplane</value>
 			</li>
+			<li>
+				<key>(AerialLaunch, Despawned)</key>
+				<value>VVE_VehicleRotorAirplane</value>
+			</li>
+			<li>
+				<key>(AerialLanding, Spawned)</key>
+				<value>VVE_VehicleRotorAirplane</value>
+			</li>
+			<li>
+				<key>(AerialCrashLanding, Spawned)</key>
+				<value>VVE_VehicleRotorAirplane</value>
+			</li>
 		</soundSustainersOnEvent>
 		
+		<race>
+			<baseBodySize>5.5</baseBodySize>
+		</race>
+		
 		<properties>
-			<visibility>5</visibility>
 			<defaultBiomesImpassable>true</defaultBiomesImpassable>
 			
 			<vehicleJobLimitations>
@@ -377,8 +392,9 @@
 								<height>(-3, 3)</height>
 								
 								<categories>
-									<Building>0.3</Building>
-									<Item>0.3</Item>
+									<Building>0</Building>
+									<Item>0</Item>
+									<Plant>0.1</Plant>
 								</categories>
 							</restriction>
 							
@@ -423,8 +439,9 @@
 								<height>(-2, 30)</height>
 								
 								<categories>
-									<Building>0.3</Building>
-									<Item>0.3</Item>
+									<Building>0</Building>
+									<Item>0</Item>
+									<Plant>0.1</Plant>
 								</categories>
 							</restriction>
 							
@@ -453,8 +470,9 @@
 								<height>(-3, 3)</height>
 								
 								<categories>
-									<Building>0.3</Building>
-									<Item>0.3</Item>
+									<Building>0</Building>
+									<Item>0</Item>
+									<Plant>0.1</Plant>
 								</categories>
 							</restriction>
 							
@@ -498,8 +516,9 @@
 								<height>(-30, 2)</height>
 								
 								<categories>
-									<Building>0.3</Building>
-									<Item>0.3</Item>
+									<Building>0</Building>
+									<Item>0</Item>
+									<Plant>0.1</Plant>
 								</categories>
 							</restriction>
 							
