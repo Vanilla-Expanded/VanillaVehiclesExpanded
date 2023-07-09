@@ -267,7 +267,7 @@ namespace VanillaVehiclesExpanded
 
         private void TrySlowdown()
 		{
-            if (Vehicle.vPather.Moving)
+            if (Vehicle.vPather.Moving && Vehicle.vPather.curPath != null)
             {
                 float totalCost = GetPathCost(false).cost;
                 float decelerateMultiplier = 4f;
