@@ -24,7 +24,7 @@
 		</projectile>
 	</ThingDef>
 
-	<Vehicles.VehicleTurretDef Name="TankMainTurret" ParentName="TurretBase">
+	<Vehicles.VehicleTurretDef Name="TankMainTurret" ParentName="VehicleTurretBase">
 		<defName>Roadkill_MainTurret</defName>
 		<label>Main Turret</label>
 		<turretType>Rotatable</turretType>

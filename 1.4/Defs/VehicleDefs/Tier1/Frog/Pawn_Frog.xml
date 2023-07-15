@@ -50,14 +50,14 @@
 		
 		<soundOneShotsOnEvent>
 			<li>
-				<key>AerialLaunch</key>
+				<key>AerialVehicleLaunch</key>
 				<value>DropPod_Leaving</value>
 			</li>
 		</soundOneShotsOnEvent>
 		
 		<soundSustainersOnEvent>
 			<li>
-				<key>(AerialLanding, Spawned)</key>
+				<key>(AerialVehicleLanding, Spawned)</key>
 				<value>DropPod_Fall</value>
 			</li>
 		</soundSustainersOnEvent>

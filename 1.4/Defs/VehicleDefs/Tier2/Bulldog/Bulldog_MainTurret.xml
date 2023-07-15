@@ -24,7 +24,7 @@
 		</projectile>
 	</ThingDef>
 	
-	<Vehicles.VehicleTurretDef ParentName="TurretBase">
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
 		<defName>Bulldog_MainTurret</defName>
 		<label>Main Turret</label>
 		

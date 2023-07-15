@@ -49,15 +49,15 @@
 				<value>VVE_VehicleRotorAirplane</value>
 			</li>
 			<li>
-				<key>(AerialLaunch, Despawned)</key>
+				<key>(AerialVehicleLaunch, AerialVehicleLeftMap)</key>
 				<value>VVE_VehicleRotorAirplane</value>
 			</li>
 			<li>
-				<key>(AerialLanding, Spawned)</key>
+				<key>(AerialVehicleLanding, Spawned)</key>
 				<value>VVE_VehicleRotorAirplane</value>
 			</li>
 			<li>
-				<key>(AerialCrashLanding, Spawned)</key>
+				<key>(AerialVehicleCrashLanding, Spawned)</key>
 				<value>VVE_VehicleRotorAirplane</value>
 			</li>
 		</soundSustainersOnEvent>
