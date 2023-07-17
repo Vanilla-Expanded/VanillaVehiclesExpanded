@@ -58,12 +58,8 @@ namespace VanillaVehiclesExpanded
             {
                 float moveSpeed = StatMoveSpeed;
                 float totalCost = GetPathCost(false).cost;
-                float decelerateMultiplier = 4f;
-                float decelerateInPctOfPath = moveSpeed / (AccelerationRate * decelerateMultiplier) / totalCost;
+                float decelerateInPctOfPath = moveSpeed / (AccelerationRate * DecelerationMultiplier) / totalCost;
                 curPctOfPathPassed = curPaidPathCost / totalCost;
-                //curPctOfPathPassedStr = curPctOfPathPassed.ToString();
-                //prevPctOfPathPassedStr = prevPctOfPathPassed.ToString();
-                //decelerateInPctOfPathStr = decelerateInPctOfPath.ToString();
                 if (decelerateInPctOfPath > 1f)
                 {
                     if (prevPctOfPathPassed > curPctOfPathPassed)
@@ -118,10 +114,11 @@ namespace VanillaVehiclesExpanded
             }
         }
 
+
         public void Slowdown(float deceleratePct, bool stopImmediately = false)
         {
-            float remainingArrivalTicks = stopImmediately ? 10 : GetPathCost(true).cost;
-            if (remainingArrivalTicks == 0) 
+            float remainingArrivalTicks = GetPathCost(true).cost;
+            if (remainingArrivalTicks == 0)
 			{
                 //Stop immediately if path cost comes back 0
                 Vehicle.vPather.PatherFailed();
@@ -129,9 +126,9 @@ namespace VanillaVehiclesExpanded
 			}
 
             float decelerationRate = AccelerationRate * DecelerationMultiplier;
-            float decelerationRateNeeded = currentSpeed / remainingArrivalTicks;
+            float decelerationRateNeeded = (MaxSpeedToDecelerateSmoothly + currentSpeed) / remainingArrivalTicks;
             decelerationRate = Mathf.Min(decelerationRate, decelerationRateNeeded); //Don't slow down more than necessary
-            
+
             float newSpeed = currentSpeed - decelerationRate;
             float slowdownMultiplier = currentSpeed / (AccelerationRate * DecelerationMultiplier) / remainingArrivalTicks;
             if (handbrakeApplied is false && slowdownMultiplier >= 2f && currentSpeed > MaxSpeedToDecelerateSmoothly && (stopImmediately || (deceleratePct > 1f && Vehicle.vPather.curPath.NodesConsumedCount < 2)))
@@ -149,7 +146,7 @@ namespace VanillaVehiclesExpanded
                 handbrakeApplied = true;
             }
 
-            newSpeed = Mathf.Max(1f, newSpeed);
+            newSpeed = Mathf.Max(MaxSpeedToDecelerateSmoothly, newSpeed);
             if (currentSpeed > newSpeed)
             {
                 currentSpeed = newSpeed;
@@ -157,9 +154,13 @@ namespace VanillaVehiclesExpanded
             if (newSpeed <= MaxSpeedToDecelerateSmoothly)
 			{
                 handbrakeApplied = false;
-                Vehicle.vPather.PatherFailed(); //Stop vehicle upon reaching max move ticks
+                //Vehicle.vPather.PatherFailed(); //Stop vehicle upon reaching max move ticks
 			}
             curMovementMode = MovementMode.Decelerate;
+            //Log.Message("currentSpeed: " + currentSpeed + " - curMovementMode: " + curMovementMode 
+            //    + " - decelerationRate: " + decelerationRate + " - decelerationRateNeeded: " + decelerationRateNeeded
+            //    + " - remainingArrivalTicks: " + remainingArrivalTicks + " - curPctOfPathPassed: " + curPctOfPathPassed
+            //    + " - deceleratePct: " + deceleratePct);
         }
 
         private void SpeedUp(float moveSpeed)
