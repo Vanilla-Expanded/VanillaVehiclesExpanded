@@ -43,6 +43,25 @@
 			<FlightSpeed>10.5</FlightSpeed>
 		</vehicleStats>
 		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(IgnitionOn, IgnitionOff)</key>
+				<value>VVE_VehicleRotorHelicoper</value>
+			</li>
+			<li>
+				<key>(AerialVehicleLaunch, AerialVehicleLeftMap)</key>
+				<value>VVE_VehicleRotorHelicoper</value>
+			</li>
+			<li>
+				<key>(AerialVehicleLanding, Spawned)</key>
+				<value>VVE_VehicleRotorHelicoper</value>
+			</li>
+			<li>
+				<key>(AerialVehicleCrashLanding, Spawned)</key>
+				<value>VVE_VehicleRotorHelicoper</value>
+			</li>
+		</soundSustainersOnEvent>
+		
 		<race>
 			<baseBodySize>2.25</baseBodySize>
 		</race>
