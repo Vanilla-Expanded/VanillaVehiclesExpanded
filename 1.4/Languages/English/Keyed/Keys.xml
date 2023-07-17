@@ -6,6 +6,6 @@ Current speed: {1} c/s</VVE_StatsReport_AccelerationRate>
 	<VVE_Close>Close</VVE_Close>
 	<VVE_OpenDescription>Designate the garage door to be opened.</VVE_OpenDescription>
 	<VVE_CloseDescription>Designate the garage door to be closed.</VVE_CloseDescription>
-	<VVE_OpenDescription_AutoDoor></VVE_OpenDescription_AutoDoor>
-	<VVE_CloseDescription_AutoDoor></VVE_CloseDescription_AutoDoor>
+	<VVE_OpenDescription_AutoDoor>Open the auto garage door.</VVE_OpenDescription_AutoDoor>
+	<VVE_CloseDescription_AutoDoor>Close the auto garage door.</VVE_CloseDescription_AutoDoor>
 </LanguageData>

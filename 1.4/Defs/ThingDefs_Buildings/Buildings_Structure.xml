@@ -103,7 +103,7 @@
 	<ThingDef ParentName="VVE_GarageDoorAbstract" Name="VVE_GarageAutoDoorBase">
 		<defName>VVE_GarageAutoDoor</defName>
 		<label>auto garage door (1x4)</label>
-		<description>Divides rooms. Manual operation allows people to open it, letting vehicles through.</description>
+		<description>Divides rooms. Electric-powered operation allows the door to open without manual interaction, letting vehicles through.</description>
 		<thingClass>VanillaVehiclesExpanded.GarageAutoDoor</thingClass>
 		<passability>Impassable</passability>
 		<defaultPlacingRot>South</defaultPlacingRot>
