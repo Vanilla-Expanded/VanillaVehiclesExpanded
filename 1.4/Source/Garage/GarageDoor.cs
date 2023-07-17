@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -8,6 +9,7 @@ namespace VanillaVehiclesExpanded
     [HotSwappable]
     public class GarageDoor : Building
     {
+        public CompPowerTrader compPower;
         public bool opened;
         public int tickOpening;
         public int tickClosing;
@@ -30,6 +32,7 @@ namespace VanillaVehiclesExpanded
         {
             base.SpawnSetup(map, respawningAfterLoad);
             garageDoors.Add(this);
+            compPower = this.TryGetComp<CompPowerTrader>();
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
@@ -72,17 +75,17 @@ namespace VanillaVehiclesExpanded
 
         public float OpenProgress()
         {
-            if (opened)
-            {
-                return 1f;
-            }
             if (tickOpening > 0)
             {
                 return 1f - ((tickOpening - Find.TickManager.TicksGame) / (float)WorkSpeedTicks);
             }
             else if (tickClosing > 0)
             {
-                return 1f - ((tickClosing - Find.TickManager.TicksGame) / (float)WorkSpeedTicks);
+                return ((tickClosing - Find.TickManager.TicksGame) / (float)WorkSpeedTicks);
+            }
+            if (opened)
+            {
+                return 1f;
             }
             return 0f;
         }
@@ -117,9 +120,27 @@ namespace VanillaVehiclesExpanded
             {
                 Find.Selector.Select(newGarage);
             }
+            if (newGarage.compPower != null)
+            {
+                newGarage.compPower.PowerOn = true;
+                newGarage.compPower.SetUpPowerVars();
+                PowerConnectionMaker.TryConnectToAnyPowerNet(newGarage.compPower);
+            }
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (var gizmo in base.GetGizmos())
+            {
+                yield return gizmo;
+            }
+            foreach (var doorGizmo in GetDoorGizmos())
+            {
+                yield return doorGizmo;
+            }
+        }
+
+        protected virtual IEnumerable<Gizmo> GetDoorGizmos() 
         {
             var openDesignation = base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Open);
             var closeDesignation = base.Map.designationManager.DesignationOn(this, VVE_DefOf.VVE_Close);

@@ -62,9 +62,6 @@
 			</damageData>
 		</graphicData>
 		<uiIconPath>Things/Building/Structure/GarageDoor4x1_MenuIcon</uiIconPath>
-		<costList>
-			<ComponentIndustrial>8</ComponentIndustrial>
-		</costList>
 		<costStuffCount>100</costStuffCount>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -93,9 +90,6 @@
 			<drawSize>(1, 1)</drawSize>
 		</graphicData>
 		<uiIconPath>Things/Building/Structure/GarageDoor5x1_MenuIcon</uiIconPath>
-		<costList Inherit="False">
-			<ComponentIndustrial>10</ComponentIndustrial>
-		</costList>
 		<costStuffCount>125</costStuffCount>
 	</ThingDef>
 
@@ -105,4 +99,78 @@
 		<designationCategory IsNull="True"/>
 		<researchPrerequisites IsNull="True"/>
 	</ThingDef>
+	
+	<ThingDef ParentName="VVE_GarageDoorAbstract" Name="VVE_GarageAutoDoorBase">
+		<defName>VVE_GarageAutoDoor</defName>
+		<label>auto garage door (1x4)</label>
+		<description>Divides rooms. Manual operation allows people to open it, letting vehicles through.</description>
+		<thingClass>VanillaVehiclesExpanded.GarageAutoDoor</thingClass>
+		<passability>Impassable</passability>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<statBases>
+			<WorkToBuild>4000</WorkToBuild>
+			<MaxHitPoints>640</MaxHitPoints>
+			<Flammability>1</Flammability>
+		</statBases>
+		<size>(4, 1)</size>
+		<graphicData>
+			<texPath>Things/Building/Structure/AutoGarageDoor4x1_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1, 1)</drawSize>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Structure/AutoGarageDoor4x1_MenuIcon</uiIconPath>
+		<costList>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<costStuffCount>100</costStuffCount>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="VVE_GarageAutoDoorBase">
+		<defName>VVE_GarageAutoDoorOpened</defName>
+		<passability>Standable</passability>
+		<designationCategory IsNull="True"/>
+		<researchPrerequisites IsNull="True"/>
+	</ThingDef>
+
+	<ThingDef ParentName="VVE_GarageAutoDoorBase" Name="VVE_GarageAutoDoorLargeBase">
+		<defName>VVE_GarageAutoDoorLarge</defName>
+		<label>auto garage door (1x5)</label>
+		<statBases>
+			<WorkToBuild>4250</WorkToBuild>
+			<MaxHitPoints>700</MaxHitPoints>
+		</statBases>
+		<size>(5, 1)</size>
+		<graphicData>
+			<texPath>Things/Building/Structure/AutoGarageDoor5x1_Mover</texPath>
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		<uiIconPath>Things/Building/Structure/AutoGarageDoor5x1_MenuIcon</uiIconPath>
+		<costList Inherit="False">
+			<ComponentIndustrial>10</ComponentIndustrial>
+		</costList>
+		<costStuffCount>125</costStuffCount>
+	</ThingDef>
+
+	<ThingDef ParentName="VVE_GarageAutoDoorLargeBase">
+		<defName>VVE_GarageAutoDoorLargeOpened</defName>
+		<passability>Standable</passability>
+		<designationCategory IsNull="True"/>
+		<researchPrerequisites IsNull="True"/>
+	</ThingDef>
+	
 </Defs>

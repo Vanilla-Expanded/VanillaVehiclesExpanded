@@ -54,6 +54,7 @@
     <Compile Include="Garage\Blueprint_GarageDoor.cs" />
     <Compile Include="CompVehicleMovement\CompProperties_VehicleMovementController.cs" />
     <Compile Include="CompVehicleMovement\CompVehicleMovementController.cs" />
+    <Compile Include="Garage\GarageAutoDoor.cs" />
     <Compile Include="Garage\GarageDoor.cs" />
     <Compile Include="Garage\GhostDrawer_DrawGhostThing_Patch.cs" />
     <Compile Include="Garage\JobDriver_GarageControlBase.cs" />
