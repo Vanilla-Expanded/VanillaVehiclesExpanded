@@ -103,7 +103,7 @@
           </li>
         </grains>      
         <pitchRange>0.99~1.01</pitchRange>
-        <volumeRange>25~25</volumeRange>
+        <volumeRange>35~35</volumeRange>
         <sustainAttack>2.5</sustainAttack>      
         <sustainRelease>2.5</sustainRelease>
       </li>
@@ -125,7 +125,7 @@
           </li>
         </grains>      
         <pitchRange>0.99~1.01</pitchRange>
-        <volumeRange>25~25</volumeRange>
+        <volumeRange>35~35</volumeRange>
         <sustainAttack>2.5</sustainAttack>      
         <sustainRelease>2.5</sustainRelease>
       </li>
@@ -169,7 +169,7 @@
           </li>
         </grains>      
         <pitchRange>0.99~1.01</pitchRange>
-        <volumeRange>25~25</volumeRange>
+        <volumeRange>35~35</volumeRange>
         <sustainAttack>2.5</sustainAttack>      
         <sustainRelease>2.5</sustainRelease>
       </li>

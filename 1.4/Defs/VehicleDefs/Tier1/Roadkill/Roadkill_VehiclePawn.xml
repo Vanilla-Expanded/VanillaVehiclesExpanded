@@ -326,7 +326,6 @@
 						</renderProperties>
 						
 						<gizmoLabel>Main Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
 						
 						<angleRestricted/>
 						<aimPieOffset>(0, 1.5)</aimPieOffset>
