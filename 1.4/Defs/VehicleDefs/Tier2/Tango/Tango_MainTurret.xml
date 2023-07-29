@@ -3,7 +3,8 @@
 <Defs>
 	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
 		<defName>Tango_MainTurret</defName>
-		<label>Main Turret</label>
+		<label>tango autocannon</label>
+		<description>A heavy automatic turret mounted on a Tango APC. Its large-caliber shells do heavy damage over significant ranges, but it’s inaccurate and uses up a lot of ammo.</description>
 		
 		<turretType>Rotatable</turretType>
 		<shotSound>Shot_Autocannon</shotSound>

@@ -26,7 +26,8 @@
 	
 	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
 		<defName>Bulldog_MainTurret</defName>
-		<label>Main Turret</label>
+		<label>bulldog cannon</label>
+		<description>A large, long range cannon capable of firing explosive shells over medium distance. Usually mounted on Bulldog tanks.</description>
 		
 		<turretType>Rotatable</turretType>
 		<shotSound>VVE_Shot_BulldogCannonSound</shotSound>

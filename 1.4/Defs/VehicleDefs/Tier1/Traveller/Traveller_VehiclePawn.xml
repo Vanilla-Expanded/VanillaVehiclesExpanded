@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Traveller</defName>
 		<label>Traveller</label>
-		<description>For the connoisseur looking to become a road warrior, the Traveller is the ideal choice for those who are wanting to get to their destination fast and on a budget. While it isn’t the worst when it comes to off-roading, it is quite the gas-guzzler and performs best when driving on smooth asphalt. A nice cargo capacity but low passenger count makes it an ideal fast transport between pockets of civilization.</description>
+		<description>A basic road vehicle suited for flat terrain, the Traveller is a relatively cheap and fast option that still performs quite amicably in cold weather and snowy conditions. The light armour and exposed front-mounted engine leans to its cadence of running away from trouble rather than towards it.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances. The extra speed and acceleration make it even less fuel-efficient as well as more time-consuming to repair.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Traveller/Tier1_Traveller</texPath>

@@ -26,7 +26,8 @@
 
 	<Vehicles.VehicleTurretDef Name="TankMainTurret" ParentName="VehicleTurretBase">
 		<defName>Roadkill_MainTurret</defName>
-		<label>Main Turret</label>
+		<label>roadkill cannon</label>
+		<description>A cannon capable of firing explosive tank shells over medium distance. Usually mounted on Roadkill tanks. Needs to be reloaded with steel. Can’t fire whilst moving. Has a decent range, but can’t target enemies too close.</description>
 		<turretType>Rotatable</turretType>
 		<shotSound>VVE_Shot_RoadkillCannonSound</shotSound>
 		<reloadSound>VVE_RoadkillReloadSound</reloadSound>

@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Mosquito</defName>
 		<label>Mosquito</label>
-		<description>A general-purpose aircraft, the Mosquito is an extremely fast and mobile mode of transportation. While it doesn’t require a landing strip, it is slower than aeroplanes and has less cargo capacity.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles.\n\nBeing a flying vehicle, it is extremely obvious when on the move.</description>
+		<description>A general-purpose aircraft, the Mosquito is an extremely fast and mobile mode of transportation. While it doesn’t require a landing strip, it is slower than aeroplanes and has less cargo capacity.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Passenger x3\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Helicopter/Tier2_Helicopter</texPath>

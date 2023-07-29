@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Warbird</defName>
 		<label>Warbird</label>
-		<description>A general-purpose fighter plane, the Warbird is an incredibly fast and effective attack craft. With minimal cargo intended for holding maintenance equipment and fuel, its primary purpose is to engage other aircraft and initiate strafing manoeuvres.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency on the world map but moves significantly faster in return.\n\nBeing a flying vehicle, it is extremely obvious when on the move.</description>
+		<description>A general-purpose fighter plane, the Warbird is an incredibly fast and effective attack craft. With minimal cargo intended for holding maintenance equipment and fuel, its primary purpose is to engage other aircraft and initiate strafing manoeuvres.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency on the world map but moves significantly faster in return.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Warplane/Tier2_Warplane</texPath>
