@@ -115,4 +115,10 @@
 		<path>Patterns/Vinyl/Pattern_Vinyl</path>
 	</Vehicles.PatternDef>
 	
+	<Vehicles.PatternDef>
+		<defName>VVE_Wildcat</defName>
+		<label>Wildcat</label>
+		<path>Patterns/Wildcat/Pattern_Wildcat</path>
+	</Vehicles.PatternDef>
+	
 </Defs>
