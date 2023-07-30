@@ -384,10 +384,7 @@
 								<width>(-2, 30)</width>
 								<height>(-3, 3)</height>
 								
-								<categories>
-									<Building>0.01</Building>
-									<Plant>0.1</Plant>
-								</categories>
+								<fillPercent>0.21</fillPercent>
 							</restriction>
 							
 							<rotationCurve Class="SmashTools.BezierCurve">
@@ -428,10 +425,7 @@
 								<width>(-3, 3)</width>
 								<height>(-2, 30)</height>
 								
-								<categories>
-									<Building>0.01</Building>
-									<Plant>0.1</Plant>
-								</categories>
+								<fillPercent>0.21</fillPercent>
 							</restriction>
 							
 							<zPositionCurve Class="SmashTools.BezierCurve">
@@ -458,10 +452,7 @@
 								<width>(-30, 2)</width>
 								<height>(-3, 3)</height>
 								
-								<categories>
-									<Building>0.01</Building>
-									<Plant>0.1</Plant>
-								</categories>
+								<fillPercent>0.21</fillPercent>
 							</restriction>
 							
 							<rotationCurve Class="SmashTools.BezierCurve">
@@ -503,10 +494,7 @@
 								<width>(-3, 3)</width>
 								<height>(-30, 2)</height>
 								
-								<categories>
-									<Building>0.01</Building>
-									<Plant>0.1</Plant>
-								</categories>
+								<fillPercent>0.21</fillPercent>
 							</restriction>
 							
 							<zPositionCurve Class="SmashTools.BezierCurve">
