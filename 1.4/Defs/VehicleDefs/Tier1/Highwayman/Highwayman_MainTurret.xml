@@ -3,7 +3,8 @@
 <Defs>
 	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
 		<defName>Highwayman_MainTurret</defName>
-		<label>Main Turret</label>
+		<label>highwayman turret</label>
+		<description>A lightly-armored twin-linked miniturret cannon. Usually mounted on Highwaymen armored personnel carriers. Needs to be reloaded with steel. Can only fire over short range, but doesn’t have any issues with firing at enemies that engage the vehicle in melee.</description>
 		
 		<turretType>Rotatable</turretType>
 		<shotSound>GunShotA</shotSound>

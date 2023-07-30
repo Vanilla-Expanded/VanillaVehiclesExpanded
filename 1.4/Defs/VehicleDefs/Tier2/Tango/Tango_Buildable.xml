@@ -4,7 +4,7 @@
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
 		<defName>VVE_Tango_Blueprint</defName>
 		<label>Tango</label>
-		<description>A general purpose armoured personnel carrier, the Tango is a slow but hardy troop transport. Ample cargo holds, hardened armour, all-terrain capability and a turret that can fire either mobile or stationary, the main downside is fuel consumption and slightly thinner plating on the rear.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency and is quite visible, its high fuel consumption rate putting a limit on the effective range.</description>
+		<description>A general purpose armoured personnel carrier, the Tango is a slow but hardy troop transport. Ample cargo holds, hardened armour, all-terrain capability and a turret that can fire either mobile or stationary, the main downside is fuel consumption and slightly thinner plating on the rear.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency and is quite visible, its high fuel consumption rate putting a limit on the effective range.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1, Passenger x4\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
 		
 		<graphicData>

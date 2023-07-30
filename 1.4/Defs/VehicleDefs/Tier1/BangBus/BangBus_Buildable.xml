@@ -4,7 +4,7 @@
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
 		<defName>VVE_BangBus_Blueprint</defName>
 		<label>Bang Bus</label>
-		<description>A possible health warning for when too many people get together and travel long distances in a tight space, the Bangbus is a rickety pile of scrap that can hold an entire squad of raiders. Earning its name from the incredibly loud backfire when the engine stalls, this is not something you want to take anywhere away from roads and especially not in the winter time. While it can’t hold much in the way of cargo, it is a terrific passenger transport with a high mileage considering it’s largely made from corrugated steel.</description>
+		<description>A basic passenger transport, the Bangbus is a relatively cheap piece of machinery to construct to transport people across roads of flat terrain. Not recommended to use in the winter season or in snowy terrain, or both, as the light plates of armour that protect the passengers similarly negatively affects its acceleration.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
 		
 		<graphicData>

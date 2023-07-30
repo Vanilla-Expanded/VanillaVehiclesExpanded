@@ -4,7 +4,7 @@
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
 		<defName>VVE_Mule_Blueprint</defName>
 		<label>Mule</label>
-		<description>What is ostensibly a bunch of wooden planks nailed together attached to the end of an oldtimer sawn in half, the Mule is as stubborn as its namesake and will carry almost inadvisable amounts of cargo. Thanks to the relatively improved engine, it performs best when travelling over long distances rather than making shortstops. Don’t expect miracles if it’s cold or slightly steep and avoid potholes.</description>
+		<description>A basic cargo transport, the Mule is a relatively cheap vehicle that can carry a large amount of cargo across smooth roads of flat terrain. Not recommended to use in the winter season or in snowy terrain, or both, and it is very lightly armoured to save weight.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances. Unlike other tier 1 vehicles, this one performs better on the world map by being slightly faster and more fuel efficient.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Hauler/Tier1_Hauler</texPath>

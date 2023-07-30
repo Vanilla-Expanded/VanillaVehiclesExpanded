@@ -4,7 +4,7 @@
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
 		<defName>VVE_Roadkill_Blueprint</defName>
 		<label>Roadkill</label>
-		<description>Calling back to an age of this planet’s history when mass-produced armoured units were needed to bolster a dwindling infantry force, the Roadkill is extremely simple, reliable and easy to assemble. They are very loud and vulnerable at the rear, while also being ridiculously thirsty and suited for short-range engagements. Are they accurate? No. Are they fast? Also no. A chore to repair? Yes, as the idea is not to maintain it but to assemble it on-site and leave it once it’s served its purpose.</description>
+		<description>A basic medium tank, the Roadkill is a comparatively cheap armoured vehicle suited for short engagements. Very respectfully armoured from frontal attacks, however side attacks can disable movement and the exposed rear-mounted engine makes it vulnerable to flanking.\n\nWhile other tier 1 vehicles are gas guzzlers, this one burns through fuel at an alarming rate and is extremely slow to repair.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
 		
 		<graphicData>

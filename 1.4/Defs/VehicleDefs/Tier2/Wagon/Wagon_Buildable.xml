@@ -4,7 +4,7 @@
 	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
 		<defName>VVE_Wagon_Blueprint</defName>
 		<label>Wagon</label>
-		<description>TODO</description>
+		<description>A general all-rounder vehicle, the Wagon performs well in all categories with a good cargo and passenger capacity. Best suited on flat roads and will struggle somewhat on hills, snow or winter tiles.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x3\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		<designationCategory>VVE_Vehicles</designationCategory>
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_FamilyCar/Tier2_FamilyCar</texPath>
