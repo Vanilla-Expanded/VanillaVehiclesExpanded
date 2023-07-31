@@ -16,6 +16,10 @@
 	</Vehicles.VehicleDef>
 	
 	<Vehicles.VehicleDef Name = "VehiclePawn_Mechanical" ParentName = "VVE_VehiclePawn_Land" Abstract = "True">
+		<properties>
+			<customTerrainCosts DisallowTerrainWithTag="Water"/>
+		</properties>
+		
 		<soundOneShotsOnEvent Inherit = "False">
 			<li>
 				<key>PawnEntered</key>
