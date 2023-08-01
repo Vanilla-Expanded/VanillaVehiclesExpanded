@@ -38,7 +38,6 @@ namespace VanillaVehiclesExpanded
         public void StartMove()
         {
             StartTicking();
-            Log.Message("wasMoving: " + wasMoving + " - currentSpeed: " + currentSpeed);
             if (wasMoving is false)
             {
                 currentSpeed = 0;
@@ -80,6 +79,7 @@ namespace VanillaVehiclesExpanded
                             Slowdown(decelerateInPctOfPath);
                         }
                     }
+
                 }
                 else
                 {
@@ -93,6 +93,7 @@ namespace VanillaVehiclesExpanded
                     }
                 }
 
+                Log.Message("Current speed: " + currentSpeed);
                 prevPctOfPathPassed = curPctOfPathPassed;
                 if (isScreeching && screechingSustainer != null && !screechingSustainer.Ended)
                 {
@@ -105,28 +106,28 @@ namespace VanillaVehiclesExpanded
             }
         }
 
-        public bool ShouldStartDeceleration()
-        {
-            float remainingArrivalTicks = GetPathCost(true).cost;
-            var costToPayThisTick = Mathf.Max(1f, Vehicle.vPather.nextCellCostTotal / 450f);
-            Log.Message("remainingArrivalTicks: " + remainingArrivalTicks + " - costToPayThisTick: " + costToPayThisTick);
-            var speed = currentSpeed;
-            while (speed > MaxSpeedToDecelerateSmoothly)
-            {
-                float decelerationRate = AccelerationRate * DecelerationMultiplier;
-                float decelerationRateNeeded = (MaxSpeedToDecelerateSmoothly + speed) / remainingArrivalTicks;
-                decelerationRate = Mathf.Min(decelerationRate, decelerationRateNeeded); //Don't slow down more than necessary
-                speed -= decelerationRate;
-                remainingArrivalTicks--;
-            }
-
-            if (remainingArrivalTicks < 180)
-            {
-                Log.Message("remainingArrivalTicks: " + remainingArrivalTicks + " - speed: " + speed);
-                return false;
-            }
-            return false;
-        }
+        //public bool ShouldStartDeceleration()
+        //{
+        //    float remainingArrivalTicks = GetPathCost(true).cost;
+        //    var costToPayThisTick = Mathf.Max(1f, Vehicle.vPather.nextCellCostTotal / 450f);
+        //    Log.Message("remainingArrivalTicks: " + remainingArrivalTicks + " - costToPayThisTick: " + costToPayThisTick);
+        //    var speed = currentSpeed;
+        //    while (speed > MaxSpeedToDecelerateSmoothly)
+        //    {
+        //        float decelerationRate = AccelerationRate * DecelerationMultiplier;
+        //        float decelerationRateNeeded = (MaxSpeedToDecelerateSmoothly + speed) / remainingArrivalTicks;
+        //        decelerationRate = Mathf.Min(decelerationRate, decelerationRateNeeded); //Don't slow down more than necessary
+        //        speed -= decelerationRate;
+        //        remainingArrivalTicks--;
+        //    }
+        //
+        //    if (remainingArrivalTicks < 180)
+        //    {
+        //        Log.Message("remainingArrivalTicks: " + remainingArrivalTicks + " - speed: " + speed);
+        //        return false;
+        //    }
+        //    return false;
+        //}
 
         private void ResetValues()
         {
@@ -153,7 +154,6 @@ namespace VanillaVehiclesExpanded
 			{
                 //Stop immediately if path cost comes back 0
                 Vehicle.vPather.PatherFailed();
-                Log.Message("PatherFailed");
                 return;
 			}
 
@@ -173,7 +173,6 @@ namespace VanillaVehiclesExpanded
             if (handbrakeApplied is false && currentSpeed > MaxSpeedToDecelerateSmoothly 
                 && (stopImmediately || (slowdownMultiplier >= 2f && deceleratePct > 1f && Vehicle.vPather.curPath.NodesConsumedCount < 2)))
             {
-                Log.Message("Should screech");
                 isScreeching = true;
                 screechingSustainer = VVE_DefOf.VVE_TiresScreech.TrySpawnSustainer(SoundInfo.InMap(parent));
                 newSpeed /= slowdownMultiplier;
