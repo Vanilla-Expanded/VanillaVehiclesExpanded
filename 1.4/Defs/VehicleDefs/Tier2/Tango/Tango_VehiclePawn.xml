@@ -39,7 +39,7 @@
 			<MoveSpeed>6.4</MoveSpeed>
 			<CargoCapacity>260</CargoCapacity>
 			<RepairRate>0.3</RepairRate>
-			<AccelerationRate>0.03</AccelerationRate>
+			<AccelerationRate>0.06</AccelerationRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>

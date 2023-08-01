@@ -35,10 +35,13 @@ namespace VanillaVehiclesExpanded
             var comp = ___vehicle.GetCachedComp<CompVehicleMovementController>();
             if (comp != null)
             {
-                __result *= comp.currentSpeed / comp.StatMoveSpeed;
-                if (comp.curPaidPathCostTickChecked != Find.TickManager.TicksGame)
+                if (comp.currentSpeed > 0)
                 {
-                    comp.curPaidPathCost += __result;
+                    __result *= comp.currentSpeed / comp.StatMoveSpeed;
+                    if (comp.curPaidPathCostTickChecked != Find.TickManager.TicksGame)
+                    {
+                        comp.curPaidPathCost += __result;
+                    }
                 }
             }
         }
