@@ -37,7 +37,8 @@ namespace VanillaVehiclesExpanded
                     {
                         this.StartClosing();
                     }
-                }; if (this.compPower.PowerOn is false)
+                }; 
+                if (this.compPower.PowerOn is false)
                 {
                     closeButton.Disable("NoPower".Translate());
                 }
