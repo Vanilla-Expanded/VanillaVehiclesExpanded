@@ -82,13 +82,13 @@ namespace VanillaVehiclesExpanded
                 }
                 else
                 {
-                    if (curPctOfPathPassed <= 1f - decelerateInPctOfPath && curMovementMode != MovementMode.Decelerate)
+                    //if (curPctOfPathPassed <= 1f - decelerateInPctOfPath && curMovementMode != MovementMode.Decelerate)
+                    //{
+                    //    SpeedUp(moveSpeed);
+                    //}
+                    //else
                     {
-                        SpeedUp(moveSpeed);
-                    }
-                    else
-                    {
-                        if (curMovementMode != MovementMode.Decelerate && StillSpeedUp(GetPathCost(true).cost))
+                        if (curMovementMode != MovementMode.Decelerate && ShouldSpeedUp(GetPathCost(true).cost))
                         {
                             SpeedUp(moveSpeed);
                         }
@@ -117,7 +117,7 @@ namespace VanillaVehiclesExpanded
             }
         }
 
-        private bool StillSpeedUp(float remainingArrivalTicks)
+        private bool ShouldSpeedUp(float remainingArrivalTicks)
         {
             var tempSpeed = currentSpeed - MaxSpeedToDecelerateSmoothly;
             for (var i = 0; i < remainingArrivalTicks; i++)
@@ -129,7 +129,7 @@ namespace VanillaVehiclesExpanded
                     tempSpeed = newSpeed;
                 }
                 var slowdownMultiplier = tempSpeed / (AccelerationRate * DecelerationMultiplier) / (remainingArrivalTicks - i);
-                if (tempSpeed <= MaxSpeedToDecelerateSmoothly)
+                if (tempSpeed <= 0)
                 {
                     if (slowdownMultiplier >= 1.5f)
                     {
@@ -167,14 +167,7 @@ namespace VanillaVehiclesExpanded
         {
             //ShouldStartDeceleration();
             Log.Message("Slowdown");
-            float remainingArrivalTicks = GetPathCost(true).cost;
-            if (remainingArrivalTicks == 0)
-			{
-                //Stop immediately if path cost comes back 0
-                Vehicle.vPather.PatherFailed();
-                return;
-			}
-
+            float remainingArrivalTicks = GetPathCost(true).cost + 30;
             float decelerationRate = AccelerationRate * DecelerationMultiplier;
             //float decelerationRateNeeded = (MaxSpeedToDecelerateSmoothly + currentSpeed) / remainingArrivalTicks;
             //decelerationRate = Mathf.Min(decelerationRate, decelerationRateNeeded); //Don't slow down more than necessary
