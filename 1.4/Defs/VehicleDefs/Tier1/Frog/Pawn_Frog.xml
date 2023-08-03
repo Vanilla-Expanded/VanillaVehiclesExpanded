@@ -23,8 +23,6 @@
 
 		<buildDef>VVE_Frog_Blueprint</buildDef>
 
-		<canCaravan LockSetting="True">false</canCaravan>
-		
 		<size>(1,1)</size>
 		<uiIconScale>0.85</uiIconScale>
 		

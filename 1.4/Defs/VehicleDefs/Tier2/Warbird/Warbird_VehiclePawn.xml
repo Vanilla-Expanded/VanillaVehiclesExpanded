@@ -22,7 +22,6 @@
 		
 		<size>(5, 5)</size>
 		
-		<canCaravan LockSetting="True">false</canCaravan>
 		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Transport</vehicleCategory>
 		<techLevel>Industrial</techLevel>
