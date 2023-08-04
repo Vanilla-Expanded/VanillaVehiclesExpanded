@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <ThingCategoryDef>
+    <defName>VVE_CarParts</defName>
+    <label>car parts</label>
+    <parent>Manufactured</parent>
+    <iconPath>UI/Icons/ThingCategories/CarParts</iconPath>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+  </ThingCategoryDef>
+  
   <ThingDef Name="VVE_CarPartBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
@@ -28,7 +36,7 @@
 	  <Beauty>-4</Beauty>
     </statBases>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>VVE_CarParts</li>
     </thingCategories>
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
