@@ -19,8 +19,6 @@
 		<nameable>true</nameable>
 		<buildDef>VVE_Mosquito_Blueprint</buildDef>
 
-		<canCaravan LockSetting = "True">false</canCaravan>
-		
 		<size>(2,5)</size>
 		
 		<vehicleMovementPermissions LockSetting = "True">NotAllowed</vehicleMovementPermissions>

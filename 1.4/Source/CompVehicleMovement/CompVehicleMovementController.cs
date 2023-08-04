@@ -57,16 +57,15 @@ namespace VanillaVehiclesExpanded
             if (wasMoving && Vehicle.vPather.curPath != null)
             {
                 float moveSpeed = StatMoveSpeed;
-                float totalCost = GetPathCost(false).cost;
-                float decelerateInPctOfPath = moveSpeed / (AccelerationRate * DecelerationMultiplier) / totalCost;
-                curPctOfPathPassed = curPaidPathCost / totalCost;
+                float totalPathCost = GetPathCost(false).cost;
                 float remainingArrivalTicks = GetPathCost(true).cost;
-
+                float decelerateInPctOfPath = moveSpeed / (AccelerationRate * DecelerationMultiplier) / totalPathCost;
+                curPctOfPathPassed = curPaidPathCost / totalPathCost;
                 if (decelerateInPctOfPath > 1f)
                 {
                     if (prevPctOfPathPassed > curPctOfPathPassed)
                     {
-                        Slowdown(decelerateInPctOfPath);
+                        Slowdown(remainingArrivalTicks, decelerateInPctOfPath);
                     }
                     else
                     {
@@ -76,38 +75,24 @@ namespace VanillaVehiclesExpanded
                         }
                         else
                         {
-                            Slowdown(decelerateInPctOfPath);
+                            Slowdown(remainingArrivalTicks, decelerateInPctOfPath);
                         }
                     }
                 }
                 else
                 {
-                    //if (curPctOfPathPassed <= 1f - decelerateInPctOfPath && curMovementMode != MovementMode.Decelerate)
-                    //{
-                    //    SpeedUp(moveSpeed);
-                    //}
-                    //else
+                    if (curMovementMode != MovementMode.Decelerate && ShouldSpeedUp(remainingArrivalTicks))
                     {
-                        if (curMovementMode != MovementMode.Decelerate && ShouldSpeedUp(GetPathCost(true).cost))
-                        {
-                            SpeedUp(moveSpeed);
-                        }
-                        else
-                        {
-                            Slowdown(decelerateInPctOfPath);
-                        }
+                        SpeedUp(moveSpeed);
+                    }
+                    else
+                    {
+                        Slowdown(remainingArrivalTicks, decelerateInPctOfPath);
                     }
                 }
-                float slowdownMultiplier = currentSpeed / (AccelerationRate * DecelerationMultiplier) / GetPathCost(true).cost;
-
-                Log.Message("Current speed: " + currentSpeed + " - curPctOfPathPassed: " + curPctOfPathPassed 
-                    + " - decelerateInPctOfPath: " + decelerateInPctOfPath 
-                    + " - remainingArrivalTicks: " + remainingArrivalTicks + " - slowdownMultiplier: " + slowdownMultiplier);
-                Log.ResetMessageCount();
                 prevPctOfPathPassed = curPctOfPathPassed;
                 if (isScreeching && screechingSustainer != null && !screechingSustainer.Ended)
                 {
-                    Log.Message("Maintaining screeching");
                     screechingSustainer.Maintain();
                 }
             }
@@ -133,14 +118,11 @@ namespace VanillaVehiclesExpanded
                 {
                     if (slowdownMultiplier >= 1.5f)
                     {
-                        Log.Message("Shouldn't speed up: " + slowdownMultiplier);
                         return false;
                     }
-                    Log.Message("Still speed up: " + slowdownMultiplier);
                     return true;
                 }
             }
-            Log.Message("Shouldn't speed up: " + tempSpeed);
             return false;
         }
 
@@ -158,20 +140,14 @@ namespace VanillaVehiclesExpanded
                 if (screechingSustainer != null && !screechingSustainer.Ended)
                 {
                     screechingSustainer.End();
-                    Log.Message("Ending " + screechingSustainer);
                 }
             }
         }
 
-        public void Slowdown(float deceleratePct, bool stopImmediately = false)
+        public void Slowdown(float remainingArrivalTicks, float deceleratePct, bool stopImmediately = false)
         {
-            //ShouldStartDeceleration();
-            Log.Message("Slowdown");
-            float remainingArrivalTicks = GetPathCost(true).cost + 30;
+            remainingArrivalTicks += 30;
             float decelerationRate = AccelerationRate * DecelerationMultiplier;
-            //float decelerationRateNeeded = (MaxSpeedToDecelerateSmoothly + currentSpeed) / remainingArrivalTicks;
-            //decelerationRate = Mathf.Min(decelerationRate, decelerationRateNeeded); //Don't slow down more than necessary
-
             float newSpeed = currentSpeed - decelerationRate;
             float slowdownMultiplier = currentSpeed / (AccelerationRate * DecelerationMultiplier) / remainingArrivalTicks;
             bool shouldApplyHandbrake = handbrakeApplied is false && (stopImmediately
@@ -181,19 +157,8 @@ namespace VanillaVehiclesExpanded
 
             if (shouldApplyHandbrake)
             {   
-                Log.Message("remainingArrivalTicks: " + remainingArrivalTicks);
-                Log.Message("handbrakeApplied: " + handbrakeApplied);
-                Log.Message("slowdownMultiplier: " + slowdownMultiplier);
-                Log.Message("currentSpeed: " + currentSpeed);
-                Log.Message("MaxSpeedToDecelerateSmoothly: " + MaxSpeedToDecelerateSmoothly);
-                Log.Message("stopImmediately: " + stopImmediately);
-                Log.Message("deceleratePct: " + deceleratePct);
-                Log.Message("shouldApplyHandbrake: " + shouldApplyHandbrake);
-                Log.Message("Vehicle.vPather.curPath.NodesConsumedCount: " + Vehicle.vPather.curPath.NodesConsumedCount);
-
                 isScreeching = true;
                 screechingSustainer = VVE_DefOf.VVE_TiresScreech.TrySpawnSustainer(SoundInfo.InMap(parent));
-                Log.Message("Spawning " + screechingSustainer);
                 newSpeed /= slowdownMultiplier;
                 Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
                 float damageAmount = currentSpeed - (AccelerationRate * 10);
@@ -224,7 +189,6 @@ namespace VanillaVehiclesExpanded
 
         private void SpeedUp(float moveSpeed)
         {
-            Log.Message("SpeedUp");
             if (moveSpeed > currentSpeed)
             {
                 curMovementMode = MovementMode.Accelerate;
@@ -363,7 +327,7 @@ namespace VanillaVehiclesExpanded
                 float totalCost = GetPathCost(false).cost;
                 float decelerateMultiplier = 4f;
                 float decelerateInPctOfPath = StatMoveSpeed / (AccelerationRate * decelerateMultiplier) / totalCost;
-                Slowdown(decelerateInPctOfPath, stopImmediately: true);
+                Slowdown(GetPathCost(true).cost, decelerateInPctOfPath, stopImmediately: true);
             }
         }
 

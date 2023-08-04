@@ -75,6 +75,8 @@
 		<passability>Standable</passability>
 		<designationCategory IsNull="True"/>
 		<researchPrerequisites IsNull="True"/>
+		<blockLight>false</blockLight>
+		<fillPercent>0</fillPercent>
 	</ThingDef>
 
 	<ThingDef ParentName="VVE_GarageDoorBase" Name="VVE_GarageDoorLargeBase">
@@ -98,6 +100,8 @@
 		<passability>Standable</passability>
 		<designationCategory IsNull="True"/>
 		<researchPrerequisites IsNull="True"/>
+		<blockLight>false</blockLight>
+		<fillPercent>0</fillPercent>
 	</ThingDef>
 	
 	<ThingDef ParentName="VVE_GarageDoorAbstract" Name="VVE_GarageAutoDoorBase">
@@ -145,6 +149,8 @@
 		<passability>Standable</passability>
 		<designationCategory IsNull="True"/>
 		<researchPrerequisites IsNull="True"/>
+		<blockLight>false</blockLight>
+		<fillPercent>0</fillPercent>
 	</ThingDef>
 
 	<ThingDef ParentName="VVE_GarageAutoDoorBase" Name="VVE_GarageAutoDoorLargeBase">
@@ -171,6 +177,8 @@
 		<passability>Standable</passability>
 		<designationCategory IsNull="True"/>
 		<researchPrerequisites IsNull="True"/>
+		<blockLight>false</blockLight>
+		<fillPercent>0</fillPercent>
 	</ThingDef>
 	
 </Defs>
