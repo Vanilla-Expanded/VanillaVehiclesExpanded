@@ -158,7 +158,7 @@ namespace VanillaVehiclesExpanded
             if (shouldApplyHandbrake)
             {   
                 isScreeching = true;
-                screechingSustainer = VVE_DefOf.VVE_TiresScreech.TrySpawnSustainer(SoundInfo.InMap(parent));
+                screechingSustainer = VVE_DefOf.VVE_TiresScreech.TrySpawnSustainer(SoundInfo.InMap(parent, MaintenanceType.PerTick));
                 newSpeed /= slowdownMultiplier;
                 Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
                 float damageAmount = currentSpeed - (AccelerationRate * 10);
