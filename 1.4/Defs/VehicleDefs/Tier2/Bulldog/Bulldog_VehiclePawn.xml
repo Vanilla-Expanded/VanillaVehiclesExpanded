@@ -30,8 +30,9 @@
 		<statBases>
 			<ArmorRating_Blunt>0.48</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
 			<Flammability>0.5</Flammability>
-			<MarketValue>2240</MarketValue>
+			<MarketValue>3700</MarketValue>
 		</statBases>
 		
 		<vehicleStats>

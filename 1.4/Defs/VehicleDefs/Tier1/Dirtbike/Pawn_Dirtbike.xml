@@ -33,6 +33,7 @@
 		<statBases>
 			<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.14</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
 			<Flammability>0.5</Flammability>
 			<MarketValue>875</MarketValue>
 		</statBases>
