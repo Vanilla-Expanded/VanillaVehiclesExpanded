@@ -11,8 +11,8 @@
       <li>BiofuelRefining</li>
     </prerequisites>
     <researchViewX>0.00</researchViewX>
-    <researchViewY>4.65</researchViewY>
-	<tab>VanillaExpanded</tab>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
   </ResearchProjectDef>
   
   <ResearchProjectDef>
@@ -26,8 +26,8 @@
 	  <li>Fabrication</li>
     </prerequisites>
     <researchViewX>1.00</researchViewX>
-    <researchViewY>4.65</researchViewY>
-	<tab>VanillaExpanded</tab>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
   </ResearchProjectDef>
   
   <ResearchProjectDef>
@@ -41,8 +41,8 @@
 	  <li>Fabrication</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>4.65</researchViewY>
-	<tab>VanillaExpanded</tab>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
   </ResearchProjectDef>
   
   <ResearchProjectDef>
@@ -56,8 +56,8 @@
 	  <li>Fabrication</li>
     </prerequisites>
     <researchViewX>3.00</researchViewX>
-    <researchViewY>4.65</researchViewY>
-	<tab>VanillaExpanded</tab>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
   </ResearchProjectDef>
 
 </Defs>
