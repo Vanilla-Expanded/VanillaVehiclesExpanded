@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Bunsen_Blueprint</defName>
+		<label>Bunsen</label>
+		<description>text.todo\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VVE_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_FlamerTank/Tier1_FlamerTank</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>825</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(2,4)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>1</VVE_CarAlternator>
+			<VVE_CarExhaust>4</VVE_CarExhaust>
+			<VVE_CarSuspension>8</VVE_CarSuspension>
+			<VVE_CarWheel>8</VVE_CarWheel>
+			<Steel>300</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>VVE_Bunsen</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>
