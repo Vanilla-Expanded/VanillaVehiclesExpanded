@@ -74,7 +74,7 @@
 	
 	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>VVE_Bullet_Bunsen</defName>
-		<label>inferno spewer shot</label>
+		<label>spew</label>
 		<thingClass>VFECore.FlamethrowProjectile</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/Proj_Bunsen</texPath>
