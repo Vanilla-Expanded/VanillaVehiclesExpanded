@@ -20,7 +20,6 @@
 		<autoSnapTargeting>false</autoSnapTargeting>
 		<rotationSpeed>3.6</rotationSpeed>
 		
-		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
 		<projectileOffset>3</projectileOffset>
 		<hitFlags>IntendedTarget</hitFlags>
 		<maxRange>14.9</maxRange>
