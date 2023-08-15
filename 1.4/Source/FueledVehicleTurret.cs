@@ -58,8 +58,8 @@ namespace VanillaVehiclesExpanded
             this.vehicle.CompFueledTravel.ConsumeFuel(fuelToConsume);
             this.loadedAmmo = this.vehicle.CompFueledTravel.Props.fuelType;
             this.shellCount += newAmmo;
-            Log.Message("this.vehicle.CompFueledTravel.Fuel: " + this.vehicle.CompFueledTravel.Fuel 
-                + " - fuelToConsume: " + fuelToConsume + " - newAmmo: " + newAmmo + " - " + this.shellCount);
+            //Log.Message("this.vehicle.CompFueledTravel.Fuel: " + this.vehicle.CompFueledTravel.Fuel 
+            //    + " - fuelToConsume: " + fuelToConsume + " - newAmmo: " + newAmmo + " - " + this.shellCount);
             EventRegistry[VehicleTurretEventDefOf.Reload].ExecuteEvents(); 
             if (turretDef.reloadSound != null)
             {
