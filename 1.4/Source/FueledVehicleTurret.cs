@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SmashTools;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Vehicles;
 using Verse;
@@ -29,7 +31,7 @@ namespace VanillaVehiclesExpanded
         {
             if (loadedAmmo == null || shellCount < turretDef.magazineCapacity)
             {
-                var newAmmo = (int)(this.vehicle.CompFueledTravel.Fuel * (float)turretDef.chargePerAmmoCount);
+                var newAmmo = (int)(this.vehicle.CompFueledTravel.Fuel / (float)turretDef.chargePerAmmoCount);
                 newAmmo = Mathf.Min(turretDef.magazineCapacity - this.shellCount, newAmmo);
                 ReloadInternal(newAmmo);
             }
@@ -43,7 +45,7 @@ namespace VanillaVehiclesExpanded
 
         public override bool AutoReloadCannon()
         {
-            var newAmmo = (int)(this.vehicle.CompFueledTravel.Fuel * (float)turretDef.chargePerAmmoCount);
+            var newAmmo = (int)(this.vehicle.CompFueledTravel.Fuel / (float)turretDef.chargePerAmmoCount);
             newAmmo = Mathf.Min(turretDef.magazineCapacity - this.shellCount, newAmmo);
             return ReloadInternal(newAmmo);
         }
@@ -54,12 +56,10 @@ namespace VanillaVehiclesExpanded
             {
                 return false;
             }
-            var fuelToConsume = newAmmo / (float)turretDef.chargePerAmmoCount;
+            var fuelToConsume = newAmmo * (float)turretDef.chargePerAmmoCount;
             this.vehicle.CompFueledTravel.ConsumeFuel(fuelToConsume);
             this.loadedAmmo = this.vehicle.CompFueledTravel.Props.fuelType;
             this.shellCount += newAmmo;
-            //Log.Message("this.vehicle.CompFueledTravel.Fuel: " + this.vehicle.CompFueledTravel.Fuel 
-            //    + " - fuelToConsume: " + fuelToConsume + " - newAmmo: " + newAmmo + " - " + this.shellCount);
             EventRegistry[VehicleTurretEventDefOf.Reload].ExecuteEvents(); 
             if (turretDef.reloadSound != null)
             {
@@ -72,18 +72,19 @@ namespace VanillaVehiclesExpanded
         {
             if (shellCount > 0)
             {
-                this.vehicle.CompFueledTravel.Refuel(shellCount / (float)turretDef.chargePerAmmoCount);
+                this.vehicle.CompFueledTravel.Refuel(shellCount * (float)turretDef.chargePerAmmoCount);
                 shellCount = 0;
                 this.loadedAmmo = null;
                 ActivateTimer(true);
             }
         }
 
+
         public override IEnumerable<SubGizmo> SubGizmos
         {
             get
             {
-                yield return SubGizmo_RemoveAmmo(this);
+                yield return SubGizmo_AmmoToFuel(this);
                 yield return SubGizmo_ReloadFromFuel(this);
                 yield return SubGizmo_FireMode(this);
                 if (autoTargeting)
@@ -91,6 +92,54 @@ namespace VanillaVehiclesExpanded
                     yield return SubGizmo_AutoTarget(this);
                 }
             }
+        }
+
+        public static SubGizmo SubGizmo_AmmoToFuel(VehicleTurret turret)
+        {
+            return new SubGizmo
+            {
+                drawGizmo = delegate (Rect rect)
+                {
+                    //Widgets.DrawTextureFitted(rect, BGTex, 1);
+                    if (turret.loadedAmmo != null)
+                    {
+                        GUIState.Push();
+                        {
+                            GUI.color = new Color(GUI.color.r, GUI.color.g, GUI.color.b, turret.CannonIconAlphaTicked); //Only modify alpha
+                            Widgets.DrawTextureFitted(rect, turret.loadedAmmo.uiIcon, 1);
+
+                            GUIState.Reset();
+
+                            Rect ammoCountRect = new Rect(rect);
+                            string ammoCount = turret.vehicle.CompFueledTravel.Fuel.ToString("F0");
+                            ammoCountRect.y += ammoCountRect.height / 2;
+                            ammoCountRect.x += ammoCountRect.width - Text.CalcSize(ammoCount).x;
+                            Widgets.Label(ammoCountRect, ammoCount);
+                        }
+                        GUIState.Pop();
+                    }
+                    else if (turret.turretDef.genericAmmo && turret.turretDef.ammunition.AllowedDefCount > 0)
+                    {
+                        Widgets.DrawTextureFitted(rect, turret.turretDef.ammunition.AllowedThingDefs.FirstOrDefault().uiIcon, 1);
+
+                        Rect ammoCountRect = new Rect(rect);
+                        string ammoCount = turret.vehicle.CompFueledTravel.Fuel.ToString("F0");
+                        ammoCountRect.y += ammoCountRect.height / 2;
+                        ammoCountRect.x += ammoCountRect.width - Text.CalcSize(ammoCount).x;
+                        Widgets.Label(ammoCountRect, ammoCount);
+                    }
+                },
+                canClick = delegate ()
+                {
+                    return turret.shellCount > 0;
+                },
+                onClick = delegate ()
+                {
+                    turret.TryRemoveShell();
+                    SoundDefOf.Artillery_ShellLoaded.PlayOneShot(new TargetInfo(turret.vehicle.Position, turret.vehicle.Map, false));
+                },
+                tooltip = turret.loadedAmmo?.LabelCap
+            };
         }
 
         public static SubGizmo SubGizmo_ReloadFromFuel(VehicleTurret turret)
