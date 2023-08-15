@@ -27,18 +27,6 @@
 		
 		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
 		
-		<recoil>
-			<distanceTotal>0.45</distanceTotal>
-			<distancePerTick>0.15</distancePerTick>
-			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
-		</recoil>
-		
-		<vehicleRecoil>
-			<distanceTotal>0.1</distanceTotal>
-			<distancePerTick>0.05</distancePerTick>
-			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
-		</vehicleRecoil>
-		
 		<fireModes>
 			<li>
 				<shotsPerBurst>1</shotsPerBurst>
