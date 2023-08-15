@@ -350,7 +350,7 @@
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleTurrets">
 				<turrets>
-					<li>
+					<li Class="VanillaVehiclesExpanded.FueledVehicleTurret">
 						<turretDef>VVE_Bunsen_MainTurret</turretDef>
 						
 						<renderProperties>

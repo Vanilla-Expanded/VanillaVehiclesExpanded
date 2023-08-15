@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FueledVehicleTurret.cs" />
     <Compile Include="Garage\Blueprint_GarageDoor.cs" />
     <Compile Include="CompVehicleMovement\CompProperties_VehicleMovementController.cs" />
     <Compile Include="CompVehicleMovement\CompVehicleMovementController.cs" />
