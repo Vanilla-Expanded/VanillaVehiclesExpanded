@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefExtensions\StatExtension.cs" />
+    <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="FueledVehicleTurret.cs" />
+    <Compile Include="GameComponents\GameComponent_VehicleUseTracker.cs" />
     <Compile Include="Garage\Blueprint_GarageDoor.cs" />
     <Compile Include="CompVehicleMovement\CompProperties_VehicleMovementController.cs" />
     <Compile Include="CompVehicleMovement\CompVehicleMovementController.cs" />
@@ -62,8 +64,18 @@
     <Compile Include="Garage\JobDriver_GarageControlBase.cs" />
     <Compile Include="Harmony\Phil_Stats_Patch.cs" />
     <Compile Include="Harmony\Startup.cs" />
+    <Compile Include="PreceptComps\PreceptComp_SailingRequired.cs" />
+    <Compile Include="PreceptComps\PreceptComp_FlyingRequired.cs" />
+    <Compile Include="PreceptComps\PreceptComp_DrivingRequired.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Garage\WorkGiver_ManageGarage.cs" />
+    <Compile Include="StaticCollections\StaticCollectionsClass.cs" />
+    <Compile Include="StatParts\StatPart_Acceleration_Precepts.cs" />
+    <Compile Include="StatParts\StatPart_VehicleRepairs_Precepts.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Sailing_Required.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Flying_Required.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Driving_Required.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_NeedRoomSize_Horrible.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
