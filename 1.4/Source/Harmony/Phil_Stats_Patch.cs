@@ -69,7 +69,7 @@ namespace VanillaVehiclesExpanded
                     position.width = 384f;
                     position.height = 576f;
                     position.x = rect.width * 0.75f - position.width / 2f + 18f;
-                    position.y = rect.center.y - position.height / 2f + 200;
+                    position.y = rect.center.y - position.height / 2f + 130;
                     GUI.DrawTexture(position, texture, ScaleMode.ScaleToFit, true);
 
 
