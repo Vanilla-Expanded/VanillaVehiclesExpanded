@@ -21,7 +21,7 @@
 		<defName>VVE_Acceleration_SundayDriver</defName>
 		<issue>VVE_Acceleration</issue>
 		<label>sunday driver</label>
-		<description>A measured pace keeps the world in balance and grants us time to savor the journey.</description>
+		<description>A measured pace keeps the world in balance and grants us time to savor the journey.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - All vehicles have World Speed Multiplier: x0.8</description>
 		<impact>Medium</impact>
 		<displayOrderInIssue>30</displayOrderInIssue>
 		
@@ -30,7 +30,7 @@
 		<defName>VVE_Acceleration_High</defName>
 		<issue>VVE_Acceleration</issue>
 		<label>high</label>
-		<description>With swift acceleration, we move forward in leaps, seizing the day with passion.</description>
+		<description>With swift acceleration, we move forward in leaps, seizing the day with passion.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - All vehicles have World Speed Multiplier: x1.25</description>
 		<impact>High</impact>
 		<displayOrderInIssue>20</displayOrderInIssue>
 		

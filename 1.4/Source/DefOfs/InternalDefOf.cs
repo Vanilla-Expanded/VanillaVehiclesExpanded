@@ -30,16 +30,23 @@ namespace VanillaVehiclesExpanded
 
         [MayRequireIdeology]
         public static PreceptDef VVE_Acceleration_SundayDriver;
-
         [MayRequireIdeology]
         public static PreceptDef VVE_Acceleration_High;
 
         [MayRequireIdeology]
         public static PreceptDef VVE_VehicleRepairs_Slow;
-
         [MayRequireIdeology]
         public static PreceptDef VVE_VehicleRepairs_Fast;
 
+        [MayRequireIdeology]
+        public static PreceptDef VVE_FuelEfficiency_Inefficient;
+        [MayRequireIdeology]
+        public static PreceptDef VVE_FuelEfficiency_Efficient;
 
+        [MayRequireIdeology]
+        public static PreceptDef VVE_ImpactDamage_High;
+
+        [MayRequireIdeology]
+        public static PreceptDef VVE_MaxSpeed_Increased;
     }
 }
