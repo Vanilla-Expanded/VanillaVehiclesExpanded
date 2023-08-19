@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IssueDef>
+		<defName>VVE_VehicleRepairs</defName>
+		<label>vehicle repairs</label>
+		<iconPath>UI/Issues/VVE_VehicleRepairs</iconPath>
+	</IssueDef>
+
+	<PreceptDef>
+		<defName>VVE_VehicleRepairs_Standard</defName>
+		<issue>VVE_VehicleRepairs</issue>
+		<label>standard</label>
+		<description>Our approach to repairs is balanced, ensuring vehicles are restored to their rightful state.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>35</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<classic>true</classic>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_VehicleRepairs_Slow</defName>
+		<issue>VVE_VehicleRepairs</issue>
+		<label>slow</label>
+		<description>Repairs are a careful ritual, not to be rushed, but to be performed with reverence.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_VehicleRepairs_Fast</defName>
+		<issue>VVE_VehicleRepairs</issue>
+		<label>fast</label>
+		<description>We mend with urgency, understanding the vital role our vehicles play in our lives.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - Adds +1 to Repair Job Limitations on a vehicle (as long as "Multiple pawns per job" is active in Mod settings).</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>20</displayOrderInIssue>
+		
+	</PreceptDef>
+	
+</Defs>

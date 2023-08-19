@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
     <name>Vanilla Vehicles Expanded</name>
-    <author>Oskar Potocki, xrushha, Smash Phil, Taranchuk, Reann Shepard</author>
+    <author>Oskar Potocki, xrushha, Smash Phil, Taranchuk, Reann Shepard, Sarg</author>
     <url></url>
     <description>Vanilla Vehicles Expanded is a long awaited mod utilising Smash Phil’s Vehicles framework. The main purpose of the mod is to add realistic and engaging mechanics surrounding vehicles of all kinds into the game. Not just the cars, but boats and airplanes too, this mod comes packed full of content and new production chains to allow players to dive deep into the vehicle production.
 	
@@ -25,11 +25,18 @@ This mod utilises the paint job system added in Vehicles framework, allowing you
 			<downloadUrl>https://github.com/SmashPhil/Vehicles/releases/latest</downloadUrl>
 			<steamWorkshopUrl/>
 		</li>
+		<li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
+		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
 		<li>brrainz.harmony</li>
 		<li>SmashPhil.VehicleFramework</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
 </ModMetaData>

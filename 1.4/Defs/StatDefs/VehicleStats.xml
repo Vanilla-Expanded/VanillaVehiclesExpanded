@@ -18,6 +18,10 @@
 			<roundDecimalPlaces>1</roundDecimalPlaces>
 			<increment>0.1</increment>
 		</modSettingsInfo>
+		<parts>
+			<li Class="VanillaVehiclesExpanded.StatPart_AccelerationPrecept_SundayDriver" />
+			<li Class="VanillaVehiclesExpanded.StatPart_AccelerationPrecept_High" />
+		</parts>
 	</Vehicles.VehicleStatDef>
 	
 </Defs>

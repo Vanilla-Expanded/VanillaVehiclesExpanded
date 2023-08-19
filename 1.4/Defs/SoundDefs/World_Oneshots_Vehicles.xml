@@ -110,6 +110,22 @@
     </subSounds>
   </SoundDef>
   
+  <SoundDef>
+    <defName>VVE_Shot_BunsenCannonSound</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>BunsenCannon_Shot</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>40~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
   <!-- T3 -->
   
   <SoundDef>

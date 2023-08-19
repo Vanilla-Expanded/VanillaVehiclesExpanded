@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>VVE_Bunsen_MainTurret</defName>
+		<label>bunsen flamethrower</label>
+		<description>A lightly-armored medium range flamethrower turret usually mounted on bunsen tanks. Takes fuel directly from the chemtank of the vehicle. Quite devastating against infantry, bunsen flamethrower struggles against armored targets.</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>VVE_Shot_BunsenCannonSound</shotSound>
+		<!-- <reloadSound></reloadSound> -->
+		
+		<projectile>VVE_Bullet_Bunsen</projectile>
+		<reloadTimer>8.4</reloadTimer>
+		<warmUpTimer>1.25</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>3.6</rotationSpeed>
+		
+		<projectileOffset>3</projectileOffset>
+		<hitFlags>IntendedTarget</hitFlags>
+		<maxRange>14.9</maxRange>
+		<minRange>3.9</minRange>
+		
+		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenBursts>1</ticksBetweenBursts>
+				<spreadRadius>2.9</spreadRadius>
+				<label>Fire Spew</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_FlamerTank/Tier1_FlamerTank_CannonTop</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3, 3)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+		
+		<!-- <motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<animationType>Reset</animationType>
+			</li>
+		</motes> -->
+	</Vehicles.VehicleTurretDef>
+	
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>VVE_Bullet_Bunsen</defName>
+		<label>spew</label>
+		<thingClass>VFECore.FlamethrowProjectile</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Proj_Bunsen</texPath>
+			<texPathFadeOut>Things/Projectile/Proj_BunsenFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<speed>45</speed>
+			<damageAmountBase>2</damageAmountBase>
+		</projectile>
+
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>0.65</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>2</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
+</Defs>
