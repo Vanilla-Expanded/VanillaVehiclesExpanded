@@ -196,6 +196,7 @@
 					<maxFlightNodes>1</maxFlightNodes>
 					<launchProperties>
 						<maxTicks>800</maxTicks>
+						<renderShadow>false</renderShadow>
 						
 						<events>
 							<li>
@@ -312,7 +313,8 @@
 							<li>
 								<def>RocketSmoke</def>
 								<angle>145~215</angle>
-								<position>DrawPos</position>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
 								<runOutOfStep>false</runOutOfStep>
 								<originOffset>(0, 0, -0.5)</originOffset>
 								
@@ -354,7 +356,8 @@
 							<li>
 								<def>RocketExhaust</def>
 								<angle>175~185</angle>
-								<position>DrawPos</position>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
 								<runOutOfStep>false</runOutOfStep>
 								<originOffset>(0, 0, -0.5)</originOffset>
 								
@@ -425,6 +428,7 @@
 					
 					<landingProperties>
 						<maxTicks>1300</maxTicks>
+						<renderShadow>false</renderShadow>
 						
 						<events>
 							<li>
@@ -537,7 +541,8 @@
 							<li>
 								<def>RocketExhaust_Short</def>
 								<angle>175~185</angle>
-								<position>DrawPos</position>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
 								<runOutOfStep>false</runOutOfStep>
 								<originOffset>(0, 0, -2.5)</originOffset>
 								<!--
