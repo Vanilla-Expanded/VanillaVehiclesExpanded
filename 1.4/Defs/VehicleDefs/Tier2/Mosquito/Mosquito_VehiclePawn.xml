@@ -356,6 +356,8 @@
 						<maxTicksPropeller>1200</maxTicksPropeller>
 						<forcedRotation>East</forcedRotation>
 						
+						<lockShadowZ>true</lockShadowZ>
+						
 						<rotationCurve Class="SmashTools.BezierCurve">
 							<points>
 								<li>(0, 0)</li>
@@ -430,6 +432,15 @@
 								<li>(1, 15)</li>
 							</points>
 						</zPositionVerticalCurve>
+						
+						<shadowAlphaPropellerCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.15, 0)</li>
+								<li>(0.2, 0)</li>
+								<li>(0.3, 1)</li>
+							</points>
+						</shadowAlphaPropellerCurve>
 						
 						<fleckDataVertical>
 							<def>DustPuff</def>
@@ -547,6 +558,8 @@
 						<maxTicksPropeller>900</maxTicksPropeller>
 						<forcedRotation>East</forcedRotation>
 						
+						<lockShadowZ>true</lockShadowZ>
+						
 						<angularVelocityPropeller Class="SmashTools.BezierCurve">
 							<points>
 								<li>(0, 59)</li>
@@ -622,6 +635,15 @@
 								<li>(1, -2.11)</li>
 							</points>
 						</zPositionVerticalCurve>
+						
+						<shadowAlphaPropellerCurve Class="SmashTools.BezierCurve">
+							<points>
+								<li>(0.7, 1)</li>
+								<li>(0.85, 1)</li>
+								<li>(0.9, 1)</li>
+								<li>(1, 0)</li>
+							</points>
+						</shadowAlphaPropellerCurve>
 						
 						<fleckDataVertical>
 							<def>DustPuff</def>

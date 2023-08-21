@@ -387,6 +387,8 @@
 							<flipHorizontal>West</flipHorizontal>
 							<flipRotation>West</flipRotation>
 							
+							<lockShadowZ>true</lockShadowZ>
+							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-2, 30)</width>
 								<height>(-3, 3)</height>
@@ -424,11 +426,23 @@
 									<li>(0.95, 75)</li>
 								</points>
 							</zPositionCurve>
+							
+							<shadowAlphaCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 0)</li>
+									<li>(0.15, 0)</li>
+									<li>(0.2, 0)</li>
+									<li>(0.25, 1)</li>
+								</points>
+							</shadowAlphaCurve>
 						</horizontal>
+						
 						<vertical>
 							<maxTicks>600</maxTicks>
 							
 							<flipVertical>South</flipVertical>
+							
+							<lockShadowZ>true</lockShadowZ>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-3, 3)</width>
@@ -448,14 +462,26 @@
 									<li>(1, 250)</li>
 								</points>
 							</zPositionCurve>
+							
+							<shadowAlphaCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0, 0)</li>
+									<li>(0.15, 0)</li>
+									<li>(0.2, 0)</li>
+									<li>(0.25, 1)</li>
+								</points>
+							</shadowAlphaCurve>
 						</vertical>
 					</launchProperties>
+					
 					<landingProperties>
 						<horizontal>
 							<maxTicks>600</maxTicks>
 							
 							<flipHorizontal>West</flipHorizontal>
 							<flipRotation>West</flipRotation>
+							
+							<lockShadowZ>true</lockShadowZ>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-30, 2)</width>
@@ -493,11 +519,23 @@
 									<li>(0.6, 0)</li>
 								</points>
 							</zPositionCurve>
+							
+							<shadowAlphaCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0.8, 1)</li>
+									<li>(0.85, 1)</li>
+									<li>(0.9, 1)</li>
+									<li>(1, 0)</li>
+								</points>
+							</shadowAlphaCurve>
 						</horizontal>
+						
 						<vertical>
 							<maxTicks>600</maxTicks>
 							
 							<flipVertical>South</flipVertical>
+							
+							<lockShadowZ>true</lockShadowZ>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
 								<width>(-3, 3)</width>
@@ -517,6 +555,15 @@
 									<li>(1, 0)</li>
 								</points>
 							</zPositionCurve>
+							
+							<shadowAlphaCurve Class="SmashTools.BezierCurve">
+								<points>
+									<li>(0.8, 1)</li>
+									<li>(0.85, 1)</li>
+									<li>(0.9, 1)</li>
+									<li>(1, 0)</li>
+								</points>
+							</shadowAlphaCurve>
 						</vertical>
 					</landingProperties>
 				</launchProtocol>
