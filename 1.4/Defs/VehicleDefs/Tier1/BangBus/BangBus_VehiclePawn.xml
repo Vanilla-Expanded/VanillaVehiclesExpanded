@@ -283,8 +283,8 @@
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.62</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.28</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.62</ArmorRating_Sharp>
 				</armor>
 				
 				<hitbox>
@@ -298,8 +298,8 @@
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.62</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.28</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.62</ArmorRating_Sharp>
 				</armor>
 				
 				<hitbox>

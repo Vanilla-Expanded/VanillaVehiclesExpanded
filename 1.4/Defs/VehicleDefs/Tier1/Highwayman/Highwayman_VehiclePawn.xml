@@ -328,8 +328,8 @@
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
 				</armor>
 				
 				<hitbox>
@@ -343,8 +343,8 @@
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
 				</armor>
 				
 				<hitbox>
@@ -358,8 +358,8 @@
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
 				</armor>
 				
 				<hitbox>
@@ -424,8 +424,8 @@
 				<depth>External</depth>
 				
 				<armor>
-					<ArmorRating_Blunt>0.72</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
 				</armor>
 			</li>
 		</components>
