@@ -5,7 +5,7 @@
 		<defName>VVE_Trawler_Blueprint</defName>
 		<label>Trawler</label>
 		<description>A general-purpose boat, the Trawler is an effective long distance transportation across open waters. Performs rather poorly on rivers and has to travel slowly during the winter season.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		<designationCategory>VVE_Vehicles</designationCategory>
+		<designationCategory>VF_Vehicles</designationCategory>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Boat/Tier2_Boat</texPath>
