@@ -345,6 +345,7 @@
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType> <!-- Must Include -->
+				<leakDef>Filth_Fuel</leakDef>
 				<fuelConsumptionRate>24.5</fuelConsumptionRate>
 				<fuelCapacity>120</fuelCapacity>
 			</li>
