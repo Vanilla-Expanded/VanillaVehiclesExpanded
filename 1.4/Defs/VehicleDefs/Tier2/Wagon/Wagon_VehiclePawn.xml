@@ -98,7 +98,7 @@
 				<label>Engine</label>
 				<health>50</health>
 				<priorityStatEfficiency>true</priorityStatEfficiency>
-				<depth>External</depth>
+				<depth>Internal</depth>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
