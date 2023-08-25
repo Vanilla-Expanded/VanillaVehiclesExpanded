@@ -97,13 +97,13 @@
 				<depth>Internal</depth>
 				
 				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
 					<li Class = "Vehicles.Reactor_Explosive">
 						<indicator>VF_Explosive</indicator>
 						<chance>0.25</chance>
 						<radius>3</radius>
 						<damageDef>Bomb</damageDef>
 					</li>
-					<li Class = "Vehicles.Reactor_FuelLeak"/>
 				</reactors>
 				
 				<hitbox>
@@ -186,6 +186,7 @@
 			
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
+				<leakDef>Filth_Fuel</leakDef>
 				<fuelConsumptionRate>800</fuelConsumptionRate>
 				<fuelCapacity>160</fuelCapacity>
 			</li>
