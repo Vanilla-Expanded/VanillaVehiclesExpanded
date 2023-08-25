@@ -81,6 +81,12 @@
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
 			<offRoadMultiplier>0.8</offRoadMultiplier>
 			
+			<customHillinessCosts>
+				<SmallHills>0.25</SmallHills>
+				<LargeHills>0.75</LargeHills>
+				<Mountainous>1.5</Mountainous>
+			</customHillinessCosts>
+			
 			<customSnowCategoryTicks>
 				<Dusting>4</Dusting>
 				<Thin>8</Thin>

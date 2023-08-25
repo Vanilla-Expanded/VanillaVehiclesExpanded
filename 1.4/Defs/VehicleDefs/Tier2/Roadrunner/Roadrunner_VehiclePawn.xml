@@ -57,6 +57,12 @@
 		<properties>
 			<customRoadCosts AssignDefaults = "0.25"/>
 		
+			<customHillinessCosts>
+				<SmallHills>0.25</SmallHills>
+				<LargeHills>0.75</LargeHills>
+				<Mountainous>1.5</Mountainous>
+			</customHillinessCosts>
+			
 			<roles>
 				<li>
 					<key>driver</key>
