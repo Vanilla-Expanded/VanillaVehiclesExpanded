@@ -59,7 +59,7 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <designationCategory>VVE_Vehicles</designationCategory>
+    <designationCategory>VF_Vehicles</designationCategory>
     <surfaceType>Item</surfaceType>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     <placeWorkers>

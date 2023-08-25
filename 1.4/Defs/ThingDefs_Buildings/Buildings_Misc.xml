@@ -37,7 +37,7 @@
     <building>
       <destroySound>BuildingDestroyed_Metal_Small</destroySound>
     </building>
-    <designationCategory>VVE_Vehicles</designationCategory>
+    <designationCategory>VF_Vehicles</designationCategory>
     <minifiedDef>MinifiedThing</minifiedDef>
     <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     <thingCategories>

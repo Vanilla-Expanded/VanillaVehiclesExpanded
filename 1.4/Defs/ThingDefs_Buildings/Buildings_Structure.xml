@@ -18,7 +18,7 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<useStuffTerrainAffordance>true</useStuffTerrainAffordance>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>VVE_Vehicles</designationCategory>
+		<designationCategory>VF_Vehicles</designationCategory>
 		<holdsRoof>true</holdsRoof>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<blockLight>true</blockLight>
