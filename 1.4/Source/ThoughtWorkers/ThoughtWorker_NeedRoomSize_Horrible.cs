@@ -6,7 +6,7 @@ namespace VanillaVehiclesExpanded
 {
     public class ThoughtWorker_NeedRoomSize_Horrible : ThoughtWorker
     {
-        protected override ThoughtState CurrentStateInternal(Pawn p)
+        public override ThoughtState CurrentStateInternal(Pawn p)
         {
             if (p.needs.roomsize == null)
             {

@@ -11,9 +11,9 @@ namespace VanillaVehiclesExpanded
         public int firstPeriod = 5; //5 days
         public int secondPeriod = 10; //10 days
         public int thirdPeriod = 20; //20 days
-       
 
-        protected override ThoughtState ShouldHaveThought(Pawn p)
+
+        public override ThoughtState ShouldHaveThought(Pawn p)
         {
 
             if (!StaticCollectionsClass.colonist_seavehicle_tracker.ContainsKey(p))
