@@ -120,6 +120,14 @@
 						<drawOffsetNorth>(-1,0,0.65)</drawOffsetNorth>
 						<drawOffsetSouth>(1,0,0.65)</drawOffsetSouth>
 						<drawOffsetEast>(0,0,1.25)</drawOffsetEast>
+						
+						<east>South</east>
+						<north>East</north>
+						<northEast>East</northEast>
+						<northWest>East</northWest>
+						<south>West</south>
+						<southEast>West</southEast>
+						<southWest>West</southWest>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -147,6 +155,14 @@
 						<drawOffsetNorth>(-1,0,-0.45)</drawOffsetNorth>
 						<drawOffsetSouth>(1,0,1.8)</drawOffsetSouth>
 						<drawOffsetEast>(-1.15,0,1.25)</drawOffsetEast>
+						
+						<east>South</east>
+						<north>East</north>
+						<northEast>East</northEast>
+						<northWest>East</northWest>
+						<south>West</south>
+						<southEast>West</southEast>
+						<southWest>West</southWest>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -174,6 +190,14 @@
 						<drawOffsetNorth>(-1,0,-2)</drawOffsetNorth>
 						<drawOffsetSouth>(1,0,3)</drawOffsetSouth>
 						<drawOffsetEast>(-2.5,0,1.25)</drawOffsetEast>
+
+						<east>South</east>
+						<north>East</north>
+						<northEast>East</northEast>
+						<northWest>East</northWest>
+						<south>West</south>
+						<southEast>West</southEast>
+						<southWest>West</southWest>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -201,6 +225,14 @@
 						<drawOffsetNorth>(1,0,0.65)</drawOffsetNorth>
 						<drawOffsetSouth>(-1,0,0.65)</drawOffsetSouth>
 						<drawOffsetEast>(0,0,0)</drawOffsetEast>
+						
+						<east>North</east>
+						<north>West</north>
+						<northEast>West</northEast>
+						<northWest>West</northWest>
+						<south>East</south>
+						<southEast>East</southEast>
+						<southWest>East</southWest>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -228,6 +260,14 @@
 						<drawOffsetNorth>(1,0,-0.45)</drawOffsetNorth>
 						<drawOffsetSouth>(-1,0,1.8)</drawOffsetSouth>
 						<drawOffsetEast>(-1.15,0,0)</drawOffsetEast>
+						
+						<east>North</east>
+						<north>West</north>
+						<northEast>West</northEast>
+						<northWest>West</northWest>
+						<south>East</south>
+						<southEast>East</southEast>
+						<southWest>East</southWest>
 					</pawnRenderer>
 				</li>
 				<li>
@@ -255,6 +295,14 @@
 						<drawOffsetNorth>(1,0,-2)</drawOffsetNorth>
 						<drawOffsetSouth>(-1,0,3)</drawOffsetSouth>
 						<drawOffsetEast>(-2.5,0,0)</drawOffsetEast>
+						
+						<east>North</east>
+						<north>West</north>
+						<northEast>West</northEast>
+						<northWest>West</northWest>
+						<south>East</south>
+						<southEast>East</southEast>
+						<southWest>East</southWest>
 					</pawnRenderer>
 				</li>
 			</roles>
