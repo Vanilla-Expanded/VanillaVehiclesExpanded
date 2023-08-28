@@ -79,7 +79,7 @@
   <ThingDef ParentName="VVE_CarPartBase">
     <defName>VVE_CarAlternator</defName>
     <label>car alternator</label>
-    <description>The alternator - battery included - is an extremely vital engine part for any vehicle that has electrical systems. Some very basic systems can get away and some more complex vehicles can require more than one.</description>
+    <description>The alternator is an extremely vital engine part for any vehicle that has electrical systems. Some very basic systems can get away and some more complex vehicles can require more than one.</description>
     <graphicData>
       <texPath>Things/Item/Resource/CarPart_Alternator</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -150,6 +150,116 @@
       <Steel>25</Steel>
       <Chemfuel>10</Chemfuel>
     </costList>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarBattery</defName>
+    <label>car battery</label>
+    <description>An insulated rechargeable battery and wiring which powers numerous electronic functions. Acts as a surge protector for electronic systems and multiple batteries can augment or even replace a vehicle's engine.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Battery</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+      <Mass>8</Mass>
+	  <WorkToMake>5000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>35</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Batteries</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarFuelTank</defName>
+    <label>car fuel tank</label>
+    <description>Carefully manufactured fuel storage and injection systems. Ideal for vehicles that require greater fuel capacity or even increased fuel consumption without increasing the likelihood of gas leaks or engine damage.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Chemtank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>95</MarketValue>
+      <Mass>10</Mass>
+	  <WorkToMake>2000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <Chemfuel>30</Chemfuel>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>BiofuelRefining</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarTransmission</defName>
+    <label>car transmission</label>
+    <description>A dedicated, automatic transmission system delicately machined from hardened and durable materials. Due to its comparatively complex design, these are required in vehicles that require immense torque or excessive rotational speeds.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Transmission</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>170</MarketValue>
+      <Mass>7</Mass>
+	  <WorkToMake>4000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarRadiator</defName>
+    <label>car radiator</label>
+    <description>A series of pipes, tubes, fans, pumps, and the radiator itself, ready to be installed in a vehicle that is expected to endure heavy loads. The harder the engine will have to work, the more radiators required to keep it cool.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Radiator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>90</MarketValue>
+      <Mass>15</Mass>
+	  <WorkToMake>3000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+	  <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>AirConditioning</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarWiring</defName>
+    <label>car wiring</label>
+    <description>Reinforced and machined wiring parts to improve electricity conduction. Typically required in vehicles that have a lot of synchronized or delicate electronic systems.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_ElectricalWiring</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>125</MarketValue>
+      <Mass>4</Mass>
+	  <WorkToMake>1000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <Gold>10</Gold>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+    </recipeMaker>
   </ThingDef>
   
 </Defs>

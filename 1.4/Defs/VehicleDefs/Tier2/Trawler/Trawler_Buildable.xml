@@ -29,6 +29,7 @@
 			<VVE_EngineBlock>2</VVE_EngineBlock>
 			<VVE_CarAlternator>2</VVE_CarAlternator>
 			<VVE_CarExhaust>2</VVE_CarExhaust>
+			<VVE_CarFuelTank>2</VVE_CarFuelTank>
 			<Steel>160</Steel>
 			<WoodLog>100</WoodLog>
 			<ComponentIndustrial>8</ComponentIndustrial>

@@ -81,6 +81,7 @@
     <Compile Include="ThoughtWorkers\ThoughtWorker_Flying_Required.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Driving_Required.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_NeedRoomSize_Horrible.cs" />
+    <Compile Include="VanillaVehiclesExpandedMod.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">

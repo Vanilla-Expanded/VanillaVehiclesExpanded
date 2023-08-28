@@ -31,6 +31,7 @@
 			<VVE_CarExhaust>2</VVE_CarExhaust>
 			<VVE_CarSuspension>2</VVE_CarSuspension>
 			<VVE_CarWheel>2</VVE_CarWheel>
+			<VVE_CarFuelTank>1</VVE_CarFuelTank>
 			<Steel>80</Steel>
 			<Gold>30</Gold>
 		</costList>

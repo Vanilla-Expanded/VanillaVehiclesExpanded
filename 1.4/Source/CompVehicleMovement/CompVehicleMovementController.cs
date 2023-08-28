@@ -157,17 +157,20 @@ namespace VanillaVehiclesExpanded
 
             if (shouldApplyHandbrake)
             {   
+                newSpeed /= slowdownMultiplier;
                 isScreeching = true;
                 screechingSustainer = VVE_DefOf.VVE_TiresScreech.TrySpawnSustainer(SoundInfo.InMap(parent, MaintenanceType.PerTick));
-                newSpeed /= slowdownMultiplier;
-                Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
-                float damageAmount = currentSpeed - (AccelerationRate * 10);
-                var components = Vehicle.statHandler.components.Where(x => x.props.tags != null && x.props.tags.Contains("Wheel"));
-                foreach (var component in components)
-                {
-                    component.TakeDamage(Vehicle, new DamageInfo(DamageDefOf.Scratch, damageAmount));
-                }
                 handbrakeApplied = true;
+                if (VanillaVehiclesExpandedSettings.handbrakeDealsDamage)
+                {
+                    Messages.Message("VVE_HandbrakeWarning".Translate(Vehicle.Named("VEHICLE")), MessageTypeDefOf.NegativeHealthEvent);
+                    float damageAmount = currentSpeed - (AccelerationRate * 10);
+                    var components = Vehicle.statHandler.components.Where(x => x.props.tags != null && x.props.tags.Contains("Wheel"));
+                    foreach (var component in components)
+                    {
+                        component.TakeDamage(Vehicle, new DamageInfo(DamageDefOf.Scratch, damageAmount));
+                    }
+                }
             }
 
             newSpeed = Mathf.Max(MaxSpeedToDecelerateSmoothly, newSpeed);
