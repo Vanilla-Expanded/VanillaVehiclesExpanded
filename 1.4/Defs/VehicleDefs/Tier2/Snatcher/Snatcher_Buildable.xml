@@ -31,6 +31,8 @@
 			<VVE_CarExhaust>4</VVE_CarExhaust>
 			<VVE_CarSuspension>4</VVE_CarSuspension>
 			<VVE_CarWheel>4</VVE_CarWheel>
+			<VVE_CarBattery>1</VVE_CarBattery>
+			<VVE_CarRadiator>1</VVE_CarRadiator>
 			<Steel>280</Steel>
 			<ComponentIndustrial>8</ComponentIndustrial>
 		</costList>

@@ -30,6 +30,9 @@
 			<VVE_CarAlternator>4</VVE_CarAlternator>
 			<VVE_CarExhaust>4</VVE_CarExhaust>
 			<VVE_CarSuspension>6</VVE_CarSuspension>
+			<VVE_CarTransmission>1</VVE_CarTransmission>
+			<VVE_CarWiring>2</VVE_CarWiring>
+			<VVE_CarBattery>2</VVE_CarBattery>
 			<Steel>480</Steel>
 			<ComponentIndustrial>16</ComponentIndustrial>
 		</costList>
