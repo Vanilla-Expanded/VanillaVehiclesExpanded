@@ -163,12 +163,15 @@
     <statBases>
       <MarketValue>120</MarketValue>
       <Mass>8</Mass>
-	  <WorkToMake>3000</WorkToMake>
+	  <WorkToMake>5000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>25</Steel>
+      <Steel>35</Steel>
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
+    <recipeMaker>
+      <researchPrerequisite>Batteries</researchPrerequisite>
+    </recipeMaker>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -182,12 +185,15 @@
     <statBases>
       <MarketValue>95</MarketValue>
       <Mass>10</Mass>
-	  <WorkToMake>2500</WorkToMake>
+	  <WorkToMake>2000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>25</Steel>
-      <Chemfuel>25</Chemfuel>
+      <Steel>10</Steel>
+      <Chemfuel>30</Chemfuel>
     </costList>
+    <recipeMaker>
+      <researchPrerequisite>BiofuelRefining</researchPrerequisite>
+    </recipeMaker>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -204,9 +210,12 @@
 	  <WorkToMake>4000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>30</Steel>
+      <Plasteel>10</Plasteel>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
+    <recipeMaker>
+      <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+    </recipeMaker>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -220,11 +229,15 @@
     <statBases>
       <MarketValue>90</MarketValue>
       <Mass>15</Mass>
-	  <WorkToMake>2500</WorkToMake>
+	  <WorkToMake>3000</WorkToMake>
     </statBases>
     <costList>
-      <Steel>30</Steel>
+      <Steel>25</Steel>
+	  <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
+    <recipeMaker>
+      <researchPrerequisite>AirConditioning</researchPrerequisite>
+    </recipeMaker>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -238,12 +251,15 @@
     <statBases>
       <MarketValue>125</MarketValue>
       <Mass>4</Mass>
-	  <WorkToMake>3000</WorkToMake>
+	  <WorkToMake>1000</WorkToMake>
     </statBases>
     <costList>
       <Steel>10</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <Gold>10</Gold>
     </costList>
+    <recipeMaker>
+      <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+    </recipeMaker>
   </ThingDef>
   
 </Defs>
