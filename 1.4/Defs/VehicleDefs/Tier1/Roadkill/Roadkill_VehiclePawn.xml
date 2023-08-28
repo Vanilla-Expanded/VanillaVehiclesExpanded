@@ -98,7 +98,6 @@
 						<radius>3</radius>
 						<damageDef>Bomb</damageDef>
 					</li>
-					<li Class = "Vehicles.Reactor_FuelLeak"/>
 				</reactors>
 				
 				<hitbox>
@@ -269,6 +268,17 @@
 				<label>Chemtank</label>
 				<health>60</health>
 				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.5</chance>
+						<maxHealth>0.3</maxHealth>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
 				
 				<hitbox>
 					<cells>
