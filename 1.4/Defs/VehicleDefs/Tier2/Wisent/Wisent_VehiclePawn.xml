@@ -131,76 +131,6 @@
 					</pawnRenderer>
 				</li>
 				<li>
-					<key>passenger4</key>
-					<label>Passenger 4</label>
-					<slots>1</slots>
-					
-					<exposed>true</exposed>
-					
-				<hitbox>
-					<cells>
-						<li>(1, 1)</li>
-					</cells>
-				</hitbox>
-				
-					<pawnRenderer>
-						<layer>1</layer>
-						<layerNorth>1</layerNorth>
-						<layerSouth>1</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleSouth>0</angleSouth>
-						<angleNorthEast>45</angleNorthEast>
-						<angleSouthEast>-45</angleSouthEast>
-						<drawOffsetNorth>(-1,0,-0.45)</drawOffsetNorth>
-						<drawOffsetSouth>(1,0,1.8)</drawOffsetSouth>
-						<drawOffsetEast>(-1.15,0,1.25)</drawOffsetEast>
-						
-						<east>South</east>
-						<north>East</north>
-						<northEast>East</northEast>
-						<northWest>East</northWest>
-						<south>West</south>
-						<southEast>West</southEast>
-						<southWest>West</southWest>
-					</pawnRenderer>
-				</li>
-				<li>
-					<key>passenger6</key>
-					<label>Passenger 6</label>
-					<slots>1</slots>
-					
-					<exposed>true</exposed>
-					
-				<hitbox>
-					<cells>
-						<li>(-1, 0)</li>
-					</cells>
-				</hitbox>
-				
-					<pawnRenderer>
-						<layer>1</layer>
-						<layerNorth>1</layerNorth>
-						<layerSouth>1</layerSouth>
-						<angleNorth>0</angleNorth>
-						<angleEast>0</angleEast>
-						<angleSouth>0</angleSouth>
-						<angleNorthEast>45</angleNorthEast>
-						<angleSouthEast>-45</angleSouthEast>
-						<drawOffsetNorth>(-1,0,-2)</drawOffsetNorth>
-						<drawOffsetSouth>(1,0,3)</drawOffsetSouth>
-						<drawOffsetEast>(-2.5,0,1.25)</drawOffsetEast>
-
-						<east>South</east>
-						<north>East</north>
-						<northEast>East</northEast>
-						<northWest>East</northWest>
-						<south>West</south>
-						<southEast>West</southEast>
-						<southWest>West</southWest>
-					</pawnRenderer>
-				</li>
-				<li>
 					<key>passenger3</key>
 					<label>Passenger 3</label>
 					<slots>1</slots>
@@ -236,6 +166,41 @@
 					</pawnRenderer>
 				</li>
 				<li>
+					<key>passenger4</key>
+					<label>Passenger 4</label>
+					<slots>1</slots>
+					
+					<exposed>true</exposed>
+					
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleSouth>0</angleSouth>
+						<angleNorthEast>45</angleNorthEast>
+						<angleSouthEast>-45</angleSouthEast>
+						<drawOffsetNorth>(-1,0,-0.85)</drawOffsetNorth>
+						<drawOffsetSouth>(1,0,1.4)</drawOffsetSouth>
+						<drawOffsetEast>(-0.8,0,1.25)</drawOffsetEast>
+						
+						<east>South</east>
+						<north>East</north>
+						<northEast>East</northEast>
+						<northWest>East</northWest>
+						<south>West</south>
+						<southEast>West</southEast>
+						<southWest>West</southWest>
+					</pawnRenderer>
+				</li>
+				<li>
 					<key>passenger5</key>
 					<label>Passenger 5</label>
 					<slots>1</slots>
@@ -257,9 +222,9 @@
 						<angleSouth>0</angleSouth>
 						<angleNorthEast>45</angleNorthEast>
 						<angleSouthEast>-45</angleSouthEast>
-						<drawOffsetNorth>(1,0,-0.45)</drawOffsetNorth>
-						<drawOffsetSouth>(-1,0,1.8)</drawOffsetSouth>
-						<drawOffsetEast>(-1.15,0,0)</drawOffsetEast>
+						<drawOffsetNorth>(1,0,-0.85)</drawOffsetNorth>
+						<drawOffsetSouth>(-1,0,1.4)</drawOffsetSouth>
+						<drawOffsetEast>(-0.8,0,0)</drawOffsetEast>
 						
 						<east>North</east>
 						<north>West</north>
@@ -271,8 +236,113 @@
 					</pawnRenderer>
 				</li>
 				<li>
+					<key>passenger6</key>
+					<label>Passenger 6</label>
+					<slots>1</slots>
+					
+					<exposed>true</exposed>
+					
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+					</cells>
+				</hitbox>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleSouth>0</angleSouth>
+						<angleNorthEast>45</angleNorthEast>
+						<angleSouthEast>-45</angleSouthEast>
+						<drawOffsetNorth>(-1,0,-1.2)</drawOffsetNorth>
+						<drawOffsetSouth>(1,0,2.4)</drawOffsetSouth>
+						<drawOffsetEast>(-1.6,0,1.25)</drawOffsetEast>
+
+						<east>South</east>
+						<north>East</north>
+						<northEast>East</northEast>
+						<northWest>East</northWest>
+						<south>West</south>
+						<southEast>West</southEast>
+						<southWest>West</southWest>
+					</pawnRenderer>
+				</li>
+				<li>
 					<key>passenger7</key>
 					<label>Passenger 7</label>
+					<slots>1</slots>
+					
+					<exposed>true</exposed>
+					
+				<hitbox>
+					<cells>
+						<li>(1, -1)</li>
+					</cells>
+				</hitbox>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleSouth>0</angleSouth>
+						<angleNorthEast>45</angleNorthEast>
+						<angleSouthEast>-45</angleSouthEast>
+						<drawOffsetNorth>(1,0,-1.2)</drawOffsetNorth>
+						<drawOffsetSouth>(-1,0,2.4)</drawOffsetSouth>
+						<drawOffsetEast>(-1.6,0,0)</drawOffsetEast>
+						
+						<east>North</east>
+						<north>West</north>
+						<northEast>West</northEast>
+						<northWest>West</northWest>
+						<south>East</south>
+						<southEast>East</southEast>
+						<southWest>East</southWest>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>passenger8</key>
+					<label>Passenger 8</label>
+					<slots>1</slots>
+					
+					<exposed>true</exposed>
+					
+				<hitbox>
+					<cells>
+						<li>(-1, 0)</li>
+					</cells>
+				</hitbox>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleSouth>0</angleSouth>
+						<angleNorthEast>45</angleNorthEast>
+						<angleSouthEast>-45</angleSouthEast>
+						<drawOffsetNorth>(-1,0,-2)</drawOffsetNorth>
+						<drawOffsetSouth>(1,0,3)</drawOffsetSouth>
+						<drawOffsetEast>(-2.5,0,1.25)</drawOffsetEast>
+
+						<east>South</east>
+						<north>East</north>
+						<northEast>East</northEast>
+						<northWest>East</northWest>
+						<south>West</south>
+						<southEast>West</southEast>
+						<southWest>West</southWest>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>passenger9</key>
+					<label>Passenger 9</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
