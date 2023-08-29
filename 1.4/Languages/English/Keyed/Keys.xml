@@ -15,10 +15,15 @@ Current speed: {1} c/s</VVE_StatsReport_AccelerationRate>
 	<VVE_Tier0>Tier 0</VVE_Tier0>
 	<VVE_Tier1>Tier 1</VVE_Tier1>
 	<VVE_Tier2>Tier 2</VVE_Tier2>
+	<VVE_Tier3>Tier 3</VVE_Tier3>
+	<VVE_Tier4>Tier 3</VVE_Tier4>
+	
 	
 	<!-- Stats Descriptions -->
 	
-	<VVE_Tier0Desc>Tier 0 vehicles are below tier 1 in terms of simplicity. These are things like wheelbarrows and oxen carts. Usually they don't need any research projects to be built, but they are very, very underpowered.</VVE_Tier0Desc>
-	<VVE_Tier1Desc>Tier 1 vehicles are the most basic and easiest to access. They are usually locked behind a very basic and general research project. They are inefficient, not ideal, have a lot of drawbacks, but they are cheap and quick to make.</VVE_Tier1Desc>
-	<VVE_Tier2Desc>Tier 2 vehicles are locked behind a more specialized research project and are more efficient than Tier 1. They are however more expensive and take a longer time to construct. Tier 2 vehicles are a "baseline" vehicle category.</VVE_Tier2Desc>
+	<VVE_Tier0Desc>Tier 0 vehicles are the most basic and easiest to access. They don't require resources to be constructed, or research project to be researched, or neither.</VVE_Tier0Desc>
+	<VVE_Tier1Desc>Tier 1 vehicles require a basic research project and a low resource cost in order to be constructed. They are inefficient, not ideal, have a lot of drawbacks, but they are cheap and available early in the game.</VVE_Tier1Desc>
+	<VVE_Tier2Desc>Tier 2 vehicles are locked behind more specialised research projects and require resources that are only available later in the game. Tier 2 is considered to be the 'baseline' of all vehicles.</VVE_Tier2Desc>
+	<VVE_Tier3Desc>Tier 3 vehicles are only obtainable if a specific condition is met - for example, they are first found in their wrecked form and restored. They require late game resources and generally serve a very specific purpose.</VVE_Tier3Desc>
+	<VVE_Tier4Desc>Tier 4 vehicles are not able to be constructed by the player, but they can still be found, purchased or otherwise spawned. They generally represent technology beyond of what's achievable in the Rimworld setting.</VVE_Tier4Desc>
 </LanguageData>
