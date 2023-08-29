@@ -5,7 +5,19 @@
 		<defName>VVE_Bulldog</defName>
 		<label>Bulldog</label>
 		<description>A general main battle tank, the Bulldog is an improved combat vehicle that performs well in any engagement. Performs better in less favourable terrain with all sides armoured, the thinnest plating being at the rear near the engine.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency and is quite visible, which is still an improvement over the tier 1 tank.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier2</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier2Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Tank/Tier2_Tank</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>

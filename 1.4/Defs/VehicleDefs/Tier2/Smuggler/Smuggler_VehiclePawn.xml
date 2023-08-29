@@ -5,7 +5,19 @@
 		<defName>VVE_Smuggler</defName>
 		<label>Smuggler</label>
 		<description>A general-purpose aircraft, the Smuggler is an extremely fast and effective mode of transportation. While it is faster and can carry more cargo than helicopters, it requires a landing strip to both take off and land.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency on the world map but moves significantly faster in return.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Passenger x3\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier2</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier2Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Airplane/Tier2_Airplane</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>

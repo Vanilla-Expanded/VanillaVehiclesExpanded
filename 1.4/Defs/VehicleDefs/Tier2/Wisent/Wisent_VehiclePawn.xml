@@ -5,7 +5,19 @@
 		<defName>VVE_Wisent</defName>
 		<label>Wisent</label>
 		<description>A military-grade all-purpose transporter, the Wisent is a powerful truck capable of transporting both plentiful cargo and soldiers into hostile territory. Terrible fuel economy, however it can quickly navigate through rough terrain.\n\nCounter to other tier 2 vehicles, this is less efficient but more effective when travelling away from roads. Passengers sitting in the back will be exposed to enemy fire and the armour plating is only suited for minimal small arms fire.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x7\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier2</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier2Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_MilitaryTruck/Tier2_MilitaryTruck</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
