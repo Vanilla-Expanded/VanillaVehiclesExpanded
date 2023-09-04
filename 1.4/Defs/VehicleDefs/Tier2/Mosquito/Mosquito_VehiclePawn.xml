@@ -57,19 +57,19 @@
 		<soundSustainersOnEvent>
 			<li>
 				<key>(IgnitionOn, IgnitionOff)</key>
-				<value>VVE_VehicleRotorHelicoper</value>
+				<value>VVE_VehicleRotorHelicopter</value>
 			</li>
 			<li>
 				<key>(AerialVehicleLaunch, AerialVehicleLeftMap)</key>
-				<value>VVE_VehicleRotorHelicoper</value>
+				<value>VVE_VehicleRotorHelicopter</value>
 			</li>
 			<li>
 				<key>(AerialVehicleLanding, Spawned)</key>
-				<value>VVE_VehicleRotorHelicoper</value>
+				<value>VVE_VehicleRotorHelicopter</value>
 			</li>
 			<li>
 				<key>(AerialVehicleCrashLanding, Spawned)</key>
-				<value>VVE_VehicleRotorHelicoper</value>
+				<value>VVE_VehicleRotorHelicopter</value>
 			</li>
 		</soundSustainersOnEvent>
 		
@@ -165,7 +165,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(1, -2)</li>
+						<li>(0, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -181,7 +181,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(0, -2)</li>
+						<li>(1, -2)</li>
 					</cells>
 				</hitbox>
 				
@@ -305,6 +305,12 @@
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_FuelLeak"/>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
 				</reactors>
 				
 				<hitbox>
@@ -347,7 +353,7 @@
 			</li>
 			<li>
 				<key>Servos</key>
-				<label>Dashboard</label>
+				<label>Servos</label>
 				<health>20</health>
 				<depth>Internal</depth>
 				<hitWeight>2</hitWeight>

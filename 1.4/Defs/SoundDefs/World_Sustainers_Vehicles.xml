@@ -111,7 +111,7 @@
   </SoundDef>
   
   <SoundDef>
-    <defName>VVE_VehicleRotorHelicoper</defName>
+    <defName>VVE_VehicleRotorHelicopter</defName>
     <sustain>true</sustain>
     <context>MapOnly</context>
     <maxSimultaneous>1</maxSimultaneous>  
@@ -245,7 +245,7 @@
   </SoundDef>
   
   <SoundDef>
-    <defName>VVE_VehicleRotorHeavyHelicoper</defName>
+    <defName>VVE_VehicleRotorHeavyHelicopter</defName>
     <sustain>true</sustain>
     <context>MapOnly</context>
     <maxSimultaneous>1</maxSimultaneous>  
@@ -267,7 +267,7 @@
   </SoundDef>
   
   <SoundDef>
-    <defName>VVE_VehicleDualRotorHelicoper</defName>
+    <defName>VVE_VehicleDualRotorHelicopter</defName>
     <sustain>true</sustain>
     <context>MapOnly</context>
     <maxSimultaneous>1</maxSimultaneous>  
