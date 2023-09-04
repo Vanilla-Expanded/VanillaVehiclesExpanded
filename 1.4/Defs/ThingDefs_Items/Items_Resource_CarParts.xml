@@ -255,7 +255,7 @@
     </statBases>
     <costList>
       <Steel>10</Steel>
-      <Gold>10</Gold>
+      <Gold>1</Gold>
     </costList>
     <recipeMaker>
       <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
