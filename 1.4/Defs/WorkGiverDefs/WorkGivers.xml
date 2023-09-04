@@ -40,5 +40,17 @@
     <priorityInType>500</priorityInType>
   </WorkGiverDef>
   
-
+	<WorkGiverDef>
+		<defName>VVE_RestoreWreck</defName>
+		<label>restore vehicle wrecks</label>
+		<giverClass>VanillaVehiclesExpanded.WorkGiver_RestoreWreck</giverClass>
+		<workType>Construction</workType>
+		<verb>restore</verb>
+		<gerund>restoring</gerund>
+		<priorityInType>70</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+	
 </Defs>

@@ -10,6 +10,13 @@ using Verse.Sound;
 
 namespace VanillaVehiclesExpanded
 {
+    public class CompProperties_VehicleMovementController : VehicleCompProperties
+    {
+        public CompProperties_VehicleMovementController()
+        {
+            compClass = typeof(CompVehicleMovementController);
+        }
+    }
     [HotSwappable]
     public class CompVehicleMovementController : VehicleComp
     {

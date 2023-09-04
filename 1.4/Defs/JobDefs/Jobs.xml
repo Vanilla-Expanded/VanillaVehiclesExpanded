@@ -14,4 +14,11 @@
     <reportString>closing garage.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  
+  <JobDef>
+    <defName>VVE_RestoreWreck</defName>
+    <driverClass>VanillaVehiclesExpanded.JobDriver_RestoreWreck</driverClass>
+    <reportString>restoring TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

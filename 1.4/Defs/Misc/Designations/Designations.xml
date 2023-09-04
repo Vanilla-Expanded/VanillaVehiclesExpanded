@@ -14,4 +14,12 @@
     <targetType>Thing</targetType>
     <designateCancelable>false</designateCancelable>
   </DesignationDef>
+  
+	<DesignationDef>
+    <defName>VVE_RestoreWreck</defName>
+    <texturePath>UI/RestoreWreck</texturePath>
+    <targetType>Thing</targetType>
+    <designateCancelable>false</designateCancelable>
+  </DesignationDef>
+  
 </Defs>

@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,13 +52,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harmony\Construction_CompleteConstructionVehicle_Patch.cs" />
+    <Compile Include="Harmony\MainTabWindow_MintResearch_SetTargetProject_Patch.cs" />
+    <Compile Include="Harmony\MainTabWindow_Research_DoBeginResearch_Patch.cs" />
+    <Compile Include="Harmony\MainTabWindow_Research_DrawLeftRect_Patch.cs" />
+    <Compile Include="Harmony\ResearchProjectDef_CanStartNow_Patch.cs" />
+    <Compile Include="Harmony\Vehicle_PathFollower_CostToPayThisTick_Patch.cs" />
+    <Compile Include="Wrecks\CompVehicleWreck.cs" />
+    <Compile Include="Harmony\Frame_Destroy_Patch.cs" />
+    <Compile Include="Wrecks\JobDriver_RestoreWreck.cs" />
+    <Compile Include="Wrecks\WorkGiver_RestoreWreck.cs" />
     <Compile Include="DefExtensions\StatExtension.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="FueledVehicleTurret.cs" />
     <Compile Include="GameComponents\GameComponent_VehicleUseTracker.cs" />
     <Compile Include="Garage\Blueprint_GarageDoor.cs" />
-    <Compile Include="CompVehicleMovement\CompProperties_VehicleMovementController.cs" />
-    <Compile Include="CompVehicleMovement\CompVehicleMovementController.cs" />
+    <Compile Include="Comps\CompVehicleMovementController.cs" />
     <Compile Include="Garage\GarageAutoDoor.cs" />
     <Compile Include="Garage\GarageDoor.cs" />
     <Compile Include="Garage\GhostDrawer_DrawGhostThing_Patch.cs" />
@@ -66,8 +76,9 @@
     <Compile Include="Harmony\VehiclePawn_PawnCollisionMultiplier.cs" />
     <Compile Include="Harmony\VehiclePawn_WorldSpeedMultiplier.cs" />
     <Compile Include="Harmony\VehicleInfoCard_Stats_Patch.cs" />
-    <Compile Include="Harmony\Startup.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Harmony\VehiclePawn_TotalAllowedFor.cs" />
+    <Compile Include="VVE_DefOf.cs" />
     <Compile Include="PreceptComps\PreceptComp_SailingRequired.cs" />
     <Compile Include="PreceptComps\PreceptComp_FlyingRequired.cs" />
     <Compile Include="PreceptComps\PreceptComp_DrivingRequired.cs" />
