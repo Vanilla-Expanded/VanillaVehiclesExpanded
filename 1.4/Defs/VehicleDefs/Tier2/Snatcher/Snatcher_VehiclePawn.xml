@@ -5,19 +5,7 @@
 		<defName>VVE_Snatcher</defName>
 		<label>Snatcher</label>
 		<description>A general passenger transport, the Snatcher is a solid vehicle for transporting people to different locations. Best suited on flat roads and will seriously struggle in snow or on hills.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		<modExtensions>
-			<li Class="VanillaVehiclesExpanded.StatExtension">
-				<statToAdd>
-					<li>VVE_VehicleTier</li>
-				</statToAdd>
-				<statValues>
-					<li>VVE_Tier2</li>
-				</statValues>
-				<statDescriptions>
-					<li>VVE_Tier2Desc</li>
-				</statDescriptions>
-			</li>
-		</modExtensions>
+		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_Van/Tier2_Van</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
@@ -100,8 +88,9 @@
 					<li Class = "Vehicles.Reactor_Explosive">
 						<indicator>VF_Explosive</indicator>
 						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
 						<radius>3</radius>
-						<damageDef>Bomb</damageDef>
+						<damageDef>Flame</damageDef>
 					</li>
 				</reactors>
 				
@@ -294,6 +283,13 @@
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_FuelLeak"/>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
 				</reactors>
 				
 				<hitbox>
@@ -365,6 +361,20 @@
 			</li>
 		</components>
 
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier2</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier2Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>

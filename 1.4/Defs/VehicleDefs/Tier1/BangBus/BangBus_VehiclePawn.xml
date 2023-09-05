@@ -5,19 +5,7 @@
 		<defName>VVE_BangBus</defName>
 		<label>Bang Bus</label>
 		<description>A basic passenger transport, the Bangbus is a relatively cheap piece of machinery to construct to transport people across roads of flat terrain. Not recommended to use in the winter season or in snowy terrain, or both, as the light plates of armour that protect the passengers similarly negatively affects its acceleration.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		<modExtensions>
-			<li Class="VanillaVehiclesExpanded.StatExtension">
-				<statToAdd>
-					<li>VVE_VehicleTier</li>
-				</statToAdd>
-				<statValues>
-					<li>VVE_Tier1</li>
-				</statValues>
-				<statDescriptions>
-					<li>VVE_Tier1Desc</li>
-				</statDescriptions>
-			</li>
-		</modExtensions>
+		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Van/Tier1_Van</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
@@ -121,13 +109,14 @@
 				<depth>External</depth>
 				
 				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
 					<li Class = "Vehicles.Reactor_Explosive">
 						<indicator>VF_Explosive</indicator>
 						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
 						<radius>3</radius>
-						<damageDef>Bomb</damageDef>
+						<damageDef>Flame</damageDef>
 					</li>
-					<li Class = "Vehicles.Reactor_FuelLeak"/>
 				</reactors>
 				
 				<hitbox>
@@ -324,6 +313,16 @@
 				<health>40</health>
 				<depth>Internal</depth>
 				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
 				<hitbox>
 					<side>Back</side>
 				</hitbox>
@@ -386,6 +385,20 @@
 			</li>
 		</components>
 
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier1</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier1Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>

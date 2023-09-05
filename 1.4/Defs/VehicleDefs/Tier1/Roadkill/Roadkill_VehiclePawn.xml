@@ -5,19 +5,7 @@
 		<defName>VVE_Roadkill</defName>
 		<label>Roadkill</label>
 		<description>A basic medium tank, the Roadkill is a comparatively cheap armoured vehicle suited for short engagements. Very respectfully armoured from frontal attacks, however side attacks can disable movement and the exposed rear-mounted engine makes it vulnerable to flanking.\n\nWhile other tier 1 vehicles are gas guzzlers, this one burns through fuel at an alarming rate and is extremely slow to repair.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		<modExtensions>
-			<li Class="VanillaVehiclesExpanded.StatExtension">
-				<statToAdd>
-					<li>VVE_VehicleTier</li>
-				</statToAdd>
-				<statValues>
-					<li>VVE_Tier1</li>
-				</statValues>
-				<statDescriptions>
-					<li>VVE_Tier1Desc</li>
-				</statDescriptions>
-			</li>
-		</modExtensions>
+		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Tank/Tier1_Tank</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
@@ -107,8 +95,9 @@
 					<li Class = "Vehicles.Reactor_Explosive">
 						<indicator>VF_Explosive</indicator>
 						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
 						<radius>3</radius>
-						<damageDef>Bomb</damageDef>
+						<damageDef>Flame</damageDef>
 					</li>
 				</reactors>
 				
@@ -285,10 +274,10 @@
 					<li Class = "Vehicles.Reactor_FuelLeak"/>
 					<li Class = "Vehicles.Reactor_Explosive">
 						<indicator>VF_Explosive</indicator>
-						<chance>0.5</chance>
-						<maxHealth>0.3</maxHealth>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
 						<radius>3</radius>
-						<damageDef>Bomb</damageDef>
+						<damageDef>Flame</damageDef>
 					</li>
 				</reactors>
 				
@@ -328,7 +317,21 @@
 				</armor>
 			</li>
 		</components>
-
+		
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier1</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier1Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
 		<comps>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
