@@ -15,7 +15,7 @@ namespace VanillaVehiclesExpanded
         }
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
-            foreach (var garageDoor in GarageDoor.garageDoors.Where(x => x?.Map == pawn.Map && HasJobOnThing(pawn, x)))
+            foreach (var garageDoor in GarageDoor.garageDoors.Where(x => x?.Map == pawn.Map))
             {
                 yield return garageDoor;
             }
@@ -26,12 +26,11 @@ namespace VanillaVehiclesExpanded
     {
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            if (!pawn.CanReserve(t, 1, -1, null, forced))
+            if (!pawn.CanReserveAndReach(t, PathEndMode, MaxPathDanger(pawn), 1, -1, null, forced))
             {
                 return false;
             }
-            var garageDoor = t as GarageDoor;
-            if (garageDoor.Map.designationManager.DesignationOn(garageDoor, VVE_DefOf.VVE_Open) is null)
+            if (t.Map.designationManager.DesignationOn(t, VVE_DefOf.VVE_Open) is null)
             {
                 return false;
             }

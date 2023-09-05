@@ -4,14 +4,12 @@ using Verse;
 using UnityEngine;
 using System.Collections.Generic;
 
-
 namespace VanillaVehiclesExpanded
 {
     public class GameComponent_VehicleUseTracker : GameComponent
     {
-
-
-
+        public HashSet<ThingDef> restoredWrecks = new HashSet<ThingDef>();
+        public Dictionary<Frame, ThingDef> frameWrecks = new();
         public int tickCounter = 0;
         public int tickInterval = 60000;
         public Dictionary<Pawn, int> colonist_landvehicle_tracker_backup = new Dictionary<Pawn, int>();
@@ -27,10 +25,16 @@ namespace VanillaVehiclesExpanded
         List<int> list7;
 
 
+        public static GameComponent_VehicleUseTracker Instance;
+
+        public GameComponent_VehicleUseTracker()
+        {
+            Instance = this;
+        }
 
         public GameComponent_VehicleUseTracker(Game game) : base()
         {
-
+            Instance = this;
         }
 
         public override void FinalizeInit()
@@ -50,10 +54,17 @@ namespace VanillaVehiclesExpanded
             Scribe_Collections.Look(ref colonist_landvehicle_tracker_backup, "colonist_landvehicle_tracker_backup", LookMode.Reference, LookMode.Value, ref list2, ref list3);
             Scribe_Collections.Look(ref colonist_airvehicle_tracker_backup, "colonist_airvehicle_tracker_backup", LookMode.Reference, LookMode.Value, ref list4, ref list5);
             Scribe_Collections.Look(ref colonist_seavehicle_tracker_backup, "colonist_seavehicle_tracker_backup", LookMode.Reference, LookMode.Value, ref list6, ref list7);
-
+            Scribe_Collections.Look(ref restoredWrecks, "restoredWrecks", LookMode.Def);
+            Scribe_Collections.Look(ref frameWrecks, "frameWrecks", LookMode.Reference, LookMode.Def, ref frameKeys, ref thingDefValues);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                restoredWrecks ??= new HashSet<ThingDef>();
+                frameWrecks ??= new();
+            }
         }
 
-
+        private List<Frame> frameKeys;
+        private List<ThingDef> thingDefValues;
 
         public override void GameComponentTick()
         {
