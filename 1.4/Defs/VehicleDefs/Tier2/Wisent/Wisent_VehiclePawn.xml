@@ -22,7 +22,7 @@
 			<texPath>Things/Vehicles/Tier2/Tier2_MilitaryTruck/Tier2_MilitaryTruck</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
-			<drawSize>(5,7)</drawSize>
+			<drawSize>(4,7)</drawSize>
 			<color>(72, 77, 72)</color>
 			<colorTwo>(56, 55, 50)</colorTwo>
 			<colorThree>(100, 69, 59)</colorThree>

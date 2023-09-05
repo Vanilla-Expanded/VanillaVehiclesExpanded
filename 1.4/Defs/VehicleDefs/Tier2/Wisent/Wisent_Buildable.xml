@@ -10,7 +10,7 @@
 		<graphicData>
 			<texPath>Things/Vehicles/Tier2/Tier2_MilitaryTruck/Tier2_MilitaryTruck</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(5,7)</drawSize>
+			<drawSize>(4,7)</drawSize>
 		</graphicData>
 		
 		<statBases>
