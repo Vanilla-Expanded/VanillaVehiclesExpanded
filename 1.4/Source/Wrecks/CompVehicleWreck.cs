@@ -71,7 +71,6 @@ namespace VanillaVehiclesExpanded
             var vehicleDef = Props.vehicleDef;
             var pos = this.parent.Position;
             var map = this.parent.Map;
-            this.parent.Destroy();
             var frame = (Frame)ThingMaker.MakeThing(vehicleDef.buildDef.frameDef, null);
             foreach (var thingCost in vehicleDef.buildDef.CostList)
             {
@@ -85,8 +84,25 @@ namespace VanillaVehiclesExpanded
                 }
             }
             frame.SetFactionDirect(worker.Faction);
-            GenSpawn.Spawn(frame, pos, map, this.parent.Rotation, WipeMode.VanishOrMoveAside);
+            var existingRect = GenAdj.OccupiedRect(this.parent);
+            this.parent.Destroy();
+
+            GenSpawn.Spawn(frame, GetMatchingPos(existingRect, pos, this.parent.def.defaultPlacingRot, vehicleDef), map, 
+                this.parent.def.defaultPlacingRot, WipeMode.VanishOrMoveAside);
             GameComponent_VehicleUseTracker.Instance.frameWrecks[frame] = this.parent.def;
+        }
+
+        public static IntVec3 GetMatchingPos(CellRect existingRect, IntVec3 cell, Rot4 rot, ThingDef vehicle)
+        {
+            foreach (var pos in existingRect.Cells)
+            {
+                var rect = GenAdj.OccupiedRect(pos, rot, vehicle.Size);
+                if (rect.minX == existingRect.minX && rect.minZ == existingRect.minZ)
+                {
+                    return pos;
+                }
+            }
+            return cell;
         }
     }
 }

@@ -15,5 +15,6 @@ namespace VanillaVehiclesExpanded
         public static DesignationDef VVE_RestoreWreck;
         [DefAlias("VVE_RestoreWreck")] public static JobDef VVE_RestoreWreckJob;
         public static DesignationDef VVE_Close;
+
     }
 }
