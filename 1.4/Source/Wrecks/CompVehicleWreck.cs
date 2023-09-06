@@ -11,6 +11,7 @@ namespace VanillaVehiclesExpanded
     {
         public VehicleDef vehicleDef;
         public ResearchProjectDef researchDef;
+        public Rot4? spawnRotation;
 
         public CompProperties_VehicleWreck()
         {
@@ -86,9 +87,8 @@ namespace VanillaVehiclesExpanded
             frame.SetFactionDirect(worker.Faction);
             var existingRect = GenAdj.OccupiedRect(this.parent);
             this.parent.Destroy();
-
-            GenSpawn.Spawn(frame, GetMatchingPos(existingRect, pos, this.parent.def.defaultPlacingRot, vehicleDef), map, 
-                this.parent.def.defaultPlacingRot, WipeMode.VanishOrMoveAside);
+            var rot = Props.spawnRotation.HasValue ? Props.spawnRotation.Value : this.parent.Rotation;
+            GenSpawn.Spawn(frame, GetMatchingPos(existingRect, pos, rot, vehicleDef), map, rot, WipeMode.VanishOrMoveAside);
             GameComponent_VehicleUseTracker.Instance.frameWrecks[frame] = this.parent.def;
         }
 
