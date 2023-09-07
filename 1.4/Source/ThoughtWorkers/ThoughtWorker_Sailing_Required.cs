@@ -13,7 +13,7 @@ namespace VanillaVehiclesExpanded
         public int thirdPeriod = 20; //20 days
 
 
-        public override ThoughtState ShouldHaveThought(Pawn p)
+        protected override ThoughtState ShouldHaveThought(Pawn p)
         {
 
             if (!StaticCollectionsClass.colonist_seavehicle_tracker.ContainsKey(p))

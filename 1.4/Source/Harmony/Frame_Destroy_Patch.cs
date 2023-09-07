@@ -6,6 +6,7 @@ using Verse;
 
 namespace VanillaVehiclesExpanded
 {
+
     [HarmonyPatch(typeof(Frame), "Destroy")]
     public static class Frame_Destroy_Patch
     {
@@ -14,7 +15,7 @@ namespace VanillaVehiclesExpanded
             __state = (__instance.Map, __instance.Position, __instance.Rotation);
             if (GameComponent_VehicleUseTracker.Instance.frameWrecks.ContainsKey(__instance))
             {
-                foreach (var thingCost in __instance.BuildDef.CostList)
+                foreach (var thingCost in __instance.def.entityDefToBuild.CostList)
                 {
                     var stackCount = (int)(thingCost.count * 0.2f);
                     while (stackCount > 0)
@@ -41,7 +42,13 @@ namespace VanillaVehiclesExpanded
             {
                 GameComponent_VehicleUseTracker.Instance.frameWrecks.Remove(__instance);
                 var wreck = ThingMaker.MakeThing(wreckDef);
-                GenSpawn.Spawn(wreck, __state.pos, __state.map, __state.rotation);
+                var compProps = wreckDef.GetCompProperties<CompProperties_VehicleWreck>();
+                var rot = wreckDef.rotatable 
+                    ? compProps.spawnRotation.HasValue ? compProps.spawnRotation.Value : __state.rotation
+                    : Rot4.North;
+                var existingRect = __instance.OccupiedRect();
+                var pos = CompVehicleWreck.GetMatchingPos(existingRect, __state.pos, rot, wreckDef);
+                GenSpawn.Spawn(wreck, pos, __state.map, rot);
             }
         }
     }
