@@ -32,9 +32,13 @@ namespace VanillaVehiclesExpanded
             wreckNotRestored = null;
             foreach (var wreck in wreckDefs)
             {
+
                 if (GameComponent_VehicleUseTracker.Instance.restoredWrecks.Contains(wreck))
                 {
-                    return false;
+                    if (wreck.GetCompProperties<CompProperties_VehicleWreck>().researchDef == __instance)
+                    {
+                        return false;
+                    }
                 }
                 else if (wreck.GetCompProperties<CompProperties_VehicleWreck>().researchDef == __instance)
                 {

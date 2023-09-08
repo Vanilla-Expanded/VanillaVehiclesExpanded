@@ -2,6 +2,15 @@
 <Defs>
 
 	<VFECore.ObjectSpawnsDef>
+		<defName>VVE_AllMaps_VehicleWrecks</defName>
+		<thingDefs>
+
+		</thingDefs>
+		<numberToSpawn>1</numberToSpawn>
+		<allowOnWater>false</allowOnWater>
+	</VFECore.ObjectSpawnsDef>
+	
+	<VFECore.ObjectSpawnsDef>
 		<defName>VVE_DirtPath_VehicleWrecks</defName>
 		<thingDefs>
 

@@ -6,7 +6,6 @@ using Verse;
 
 namespace VanillaVehiclesExpanded
 {
-
     [HarmonyPatch(typeof(Frame), "Destroy")]
     public static class Frame_Destroy_Patch
     {
