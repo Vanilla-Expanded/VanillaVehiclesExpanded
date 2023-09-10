@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SmashTools">
-      <HintPath>.\SmashTools.dll</HintPath>
+      <HintPath>..\..\..\Vehicle-Framework\1.4\Assemblies\SmashTools.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -47,7 +47,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Vehicles">
-      <HintPath>.\Vehicles.dll</HintPath>
+      <HintPath>..\..\..\Vehicle-Framework\1.4\Assemblies\Vehicles.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

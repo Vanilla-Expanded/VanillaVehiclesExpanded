@@ -175,7 +175,7 @@ namespace VanillaVehiclesExpanded
                     var components = Vehicle.statHandler.components.Where(x => x.props.tags != null && x.props.tags.Contains("Wheel"));
                     foreach (var component in components)
                     {
-                        component.TakeDamage(Vehicle, new DamageInfo(DamageDefOf.Scratch, damageAmount));
+                        component.TakeDamage(Vehicle, new DamageInfo(DamageDefOf.Scratch, damageAmount), ignoreArmor: true);
                     }
                 }
             }
