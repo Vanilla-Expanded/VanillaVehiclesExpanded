@@ -15,6 +15,7 @@ namespace VanillaVehiclesExpanded
     {
         public List<Tool> tools;
         private List<VerbProperties> verbs;
+        public List<string> commandDescriptions;
         private static List<VerbProperties> EmptyVerbPropertiesList = new List<VerbProperties>();
         public List<VerbProperties> Verbs
         {
@@ -106,7 +107,7 @@ namespace VanillaVehiclesExpanded
             }
         }
 
-        public void TryReload()
+        public void TryReload(Verb verb)
         {
             if (NeedsReload(allowForcedReload: true))
             {
@@ -121,7 +122,7 @@ namespace VanillaVehiclesExpanded
                         var newCharge = (int)(toFill * (fuelToConsume / fuelNeeded));
                         if (newCharge <= 0)
                         {
-                            Messages.Message("VVE_CannotReloadNotEnoughAmmo".Translate(VerbProperties.First().label, Props.ammoDef.label), MessageTypeDefOf.RejectInput);
+                            Messages.Message("VVE_CannotReloadNotEnoughAmmo".Translate(verb.verbProps.label, Props.ammoDef.label), MessageTypeDefOf.RejectInput);
                         }
                         else
                         {
@@ -137,7 +138,7 @@ namespace VanillaVehiclesExpanded
             }
             else
             {
-                Messages.Message("VVE_CannotReloadFullAmmo".Translate(VerbProperties.First().label, Props.ammoDef.label), MessageTypeDefOf.RejectInput);
+                Messages.Message("VVE_CannotReloadFullAmmo".Translate(verb.verbProps.label, Props.ammoDef.label), MessageTypeDefOf.RejectInput);
             }
         }
 
@@ -172,7 +173,14 @@ namespace VanillaVehiclesExpanded
         private Command_ReloadableWithVerbs CreateVerbTargetCommandOverride(Thing gear, Verb verb)
         {
             Command_ReloadableWithVerbs command_Reloadable = new Command_ReloadableWithVerbs(this);
-            command_Reloadable.defaultDesc = gear.def.description;
+            if (this.Props.commandDescriptions != null)
+            {
+                command_Reloadable.defaultDesc = this.Props.commandDescriptions[AllVerbs.IndexOf(verb)];
+            }
+            else
+            {
+                command_Reloadable.defaultDesc = gear.def.description;
+            }
             command_Reloadable.hotKey = Props.hotKey;
             command_Reloadable.defaultLabel = verb.verbProps.label;
             command_Reloadable.verb = verb;
@@ -188,7 +196,6 @@ namespace VanillaVehiclesExpanded
                 command_Reloadable.icon = ((verb.UIIcon != BaseContent.BadTex) ? verb.UIIcon : gear.def.uiIcon);
                 command_Reloadable.iconAngle = gear.def.uiIconAngle;
                 command_Reloadable.iconOffset = gear.def.uiIconOffset;
-                command_Reloadable.defaultIconColor = gear.DrawColor;
             }
             if (Wearer.Faction != Faction.OfPlayer)
             {
@@ -215,16 +222,16 @@ namespace VanillaVehiclesExpanded
 
         public override string TopRightLabel => comp.LabelRemaining;
 
-        public override Color IconDrawColor => overrideColor ?? base.IconDrawColor;
+        public override Color IconDrawColor => overrideColor ?? defaultIconColor;
 
         public override IEnumerable<FloatMenuOption> RightClickFloatMenuOptions
         {
             get
             {
-                var label = "VVE_Reload".Translate(comp.Props.Verbs.First().label, comp.AmmoDef.Named("AMMO")) + " (" + comp.LabelRemaining + ")";
+                var label = "VVE_Reload".Translate(verb.verbProps.label, comp.AmmoDef.Named("AMMO")) + " (" + comp.LabelRemaining + ")";
                 yield return new FloatMenuOption(label, delegate
                 {
-                    comp.TryReload();
+                    comp.TryReload(verb);
                 });
             }
         }
