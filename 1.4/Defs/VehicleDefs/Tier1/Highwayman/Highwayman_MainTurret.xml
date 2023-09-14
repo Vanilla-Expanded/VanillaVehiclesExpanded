@@ -13,6 +13,8 @@
 		<reloadTimer>2.4</reloadTimer>
 		<warmUpTimer>1.2</warmUpTimer>
 		
+		<chargePerAmmoCount>0.25</chargePerAmmoCount>
+		
 		<magazineCapacity>75</magazineCapacity>
 		<genericAmmo>true</genericAmmo>
 		
