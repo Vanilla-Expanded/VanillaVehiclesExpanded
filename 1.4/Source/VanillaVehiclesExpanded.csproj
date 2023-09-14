@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comps\CompRefrigerator.cs" />
+    <Compile Include="Comps\CompReloadableWithVerbs.cs" />
     <Compile Include="Harmony\CompRottable_Active_Patch.cs" />
     <Compile Include="Harmony\VehiclePawn_Notify_Boarded_Pawn.cs" />
     <Compile Include="VehicleTracker.cs" />
@@ -101,6 +102,11 @@
     <Compile Include="VanillaVehiclesExpandedMod.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer">
+      <Version>2.2.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Krafs.Rimworld.Ref">
       <Version>1.4.3704</Version>
     </PackageReference>
