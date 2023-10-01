@@ -83,6 +83,12 @@
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 1)</li>
+						</cells>
+					</hitbox>
 				</li>
 			</roles>
 		</properties>

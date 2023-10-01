@@ -83,11 +83,24 @@
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 2)</li>
+						</cells>
+					</hitbox>
 				</li>
 				<li>
 					<key>passenger</key>
 					<label>Passenger</label>
 					<slots>3</slots>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 1)</li>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
 				</li>
 			</roles>
 		</properties>

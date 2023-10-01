@@ -71,6 +71,12 @@
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 1)</li>
+						</cells>
+					</hitbox>
 				</li>
 				<li>
 					<key>gunner</key>
@@ -79,14 +85,32 @@
 					<slotsToOperate>1</slotsToOperate>
 					
 					<handlingTypes>Turret</handlingTypes>
+					
 					<turretIds>
 						<li>mainTurret</li>
 					</turretIds>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
 				</li>
 				<li>
 					<key>passenger</key>
 					<label>Passenger</label>
 					<slots>4</slots>
+					
+					<hitbox>
+						<cells>
+							<li>(-1, -1)</li>
+							<li>(0, -1)</li>
+							<li>(1, -1)</li>
+							<li>(-1, -2)</li>
+							<li>(0, -2)</li>
+							<li>(1, -2)</li>
+						</cells>
+					</hitbox>
 				</li>
 			</roles>
 		</properties>

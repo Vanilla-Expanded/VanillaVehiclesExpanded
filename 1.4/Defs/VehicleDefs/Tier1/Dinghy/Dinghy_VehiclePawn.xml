@@ -86,7 +86,9 @@
 					<slotsToOperate>1</slotsToOperate>
 					
 					<hitbox>
-						<side>Back</side>
+						<cells>
+							<li>(0, -1)</li>
+						</cells>
 					</hitbox>
 					
 					<pawnRenderer>
@@ -113,10 +115,9 @@
 					<exposed>true</exposed>
 					
 					<hitbox>
-						<side>BodyNoOverlap</side>
-						<noOverlapWith>
-							<li>Back</li>
-						</noOverlapWith>
+						<cells>
+							<li>(1, -1)</li>
+						</cells>
 					</hitbox>
 					
 					<pawnRenderer>
@@ -143,10 +144,9 @@
 					<exposed>true</exposed>
 					
 					<hitbox>
-						<side>BodyNoOverlap</side>
-						<noOverlapWith>
-							<li>Back</li>
-						</noOverlapWith>
+						<cells>
+							<li>(0, 0)</li>
+						</cells>
 					</hitbox>
 					
 					<pawnRenderer>
@@ -173,10 +173,9 @@
 					<exposed>true</exposed>
 					
 					<hitbox>
-						<side>BodyNoOverlap</side>
-						<noOverlapWith>
-							<li>Back</li>
-						</noOverlapWith>
+						<cells>
+							<li>((1, 0)</li>
+						</cells>
 					</hitbox>
 					
 					<pawnRenderer>
@@ -203,10 +202,9 @@
 					<exposed>true</exposed>
 					
 					<hitbox>
-						<side>BodyNoOverlap</side>
-						<noOverlapWith>
-							<li>Back</li>
-						</noOverlapWith>
+						<cells>
+							<li>(0, 1)</li>
+						</cells>
 					</hitbox>
 					
 					<pawnRenderer>
@@ -233,10 +231,9 @@
 					<exposed>true</exposed>
 					
 					<hitbox>
-						<side>BodyNoOverlap</side>
-						<noOverlapWith>
-							<li>Back</li>
-						</noOverlapWith>
+						<cells>
+							<li>(1, 1)</li>
+						</cells>
 					</hitbox>
 					
 					<pawnRenderer>

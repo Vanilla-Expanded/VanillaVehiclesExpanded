@@ -68,6 +68,12 @@
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
+					<hitbox>
+						<cells>
+							<li>(0, 1)</li>
+						</cells>
+					</hitbox>
+					
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>
@@ -77,6 +83,12 @@
 					<label>Gunner</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
 					
 					<handlingTypes>Turret</handlingTypes>
 					

@@ -68,6 +68,13 @@
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+					
 					<handlingTypes>
 						<li>Movement</li>
 					</handlingTypes>

@@ -66,22 +66,27 @@
 					<label>Driver</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
-					<handlingTypes>
-						<li>Movement</li>
-					</handlingTypes>
+					
 					<hitbox>
 						<cells>
 							<li>(0, 1)</li>
+							<li>(1, 1)</li>
 						</cells>
 					</hitbox>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
 				</li>
 				<li>
 					<key>passenger</key>
 					<label>Passenger</label>
 					<slots>1</slots>
+					
 					<hitbox>
 						<cells>
-							<li>(1, 1)</li>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
 						</cells>
 					</hitbox>
 				</li>
