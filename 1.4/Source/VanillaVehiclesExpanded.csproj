@@ -55,6 +55,7 @@
     <Compile Include="Comps\CompRefrigerator.cs" />
     <Compile Include="Comps\CompReloadableWithVerbs.cs" />
     <Compile Include="Harmony\CompRottable_Active_Patch.cs" />
+    <Compile Include="Harmony\MemoryUtility_UnloadUnusedUnityAssets_Patch.cs" />
     <Compile Include="Harmony\VehiclePawn_Notify_Boarded_Pawn.cs" />
     <Compile Include="VehicleTracker.cs" />
     <Compile Include="Harmony\Pawn_ExposeData_Patch.cs" />

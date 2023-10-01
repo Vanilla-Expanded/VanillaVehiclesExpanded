@@ -74,6 +74,9 @@
       <Silver>4</Silver>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -111,6 +114,9 @@
     <costList>
       <Steel>40</Steel>
     </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -131,6 +137,9 @@
       <Silver>1</Silver>
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -150,6 +159,9 @@
       <Steel>25</Steel>
       <Chemfuel>10</Chemfuel>
     </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -172,6 +184,9 @@
     <recipeMaker>
       <researchPrerequisite>Batteries</researchPrerequisite>
     </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -194,6 +209,9 @@
     <recipeMaker>
       <researchPrerequisite>BiofuelRefining</researchPrerequisite>
     </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -216,6 +234,9 @@
     <recipeMaker>
       <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
     </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -238,6 +259,9 @@
     <recipeMaker>
       <researchPrerequisite>AirConditioning</researchPrerequisite>
     </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
@@ -260,6 +284,9 @@
     <recipeMaker>
       <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
     </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
   </ThingDef>
   
 </Defs>
