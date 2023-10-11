@@ -1,6 +1,8 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Vehicles;
 using Verse;
 using Verse.Sound;
 
@@ -196,6 +198,7 @@ namespace VanillaVehiclesExpanded
                     }
                 };
                 yield return closeButton;
+                CheckVehicleObstructingClosingGarage(closeButton);
             }
             else if (closeDesignationOn && opened)
             {
@@ -209,6 +212,15 @@ namespace VanillaVehiclesExpanded
                     }
                 };
                 yield return cancelButton;
+            }
+        }
+
+        public void CheckVehicleObstructingClosingGarage(Command_Action command)
+        {
+            var cellRect = this.OccupiedRect();
+            if (cellRect.Cells.Any(x => x.GetFirstThing<VehiclePawn>(this.Map) != null))
+            {
+                command.Disable("VVE_VehicleObstructingClosingGarage".Translate());
             }
         }
 

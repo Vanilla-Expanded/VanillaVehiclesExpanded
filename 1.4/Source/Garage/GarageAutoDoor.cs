@@ -43,6 +43,7 @@ namespace VanillaVehiclesExpanded
                     closeButton.Disable("NoPower".Translate());
                 }
                 yield return closeButton;
+                CheckVehicleObstructingClosingGarage(closeButton);
             }
         }
     }
