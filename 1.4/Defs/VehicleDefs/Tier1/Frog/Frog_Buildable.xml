@@ -5,7 +5,6 @@
 		<defName>VVE_Frog_Blueprint</defName>
 		<label>Frog</label>
 		<description>A basic reusable transport pod, the Frog is a relatively cheap vehicle that is the first option when it comes to flying without crashing into the ground. Several times faster than conventional transport pods with acceptable armour for its single passenger, making it an ideal ambush vehicle.\n\nEven worse than other tier 1 vehicles, fuel efficiency isn’t a thing with this transportation. Care must be taken to either refuel at the landing site or travel with enough spare fuel to make the trip back.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
-		<designationCategory>VF_Vehicles</designationCategory>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_Droppod/Tier1_Droppod</texPath>

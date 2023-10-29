@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Rocket_Scytheman_MainTurret</defName>
+		<label>high-explosive rocket</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		
+		<graphicData>
+			<texPath>Projectiles/Marshal_Shot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4, 4)</drawSize>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>54</damageAmountBase>
+			<speed>162</speed>
+			<explosionRadius>5.9</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+	</ThingDef>
+	
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>Scytheman_MainTurret</defName>
+		<label>Multiple Launch Rocket System</label>
+		<description>An inaccurate launcher capable of firing two barrages of rockets covering a large area. The turret does not fire until someone orders it to fire. It is very effective against large groups of weaker combatants, but less effective against small numbers of armored targets. Extensive firing may overheat and disable the turret.</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>RocketswarmLauncher_Fire</shotSound>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		
+		<projectile>Proj_Rocket</projectile>
+		<reloadTimer>12.2</reloadTimer>
+		<warmUpTimer>1</warmUpTimer>
+		<chargePerAmmoCount>10</chargePerAmmoCount>
+		
+		<magazineCapacity>16</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>1</rotationSpeed>
+		
+		<projectileOffset>0.1</projectileOffset>
+		
+		<minRange>20.9</minRange>
+		
+		<cooldown>
+			<heatPerShot>5</heatPerShot>
+			<dissipationRate>0.01667</dissipationRate> <!-- 1 per second -->
+		</cooldown>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>8</shotsPerBurst>
+				<ticksBetweenShots>8</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<spreadRadius>9.9</spreadRadius>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_RocketTruck/Tier1_RocketTruck_CannonTop</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>Cutout</shaderType>
+			<drawSize>(3, 3)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+		
+		<!--
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<offset>(0, 0, 2)</offset>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+		-->
+	</Vehicles.VehicleTurretDef>
+</Defs>

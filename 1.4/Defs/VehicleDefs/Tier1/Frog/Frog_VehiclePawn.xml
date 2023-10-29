@@ -18,15 +18,17 @@
 		</graphicData>
 		
 		<fillPercent>1</fillPercent>
+		<rotatable>false</rotatable>
 		
 		<nameable>false</nameable>
-
+		
 		<buildDef>VVE_Frog_Blueprint</buildDef>
 
 		<size>(1,1)</size>
 		<uiIconScale>0.85</uiIconScale>
 		
-		<vehicleMovementPermissions LockSetting="True">NotAllowed</vehicleMovementPermissions>
+		<vehicleMovementPermissions LockSetting = "True">NotAllowed</vehicleMovementPermissions>
+		<canCaravan LockSetting = "True">false</canCaravan>
 		<vehicleCategory>Transport</vehicleCategory>
 		<techLevel>Industrial</techLevel>
 		<vehicleType>Air</vehicleType>
