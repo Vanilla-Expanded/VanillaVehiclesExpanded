@@ -3,6 +3,7 @@ using System;
 using Verse;
 using SmashTools;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace VanillaVehiclesExpanded
 {
@@ -30,17 +31,16 @@ namespace VanillaVehiclesExpanded
         public static bool IsDisabled(this ResearchProjectDef __instance, out ThingDef wreckNotRestored)
         {
             wreckNotRestored = null;
-            foreach (var wreck in wreckDefs)
+            foreach (var restoredWreck in GameComponent_VehicleUseTracker.Instance.restoredWrecks)
             {
-
-                if (GameComponent_VehicleUseTracker.Instance.restoredWrecks.Contains(wreck))
+                if (restoredWreck.GetCompProperties<CompProperties_VehicleWreck>().researchDef == __instance)
                 {
-                    if (wreck.GetCompProperties<CompProperties_VehicleWreck>().researchDef == __instance)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
-                else if (wreck.GetCompProperties<CompProperties_VehicleWreck>().researchDef == __instance)
+            }
+            foreach (var wreck in wreckDefs.Where(x => GameComponent_VehicleUseTracker.Instance.restoredWrecks.Contains(x) is false))
+            {
+                if (wreck.GetCompProperties<CompProperties_VehicleWreck>().researchDef == __instance)
                 {
                     wreckNotRestored = wreck;
                     return true;
