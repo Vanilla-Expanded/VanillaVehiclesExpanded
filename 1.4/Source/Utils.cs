@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace VanillaVehiclesExpanded
 {
+
     [StaticConstructorOnStartup]
     public static class Utils
     {

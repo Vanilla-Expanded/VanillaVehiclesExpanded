@@ -4,19 +4,18 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>Rocket_Scytheman_MainTurret</defName>
 		<label>high-explosive rocket</label>
-		<thingClass>Projectile_Explosive</thingClass>
-		
+		<thingClass>VanillaVehiclesExpanded.Rocket_Scytheman</thingClass>
 		<graphicData>
-			<texPath>Projectiles/Marshal_Shot</texPath>
+			<texPath>Things/Projectile/Rocket_Swarm</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(4, 4)</drawSize>
-			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.2</drawSize>
 		</graphicData>
-		
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<damageAmountBase>54</damageAmountBase>
-			<speed>162</speed>
+			<flyOverhead>true</flyOverhead>
+			<speed>38</speed>
+			<arcHeightFactor>50</arcHeightFactor>
 			<explosionRadius>5.9</explosionRadius>
 			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
 			<soundExplode>MortarBomb_Explode</soundExplode>
@@ -34,7 +33,7 @@
 		<shotSound>RocketswarmLauncher_Fire</shotSound>
 		<reloadSound>Artillery_ShellLoaded</reloadSound>
 		
-		<projectile>Proj_Rocket</projectile>
+		<projectile>Rocket_Scytheman_MainTurret</projectile>
 		<reloadTimer>12.2</reloadTimer>
 		<warmUpTimer>1</warmUpTimer>
 		<chargePerAmmoCount>10</chargePerAmmoCount>
