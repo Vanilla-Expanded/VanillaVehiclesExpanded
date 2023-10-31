@@ -3,7 +3,7 @@
 <Defs>
 	<ThingDef ParentName="BaseBullet">
 		<defName>Rocket_Scytheman_MainTurret</defName>
-		<label>high-explosive rocket</label>
+		<label>swarmer rocket</label>
 		<thingClass>VanillaVehiclesExpanded.Rocket_Scytheman</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/Rocket_Swarm</texPath>
@@ -12,11 +12,11 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Bomb</damageDef>
-			<damageAmountBase>54</damageAmountBase>
+			<damageAmountBase>38</damageAmountBase>
 			<flyOverhead>true</flyOverhead>
-			<speed>38</speed>
-			<arcHeightFactor>50</arcHeightFactor>
-			<explosionRadius>5.9</explosionRadius>
+			<speed>24</speed>
+			<arcHeightFactor>40</arcHeightFactor>
+			<explosionRadius>4.9</explosionRadius>
 			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
 			<soundExplode>MortarBomb_Explode</soundExplode>
 			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
@@ -26,7 +26,7 @@
 	
 	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
 		<defName>Scytheman_MainTurret</defName>
-		<label>Multiple Launch Rocket System</label>
+		<label>Rocket swarm turret</label>
 		<description>An inaccurate launcher capable of firing two barrages of rockets covering a large area. The turret does not fire until someone orders it to fire. It is very effective against large groups of weaker combatants, but less effective against small numbers of armored targets. Extensive firing may overheat and disable the turret.</description>
 		
 		<turretType>Rotatable</turretType>
@@ -35,7 +35,7 @@
 		
 		<projectile>Rocket_Scytheman_MainTurret</projectile>
 		<reloadTimer>12.2</reloadTimer>
-		<warmUpTimer>1</warmUpTimer>
+		<warmUpTimer>3.6</warmUpTimer>
 		<chargePerAmmoCount>10</chargePerAmmoCount>
 		
 		<magazineCapacity>16</magazineCapacity>
@@ -59,8 +59,8 @@
 			<li>
 				<shotsPerBurst>8</shotsPerBurst>
 				<ticksBetweenShots>8</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
-				<spreadRadius>9.9</spreadRadius>
+				<ticksBetweenBursts>240</ticksBetweenBursts>
+				<spreadRadius>15.9</spreadRadius>
 				<label>Burst</label>
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>

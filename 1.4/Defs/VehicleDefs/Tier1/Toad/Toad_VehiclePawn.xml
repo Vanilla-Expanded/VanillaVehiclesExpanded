@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Toad</defName>
 		<label>Toad</label>
-		<description>TODO.</description>
+		<description>A squad and mortar deployment pod, the Toad is a somewhat expensive vehicle to quickly mount a siege on a nearby locale without exposing your gunners to danger. With more armour than a tank and a design made to be deployed from orbit, it makes for a semi-disposable assault vehicle.\n\nFuel efficiency is not the design of this vehicle, consider only deploying on short distances with enough fuel to make it back.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Operator x1, Passenger x3\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_SiegePod/Tier1_SiegePod</texPath>
