@@ -122,7 +122,7 @@
       </li>
       <li Class="CompProperties_Explosive">
         <explosiveRadius>0</explosiveRadius>
-        <explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+        <explosiveExpandPerFuel>0.05</explosiveExpandPerFuel>
         <explosiveDamageType>Flame</explosiveDamageType>
         <destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
         <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
