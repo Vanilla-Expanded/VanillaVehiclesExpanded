@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Armored">
 		<defName>VVE_Scytheman</defName>
 		<label>Scytheman</label>
-		<description>TODO</description>
+		<description>A juryrigged multiple rocket launcher system, the Scytheman is a repurposed farming vehicle intended to saturate a location with inaccurate volleys of explosives. Due to the design, it is not intended to fire successive volleys or be exposed to enemy fire.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances. Performs worse in the winter but slightly better on the flat, open road.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
 		
 		<graphicData>
 			<texPath>Things/Vehicles/Tier1/Tier1_RocketTruck/Tier1_RocketTruck</texPath>
@@ -481,7 +481,7 @@
 							<east>(-1.55, 0.53)</east>
 						</renderProperties>
 						
-						<gizmoLabel>MLRS</gizmoLabel>
+						<gizmoLabel>Rocket salvo</gizmoLabel>
 						
 						<defaultAngleRotated>180</defaultAngleRotated>
 						<angleRestricted>(90,270)</angleRestricted>
