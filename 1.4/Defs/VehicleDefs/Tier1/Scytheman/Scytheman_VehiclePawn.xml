@@ -493,30 +493,6 @@
 					</li>
 				</turrets>
 			</li>
-			<li Class="VanillaVehiclesExpanded.CompProperties_ReloadableWithVerbs">
-				<maxCharges>3</maxCharges>
-				<ammoDef>Chemfuel</ammoDef>
-				<ammoCountToRefill>10</ammoCountToRefill>
-				<soundReload>Standard_Reload</soundReload>
-				<hotKey>Misc4</hotKey>
-				<chargeNoun>smokepop</chargeNoun>
-				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-				<verbs>
-					<li>
-						<verbClass>Verb_Smokepop</verbClass>
-						<label>pop smoke</label>
-						<violent>false</violent>
-						<hasStandardCommand>true</hasStandardCommand>
-						<commandIcon>UI/ActivateBlindsmokePop</commandIcon>
-						<targetable>false</targetable>
-						<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
-						<onlyManualCast>True</onlyManualCast>
-					</li>
-				</verbs>
-				<commandDescriptions>
-					<li>A defensive smokescreen. When activated, it will release a cloud of smoke, obscuring incoming shots and preventing turrets from locking on. Has three charges and will require a chemfuel reload after they are spent.</li>
-				</commandDescriptions>
-			</li>
 		</comps>
 	</Vehicles.VehicleDef>
 </Defs>
