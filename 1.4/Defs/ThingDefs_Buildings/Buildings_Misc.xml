@@ -101,6 +101,7 @@
     <thingCategories>
       <li>BuildingsMisc</li>
     </thingCategories>
+	<hasInteractionCell>true</hasInteractionCell>
 	<interactionCellOffset>(0,0,-2)</interactionCellOffset>
 	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <researchPrerequisites>
