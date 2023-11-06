@@ -49,17 +49,14 @@
 			<FlightSpeed>50</FlightSpeed>
 		</vehicleStats>
 		
-		<soundOneShotsOnEvent>
-			<li>
-				<key>AerialVehicleLaunch</key>
-				<value>DropPod_Leaving</value>
-			</li>
-		</soundOneShotsOnEvent>
-		
 		<soundSustainersOnEvent>
 			<li>
+				<key>(AerialVehicleLaunch, Despawned)</key>
+				<value>VVE_VehicleEngineRocket</value>
+			</li>
+			<li>
 				<key>(AerialVehicleLanding, Spawned)</key>
-				<value>DropPod_Fall</value>
+				<value>VVE_VehicleEngineRocket</value>
 			</li>
 		</soundSustainersOnEvent>
 		

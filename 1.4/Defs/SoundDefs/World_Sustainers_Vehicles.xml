@@ -325,7 +325,7 @@
           </li>
         </grains>      
         <pitchRange>0.99~1.01</pitchRange>
-        <volumeRange>30~35</volumeRange>
+        <volumeRange>70~75</volumeRange>
         <sustainAttack>2.5</sustainAttack>      
         <sustainRelease>2.5</sustainRelease>
       </li>

@@ -98,6 +98,12 @@
 						<maxHealth>0.2</maxHealth>
 						<radius>3</radius>
 						<damageDef>Flame</damageDef>
+						
+						<drawOffsets>
+							<north>(0, 0, -0.6)</north>
+							<east>(-1.1, 0, 0.6)</east>
+							<south>(0, 0, 1.15)</south>
+						</drawOffsets>
 					</li>
 				</reactors>
 				
@@ -278,6 +284,11 @@
 						<maxHealth>0.2</maxHealth>
 						<radius>3</radius>
 						<damageDef>Flame</damageDef>
+						<drawOffsets>
+							<north>(0, 0, 1.2)</north>
+							<east>(0.85, 0, 0.45)</east>
+							<south>(0, 0, -0.5)</south>
+						</drawOffsets>
 					</li>
 				</reactors>
 				
