@@ -49,17 +49,14 @@
 			<FlightSpeed>50</FlightSpeed>
 		</vehicleStats>
 		
-		<soundOneShotsOnEvent>
-			<li>
-				<key>AerialVehicleLaunch</key>
-				<value>DropPod_Leaving</value>
-			</li>
-		</soundOneShotsOnEvent>
-		
 		<soundSustainersOnEvent>
 			<li>
+				<key>(AerialVehicleLaunch, Despawned)</key>
+				<value>VVE_VehicleEngineRocket</value>
+			</li>
+			<li>
 				<key>(AerialVehicleLanding, Spawned)</key>
-				<value>DropPod_Fall</value>
+				<value>VVE_VehicleEngineRocket</value>
 			</li>
 		</soundSustainersOnEvent>
 		
@@ -286,15 +283,16 @@
 								
 								<drawOffset>
 									<points>
-										<li>(1, -0.5)</li>
+										<li>(1, 1)</li>
 									</points>
 								</drawOffset>
 								
 								<frequency Class="SmashTools.BezierCurve">
 									<points>
 										<li>(0, 100)</li>
-										<li>(0.2, 250)</li>
-										<li>(0.3, 0)</li>
+										<li>(0.1, 200)</li>
+										<li>(0.2, 100)</li>
+										<li>(0.3, 50)</li>
 										<li>(0.4, 0)</li>
 										<li>(0.5, 0)</li>
 									</points>
@@ -309,17 +307,17 @@
 								
 								<size Class="SmashTools.BezierCurve">
 									<points>
-										<li>(0, 6)</li>
-										<li>(0.25, 5)</li>
-										<li>(0.75, 5)</li>
-										<li>(1, 5)</li>
+										<li>(0, 5)</li>
+										<li>(0.25, 4)</li>
+										<li>(0.75, 4)</li>
+										<li>(1, 4)</li>
 									</points>
 								</size>
 								
 								<speed Class="SmashTools.BezierCurve">
 									<points>
-										<li>(0, 6)</li>
-										<li>(0.2, 6)</li>
+										<li>(0, 4)</li>
+										<li>(0.2, 4)</li>
 										<li>(0.3, 0)</li>
 										<li>(0.4, 0)</li>
 										<li>(1, 0)</li>
@@ -332,7 +330,11 @@
 								<lockFleckX>false</lockFleckX>
 								<lockFleckZ>false</lockFleckZ>
 								<runOutOfStep>false</runOutOfStep>
-								<originOffset>(0, 0, -0.5)</originOffset>
+								
+								<originOffsetRange>
+									<from>(-0.6, 0, -0.2)</from>
+									<to>(0.6, 0, -0.2)</to>
+								</originOffsetRange>
 								
 								<frequency Class="SmashTools.BezierCurve">
 									<points>
@@ -353,10 +355,10 @@
 								
 								<size Class="SmashTools.BezierCurve">
 									<points>
-										<li>(0, 5)</li>
-										<li>(0.25, 7)</li>
-										<li>(0.75, 7)</li>
-										<li>(1, 7)</li>
+										<li>(0, 2)</li>
+										<li>(0.25, 4)</li>
+										<li>(0.75, 4)</li>
+										<li>(1, 4)</li>
 									</points>
 								</size>
 								
@@ -370,20 +372,19 @@
 								</speed>
 							</li>
 							<li>
-								<def>RocketExhaust</def>
-								<angle>175~185</angle>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
 								<lockFleckX>false</lockFleckX>
 								<lockFleckZ>false</lockFleckZ>
 								<runOutOfStep>false</runOutOfStep>
-								<originOffset>(0, 0, -0.5)</originOffset>
+								<originOffset>(-0.6, 0, -0.2)</originOffset>
 								
-								<frequency Class="SmashTools.BezierCurve">
+								<frequency Class="SmashTools.LinearCurve">
 									<points>
-										<li>(0, 0)</li>
-										<li>(0.1, 0)</li>
 										<li>(0.2, 0)</li>
+										<li>(0.3, 250)</li>
 										<li>(0.4, 250)</li>
-										<li>(1, 0)</li>
+										<li>(1, 250)</li>
 									</points>
 								</frequency>
 								
@@ -396,19 +397,94 @@
 								
 								<size Class="SmashTools.BezierCurve">
 									<points>
-										<li>(0, 4)</li>
-										<li>(0.25, 6)</li>
-										<li>(0.75, 6)</li>
-										<li>(1, 4)</li>
+										<li>(0, 1.75)</li>
 									</points>
 								</size>
 								
-								<speed Class="SmashTools.BezierCurve">
+								<speed Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.6, 20)</li>
+										<li>(0.7, 10)</li>
+										<li>(0.8, -5)</li>
+										<li>(1,-25)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(0.6, 0, -0.2)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 0)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(1, 250)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
 									<points>
 										<li>(0, 3)</li>
-										<li>(0.25, 1)</li>
-										<li>(0.75, 1)</li>
 										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 1.75)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.6, 20)</li>
+										<li>(0.7, 10)</li>
+										<li>(0.8, -5)</li>
+										<li>(1,-25)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(0, 0, 0.2)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 0)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(1, 250)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 1.75)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.6, 20)</li>
+										<li>(0.7, 10)</li>
+										<li>(0.8, -5)</li>
+										<li>(1,-25)</li>
 									</points>
 								</speed>
 							</li>
@@ -556,28 +632,18 @@
 							</li>
 							<li>
 								<def>RocketExhaust_Short</def>
-								<angle>175~185</angle>
+								<angle>177~183</angle>
 								<lockFleckX>false</lockFleckX>
 								<lockFleckZ>false</lockFleckZ>
 								<runOutOfStep>false</runOutOfStep>
-								<originOffset>(0, 0, -2.5)</originOffset>
-								<!--
-								<drawOffset>
-									<points>
-										<li>(0, -2.5)</li>
-										<li>(0.2, -2.5)</li>
-										<li>(0.4, -2.5)</li>
-										<li>(0.65, -0.5)</li>
-									</points>
-								</drawOffset>
-								-->
-								<frequency Class="SmashTools.BezierCurve">
+								<originOffset>(-0.6, 0, -0.2)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
 									<points>
 										<li>(0, 250)</li>
-										<li>(0.2, 250)</li>
 										<li>(0.3, 250)</li>
 										<li>(0.4, 250)</li>
-										<li>(0.75, 0)</li>
+										<li>(0.7, 0)</li>
 									</points>
 								</frequency>
 								
@@ -590,19 +656,94 @@
 								
 								<size Class="SmashTools.BezierCurve">
 									<points>
-										<li>(0, 4)</li>
-										<li>(0.25, 6)</li>
-										<li>(0.5, 6)</li>
-										<li>(0.75, 6)</li>
+										<li>(0, 1.75)</li>
 									</points>
 								</size>
 								
-								<speed Class="SmashTools.BezierCurve">
+								<speed Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 55)</li>
+										<li>(0.3, 45)</li>
+										<li>(0.4, 35)</li>
+										<li>(0.5, 30)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(0.6, 0, -0.2)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0, 250)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(0.7, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
 									<points>
 										<li>(0, 3)</li>
-										<li>(0.25, 3)</li>
-										<li>(0.5, 3)</li>
-										<li>(0.75, 1)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 1.75)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 55)</li>
+										<li>(0.3, 45)</li>
+										<li>(0.4, 35)</li>
+										<li>(0.5, 30)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(0, 0, 0.2)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0, 250)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(0.7, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 1.75)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 55)</li>
+										<li>(0.3, 45)</li>
+										<li>(0.4, 35)</li>
+										<li>(0.5, 30)</li>
 									</points>
 								</speed>
 							</li>
