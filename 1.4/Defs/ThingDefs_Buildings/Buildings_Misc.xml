@@ -121,6 +121,9 @@
         </fuelFilter>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
       </li>
+	  <li Class="VanillaVehiclesExpanded.CompProperties_RefuelingPump">
+		<refuelAmountPerTick>1</refuelAmountPerTick>
+	  </li>
       <li Class="CompProperties_Explosive">
         <explosiveRadius>0</explosiveRadius>
         <explosiveExpandPerFuel>0.05</explosiveExpandPerFuel>

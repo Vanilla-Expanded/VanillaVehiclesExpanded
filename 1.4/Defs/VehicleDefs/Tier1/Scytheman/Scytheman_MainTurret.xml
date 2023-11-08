@@ -22,8 +22,35 @@
 			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
 			<soundAmbient>MortarRound_Ambient</soundAmbient>
 		</projectile>
+		<drawOffscreen>true</drawOffscreen>
 	</ThingDef>
 	
+	<FleckDef ParentName = "FleckBase_Thrown">
+		<defName>VVE_Scytheman_RocketSmoke</defName>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<renderInstanced>true</renderInstanced>
+		</graphicData>
+		
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>1</fadeInTime>
+		<solidTime>4.5</solidTime>
+		<fadeOutTime>2.5</fadeOutTime>
+		<growthRate>0.01</growthRate>
+	</FleckDef>
+	
+	<FleckDef ParentName="FleckBaseSmoke">
+		<defName>VVE_Scytheman_RocketExhaust</defName>
+		<graphicData>
+			<texPath>Things/Mote/FireGlow</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<solidTime>0.03</solidTime>
+		<fadeOutTime>0.15</fadeOutTime>
+	</FleckDef>
+
+
 	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
 		<defName>Scytheman_MainTurret</defName>
 		<label>Rocket swarm turret</label>
