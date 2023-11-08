@@ -12,13 +12,13 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Bomb</damageDef>
-			<damageAmountBase>38</damageAmountBase>
+			<damageAmountBase>28</damageAmountBase>
 			<flyOverhead>true</flyOverhead>
 			<speed>24</speed>
-			<arcHeightFactor>40</arcHeightFactor>
+			<arcHeightFactor>35</arcHeightFactor>
 			<explosionRadius>4.9</explosionRadius>
 			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
-			<soundExplode>MortarBomb_Explode</soundExplode>
+			<soundExplode>Explosion_Rocket</soundExplode>
 			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
 			<soundAmbient>MortarRound_Ambient</soundAmbient>
 		</projectile>
@@ -72,6 +72,8 @@
 		
 		<autoSnapTargeting>false</autoSnapTargeting>
 		<rotationSpeed>1</rotationSpeed>
+		
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
 		
 		<projectileOffset>0.1</projectileOffset>
 		
