@@ -42,7 +42,7 @@ namespace VanillaVehiclesExpanded
 
         public void StartMove()
         {
-            wasMoving = Vehicle.vPather.Moving;
+            wasMoving = Vehicle.vehiclePather.Moving;
             if (wasMoving is false)
             {
                 currentSpeed = 0;
@@ -60,8 +60,8 @@ namespace VanillaVehiclesExpanded
 
             if (!Vehicle.Spawned) return; //WorldPawns can tick.  If curPath was not cleared before ticking, exception will be thrown
             
-            wasMoving = Vehicle.vPather.Moving;
-            if (wasMoving && Vehicle.vPather.curPath != null)
+            wasMoving = Vehicle.vehiclePather.Moving;
+            if (wasMoving && Vehicle.vehiclePather.curPath != null)
             {
                 float moveSpeed = StatMoveSpeed;
                 float totalPathCost = GetPathCost(false).cost;
@@ -159,7 +159,7 @@ namespace VanillaVehiclesExpanded
             float slowdownMultiplier = currentSpeed / (AccelerationRate * DecelerationMultiplier) / remainingArrivalTicks;
             bool shouldApplyHandbrake = handbrakeApplied is false && (stopImmediately
                             || (slowdownMultiplier >= 2f && currentSpeed > MaxSpeedToDecelerateSmoothly
-                            || deceleratePct > 1f && Vehicle.vPather.curPath.NodesConsumedCount < 2));
+                            || deceleratePct > 1f && Vehicle.vehiclePather.curPath.NodesConsumedCount < 2));
 
 
             if (shouldApplyHandbrake)
@@ -212,9 +212,9 @@ namespace VanillaVehiclesExpanded
 
         public PathCostResult GetPathCost(bool ignorePassedCells)
         {
-            var path = Vehicle.vPather.curPath;
+            var path = Vehicle.vehiclePather.curPath;
             var result = GetPathCost(path, ignorePassedCells);
-            result.cost += Vehicle.vPather.nextCellCostTotal - Vehicle.vPather.nextCellCostLeft;
+            result.cost += Vehicle.vehiclePather.nextCellCostTotal - Vehicle.vehiclePather.nextCellCostLeft;
             var otherResult = GetPathCostsFromQueuedJobs(path.LastNode);
             result.cost += otherResult.cost;
             result.cells += otherResult.cells;
@@ -332,7 +332,7 @@ namespace VanillaVehiclesExpanded
 
         private void TrySlowdown()
 		{
-            if (Vehicle.vPather.Moving && Vehicle.vPather.curPath != null)
+            if (Vehicle.vehiclePather.Moving && Vehicle.vehiclePather.curPath != null)
             {
                 float totalCost = GetPathCost(false).cost;
                 float decelerateMultiplier = 4f;
