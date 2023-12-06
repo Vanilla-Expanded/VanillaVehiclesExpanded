@@ -229,7 +229,7 @@
       <li>
 				<grains>
 					<li Class="AudioGrain_Folder">
-						<clipFolderPath>Sounds/TruckHorn</clipFolderPath>
+						<clipFolderPath>TruckHorn</clipFolderPath>
 					</li>
 				</grains>  
         <volumeRange>40~40</volumeRange>

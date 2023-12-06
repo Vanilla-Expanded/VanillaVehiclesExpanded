@@ -21,7 +21,7 @@
 	<altitudeLayer>Building</altitudeLayer>
 	<passability>PassThroughOnly</passability>
 	<castEdgeShadows>false</castEdgeShadows>
-	<fillPercent>0.55</fillPercent>
+	<fillPercent>0.15</fillPercent>
 	<canOverlapZones>false</canOverlapZones>
 	<pathCost>42</pathCost>
 	
