@@ -238,4 +238,37 @@
     </subSounds>
   </SoundDef>
 
+  <SoundDef>
+    <defName>VVE_Deploy</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+		<grains>
+			<li Class="AudioGrain_Clip">
+				<clipPath>VehicleDeploy_Oneshot</clipPath>
+			</li>
+		</grains>  
+        <volumeRange>40~40</volumeRange>
+        <pitchRange>0.89~1.11</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_Undeploy</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+		<grains>
+			<li Class="AudioGrain_Clip">
+				<clipPath>VehicleUndeploy_Oneshot</clipPath>
+			</li>
+		</grains>  
+        <volumeRange>40~40</volumeRange>
+        <pitchRange>0.89~1.11</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>
