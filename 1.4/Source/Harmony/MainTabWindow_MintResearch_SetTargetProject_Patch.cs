@@ -9,7 +9,7 @@ namespace VanillaVehiclesExpanded
     [HarmonyPatch]
     public static class MainTabWindow_MintResearch_SetTargetProject_Patch
     {
-        public static bool Prepare() => ModsConfig.IsActive("Dubwise.DubsMintMenus");
+        public static bool Prepare() => ModsConfig.IsActive("Dubwise.DubsMintMenus") || ModsConfig.IsActive("Dubwise.DubsMintMenus_steam");
 
         [HarmonyTargetMethods]
         public static IEnumerable<MethodBase> TargetMethods()
