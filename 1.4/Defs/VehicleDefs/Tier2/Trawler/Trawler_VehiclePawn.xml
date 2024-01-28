@@ -74,6 +74,7 @@
 		<properties>
 			<fishing>true</fishing>
 			<winterSpeedMultiplier>5</winterSpeedMultiplier>
+			<riverCost>1</riverCost>
 			
 			<track Class = "Vehicles.VehicleTrack_Wake">
 				<speed>1</speed>
