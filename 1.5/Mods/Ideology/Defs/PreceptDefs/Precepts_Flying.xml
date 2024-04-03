@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IssueDef>
+		<defName>VVE_Flying</defName>
+		<label>flying</label>
+		<iconPath>UI/Issues/VVE_Flying</iconPath>
+	</IssueDef>
+	<PreceptDef>
+		<defName>VVE_Flying_Forbidden</defName>
+		<issue>VVE_Flying</issue>
+		<label>forbidden</label>
+		<description>To soar through the skies is an affront to our traditions and beliefs.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>50</displayOrderInIssue>
+		<comps>
+			<li Class="PreceptComp_UnwillingToDo">
+				<eventDef>VF_BoardAirVehicle</eventDef>
+			</li>
+		</comps>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Flying_Horrible</defName>
+		<issue>VVE_Flying</issue>
+		<label>horrible</label>
+		<description>We believe taking to the skies disrupts the natural balance.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>40</displayOrderInIssue>
+		<comps>
+			<li Class="PreceptComp_SelfTookMemoryThought">
+				<eventDef>VF_BoardedAirVehicle</eventDef>
+				<thought>VVE_Flying_Horrible</thought>
+				<description>Travelled in an air vehicle</description>
+			</li>
+		</comps>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Flying_Allowed</defName>
+		<issue>VVE_Flying</issue>
+		<label>allowed</label>
+		<description>The skies are open to us, as they should be for all who wish to traverse them.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>35</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<classic>true</classic>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Flying_Approved</defName>
+		<issue>VVE_Flying</issue>
+		<label>approved</label>
+		<description>We hold that flying brings us collectively closer to the divine.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		<comps>
+			<li Class="PreceptComp_SelfTookMemoryThought">
+				<eventDef>VF_BoardedAirVehicle</eventDef>
+				<thought>VVE_Flying_Approved</thought>
+				<description>Travelled in an air vehicle</description>
+			</li>
+		</comps>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Flying_Required</defName>
+		<issue>VVE_Flying</issue>
+		<label>required</label>
+		<description>The purity of spirit is found amongst the clouds; one must experience the freedom of flight regularly.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>20</displayOrderInIssue>
+		<comps>
+			<li Class="VanillaVehiclesExpanded.PreceptComp_FlyingRequired">
+				<eventDef>VF_BoardedAirVehicle</eventDef>
+				
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>VVE_Flying_Required</thought>
+				<thoughtStageDescriptions>
+					
+					<li>Aerophilia (1 days without flying)</li>
+					<li>Aerophilia (5 days without flying)</li>
+					<li>Aerophilia (10 days without flying)</li>
+					<li>Aerophilia (20 days without flying)</li>
+			
+				</thoughtStageDescriptions>
+			</li>
+		</comps>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>VVE_Flying_Horrible</defName>
+		<durationDays>3</durationDays>
+		<stages>
+			<li>
+				<label>boarded an air vehicle</label>
+				<description>I was in a flying vehicle. It was horrible.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VVE_Flying_Approved</defName>
+		<durationDays>3</durationDays>
+		<stages>
+			<li>
+				<label>boarded an air vehicle</label>
+				<description>I was in an air vehicle. I loved it.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+		<ThoughtDef>
+		<defName>VVE_Flying_Required</defName>
+		<validWhileDespawned>true</validWhileDespawned>
+		<workerClass>VanillaVehiclesExpanded.ThoughtWorker_Flying_Required</workerClass>
+		<stages>
+			<li>
+				<label>aerophilia (more than 1 day)</label>
+				<description>It has been a lil while since I've soared the skies.</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+			<li>
+				<label>aerophilia (more than 5 days)</label>
+				<description>I need to fly, I'm getting very antsy.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>aerophilia (more than 10 days)</label>
+				<description>Enough is enough, I'm feeling the call of the open skies! I want to fly!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>aerophilia (more than 20 days)</label>
+				<description>ICARUS FLEW TOO CLOSE TO THE SUN, BUT I'M GONNA CATAPULT YOU THERE IF I CAN'T FLY SOON!</description>
+				<baseMoodEffect>-15</baseMoodEffect>
+			</li>
+			
+			
+			
+			
+		</stages>
+	</ThoughtDef>
+</Defs>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Bunsen_Blueprint</defName>
+		<label>Bunsen</label>
+		<description>A basic light tank, the Bunsen is a modified armoured vehicle suited for taking on enemy fortifications and exposed infantry. Special light plating to prevent self-immolation, combined with its main weapon drawing directly from its enlarged fuel tanks, leave it a very precarious model to field.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances, however it’s also less fuel efficient on the world map.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_FlamerTank/Tier1_FlamerTank</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>825</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(2,4)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>1</VVE_CarAlternator>
+			<VVE_CarExhaust>4</VVE_CarExhaust>
+			<VVE_CarSuspension>8</VVE_CarSuspension>
+			<VVE_CarWheel>8</VVE_CarWheel>
+			<Steel>300</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>VVE_Bunsen</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

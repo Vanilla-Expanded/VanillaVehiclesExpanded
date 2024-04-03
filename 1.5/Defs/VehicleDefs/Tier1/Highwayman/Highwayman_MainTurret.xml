@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>Highwayman_MainTurret</defName>
+		<label>highwayman turret</label>
+		<description>A lightly-armored twin-linked miniturret cannon. Usually mounted on Highwaymen armored personnel carriers. Needs to be reloaded with steel. Can only fire over short range, but doesn’t have any issues with firing at enemies that engage the vehicle in melee.</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>GunShotA</shotSound>
+		
+		<projectile>Bullet_MiniTurret</projectile>
+		<reloadTimer>2.4</reloadTimer>
+		<warmUpTimer>1.2</warmUpTimer>
+		
+		<chargePerAmmoCount>0.25</chargePerAmmoCount>
+		
+		<magazineCapacity>75</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2</rotationSpeed>
+		
+		<projectileOffset>2.1</projectileOffset>
+		<projectileShifting>
+			<li>0.2</li>
+			<li>-0.2</li>
+		</projectileShifting>
+		
+		<maxRange>28.9</maxRange>
+		
+		<recoil>
+			<distanceTotal>0.15</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
+		</recoil>
+		
+		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>4</shotsPerBurst>
+				<ticksBetweenShots>6</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_APC/Tier1_APC_CannonTop</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(4, 4)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+</Defs>

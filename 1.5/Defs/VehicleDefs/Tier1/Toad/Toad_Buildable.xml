@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Toad_Blueprint</defName>
+		<label>Toad</label>
+		<description>A squad and mortar deployment pod, the Toad is a somewhat expensive vehicle to quickly mount a siege on a nearby locale without exposing your gunners to danger. With more armour than a tank and a design made to be deployed from orbit, it makes for a semi-disposable assault vehicle.\n\nFuel efficiency is not the design of this vehicle, consider only deploying on short distances with enough fuel to make it back.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Operator x1, Passenger x3\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_SiegePod/Tier1_SiegePod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4, 4)</drawSize>
+			<drawRotated>false</drawRotated>
+		</graphicData>
+		
+		<rotatable>false</rotatable>
+
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<size>(3, 3)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>2</VVE_CarAlternator>
+			<VVE_CarExhaust>12</VVE_CarExhaust>
+			<VVE_CarSuspension>4</VVE_CarSuspension>
+			<Steel>160</Steel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>VVE_Toad</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

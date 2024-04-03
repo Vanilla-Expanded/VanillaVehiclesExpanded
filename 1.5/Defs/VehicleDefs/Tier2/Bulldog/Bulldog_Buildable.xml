@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Bulldog_Blueprint</defName>
+		<label>Bulldog</label>
+		<description>A general main battle tank, the Bulldog is an improved combat vehicle that performs well in any engagement. Performs better in less favourable terrain with all sides armoured, the thinnest plating being at the rear near the engine.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency and is quite visible, which is still an improvement over the tier 1 tank.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Tank/Tier2_Tank</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4, 6)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(3, 5)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_CombatVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>2</VVE_CarAlternator>
+			<VVE_CarExhaust>4</VVE_CarExhaust>
+			<VVE_CarSuspension>10</VVE_CarSuspension>
+			<VVE_CarWheel>14</VVE_CarWheel>
+			<VVE_CarTransmission>1</VVE_CarTransmission>
+			<VVE_CarRadiator>2</VVE_CarRadiator>
+			<VVE_CarFuelTank>2</VVE_CarFuelTank>
+			<Steel>440</Steel>
+			<ComponentIndustrial>16</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>VVE_Bulldog</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

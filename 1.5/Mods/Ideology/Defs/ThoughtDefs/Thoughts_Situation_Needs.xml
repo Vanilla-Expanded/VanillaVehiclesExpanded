@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+
+  <ThoughtDef>
+    <defName>VVE_NeedRoomSize_Horrible</defName>
+    <workerClass>VanillaVehiclesExpanded.ThoughtWorker_NeedRoomSize_Horrible</workerClass>
+    <stages>
+      <li>
+        <label>confined interior</label>
+        <description>This space is so tiny. I feel like a rat in a cage.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+      <li>
+        <label>cramped interior</label>
+        <description>This room is too small. I wish I had more space to move around and breathe.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>spacious interior</label>
+        <description>This room is so expansive, I feel free.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+</Defs>

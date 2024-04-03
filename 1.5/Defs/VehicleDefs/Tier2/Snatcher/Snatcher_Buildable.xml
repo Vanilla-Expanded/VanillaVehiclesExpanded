@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Snatcher_Blueprint</defName>
+		<label>Snatcher</label>
+		<description>A general passenger transport, the Snatcher is a solid vehicle for transporting people to different locations. Best suited on flat roads and will seriously struggle in snow or on hills.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Van/Tier2_Van</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,6)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>9500</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(2,5)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_ComplexVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>2</VVE_CarAlternator>
+			<VVE_CarExhaust>4</VVE_CarExhaust>
+			<VVE_CarSuspension>4</VVE_CarSuspension>
+			<VVE_CarWheel>4</VVE_CarWheel>
+			<VVE_CarBattery>1</VVE_CarBattery>
+			<VVE_CarRadiator>1</VVE_CarRadiator>
+			<Steel>280</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>VVE_Snatcher</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

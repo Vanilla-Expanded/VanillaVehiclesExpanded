@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Armored">
+		<defName>VVE_Bunsen</defName>
+		<label>Bunsen</label>
+		<description>A basic light tank, the Bunsen is a modified armoured vehicle suited for taking on enemy fortifications and exposed infantry. Special light plating to prevent self-immolation, combined with its main weapon drawing directly from its enlarged fuel tanks, leave it a very precarious model to field.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances, however it’s also less fuel efficient on the world map.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Gunner x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_FlamerTank/Tier1_FlamerTank</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3,5)</drawSize>
+			<color>(72, 77, 72)</color>
+			<colorTwo>(56, 55, 50)</colorTwo>
+			<colorThree>(100, 69, 59)</colorThree>
+		</graphicData>
+		
+		<fillPercent>0.85</fillPercent>
+		
+		<buildDef>VVE_Bunsen_Blueprint</buildDef>
+		
+		<size>(2,4)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.28</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.46</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.65</ArmorRating_Heat>
+			<Flammability>0</Flammability>
+			<MarketValue>2880</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>260</Mass>
+			<MoveSpeed>7.0</MoveSpeed>
+			<CargoCapacity>80</CargoCapacity>
+			<RepairRate>0.5</RepairRate>
+			<AccelerationRate>0.03</AccelerationRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(IgnitionOn, IgnitionOff)</key>
+				<value>VVE_VehicleEngineHeavy</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<race>
+			<baseBodySize>3.5</baseBodySize>
+		</race>
+		
+		<properties>
+			<customRoadCosts AssignDefaults = "0.5"/>
+			
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 2)</li>
+			</vehicleJobLimitations>
+
+			<diagonalRotation>true</diagonalRotation>
+			<manhunterTargetsVehicle>false</manhunterTargetsVehicle>
+			<worldSpeedMultiplier>1</worldSpeedMultiplier>
+			<winterSpeedMultiplier>1.5</winterSpeedMultiplier>
+			
+			<roles>
+				<li>
+					<key>driver</key>
+					<label>Driver</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 1)</li>
+							<li>(1, 1)</li>
+						</cells>
+					</hitbox>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				</li>
+				<li>
+					<key>gunner</key>
+					<label>Gunner</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+					
+					<handlingTypes>Turret</handlingTypes>
+					
+					<turretIds>
+						<li>mainTurret</li>
+					</turretIds>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>60</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>LeftTrack</key>
+				<label>Left Track</label>
+				<health>100</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightTrack</key>
+				<label>Right Track</label>
+				<health>100</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontLeftDriveSprocket</key>
+				<label>Front Left Drive Sprocket</label>
+				<health>20</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontRightDriveSprocket</key>
+				<label>Front Right Drive Sprocket</label>
+				<health>20</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(1, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackLeftDriveSprocket</key>
+				<label>Back Left Drive Sprocket</label>
+				<health>20</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackRightDriveSprocket</key>
+				<label>Back Right Drive Sprocket</label>
+				<health>20</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(1, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Gearbox</key>
+				<label>Gearbox</label>
+				<health>40</health>
+				<depth>Internal</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 1)</li>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>LeftArmorPlating</key>
+				<label>Left Armor Plating</label>
+				<health>60</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightArmorPlating</key>
+				<label>Right Armor Plating</label>
+				<health>100</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>FrontArmorPlating</key>
+				<label>Front Armor Plating</label>
+				<health>60</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>BackArmorPlating</key>
+				<label>Back Armor Plating</label>
+				<health>60</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>60</health>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 0)</li>
+						<li>(1, 0)</li>
+						<li>(0, -1)</li>
+						<li>(1, -1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>Dashboard</key>
+				<label>Dashboard</label>
+				<health>45</health>
+				<depth>Internal</depth>
+				<hitWeight>2</hitWeight>
+			</li>
+			<li>
+				<key>SteeringApparatus</key>
+				<label>Steering Apparatus</label>
+				<health>20</health>
+				<depth>Internal</depth>
+				<hitWeight>2</hitWeight>
+			</li>
+			<li>
+				<key>Alternator</key>
+				<label>Alternator</label>
+				<health>20</health>
+				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
+			</li>
+			<li>
+				<key>Roof</key>
+				<label>Roof</label>
+				<health>80</health>
+				<depth>External</depth>
+				<hitWeight>10</hitWeight>
+				
+				<armor>
+					<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
+			</li>
+		</components>
+
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier1</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier1Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<leakDef>Filth_Fuel</leakDef>
+				<fuelConsumptionRate>29.5</fuelConsumptionRate>
+				<fuelConsumptionWorldMultiplier>0.8</fuelConsumptionWorldMultiplier>
+				<fuelCapacity>160</fuelCapacity>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li Class="VanillaVehiclesExpanded.FueledVehicleTurret">
+						<turretDef>VVE_Bunsen_MainTurret</turretDef>
+						
+						<renderProperties>
+							<north>(-0.05, 0.2)</north>
+							<south>(-0.02, 0.2)</south>
+							<east>(-0.02, 0.4)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 1.5)</aimPieOffset>
+						
+						<key>mainTurret</key>
+					</li>
+				</turrets>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

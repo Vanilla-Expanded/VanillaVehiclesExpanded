@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>VVE_OpenGarage</defName>
+    <driverClass>VanillaVehiclesExpanded.JobDriver_OpenGarage</driverClass>
+    <reportString>opening garage.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>VVE_CloseGarage</defName>
+    <driverClass>VanillaVehiclesExpanded.JobDriver_CloseGarage</driverClass>
+    <reportString>closing garage.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>VVE_RestoreWreck</defName>
+    <driverClass>VanillaVehiclesExpanded.JobDriver_RestoreWreck</driverClass>
+    <reportString>restoring TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IssueDef>
+		<defName>VVE_Acceleration</defName>
+		<label>acceleration</label>
+		<iconPath>UI/Issues/VVE_Acceleration</iconPath>
+	</IssueDef>
+
+	<PreceptDef>
+		<defName>VVE_Acceleration_Standard</defName>
+		<issue>VVE_Acceleration</issue>
+		<label>standard</label>
+		<description>Our vehicles move with balance, neither too fast nor too slow.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>35</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<classic>true</classic>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Acceleration_SundayDriver</defName>
+		<issue>VVE_Acceleration</issue>
+		<label>sunday driver</label>
+		<description>A measured pace keeps the world in balance and grants us time to savor the journey.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - All vehicles have World Speed Multiplier: x0.8</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Acceleration_High</defName>
+		<issue>VVE_Acceleration</issue>
+		<label>high</label>
+		<description>With swift acceleration, we move forward in leaps, seizing the day with passion.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - All vehicles have World Speed Multiplier: x1.25</description>
+		<impact>High</impact>
+		<displayOrderInIssue>20</displayOrderInIssue>
+		
+	</PreceptDef>
+	
+</Defs>

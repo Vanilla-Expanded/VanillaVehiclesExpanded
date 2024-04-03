@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>Toad_MainTurret</defName>
+		<label>toad artillery</label>
+		<description>A mortar turret that launches all kinds of shells, typically mounted on Toad siege pods. While it can inflict devastating damage, the mortar's inherent inaccuracy makes it more useful for attacking large fortifications than groups of enemies in the field.</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>Mortar_LaunchA</shotSound>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		
+		<reloadTimer>22</reloadTimer>
+		<warmUpTimer>4</warmUpTimer>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2</rotationSpeed>
+		
+		<projectileOffset>1</projectileOffset>
+		
+		<minRange>20.9</minRange>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<spreadRadius>4.4</spreadRadius>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_SiegePod/Tier1_SiegePod_CannonTop</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType> <!-- barrel graphic doesn't need masking -->
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<categories>
+				<li>MortarShells</li>
+			</categories>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+</Defs>

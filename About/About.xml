@@ -11,6 +11,7 @@ This mod utilises the paint job system added in Vehicles framework, allowing you
     <packageId>OskarPotocki.VanillaVehiclesExpanded</packageId>
     <supportedVersions>
 		<li>1.4</li>
+		<li>1.5</li>
     </supportedVersions>
     <modDependencies>
 		<li>
