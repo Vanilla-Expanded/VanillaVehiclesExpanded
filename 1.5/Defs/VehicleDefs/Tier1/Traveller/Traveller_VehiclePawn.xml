@@ -432,6 +432,9 @@
 				<fuelConsumptionRate>22.5</fuelConsumptionRate>
 				<fuelCapacity>80</fuelCapacity>
 			</li>
+			<li Class = "Vehicles.CompProperties_UpgradeTree">
+				<def>VVE_Traveller_UpgradeTree</def>
+			</li>
 		</comps>
 	</Vehicles.VehicleDef>
 </Defs>

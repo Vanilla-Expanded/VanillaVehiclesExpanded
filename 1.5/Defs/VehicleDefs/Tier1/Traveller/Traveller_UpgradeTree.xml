@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.UpgradeTreeDef>
+		<defName>VVE_Traveller_UpgradeTree</defName>
+		
+		<nodes>
+			<li>
+				<key>ReinforcedBumper</key>
+				<label>Reinforced Bumper</label>
+				<description>Reinforce the front bumper to allow this vehicle to deal more damage during collisions.</description>
+				
+				<icon>UI/UpgradeTree/Upgrade_Bumper</icon>
+				
+				<work>120</work>
+				
+				<gridCoordinate>(2,2)</gridCoordinate>
+				<drawSize>(80, 80)</drawSize>
+				
+				<upgrades>
+					<li Class = "Vehicles.VehicleUpgrade">
+						<health>
+							<li>
+								<key>FrontBumper</key>
+								<value>100</value>
+								<type>Set</type>
+							</li>
+						</health>
+					</li>
+				</upgrades>
+				
+				<ingredients>
+					<Steel>100</Steel>
+				</ingredients>
+				
+				<graphicOverlays>
+					<li>
+						<rotation>0</rotation>
+						<graphicData>
+							<texPath>Things/Vehicles/Tier2/Tier2_Helicopter/Tier2_Helicopter_RotorTop</texPath>
+							<graphicClass>Vehicles.Graphic_Propeller</graphicClass>
+							<drawSize>(5,5)</drawSize>
+							<drawOffsetNorth>(0, 0, 1.3)</drawOffsetNorth>
+							<drawOffsetEast>(0.55, 0, 0.5)</drawOffsetEast>
+							<drawOffsetSouth>(0, 0, 0.125)</drawOffsetSouth>
+							<drawOffsetWest>(-0.55, 0, 0.5)</drawOffsetWest>
+							<layer>1</layer>
+							<shaderType>Cutout</shaderType>
+						</graphicData>
+					</li>
+				</graphicOverlays>
+			</li>
+		</nodes>
+	</Vehicles.UpgradeTreeDef>
+</Defs>
