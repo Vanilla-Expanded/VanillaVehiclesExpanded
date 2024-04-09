@@ -71,7 +71,6 @@
 			
 			<worldSpeedMultiplier>1</worldSpeedMultiplier>
 			<winterSpeedMultiplier>5</winterSpeedMultiplier>
-			<riverCost>1</riverCost>
 			
 			<roles>
 				<li>

@@ -10,9 +10,33 @@ using Verse.Sound;
 
 namespace VanillaVehiclesExpanded
 {
+    [HarmonyPatch(typeof(Verb), "EquipmentSource", MethodType.Getter)]
+    public static class Verb_EquipmentSource_Patch
+    {
+        public static void Postfix(ref ThingWithComps __result, Verb __instance)
+        {
+            if (__instance.DirectOwner is CompReloadableWithVerbs comp)
+            {
+                __result = comp.parent;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(ReloadableUtility), "OwnerOf")]
+    public static class ReloadableUtility_OwnerOf_Patch
+    {
+        public static void Postfix(IReloadableComp reloadable, ref Pawn __result)
+        {
+            if (reloadable is CompReloadableWithVerbs withVerbs)
+            {
+                __result = withVerbs.Vehicle;
+            }
+        }
+    }
+
     public class CompReloadableWithVerbs : ThingComp, IVerbOwner, IReloadableComp, ICompWithCharges
     {
-        public new CompProperties_ReloadableWithVerbs Props => props as CompProperties_ReloadableWithVerbs;
+        public CompProperties_ReloadableWithVerbs Props => props as CompProperties_ReloadableWithVerbs;
 
         private VerbTracker verbTracker;
 
@@ -24,15 +48,13 @@ namespace VanillaVehiclesExpanded
 
         public string LabelRemaining => $"{RemainingCharges} / {MaxCharges}";
 
-        public Pawn Wearer => Vehicle;
+        public List<VerbProperties> VerbProperties => Props.Verbs;
 
-        public List<VerbProperties> VerbProperties => parent.def.Verbs;
-
-        public List<Tool> Tools => parent.def.tools;
+        public List<Tool> Tools => Props.tools;
 
         public ImplementOwnerTypeDef ImplementOwnerTypeDef => ImplementOwnerTypeDefOf.NativeVerb;
 
-        public Thing ConstantCaster => Wearer;
+        public Thing ConstantCaster => Vehicle;
 
         public virtual string GizmoExtraLabel => null;
 
@@ -69,7 +91,7 @@ namespace VanillaVehiclesExpanded
                     yield return item;
                 }
             }
-            yield return new StatDrawEntry(StatCategoryDefOf.Apparel, "Stat_Thing_ReloadChargesRemaining_Name".Translate(Props.ChargeNounArgument), LabelRemaining, "Stat_Thing_ReloadChargesRemaining_Desc".Translate(Props.ChargeNounArgument), 2749);
+            yield return new StatDrawEntry(VehicleStatCategoryDefOf.VehicleBasics, "Stat_Thing_ReloadChargesRemaining_Name".Translate(Props.ChargeNounArgument), LabelRemaining, "Stat_Thing_ReloadChargesRemaining_Desc".Translate(Props.ChargeNounArgument), 2749);
         }
 
         public void UsedOnce()
@@ -98,7 +120,7 @@ namespace VanillaVehiclesExpanded
 
         public bool VerbsStillUsableBy(Pawn p)
         {
-            return Wearer == p;
+            return Vehicle == p;
         }
 
 
@@ -110,21 +132,13 @@ namespace VanillaVehiclesExpanded
 
         private void SetupVerbs()
         {
+            if (AllVerbs.Count <= 0)
+            {
+                VerbTracker.InitVerbsFromZero();
+            }
             for (int i = 0; i < AllVerbs.Count; i++)
             {
-                AllVerbs[i].caster = Wearer;
-            }
-        }
-
-        [HarmonyPatch(typeof(ReloadableUtility), "OwnerOf")]
-        public static class ReloadableUtility_OwnerOf_Patch
-        {
-            public static void Postfix(IReloadableComp reloadable, ref Pawn __result)
-            {
-                if (reloadable is CompReloadableWithVerbs withVerbs)
-                {
-                    __result = withVerbs.Vehicle;
-                }
+                AllVerbs[i].caster = Vehicle;
             }
         }
 
@@ -132,7 +146,6 @@ namespace VanillaVehiclesExpanded
 
         public override void PostExposeData()
         {
-
             Scribe_Values.Look(ref remainingCharges, UniqueVerbOwnerID() + "_remainingCharges", -999);
             Scribe_Values.Look(ref replenishInTicks, UniqueVerbOwnerID() + "_replenishInTicks", -1);
             Scribe_Deep.Look(ref verbTracker, UniqueVerbOwnerID() + "_verbTracker", this);
@@ -169,7 +182,7 @@ namespace VanillaVehiclesExpanded
                             Vehicle.CompFueledTravel.ConsumeFuel(fuelToConsume);
                             if (Props.soundReload != null)
                             {
-                                Props.soundReload.PlayOneShot(new TargetInfo(Wearer.Position, Wearer.Map));
+                                Props.soundReload.PlayOneShot(new TargetInfo(Vehicle.Position, Vehicle.Map));
                             }
                         }
                     }
@@ -183,7 +196,7 @@ namespace VanillaVehiclesExpanded
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            bool drafted = Wearer.Drafted;
+            bool drafted = Vehicle.Drafted;
             if ((drafted && !Props.displayGizmoWhileDrafted) || (!drafted && !Props.displayGizmoWhileUndrafted))
             {
                 yield break;
@@ -196,7 +209,6 @@ namespace VanillaVehiclesExpanded
                     yield return CreateVerbTargetCommandOverride(gear, allVerb);
                 }
             }
-
             if (DebugSettings.ShowDevGizmos)
             {
                 Command_Action command_Action = new Command_Action();
@@ -236,13 +248,13 @@ namespace VanillaVehiclesExpanded
                 command_Reloadable.iconAngle = gear.def.uiIconAngle;
                 command_Reloadable.iconOffset = gear.def.uiIconOffset;
             }
-            if (Wearer.Faction != Faction.OfPlayer)
+            if (Vehicle.Faction != Faction.OfPlayer)
             {
                 command_Reloadable.Disable("CannotOrderNonControlled".Translate());
             }
-            else if (verb.verbProps.violent && Wearer.WorkTagIsDisabled(WorkTags.Violent))
+            else if (verb.verbProps.violent && Vehicle.WorkTagIsDisabled(WorkTags.Violent))
             {
-                command_Reloadable.Disable("IsIncapableOfViolenceLower".Translate(Wearer.LabelShort, Wearer).CapitalizeFirst() + ".");
+                command_Reloadable.Disable("IsIncapableOfViolenceLower".Translate(Vehicle.LabelShort, Vehicle).CapitalizeFirst() + ".");
             }
             else if (!CanBeUsed(out var reason))
             {
@@ -332,7 +344,7 @@ namespace VanillaVehiclesExpanded
             }
             if (Props.soundReload != null)
             {
-                Props.soundReload.PlayOneShot(new TargetInfo(this.Wearer.Position, this.Wearer.Map));
+                Props.soundReload.PlayOneShot(new TargetInfo(this.Vehicle.Position, this.Vehicle.Map));
             }
         }
 

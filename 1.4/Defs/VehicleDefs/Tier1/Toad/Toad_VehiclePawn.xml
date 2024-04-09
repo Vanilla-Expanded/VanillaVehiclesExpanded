@@ -300,8 +300,7 @@
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
 				<controlInFlight>false</controlInFlight>
-				<canRoofPunch>true</canRoofPunch>
-				<animationPunchAt>0.7</animationPunchAt>
+
 				
 				<launchProtocol Class="Vehicles.DefaultTakeoff">
 					<maxFlightNodes>1</maxFlightNodes>

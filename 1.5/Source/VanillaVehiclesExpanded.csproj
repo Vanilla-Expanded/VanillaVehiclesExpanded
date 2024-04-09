@@ -57,6 +57,7 @@
     <Compile Include="Comps\CompRefrigerator.cs" />
     <Compile Include="Comps\CompRefuelingPump.cs" />
     <Compile Include="Comps\CompReloadableWithVerbs.cs" />
+    <Compile Include="Comps\Verb_SmokePop.cs" />
     <Compile Include="Harmony\CompRottable_Active_Patch.cs" />
     <Compile Include="Harmony\MemoryUtility_UnloadUnusedUnityAssets_Patch.cs" />
     <Compile Include="Harmony\VehiclePawn_Notify_Boarded_Pawn.cs" />
