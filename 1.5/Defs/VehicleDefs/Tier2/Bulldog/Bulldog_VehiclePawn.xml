@@ -45,7 +45,8 @@
 		
 		<soundSustainersOnEvent>
 			<li>
-				<key>(IgnitionOn, IgnitionOff)</key>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
 				<value>VVE_VehicleEngineHeavy</value>
 			</li>
 		</soundSustainersOnEvent>

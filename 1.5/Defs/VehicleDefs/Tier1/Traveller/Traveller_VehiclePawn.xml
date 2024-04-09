@@ -45,8 +45,10 @@
 		
 		<soundSustainersOnEvent>
 			<li>
-				<key>(IgnitionOn, IgnitionOff)</key>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
 				<value>VVE_VehicleEngineMuscleCar</value>
+				<removalKey>DefaultEngine</removalKey>
 			</li>
 		</soundSustainersOnEvent>
 		
@@ -431,9 +433,6 @@
 				<leakDef>Filth_Fuel</leakDef>
 				<fuelConsumptionRate>22.5</fuelConsumptionRate>
 				<fuelCapacity>80</fuelCapacity>
-			</li>
-			<li Class = "Vehicles.CompProperties_UpgradeTree">
-				<def>VVE_Traveller_UpgradeTree</def>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>
