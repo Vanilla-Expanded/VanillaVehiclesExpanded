@@ -60,6 +60,7 @@
     <Compile Include="Comps\Verb_SmokePop.cs" />
     <Compile Include="Harmony\CompRottable_Active_Patch.cs" />
     <Compile Include="Harmony\MemoryUtility_UnloadUnusedUnityAssets_Patch.cs" />
+    <Compile Include="Harmony\ReadingOutcomeDoerGainResearch_OnReadingTick_Patch.cs" />
     <Compile Include="Harmony\VehiclePawn_Notify_Boarded_Pawn.cs" />
     <Compile Include="Rocket_Scytheman.cs" />
     <Compile Include="VehicleTracker.cs" />
