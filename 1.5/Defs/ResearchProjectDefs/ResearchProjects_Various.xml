@@ -13,6 +13,15 @@
     <researchViewX>0.00</researchViewX>
     <researchViewY>1.00</researchViewY>
 	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->first vehicles</li>
+    <li>subject_story->started making simple vehicles like buggies and single-person tanks</li>
+    <li>subject_story->changed how far we could go and what we could carry</li>
+    <li>subject_story->made travel faster than ever before</li>
+    <li>subject_gerund->inventing new ways to move</li>
+  </rulesStrings>
+</generalRules>
   </ResearchProjectDef>
   
   <ResearchProjectDef>
@@ -28,6 +37,15 @@
     <researchViewX>1.00</researchViewX>
     <researchViewY>1.00</researchViewY>
 	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->better vehicles</li>
+    <li>subject_story->built more complex vehicles like wagons and fast cars</li>
+    <li>subject_story->made it easier to move things and people over long distances</li>
+    <li>subject_story->vehicles became more useful and versatile</li>
+    <li>subject_gerund->improving our rides</li>
+  </rulesStrings>
+</generalRules>
   </ResearchProjectDef>
   
   <ResearchProjectDef>
@@ -43,6 +61,15 @@
     <researchViewX>2.00</researchViewX>
     <researchViewY>1.00</researchViewY>
 	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->flying machines</li>
+    <li>subject_story->created helicopters and cargo planes to fly over obstacles</li>
+    <li>subject_story->opened up new ways to explore and trade</li>
+    <li>subject_story->made air travel possible, changing how we see the world</li>
+    <li>subject_gerund->taking to the skies</li>
+  </rulesStrings>
+</generalRules>
   </ResearchProjectDef>
   
   <ResearchProjectDef>
@@ -58,6 +85,15 @@
     <researchViewX>3.00</researchViewX>
     <researchViewY>1.00</researchViewY>
 	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->war vehicles</li>
+    <li>subject_story->made powerful combat vehicles like tanks and armored planes</li>
+    <li>subject_story->vehicles could now fight and defend in wars</li>
+    <li>subject_story->changed how battles are fought with these new machines</li>
+    <li>subject_gerund->building for battle</li>
+  </rulesStrings>
+</generalRules>
   </ResearchProjectDef>
 
 </Defs>

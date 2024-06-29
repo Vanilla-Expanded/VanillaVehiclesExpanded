@@ -96,6 +96,9 @@
       <Steel>10</Steel>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
   </ThingDef>
   
   <ThingDef ParentName="VVE_CarPartBase">
