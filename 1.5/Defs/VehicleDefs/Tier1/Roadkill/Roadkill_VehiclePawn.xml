@@ -362,11 +362,12 @@
 							<south>(0, 0.25)</south>
 							<east>(0.05, 0.35)</east>
 						</renderProperties>
-						
+						<drawLayer>1</drawLayer>
+
 						<gizmoLabel>Main Turret</gizmoLabel>
 						
 						<angleRestricted/>
-						<aimPieOffset>(0, 1.5)</aimPieOffset>
+						<aimPieOffset>(0, 1)</aimPieOffset>
 						
 						<key>mainTurret</key>
 					</li>

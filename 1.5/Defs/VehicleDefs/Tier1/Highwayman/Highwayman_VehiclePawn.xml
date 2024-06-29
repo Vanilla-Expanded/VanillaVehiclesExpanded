@@ -483,7 +483,8 @@
 							<south>(0, 0.5)</south>
 							<east>(0.1, 0.5)</east>
 						</renderProperties>
-						
+						<drawLayer>3</drawLayer>
+
 						<gizmoLabel>Main Turret</gizmoLabel>
 						
 						<angleRestricted/>

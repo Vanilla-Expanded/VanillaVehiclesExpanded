@@ -24,7 +24,7 @@
 		</projectile>
 	</ThingDef>
 
-	<Vehicles.VehicleTurretDef Name="TankMainTurret" ParentName="VehicleTurretBase">
+	<Vehicles.VehicleTurretDef Name="RoadkillMainTurret" ParentName="VehicleTurretBase">
 		<defName>Roadkill_MainTurret</defName>
 		<label>roadkill cannon</label>
 		<description>A cannon capable of firing explosive tank shells over medium distance. Usually mounted on Roadkill tanks. Needs to be reloaded with steel. Can’t fire whilst moving. Has a decent range, but can’t target enemies too close.</description>
@@ -77,6 +77,7 @@
 			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
 			<drawSize>(4, 4)</drawSize>
+			<layer>5</layer>
 		</graphicData>
 		
 		<ammunition>
@@ -89,6 +90,7 @@
 			<li>
 				<cycles>1</cycles>
 				<moteDef>Mote_CannonPlume</moteDef>
+				<offset>(0, 0, 1.25)</offset>
 				<animationType>Reset</animationType>
 			</li>
 		</motes>
