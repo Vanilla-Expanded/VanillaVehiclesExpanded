@@ -420,6 +420,9 @@
 				<fuelConsumptionRate>18.5</fuelConsumptionRate>
 				<fuelCapacity>60</fuelCapacity>
 			</li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets/>
+			</li>
 		</comps>
 	</Vehicles.VehicleDef>
 </Defs>

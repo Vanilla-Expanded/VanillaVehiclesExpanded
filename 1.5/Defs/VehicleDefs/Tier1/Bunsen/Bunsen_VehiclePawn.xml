@@ -398,6 +398,7 @@
 							<south>(-0.02, 0.2)</south>
 							<east>(-0.02, 0.4)</east>
 						</renderProperties>
+						<drawLayer>3</drawLayer>
 						
 						<gizmoLabel>Main Turret</gizmoLabel>
 						
