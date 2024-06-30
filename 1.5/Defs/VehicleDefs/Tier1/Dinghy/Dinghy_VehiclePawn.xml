@@ -176,7 +176,7 @@
 					
 					<hitbox>
 						<cells>
-							<li>((1, 0)</li>
+							<li>(1, 0)</li>
 						</cells>
 					</hitbox>
 					
