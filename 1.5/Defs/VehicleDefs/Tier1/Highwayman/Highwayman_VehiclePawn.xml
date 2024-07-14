@@ -33,6 +33,7 @@
 			<ArmorRating_Heat>1.0</ArmorRating_Heat>
 			<Flammability>0.5</Flammability>
 			<MarketValue>2240</MarketValue>
+			<PackRadius>6.9</PackRadius>
 		</statBases>
 		
 		<vehicleStats>
