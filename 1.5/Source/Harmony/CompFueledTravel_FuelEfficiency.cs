@@ -25,12 +25,12 @@ namespace VanillaVehiclesExpanded
 
             if (Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo.GetPrecept(InternalDefOf.VVE_FuelEfficiency_Inefficient) != null)
             {
-                __result = __result * 0.5f;
+                __result = __result * 1.5f;
             }
 
             if (Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo.GetPrecept(InternalDefOf.VVE_FuelEfficiency_Efficient) != null)
             {
-                __result = __result * 1.5f;
+                __result = __result * 0.5f;
             }
 
         }
