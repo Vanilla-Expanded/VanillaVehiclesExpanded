@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBoatBaseBuildable">
+		<defName>VVE_Trawler_Blueprint</defName>
+		<label>Trawler</label>
+		<description>A general-purpose boat, the Trawler is an effective long distance transportation across open waters. Performs rather poorly on rivers and has to travel slowly during the winter season.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Boat/Tier2_Boat</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 6)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>8000</WorkToBuild>
+			<Flammability>0.65</Flammability>
+		</statBases>
+		
+		<size>(2, 5)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_ComplexVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>2</VVE_EngineBlock>
+			<VVE_CarAlternator>2</VVE_CarAlternator>
+			<VVE_CarExhaust>2</VVE_CarExhaust>
+			<VVE_CarFuelTank>2</VVE_CarFuelTank>
+			<Steel>160</Steel>
+			<WoodLog>100</WoodLog>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>VVE_Trawler</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VFECore.ObjectSpawnsDef>
+		<defName>VVE_AllMaps_VehicleWrecks</defName>
+		<thingDefs>
+
+		</thingDefs>
+		<numberToSpawn>1</numberToSpawn>
+		<allowOnWater>false</allowOnWater>
+	</VFECore.ObjectSpawnsDef>
+	
+	<VFECore.ObjectSpawnsDef>
+		<defName>VVE_DirtPath_VehicleWrecks</defName>
+		<thingDefs>
+
+		</thingDefs>
+		<numberToSpawn>1</numberToSpawn>
+		<allowedRoads>
+			<li>DirtPath</li>
+		</allowedRoads>
+		<allowOnWater>false</allowOnWater>
+	</VFECore.ObjectSpawnsDef>
+
+	<VFECore.ObjectSpawnsDef>
+		<defName>VVE_DirtRoad_VehicleWrecks</defName>
+		<thingDefs>
+
+		</thingDefs>
+		<numberToSpawn>1</numberToSpawn>
+		<allowedRoads>
+			<li>DirtRoad</li>
+		</allowedRoads>
+		<allowOnWater>false</allowOnWater>
+	</VFECore.ObjectSpawnsDef>
+
+
+	<VFECore.ObjectSpawnsDef>
+		<defName>VVE_StoneRoad_VehicleWrecks</defName>
+		<thingDefs>
+
+		</thingDefs>
+		<numberToSpawn>2</numberToSpawn>
+		<allowedRoads>
+			<li>StoneRoad</li>
+		</allowedRoads>
+		<allowOnWater>false</allowOnWater>
+	</VFECore.ObjectSpawnsDef>
+
+
+	<VFECore.ObjectSpawnsDef>
+		<defName>VVE_AncientAsphaltRoad_VehicleWrecks</defName>
+		<thingDefs>
+
+		</thingDefs>
+		<numberToSpawn>3</numberToSpawn>
+		<allowedRoads>
+			<li>AncientAsphaltRoad</li>
+		</allowedRoads>
+		<allowOnWater>false</allowOnWater>
+	</VFECore.ObjectSpawnsDef>
+
+	<VFECore.ObjectSpawnsDef>
+		<defName>VVE_AncientAsphaltHighway_VehicleWrecks</defName>
+		<thingDefs>
+
+		</thingDefs>
+		<numberToSpawn>4</numberToSpawn>
+		<allowedRoads>
+			<li>AncientAsphaltHighway</li>
+		</allowedRoads>
+		<allowOnWater>false</allowOnWater>
+	</VFECore.ObjectSpawnsDef>
+	
+</Defs>

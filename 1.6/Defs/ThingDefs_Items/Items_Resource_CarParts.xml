@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>VVE_CarParts</defName>
+    <label>car parts</label>
+    <parent>Manufactured</parent>
+    <iconPath>UI/Icons/ThingCategories/CarParts</iconPath>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+  </ThingCategoryDef>
+  
+  <ThingDef Name="VVE_CarPartBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>10</stackLimit>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+	<healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+	  <Beauty>-4</Beauty>
+    </statBases>
+    <thingCategories>
+      <li>VVE_CarParts</li>
+    </thingCategories>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+	  <workSkill>Crafting</workSkill>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <recipeUsers>
+        <li>VVE_GarageBench</li>
+      </recipeUsers>
+      <researchPrerequisite>VVE_BasicVehicles</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  <!-- all the costLists are placeholders for now -->
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_EngineBlock</defName>
+    <label>engine block</label>
+    <description>Literally the part that gets a vehicle moving in the first place, no vehicle can be assembled without one. Exceedingly large or heavy vehicles could require more than one.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_EngineBlock</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>325</MarketValue>
+      <Mass>18</Mass>
+	  <WorkToMake>5000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <Silver>4</Silver>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarAlternator</defName>
+    <label>car alternator</label>
+    <description>The alternator is an extremely vital engine part for any vehicle that has electrical systems. Some very basic systems can get away and some more complex vehicles can require more than one.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Alternator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>95</MarketValue>
+      <Mass>4</Mass>
+	  <WorkToMake>3000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarExhaust</defName>
+    <label>car exhaust</label>
+    <description>A series of pipes, catalysts and fittings that transfer the exhaust from the car engine away from the driver’s cabin. Engines that will be put under a lot of strain require more exhausts.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Exhaust</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>80</MarketValue>
+      <Mass>7</Mass>
+	  <WorkToMake>1000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+    </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarSuspension</defName>
+    <label>car suspension</label>
+    <description>A series of transmissions, springs and shock absorbers that redirect or reduce forces transferred through the wheels. Generally, the greater the mass and cargo capacity of the vehicle, the more suspensions are needed.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Suspension</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>90</MarketValue>
+      <Mass>8</Mass>
+	  <WorkToMake>2000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+      <Silver>1</Silver>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarWheel</defName>
+    <label>car wheel</label>
+    <description>One of the most ancient technologies developed by man, the wheel takes the power from the engine and translates it into movement. As wheels have to not only move the vehicle in whichever direction necessary but also withstand the combined weight, larger and heavier vehicles can need several or dozens of them.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Wheel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>70</MarketValue>
+      <Mass>10</Mass>
+	  <WorkToMake>100</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <Chemfuel>10</Chemfuel>
+    </costList>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarBattery</defName>
+    <label>car battery</label>
+    <description>An insulated rechargeable battery and wiring which powers numerous electronic functions. Acts as a surge protector for electronic systems and multiple batteries can augment or even replace a vehicle's engine.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Battery</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+      <Mass>8</Mass>
+	  <WorkToMake>5000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>35</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Batteries</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarFuelTank</defName>
+    <label>car fuel tank</label>
+    <description>Carefully manufactured fuel storage and injection systems. Ideal for vehicles that require greater fuel capacity or even increased fuel consumption without increasing the likelihood of gas leaks or engine damage.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Chemtank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>95</MarketValue>
+      <Mass>10</Mass>
+	  <WorkToMake>2000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <Chemfuel>30</Chemfuel>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>BiofuelRefining</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarTransmission</defName>
+    <label>car transmission</label>
+    <description>A dedicated, automatic transmission system delicately machined from hardened and durable materials. Due to its comparatively complex design, these are required in vehicles that require immense torque or excessive rotational speeds.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Transmission</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>170</MarketValue>
+      <Mass>7</Mass>
+	  <WorkToMake>4000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarRadiator</defName>
+    <label>car radiator</label>
+    <description>A series of pipes, tubes, fans, pumps, and the radiator itself, ready to be installed in a vehicle that is expected to endure heavy loads. The harder the engine will have to work, the more radiators required to keep it cool.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_Radiator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>90</MarketValue>
+      <Mass>15</Mass>
+	  <WorkToMake>3000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+	  <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>AirConditioning</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>VVE_CarWiring</defName>
+    <label>car wiring</label>
+    <description>Reinforced and machined wiring parts to improve electricity conduction. Typically required in vehicles that have a lot of synchronized or delicate electronic systems.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/CarPart_ElectricalWiring</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>125</MarketValue>
+      <Mass>4</Mass>
+	  <WorkToMake>1000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <Gold>1</Gold>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
+  </ThingDef>
+  
+</Defs>

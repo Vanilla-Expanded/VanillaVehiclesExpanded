@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
+		<defName>VVE_Dirtbike</defName>
+		<label>Dirtbike</label>
+		<description>A basic off-road motorcycle, the Dirtbike is a very cheap vehicle that allows a single user to travel quickly, efficiently and quietly. Incredibly light and practically paper-thin on armour, it performs poorly in the winter or in the snow, or both, and has absolutely no cargo capacity.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Motorbike/Tier1_Motorbike</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<drawOffset>(0,0,0.25)</drawOffset>
+			<color>(150, 10, 0)</color>
+			<colorTwo>(30, 50, 80)</colorTwo>
+			<colorThree>(200, 200, 200)</colorThree>
+		</graphicData>
+		
+		<fillPercent>0.2</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>VVE_Dirtbike_Blueprint</buildDef>
+		
+		<size>(1,1)</size>
+		<uiIconScale>1</uiIconScale>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.14</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Flammability>0.5</Flammability>
+			<MarketValue>875</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>30</Mass>
+			<MoveSpeed>12</MoveSpeed>
+			<CargoCapacity>10</CargoCapacity>
+			<RepairRate>1</RepairRate>
+			<AccelerationRate>0.08</AccelerationRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
+				<value>VVE_VehicleEngineBuggy</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>IgnitionOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+		
+		<race>
+			<baseBodySize>1</baseBodySize>
+		</race>
+		
+		<drawProperties>
+			<displayOffsetNorth>(0, -0.2)</displayOffsetNorth>
+			<displayOffsetEast>(-0.05, -0.2)</displayOffsetEast>
+			<displayOffsetSouth>(0, -0.2)</displayOffsetSouth>
+		</drawProperties>
+		
+		<properties>
+			<diagonalRotation>false</diagonalRotation>
+			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
+			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+			<offRoadMultiplier>0.8</offRoadMultiplier>
+			
+			<customHillinessCosts>
+				<SmallHills>0.25</SmallHills>
+				<LargeHills>0.75</LargeHills>
+				<Mountainous>1.5</Mountainous>
+			</customHillinessCosts>
+			
+			<customSnowCategoryTicks>
+				<Dusting>4</Dusting>
+				<Thin>8</Thin>
+				<Medium>16</Medium>
+				<Thick>24</Thick>
+			</customSnowCategoryTicks>
+			
+			<roles>
+				<li>
+					<key>rider</key>
+					<label>Rider</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<side>Body</side>
+					</hitbox>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>-1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0,0,0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(0,0,0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0,0,0.25)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>FrontWheel</key>
+				<label>Front Wheel</label>
+				<health>20</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackWheel</key>
+				<label>Back Wheel</label>
+				<health>20</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>25</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontSuspension</key>
+				<label>Front Suspension</label>
+				<health>10</health>
+				<depth>External</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackSuspension</key>
+				<label>Back Suspension</label>
+				<health>10</health>
+				<depth>External</depth>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+		</components>
+
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier1</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier1Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<leakDef>Filth_Fuel</leakDef>
+				<fuelConsumptionRate>12.5</fuelConsumptionRate>
+				<fuelCapacity>30</fuelCapacity>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseSeaVehicle">
+		<defName>VVE_Dinghy</defName>
+		<label>Dinghy</label>
+		<description>A very basic motorised boat, the Dingy is an incredibly cheap and discrete method of transportation over water. Has a good cargo capacity, however it is likely to get frozen solid in the winter times and moves slowly on rivers. The exposed rear-mounted engine is vulnerable to attacks and the hull plating should not be expected to wither projectile weapons.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Boat/Tier1_Boat</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3,5)</drawSize>
+		</graphicData>
+		
+		<fillPercent>1</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>VVE_Dinghy_Blueprint</buildDef>
+		
+		<size>(2,4)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Sea</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.36</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>530</MarketValue>
+			<Flammability>1</Flammability>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>80</Mass>
+			<MoveSpeed>7</MoveSpeed>
+			<CargoCapacity>250</CargoCapacity>
+			<RepairRate>1</RepairRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
+				<value>VVE_VehicleEngineBuggy</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>IgnitionOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+		
+		<race>
+			<baseBodySize>2</baseBodySize>
+		</race>
+		
+		<properties>
+			<fishing>true</fishing>
+			
+			<track Class = "Vehicles.VehicleTrack_Wake">
+				<speed>1</speed>
+			</track>
+			
+			<worldSpeedMultiplier>1</worldSpeedMultiplier>
+			<winterSpeedMultiplier>5</winterSpeedMultiplier>
+			<riverCost>1</riverCost>
+			
+			<roles>
+				<li>
+					<key>driver</key>
+					<label>Driver</label>
+					<exposed>true</exposed>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<hitbox>
+						<cells>
+							<li>(0, -1)</li>
+						</cells>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layerNorth>3</layerNorth>
+						<layerSouth>1</layerSouth>
+						<layerEast>1</layerEast>
+						
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<northEast>East</northEast>
+						<southEast>East</southEast>
+						<southWest>West</southWest>
+						<northWest>West</northWest>
+						
+						<drawOffsetNorth>(-0.4, 0, -0.75)</drawOffsetNorth>
+						<drawOffsetSouth>(0.4, 0, 1.2)</drawOffsetSouth>
+						<drawOffsetEast>(-0.55, 0, 0.6)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_BottomRight</key>
+					<label>Passenger 1</label>
+					<slots>1</slots>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<cells>
+							<li>(1, -1)</li>
+						</cells>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layerNorth>3</layerNorth>
+						<layerSouth>2</layerSouth>
+						<layerEast>2</layerEast>
+						
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<northEast>East</northEast>
+						<southEast>East</southEast>
+						<southWest>West</southWest>
+						<northWest>West</northWest>
+						
+						<drawOffsetNorth>(0.4, 0, -0.65)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.4, 0, 1.2)</drawOffsetSouth>
+						<drawOffsetEast>(-0.55,0, -0.1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_MiddleLeft</key>
+					<label>Passenger 2</label>
+					<slots>1</slots>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>1</layerSouth>
+						<layerEast>1</layerEast>
+						
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<northEast>East</northEast>
+						<southEast>East</southEast>
+						<southWest>West</southWest>
+						<northWest>West</northWest>
+						
+						<drawOffsetNorth>(-0.4, 0, 0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(0.4, 0, 0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0.35, 0, 0.6)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_MiddleRight</key>
+					<label>Passenger 3</label>
+					<slots>1</slots>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<cells>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layerNorth>2</layerNorth>
+						<layerSouth>2</layerSouth>
+						<layerEast>2</layerEast>
+						
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<northEast>East</northEast>
+						<southEast>East</southEast>
+						<southWest>West</southWest>
+						<northWest>West</northWest>
+						
+						<drawOffsetNorth>(0.4, 0, 0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.4, 0, 0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0.35, 0, -0.1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_TopLeft</key>
+					<label>Passenger 4</label>
+					<slots>1</slots>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<cells>
+							<li>(0, 1)</li>
+						</cells>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>1</layerSouth>
+						<layerEast>1</layerEast>
+						
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<northEast>East</northEast>
+						<southEast>East</southEast>
+						<southWest>West</southWest>
+						<northWest>West</northWest>
+						
+						<drawOffsetNorth>(-0.4, 0, 1.1)</drawOffsetNorth>
+						<drawOffsetSouth>(0.4, 0, -0.5)</drawOffsetSouth>
+						<drawOffsetEast>(1.3, 0, 0.5)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+				<li>
+					<key>Passenger_TopRight</key>
+					<label>Passenger 5</label>
+					<slots>1</slots>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<cells>
+							<li>(1, 1)</li>
+						</cells>
+					</hitbox>
+					
+					<pawnRenderer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>2</layerSouth>
+						<layerEast>2</layerEast>
+						
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<northEast>East</northEast>
+						<southEast>East</southEast>
+						<southWest>West</southWest>
+						<northWest>West</northWest>
+						
+						<drawOffsetNorth>(0.4, 0, 1.1)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.4, 0, -0.5)</drawOffsetSouth>
+						<drawOffsetEast>(1.3, 0, 0.1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>50</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftSidePanel</key>
+				<label>Left Side Panel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightSidePanel</key>
+				<label>Right Side Panel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+		</components>
+		
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier1</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier1Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<leakDef>Filth_Fuel</leakDef>
+				<fuelConsumptionRate>8</fuelConsumptionRate>
+				<fuelCapacity>40</fuelCapacity>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

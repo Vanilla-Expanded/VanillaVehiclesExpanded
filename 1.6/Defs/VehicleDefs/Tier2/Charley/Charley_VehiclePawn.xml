@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
+		<defName>VVE_Charley</defName>
+		<label>Charley</label>
+		<description>A general motorcycle, the Charley is a very effective single-person vehicle with a small cargo capacity. Performs well on any road except during winter season or snowy terrain, or both, with an increased speed on the world map.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles. They are also less visible due to improved manufacturing.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Motorbike/Tier2_Motorbike</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<drawOffset>(0,0,0.25)</drawOffset>
+			<color>(150, 10, 0)</color>
+			<colorTwo>(30, 50, 80)</colorTwo>
+			<colorThree>(200, 200, 200)</colorThree>
+		</graphicData>
+		
+		<fillPercent>0.2</fillPercent>
+		
+		<nameable>false</nameable>
+		<buildDef>VVE_Charley_Blueprint</buildDef>
+		
+		<size>(1,1)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Land</vehicleType>
+				
+		<statBases>
+			<ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Flammability>0.5</Flammability>
+			<MarketValue>1485</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>50</Mass>
+			<MoveSpeed>12.8</MoveSpeed>
+			<CargoCapacity>60</CargoCapacity>
+			<RepairRate>0.8</RepairRate>
+			<AccelerationRate>0.08</AccelerationRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
+				<value>VVE_VehicleEngineMuscleCar</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>IgnitionOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+		
+		<race>
+			<baseBodySize>1</baseBodySize>
+		</race>
+		
+		<drawProperties>
+			<displayOffsetNorth>(0, -0.2)</displayOffsetNorth>
+			<displayOffsetEast>(-0.05, -0.2)</displayOffsetEast>
+			<displayOffsetSouth>(0, -0.2)</displayOffsetSouth>
+		</drawProperties>
+		
+		<properties>
+			<diagonalRotation>false</diagonalRotation>
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+			
+			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
+			<offRoadMultiplier>0.8</offRoadMultiplier>
+			
+			<customRoadCosts AssignDefaults = "0.25"/>
+			
+			<customSnowCategoryTicks>
+				<Dusting>4</Dusting>
+				<Thin>8</Thin>
+				<Medium>16</Medium>
+				<Thick>24</Thick>
+			</customSnowCategoryTicks>
+			
+			<roles>
+				<li>
+					<key>rider</key>
+					<label>Rider</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<exposed>true</exposed>
+					
+					<hitbox>
+						<side>Body</side>
+					</hitbox>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				
+					<pawnRenderer>
+						<layer>1</layer>
+						<layerNorth>1</layerNorth>
+						<layerSouth>-1</layerSouth>
+						<angleNorth>0</angleNorth>
+						<angleEast>0</angleEast>
+						<angleNorthEast>0</angleNorthEast>
+						<angleSouthEast>0</angleSouthEast>
+						<drawOffsetNorth>(0,0,0.25)</drawOffsetNorth>
+						<drawOffsetSouth>(0,0,0.5)</drawOffsetSouth>
+						<drawOffsetEast>(0,0,0.25)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>FrontWheel</key>
+				<label>Front Wheel</label>
+				<health>25</health>
+				<depth>External</depth>
+				<hitWeight>5</hitWeight>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackWheel</key>
+				<label>Back Wheel</label>
+				<health>25</health>
+				<depth>External</depth>
+				<hitWeight>5</hitWeight>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>50</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>External</depth>
+				<hitWeight>4</hitWeight>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontSuspension</key>
+				<label>Front Suspension</label>
+				<health>20</health>
+				<depth>External</depth>
+				<hitWeight>2</hitWeight>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackSuspension</key>
+				<label>Back Suspension</label>
+				<health>20</health>
+				<depth>External</depth>
+				<hitWeight>2</hitWeight>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+		</components>
+
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier2</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier2Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<leakDef>Filth_Fuel</leakDef>
+				<fuelConsumptionRate>14.5</fuelConsumptionRate>
+				<fuelCapacity>50</fuelCapacity>
+				<fuelConsumptionWorldMultiplier>0.8</fuelConsumptionWorldMultiplier>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

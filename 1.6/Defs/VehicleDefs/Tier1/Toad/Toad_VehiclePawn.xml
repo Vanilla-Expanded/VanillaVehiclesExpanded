@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
+		<defName>VVE_Toad</defName>
+		<label>Toad</label>
+		<description>A squad and mortar deployment pod, the Toad is a somewhat expensive vehicle to quickly mount a siege on a nearby locale without exposing your gunners to danger. With more armour than a tank and a design made to be deployed from orbit, it makes for a semi-disposable assault vehicle.\n\nFuel efficiency is not the design of this vehicle, consider only deploying on short distances with enough fuel to make it back.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Operator x1, Passenger x3\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_SiegePod/Tier1_SiegePod</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(4,4)</drawSize>
+			<drawRotated>false</drawRotated>
+			<color>(138, 100, 15)</color>
+			<colorTwo>(75, 40, 15)</colorTwo>
+			<colorThree>(100, 75, 30)</colorThree>
+		</graphicData>
+		
+		<fillPercent>0.85</fillPercent>
+		<rotatable>false</rotatable>
+		
+		<nameable>false</nameable>
+
+		<buildDef>VVE_Toad_Blueprint</buildDef>
+
+		<size>(3,3)</size>
+		<uiIconScale>0.85</uiIconScale>
+		
+		<vehicleMovementPermissions LockSetting="True">NotAllowed</vehicleMovementPermissions>
+		<canCaravan LockSetting = "True">false</canCaravan>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Air</vehicleType>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.68</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Flammability>0.5</Flammability>
+			<MarketValue>2400</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>140</Mass>
+			<MoveSpeed LockSetting="True">0</MoveSpeed>
+			<CargoCapacity>400</CargoCapacity>
+			<RepairRate>1</RepairRate>
+			<FlightSpeed>50</FlightSpeed>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<start>AerialVehicleLaunch</start>
+				<stop>Despawned</stop>
+				<value>VVE_VehicleEngineRocket</value>
+			</li>
+			<li>
+				<start>AerialVehicleLanding</start>
+				<stop>Spawned</stop>
+				<value>VVE_VehicleEngineRocket</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<race>
+			<baseBodySize>1.5</baseBodySize>
+		</race>
+		
+		<drawProperties>
+			<displayRotation>North</displayRotation>
+		</drawProperties>
+		
+		<properties>
+			<roles>
+				<li>
+					<key>Operator</key>
+					<label>Operator</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<turretIds>
+						<li>mainTurret</li>
+					</turretIds>
+					
+					<handlingTypes>
+						<li>Movement</li>
+						<li>Turret</li>
+					</handlingTypes>
+				</li>
+				<li>
+					<key>Passenger</key>
+					<label>Passenger</label>
+					<slots>3</slots>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Engine</key>
+				<label>Engine</label>
+				<health>100</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FirstThruster</key>
+				<label>First Thruster</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(-1, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>SecondThruster</key>
+				<label>Second Thruster</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>ThirdThruster</key>
+				<label>Third Thruster</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(-1, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FourthThruster</key>
+				<label>Fourth Thruster</label>
+				<health>50</health>
+				<depth>External</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(1, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+					<li>FlightControl</li>
+					<li>FlightSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>Chemtank</key>
+				<label>Chemtank</label>
+				<health>80</health>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+					<li Class = "Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.25</chance>
+						<maxHealth>0.2</maxHealth>
+						<radius>3</radius>
+						<damageDef>Flame</damageDef>
+					</li>
+				</reactors>
+			</li>
+			<li>
+				<key>Hull</key>
+				<label>Hull</label>
+				<health>220</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Body</side>
+				</hitbox>
+			</li>
+		</components>
+		
+		<modExtensions>
+			<li Class="VanillaVehiclesExpanded.StatExtension">
+				<statToAdd>
+					<li>VVE_VehicleTier</li>
+				</statToAdd>
+				<statValues>
+					<li>VVE_Tier1</li>
+				</statValues>
+				<statDescriptions>
+					<li>VVE_Tier1Desc</li>
+				</statDescriptions>
+			</li>
+		</modExtensions>
+		
+		<comps>	
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType>
+				<leakDef>Filth_Fuel</leakDef>
+				<fuelConsumptionRate>1600</fuelConsumptionRate>
+				<fuelCapacity>260</fuelCapacity>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>Toad_MainTurret</turretDef>
+						
+						<renderProperties>
+							<north>(0, 0.3755)</north>
+						</renderProperties>
+						
+						<gizmoLabel>Main Turret</gizmoLabel>
+						<autoTargeting>false</autoTargeting>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, -0.35)</aimPieOffset>
+						
+						<key>mainTurret</key>
+					</li>
+				</turrets>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleLauncher">
+				<controlInFlight>false</controlInFlight>
+				<canRoofPunch>true</canRoofPunch>
+				<animationPunchAt>0.7</animationPunchAt>
+				
+				<launchProtocol Class="Vehicles.DefaultTakeoff">
+					<maxFlightNodes>1</maxFlightNodes>
+					<launchProperties>
+						<maxTicks>1200</maxTicks>
+						<renderShadow>false</renderShadow>
+						
+						<events>
+							<li>
+								<triggerAt>0</triggerAt>
+								<method>Vehicles.LaunchProtocol.SetOverlayStatus(false)</method>
+							</li>
+							<li>
+								<triggerAt>0.3</triggerAt>
+								<method>Vehicles.LaunchProtocol.SetOverlayStatus(true)</method>
+							</li>
+						</events>
+						
+						<zPositionCurve Class = "SmashTools.BezierCurve">
+							<points>
+								<li>(0, 0)</li>
+								<li>(0.25, 0)</li>
+								<li>(0.5, 0)</li>
+								<li>(0.75, 0)</li>
+								<li>(1, 200)</li>
+							</points>
+						</zPositionCurve>
+						
+						<fleckData>
+							<li>
+								<def>Smoke</def>
+								<angle>0~360</angle>
+								<runOutOfStep>false</runOutOfStep>
+								
+								<drawOffset>
+									<points>
+										<li>(1, 2)</li>
+									</points>
+								</drawOffset>
+								
+								<frequency Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 200)</li>
+										<li>(0.2, 300)</li>
+										<li>(0.3, 0)</li>
+										<li>(0.4, 0)</li>
+										<li>(0.6, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 6)</li>
+										<li>(0.25, 4)</li>
+										<li>(0.75, 4)</li>
+										<li>(1, 3)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(1, 3)</li>
+										<li>(1, 2)</li>
+										<li>(1, 2)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust</def>
+								<angle>0~360</angle>
+								<runOutOfStep>false</runOutOfStep>
+								
+								<drawOffset>
+									<points>
+										<li>(1, 2)</li>
+									</points>
+								</drawOffset>
+								
+								<frequency Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 100)</li>
+										<li>(0.1, 200)</li>
+										<li>(0.2, 300)</li>
+										<li>(0.3, 200)</li>
+										<li>(0.4, 0)</li>
+										<li>(0.5, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 6)</li>
+										<li>(0.25, 5)</li>
+										<li>(0.75, 5)</li>
+										<li>(1, 5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 7)</li>
+										<li>(0.2, 7)</li>
+										<li>(0.3, 0)</li>
+										<li>(0.4, 0)</li>
+										<li>(1, 0)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketSmoke</def>
+								<angle>145~215</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								
+								<originOffsetRange>
+									<from>(-1, 0, -2.5)</from>
+									<to>(1, 0, -2.5)</to>
+								</originOffsetRange>
+								
+								<frequency Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 0)</li>
+										<li>(0.1, 0)</li>
+										<li>(0.2, 0)</li>
+										<li>(0.5, 250)</li>
+										<li>(1, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 4)</li>
+										<li>(0.25, 5)</li>
+										<li>(0.75, 5)</li>
+										<li>(1, 5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 4)</li>
+										<li>(0.25, 3)</li>
+										<li>(0.75, 3)</li>
+										<li>(1, 3)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(-1.1, 0, -0.45)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 0)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(1, 250)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0.2, 30)</li>
+										<li>(0.75, 40)</li>
+										<li>(1, 40)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(1.1, 0, -0.45)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 0)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(1, 250)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0.2, 30)</li>
+										<li>(0.75, 40)</li>
+										<li>(1, 40)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(-1.1, 0, 0.6)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 0)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(1, 250)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0.2, 30)</li>
+										<li>(0.75, 40)</li>
+										<li>(1, 40)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(1.1, 0, 0.6)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0.2, 0)</li>
+										<li>(0.3, 250)</li>
+										<li>(0.4, 250)</li>
+										<li>(1, 250)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0.2, 30)</li>
+										<li>(0.75, 40)</li>
+										<li>(1, 40)</li>
+									</points>
+								</speed>
+							</li>
+						</fleckData>
+						
+						<additionalTextures>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(3, 3)</drawSize>
+								<drawOffset>(-1.1, 0, -2.75)</drawOffset>
+								<shaderType>TransparentPostLight</shaderType>
+								<layer>-1</layer>
+							</li>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(3, 3)</drawSize>
+								<drawOffset>(1.1, 0, -2.75)</drawOffset>
+								<shaderType>TransparentPostLight</shaderType>
+								<layer>-1</layer>
+							</li>
+						</additionalTextures>
+					</launchProperties>
+					
+					<landingProperties>
+						<maxTicks>1200</maxTicks>
+						<renderShadow>false</renderShadow>
+						
+						<events>
+							<li>
+								<triggerAt>0.65</triggerAt>
+								<method>Vehicles.LaunchProtocol.SetOverlayStatus(false)</method>
+							</li>
+							<li>
+								<triggerAt>0.85</triggerAt>
+								<method>Vehicles.AerialAnimationEvents.ShakeCamera(0.5)</method>
+							</li>
+						</events>
+						
+						<zPositionCurve Class = "SmashTools.BezierCurve">
+							<points>
+								<li>(0, 200)</li>
+								<li>(0.25, 0)</li>
+								<li>(0.5, 0)</li>
+								<li>(0.75, 0)</li>
+								<li>(1, 0)</li>
+							</points>
+						</zPositionCurve>
+						
+						<fleckData>
+							<li>
+								<def>Smoke</def>
+								<angle>0~360</angle>
+								<runOutOfStep>false</runOutOfStep>
+								
+								<drawOffset>
+									<points>
+										<li>(1, 2)</li>
+									</points>
+								</drawOffset>
+								
+								<frequency Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0.6, 0)</li>
+										<li>(0.75, 400)</li>
+										<li>(0.9, 100)</li>
+										<li>(0.95, 0)</li>
+										<li>(1, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 6)</li>
+										<li>(0.25, 5)</li>
+										<li>(0.75, 5)</li>
+										<li>(1, 5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(1, 3)</li>
+										<li>(1, 2)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust</def>
+								<angle>0~360</angle>
+								<runOutOfStep>false</runOutOfStep>
+								
+								<drawOffset>
+									<points>
+										<li>(1, 0.5)</li>
+									</points>
+								</drawOffset>
+								
+								<frequency Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0.55, 0)</li>
+										<li>(0.6, 250)</li>
+										<li>(0.7, 300)</li>
+										<li>(0.8, 250)</li>
+										<li>(0.9, 0)</li>
+										<li>(1, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+										<li>(1, 1)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 6)</li>
+										<li>(0.25, 5)</li>
+										<li>(0.75, 5)</li>
+										<li>(1, 5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0.6, 7)</li>
+										<li>(0.7, 9)</li>
+										<li>(0.8, 9)</li>
+										<li>(0.9, 5)</li>
+										<li>(1, 0)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(-1.1, 0, -0.45)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0, 250)</li>
+										<li>(0.62, 250)</li>
+										<li>(0.65, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 90)</li>
+										<li>(0.2, 70)</li>
+										<li>(0.4, 50)</li>
+										<li>(0.6, 50)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(1.1, 0, -0.45)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0, 250)</li>
+										<li>(0.62, 250)</li>
+										<li>(0.65, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 90)</li>
+										<li>(0.2, 70)</li>
+										<li>(0.4, 50)</li>
+										<li>(0.6, 50)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(-1.1, 0, 0.6)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0, 250)</li>
+										<li>(0.62, 250)</li>
+										<li>(0.65, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 90)</li>
+										<li>(0.2, 70)</li>
+										<li>(0.4, 50)</li>
+										<li>(0.6, 50)</li>
+									</points>
+								</speed>
+							</li>
+							<li>
+								<def>RocketExhaust_Short</def>
+								<angle>177~183</angle>
+								<lockFleckX>false</lockFleckX>
+								<lockFleckZ>false</lockFleckZ>
+								<runOutOfStep>false</runOutOfStep>
+								<originOffset>(1.1, 0, 0.6)</originOffset>
+								
+								<frequency Class="SmashTools.LinearCurve">
+									<points>
+										<li>(0, 250)</li>
+										<li>(0.62, 250)</li>
+										<li>(0.65, 0)</li>
+									</points>
+								</frequency>
+								
+								<rotationRate>
+									<points>
+										<li>(0, 3)</li>
+									</points>
+								</rotationRate>
+								
+								<size Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 3.5)</li>
+									</points>
+								</size>
+								
+								<speed Class="SmashTools.BezierCurve">
+									<points>
+										<li>(0, 90)</li>
+										<li>(0.2, 70)</li>
+										<li>(0.4, 50)</li>
+										<li>(0.6, 50)</li>
+									</points>
+								</speed>
+							</li>
+						</fleckData>
+						
+						<additionalTextures>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(3, 3)</drawSize>
+								<drawOffset>(-1.1, 0, -2.75)</drawOffset>
+								<shaderType>TransparentPostLight</shaderType>
+								<layer>-1</layer>
+							</li>
+							<li>
+								<texPath>Animations/JetEffect</texPath>
+								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
+								<drawSize>(3, 3)</drawSize>
+								<drawOffset>(1.1, 0, -2.75)</drawOffset>
+								<shaderType>TransparentPostLight</shaderType>
+								<layer>-1</layer>
+							</li>
+						</additionalTextures>
+					</landingProperties>
+				</launchProtocol>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

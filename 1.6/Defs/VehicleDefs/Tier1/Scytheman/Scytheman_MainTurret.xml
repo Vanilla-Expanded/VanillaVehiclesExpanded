@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Rocket_Scytheman_MainTurret</defName>
+		<label>swarmer rocket</label>
+		<thingClass>VanillaVehiclesExpanded.Rocket_Scytheman</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Rocket_Swarm</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>28</damageAmountBase>
+			<flyOverhead>true</flyOverhead>
+			<speed>24</speed>
+			<arcHeightFactor>35</arcHeightFactor>
+			<explosionRadius>4.9</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>Explosion_Rocket</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+		<drawOffscreen>true</drawOffscreen>
+	</ThingDef>
+	
+	<FleckDef ParentName = "FleckBase_Thrown">
+		<defName>VVE_Scytheman_RocketSmoke</defName>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<renderInstanced>true</renderInstanced>
+		</graphicData>
+		
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>1</fadeInTime>
+		<solidTime>4.5</solidTime>
+		<fadeOutTime>2.5</fadeOutTime>
+		<growthRate>0.01</growthRate>
+	</FleckDef>
+	
+	<FleckDef ParentName="FleckBaseSmoke">
+		<defName>VVE_Scytheman_RocketExhaust</defName>
+		<graphicData>
+			<texPath>Things/Mote/FireGlow</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<solidTime>0.03</solidTime>
+		<fadeOutTime>0.15</fadeOutTime>
+	</FleckDef>
+
+
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>Scytheman_MainTurret</defName>
+		<label>Rocket swarm turret</label>
+		<description>An inaccurate launcher capable of firing two barrages of rockets covering a large area. The turret does not fire until someone orders it to fire. It is very effective against large groups of weaker combatants, but less effective against small numbers of armored targets. Extensive firing may overheat and disable the turret.</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>RocketswarmLauncher_Fire</shotSound>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		
+		<projectile>Rocket_Scytheman_MainTurret</projectile>
+		<reloadTimer>12.2</reloadTimer>
+		<warmUpTimer>3.6</warmUpTimer>
+		<chargePerAmmoCount>10</chargePerAmmoCount>
+		
+		<magazineCapacity>16</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>1</rotationSpeed>
+		
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
+		
+		<projectileOffset>0.1</projectileOffset>
+		
+		<minRange>20.9</minRange>
+		
+		<cooldown>
+			<heatPerShot>5</heatPerShot>
+			<dissipationRate>0.01667</dissipationRate> <!-- 1 per second -->
+		</cooldown>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>8</shotsPerBurst>
+				<ticksBetweenShots>8</ticksBetweenShots>
+				<ticksBetweenBursts>240</ticksBetweenBursts>
+				<spreadRadius>15.9</spreadRadius>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_RocketTruck/Tier1_RocketTruck_CannonTop</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>Cutout</shaderType>
+			<drawSize>(3, 3)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+		
+		<!--
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<offset>(0, 0, 2)</offset>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+		-->
+	</Vehicles.VehicleTurretDef>
+</Defs>

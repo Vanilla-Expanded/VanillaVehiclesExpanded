@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>VVE_VehicleEngineCar</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineCar_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineBuggy</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineBuggy_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineHeavy</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineHeavy_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineMuscleCar</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineMuscleCar_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_TiresScreech</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>TiresScreech_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>35~35</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleRotorHelicopter</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleRotorHelicopter_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>35~35</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineBoat</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineBoat_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleRotorAirplane</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleRotorAirplane_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>35~35</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <!-- T3 -->
+
+  <SoundDef>
+    <defName>VVE_VehicleEngineClassicCar</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineClassicCar_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineHeavyCombat</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineHeavyCombat_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>25~25</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineSuperCar</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineSupercar_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>45~55</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleRotorHeavyHelicopter</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleRotorHeavyHelicopter_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>35~35</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleDualRotorHelicopter</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleDualRotorHelicopter_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>35~35</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineBigTruck</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineBigTruck_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>30~30</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleEngineRocket</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineRocket_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>70~75</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VVE_VehicleDeploying</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    
+	<subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleDeploying_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>45~45</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>
