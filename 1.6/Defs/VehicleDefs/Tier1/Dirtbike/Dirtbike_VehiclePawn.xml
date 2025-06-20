@@ -25,7 +25,6 @@
 		<size>(1,1)</size>
 		<uiIconScale>1</uiIconScale>
 		
-		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Transport</vehicleCategory>
 		<techLevel>Industrial</techLevel>
 		<vehicleType>Land</vehicleType>
@@ -88,12 +87,12 @@
 				<Mountainous>1.5</Mountainous>
 			</customHillinessCosts>
 			
-			<customSnowCategoryTicks>
+			<customWeatherCosts>
 				<Dusting>4</Dusting>
 				<Thin>8</Thin>
 				<Medium>16</Medium>
 				<Thick>24</Thick>
-			</customSnowCategoryTicks>
+			</customWeatherCosts>
 			
 			<roles>
 				<li>

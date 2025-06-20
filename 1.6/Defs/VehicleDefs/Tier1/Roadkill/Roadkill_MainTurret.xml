@@ -44,7 +44,6 @@
 		
 		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
 		<projectileOffset>2.5</projectileOffset>
-		<hitFlags>IntendedTarget</hitFlags>
 		<maxRange>32.9</maxRange>
 		<minRange>5</minRange>
 		

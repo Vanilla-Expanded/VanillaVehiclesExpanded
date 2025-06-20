@@ -27,7 +27,6 @@
 		<size>(1,1)</size>
 		<uiIconScale>0.85</uiIconScale>
 		
-		<vehicleMovementPermissions LockSetting = "True">NotAllowed</vehicleMovementPermissions>
 		<canCaravan LockSetting = "True">false</canCaravan>
 		<vehicleCategory>Transport</vehicleCategory>
 		<techLevel>Industrial</techLevel>

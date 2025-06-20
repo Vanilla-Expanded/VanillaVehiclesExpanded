@@ -48,7 +48,6 @@
 		<rotationSpeed>3.6</rotationSpeed>
 		
 		<projectileOffset>3</projectileOffset>
-		<hitFlags>IntendedTarget</hitFlags>
 		<maxRange>14.9</maxRange>
 		<minRange>3.9</minRange>
 		
