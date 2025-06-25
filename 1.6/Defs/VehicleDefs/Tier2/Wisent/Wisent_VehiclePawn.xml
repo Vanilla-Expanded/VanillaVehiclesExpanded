@@ -56,7 +56,8 @@
 		
 		<properties>
 			<customRoadCosts AssignDefaults = "0.5"/>
-			
+			<visibilityWeight>7</visibilityWeight>
+
 			<vehicleJobLimitations>
 				<li>(RepairVehicle, 2)</li>
 			</vehicleJobLimitations>

@@ -14,7 +14,6 @@ namespace VanillaVehiclesExpanded
 
     static Utils()
     {
-      Harmony.DEBUG = true;
       new Harmony("VanillaVehiclesExpanded.Mod").PatchAll();
 
       foreach (var def in DefDatabase<ThingDef>.AllDefsListForReading)
