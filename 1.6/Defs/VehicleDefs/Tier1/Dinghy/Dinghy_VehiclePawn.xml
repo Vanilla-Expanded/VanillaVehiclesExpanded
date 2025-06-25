@@ -64,7 +64,8 @@
 		
 		<properties>
 			<fishing>true</fishing>
-			
+			<visibilityWeight>2</visibilityWeight>
+
 			<track Class = "Vehicles.VehicleTrack_Wake">
 				<speed>1</speed>
 			</track>

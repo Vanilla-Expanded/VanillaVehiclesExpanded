@@ -55,6 +55,7 @@
 		</race>
 		
 		<properties>
+      <visibilityWeight>3.5</visibilityWeight>
 			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
 			
 			<customRoadCosts AssignDefaults = "0.25"/>

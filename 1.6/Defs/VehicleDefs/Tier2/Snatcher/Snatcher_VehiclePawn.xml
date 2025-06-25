@@ -56,7 +56,8 @@
 		
 		<properties>
 			<customRoadCosts AssignDefaults = "0.25"/>
-			
+			<visibilityWeight>3.25</visibilityWeight>
+
 			<roles>
 				<li>
 					<key>driver</key>

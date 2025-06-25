@@ -44,6 +44,11 @@
 				<ticksBetweenBursts>60</ticksBetweenBursts>
 				<label>Burst</label>
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+
+        <accuracyTouch>0.77</accuracyTouch>
+        <accuracyShort>0.7</accuracyShort>
+        <accuracyMedium>0.45</accuracyMedium>
+        <accuracyLong>0.24</accuracyLong>
 			</li>
 		</fireModes>
 

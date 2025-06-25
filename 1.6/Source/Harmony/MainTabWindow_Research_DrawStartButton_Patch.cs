@@ -19,7 +19,6 @@ namespace VanillaVehiclesExpanded
       var lockedReason = AccessTools.Field(typeof(MainTabWindow_Research),
         "lockedReasons");
       bool patched = false;
-      int match = 0;
       for (var i = 0; i < codes.Count; i++)
       {
         var code = codes[i];
@@ -27,12 +26,10 @@ namespace VanillaVehiclesExpanded
         if (!patched && code.LoadsField(lockedReason))
         {
           patched = true;
-          match = i + 1;
-        }
-        else if (patched && i == match)
-        {
+          yield return codes[++i]; // lockedReasons.Clear
           yield return new CodeInstruction(OpCodes.Ldarg_0);
           yield return new CodeInstruction(OpCodes.Ldfld, selectedProjectInfo);
+          yield return new CodeInstruction(OpCodes.Ldsfld, lockedReason);
           yield return new CodeInstruction(OpCodes.Call,
             AccessTools.Method(typeof(MainTabWindow_Research_DrawStartButton_Patch),
               "AddLockedReason"));

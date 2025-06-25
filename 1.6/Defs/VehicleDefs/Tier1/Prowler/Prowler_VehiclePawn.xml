@@ -55,6 +55,8 @@
 		</race>
 		
 		<properties>
+      <visibilityWeight>2.5</visibilityWeight>
+
 			<customHillinessCosts>
 				<SmallHills>0.25</SmallHills>
 				<LargeHills>0.75</LargeHills>

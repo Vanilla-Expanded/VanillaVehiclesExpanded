@@ -76,7 +76,7 @@
 		<properties>
 			<diagonalRotation>false</diagonalRotation>
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
-			
+			<visibilityWeight>1</visibilityWeight>
 			<worldSpeedMultiplier>1.2</worldSpeedMultiplier>
 			<offRoadMultiplier>0.8</offRoadMultiplier>
 			

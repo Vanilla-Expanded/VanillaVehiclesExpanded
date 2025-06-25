@@ -90,6 +90,8 @@
 		</drawProperties>
 		
 		<properties>
+      <visibilityWeight>2.25</visibilityWeight>
+
 			<roles>
 				<li>
 					<key>pilot</key>

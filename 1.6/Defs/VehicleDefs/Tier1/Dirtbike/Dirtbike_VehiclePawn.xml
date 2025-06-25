@@ -80,7 +80,8 @@
 			<winterSpeedMultiplier>3.25</winterSpeedMultiplier>
 			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
 			<offRoadMultiplier>0.8</offRoadMultiplier>
-			
+			<visibilityWeight>1</visibilityWeight>
+
 			<customHillinessCosts>
 				<SmallHills>0.25</SmallHills>
 				<LargeHills>0.75</LargeHills>

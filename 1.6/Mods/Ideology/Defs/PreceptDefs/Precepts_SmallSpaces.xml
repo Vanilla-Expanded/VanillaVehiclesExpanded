@@ -3,7 +3,7 @@
 	<PreceptDef>
 		<defName>VVE_SmallSpaces_Horrible</defName>
 		<label>horrible</label>
-		<issue>SmallSpaces</issue>
+		<issue>Indoors</issue>
 		<description>Being in tight quarters is an affront to our freedoms.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - Doubles negative thoughts about small spaces. Positive thoughts about spacious areas are unaffected.</description>
 		<impact>Medium</impact>
 		<displayOrderInImpact>110</displayOrderInImpact>

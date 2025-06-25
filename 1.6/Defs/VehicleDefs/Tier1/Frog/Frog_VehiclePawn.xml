@@ -70,6 +70,8 @@
 		</drawProperties>
 		
 		<properties>
+      <visibilityWeight>1.5</visibilityWeight>
+
 			<roles>
 				<li>
 					<key>Operator</key>

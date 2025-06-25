@@ -72,7 +72,8 @@
 		
 		<properties>
 			<defaultBiomesImpassable>true</defaultBiomesImpassable>
-			
+			<visibilityWeight>6.5</visibilityWeight>
+
 			<vehicleJobLimitations>
 				<li>(RepairVehicle, 3)</li>
 			</vehicleJobLimitations>
