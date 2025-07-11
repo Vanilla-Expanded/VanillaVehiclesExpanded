@@ -71,7 +71,10 @@
 		</race>
 		
 		<properties>
-			<defaultBiomesImpassable>true</defaultBiomesImpassable>
+			<defaultImpassable>
+        <li>Biomes</li>
+      </defaultImpassable>
+      
 			<visibilityWeight>6.5</visibilityWeight>
 
 			<vehicleJobLimitations>
