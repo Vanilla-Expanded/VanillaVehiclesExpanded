@@ -35,12 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="SmashTools">
-      <HintPath>..\..\..\Vehicles\1.6\Assemblies\SmashTools.dll</HintPath>
+      <HintPath>..\..\..\Vehicle-Framework\1.6\Assemblies\SmashTools.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -68,7 +64,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Vehicles">
-      <HintPath>..\..\..\Vehicles\1.6\Assemblies\Vehicles.dll</HintPath>
+      <HintPath>..\..\..\Vehicle-Framework\1.6\Assemblies\Vehicles.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -130,6 +126,9 @@
     <Compile Include="VanillaVehiclesExpandedMod.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.6.4539-beta</Version>
+    </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <ExcludeAssets>runtime</ExcludeAssets>
       <Version>2.3.3</Version>
