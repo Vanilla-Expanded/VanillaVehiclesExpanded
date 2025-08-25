@@ -41,7 +41,7 @@ namespace VanillaVehiclesExpanded
           if (compFuel != null && compFuel.Fuel < compFuel.FuelCapacity)
           {
             var fuelAmount = Mathf.Min(compFuel.FuelCapacity - compFuel.Fuel,
-              Mathf.Min(compFuel.Fuel, Props.refuelAmountPerTick));
+              Mathf.Min(Mathf.Max(0.1f, compFuel.Fuel), Props.refuelAmountPerTick));
             compFuel.Refuel(fuelAmount);
             compRefuelable.ConsumeFuel(fuelAmount);
           }
