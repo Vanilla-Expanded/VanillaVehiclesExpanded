@@ -133,7 +133,7 @@
 			</li>
 			<li>
 				<key>LeftLandingWheel</key>
-				<label>Left Landing Wheel</label>
+				<label>Left landing wheel</label>
 				<health>45</health>
 				<depth>External</depth>
 				
@@ -159,7 +159,7 @@
 			</li>
 			<li>
 				<key>RightLandingWheel</key>
-				<label>Right Landing Wheel</label>
+				<label>Right landing wheel</label>
 				<health>45</health>
 				<depth>External</depth>
 				
@@ -185,7 +185,7 @@
 			</li>
 			<li>
 				<key>CentralLandingWheel</key>
-				<label>Central Landing Wheel</label>
+				<label>Central landing wheel</label>
 				<health>45</health>
 				<depth>External</depth>
 				
@@ -211,7 +211,7 @@
 			</li>
 			<li>
 				<key>LeftHorizontalStabilizer</key>
-				<label>Left Horizontal Stabilizer</label>
+				<label>Left horizontal stabilizer</label>
 				<health>40</health>
 				<depth>External</depth>
 				
@@ -227,7 +227,7 @@
 			</li>
 			<li>
 				<key>RightHorizontalStabilizer</key>
-				<label>Right Horizontal Stabilizer</label>
+				<label>Right horizontal stabilizer</label>
 				<health>40</health>
 				<depth>External</depth>
 				
@@ -243,7 +243,7 @@
 			</li>
 			<li>
 				<key>FuelIntake</key>
-				<label>Fuel Intake</label>
+				<label>Fuel intake</label>
 				<health>50</health>
 				<depth>Internal</depth>
 				
@@ -332,7 +332,7 @@
 			</li>
 			<li>
 				<key>LeftWing</key>
-				<label>Left Wing</label>
+				<label>Left wing</label>
 				<health>125</health>
 				<depth>External</depth>
 				
@@ -349,7 +349,7 @@
 			</li>
 			<li>
 				<key>RightWing</key>
-				<label>Right Wing</label>
+				<label>Right wing</label>
 				<health>125</health>
 				<depth>External</depth>
 				

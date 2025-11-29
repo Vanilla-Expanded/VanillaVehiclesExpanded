@@ -415,7 +415,7 @@
 			</li>
 			<li>
 				<key>FrontLeftWheel</key>
-				<label>Front Left Wheel</label>
+				<label>Front left wheel</label>
 				<health>50</health>
 				<depth>External</depth>
 				
@@ -441,7 +441,7 @@
 			</li>
 			<li>
 				<key>FrontRightWheel</key>
-				<label>Front Right Wheel</label>
+				<label>Front right wheel</label>
 				<health>50</health>
 				<depth>External</depth>
 				
@@ -467,7 +467,7 @@
 			</li>
 			<li>
 				<key>MiddleLeftWheel</key>
-				<label>Middle Left Wheel</label>
+				<label>Middle left wheel</label>
 				<health>50</health>
 				<depth>External</depth>
 				
@@ -493,7 +493,7 @@
 			</li>
 			<li>
 				<key>MiddleRightWheel</key>
-				<label>Middle Right Wheel</label>
+				<label>Middle right wheel</label>
 				<health>50</health>
 				<depth>External</depth>
 				
@@ -519,7 +519,7 @@
 			</li>
 			<li>
 				<key>BackLeftWheel</key>
-				<label>Back Left Wheel</label>
+				<label>Back left wheel</label>
 				<health>50</health>
 				<depth>External</depth>
 				
@@ -545,7 +545,7 @@
 			</li>
 			<li>
 				<key>BackRightWheel</key>
-				<label>Back Right Wheel</label>
+				<label>Back right wheel</label>
 				<health>50</health>
 				<depth>External</depth>
 				
@@ -571,7 +571,7 @@
 			</li>
 			<li>
 				<key>FrontLeftSuspension</key>
-				<label>Front Left Suspension</label>
+				<label>Front left suspension</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -587,7 +587,7 @@
 			</li>
 			<li>
 				<key>FrontRightSuspension</key>
-				<label>Front Right Suspension</label>
+				<label>Front right suspension</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -603,7 +603,7 @@
 			</li>
 			<li>
 				<key>MiddleLeftSuspension</key>
-				<label>Middle Left Suspension</label>
+				<label>Middle left suspension</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -619,7 +619,7 @@
 			</li>
 			<li>
 				<key>MiddleRightSuspension</key>
-				<label>Middle Right Suspension</label>
+				<label>Middle right suspension</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -635,7 +635,7 @@
 			</li>
 			<li>
 				<key>BackLeftSuspension</key>
-				<label>Back Left Suspension</label>
+				<label>Back left suspension</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -651,7 +651,7 @@
 			</li>
 			<li>
 				<key>BackRightSuspension</key>
-				<label>Back Right Suspension</label>
+				<label>Back right suspension</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -684,7 +684,7 @@
 			</li>
 			<li>
 				<key>LeftSidePanel</key>
-				<label>Left Side Panel</label>
+				<label>Left side panel</label>
 				<health>20</health>
 				<depth>External</depth>
 				
@@ -694,7 +694,7 @@
 			</li>
 			<li>
 				<key>RightSidePanel</key>
-				<label>Right Side Panel</label>
+				<label>Right side panel</label>
 				<health>20</health>
 				<depth>External</depth>
 				
@@ -704,7 +704,7 @@
 			</li>
 			<li>
 				<key>LeftChemtank</key>
-				<label>Left Chemtank</label>
+				<label>Left chemtank</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -727,7 +727,7 @@
 			</li>
 			<li>
 				<key>RightChemtank</key>
-				<label>Right Chemtank</label>
+				<label>Right chemtank</label>
 				<health>30</health>
 				<depth>Internal</depth>
 				
@@ -750,7 +750,7 @@
 			</li>
 			<li>
 				<key>LeftBackPanel</key>
-				<label>Left Back Panel</label>
+				<label>Left back panel</label>
 				<health>30</health>
 				<depth>External</depth>
 				
@@ -771,7 +771,7 @@
 			</li>
 			<li>
 				<key>RightBackPanel</key>
-				<label>Right Back Panel</label>
+				<label>Right back panel</label>
 				<health>30</health>
 				<depth>External</depth>
 		
@@ -792,7 +792,7 @@
 			</li>
 			<li>
 				<key>FrontBumper</key>
-				<label>Front Bumper</label>
+				<label>Front bumper</label>
 				<health>30</health>
 				<depth>External</depth>
 				
@@ -802,7 +802,7 @@
 			</li>
 			<li>
 				<key>RearBumper</key>
-				<label>Rear Bumper</label>
+				<label>Rear bumper</label>
 				<health>20</health>
 				<depth>External</depth>
 				
@@ -826,7 +826,7 @@
 			</li>
 			<li>
 				<key>SteeringWheel</key>
-				<label>Steering Wheel</label>
+				<label>Steering wheel</label>
 				<health>20</health>
 				<depth>Internal</depth>
 				<hitWeight>1</hitWeight>

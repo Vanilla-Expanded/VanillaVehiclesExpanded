@@ -121,7 +121,7 @@
 			</li>
 			<li>
 				<key>FirstThruster</key>
-				<label>First Thruster</label>
+				<label>First thruster</label>
 				<health>30</health>
 				<depth>External</depth>
 				
@@ -137,7 +137,7 @@
 			</li>
 			<li>
 				<key>SecondThruster</key>
-				<label>Second Thruster</label>
+				<label>Second thruster</label>
 				<health>30</health>
 				<depth>External</depth>
 				
@@ -153,7 +153,7 @@
 			</li>
 			<li>
 				<key>ThirdThruster</key>
-				<label>Third Thruster</label>
+				<label>Third thruster</label>
 				<health>30</health>
 				<depth>External</depth>
 				

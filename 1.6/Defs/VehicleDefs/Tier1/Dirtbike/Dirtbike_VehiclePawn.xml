@@ -130,7 +130,7 @@
 		<components>
 			<li>
 				<key>FrontWheel</key>
-				<label>Front Wheel</label>
+				<label>Front wheel</label>
 				<health>20</health>
 				<depth>External</depth>
 				
@@ -149,7 +149,7 @@
 			</li>
 			<li>
 				<key>BackWheel</key>
-				<label>Back Wheel</label>
+				<label>Back wheel</label>
 				<health>20</health>
 				<depth>External</depth>
 				
@@ -189,7 +189,7 @@
 			</li>
 			<li>
 				<key>FrontSuspension</key>
-				<label>Front Suspension</label>
+				<label>Front suspension</label>
 				<health>10</health>
 				<depth>External</depth>
 				
@@ -199,7 +199,7 @@
 			</li>
 			<li>
 				<key>BackSuspension</key>
-				<label>Back Suspension</label>
+				<label>Back suspension</label>
 				<health>10</health>
 				<depth>External</depth>
 				

@@ -132,7 +132,7 @@
 		<components>
 			<li>
 				<key>LeftLandingSkid</key>
-				<label>Left Landing Skid</label>
+				<label>Left landing skid</label>
 				<health>30</health>
 				<depth>External</depth>
 				
@@ -150,7 +150,7 @@
 			</li>
 			<li>
 				<key>RightLandingSkid</key>
-				<label>Right Landing Skid</label>
+				<label>Right landing skid</label>
 				<health>30</health>
 				<depth>External</depth>
 				
@@ -168,7 +168,7 @@
 			</li>
 			<li>
 				<key>LeftHorizontalStabilizer</key>
-				<label>Left Horizontal Stabilizer</label>
+				<label>Left horizontal stabilizer</label>
 				<health>20</health>
 				<depth>External</depth>
 				
@@ -184,7 +184,7 @@
 			</li>
 			<li>
 				<key>RightHorizontalStabilizer</key>
-				<label>Right Horizontal Stabilizer</label>
+				<label>Right horizontal stabilizer</label>
 				<health>20</health>
 				<depth>External</depth>
 				
@@ -228,7 +228,7 @@
 			</li>
 			<li>
 				<key>FuelIntake</key>
-				<label>Fuel Intake</label>
+				<label>Fuel intake</label>
 				<health>40</health>
 				<depth>External</depth>
 				
@@ -279,7 +279,7 @@
 			</li>
 			<li>
 				<key>LeftSidePanel</key>
-				<label>Left Side Panel</label>
+				<label>Left side panel</label>
 				<health>80</health>
 				<depth>External</depth>
 				
@@ -294,7 +294,7 @@
 			</li>
 			<li>
 				<key>RightSidePanel</key>
-				<label>Right Side Panel</label>
+				<label>Right side panel</label>
 				<health>80</health>
 				<depth>External</depth>
 				
@@ -333,7 +333,7 @@
 			</li>
 			<li>
 				<key>RotorMast</key>
-				<label>Rotor Mast</label>
+				<label>Rotor mast</label>
 				<health>80</health>
 				<depth>External</depth>
 				

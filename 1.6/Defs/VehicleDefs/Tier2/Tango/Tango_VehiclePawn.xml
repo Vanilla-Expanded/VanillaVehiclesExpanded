@@ -147,7 +147,7 @@
 			</li>
 			<li>
 				<key>LeftTrack</key>
-				<label>Left Track</label>
+				<label>Left track</label>
 				<health>180</health>
 				<depth>External</depth>
 				
@@ -166,7 +166,7 @@
 			</li>
 			<li>
 				<key>RightTrack</key>
-				<label>Right Track</label>
+				<label>Right track</label>
 				<health>180</health>
 				<depth>External</depth>
 					
@@ -185,7 +185,7 @@
 			</li>
 			<li>
 				<key>FrontLeftDriveSprocket</key>
-				<label>Front Left Drive Sprocket</label>
+				<label>Front left drive sprocket</label>
 				<health>25</health>
 				<depth>External</depth>
 				
@@ -206,7 +206,7 @@
 			</li>
 			<li>
 				<key>FrontRightDriveSprocket</key>
-				<label>Front Right Drive Sprocket</label>
+				<label>Front right drive sprocket</label>
 				<health>25</health>
 				<depth>External</depth>
 				
@@ -227,7 +227,7 @@
 			</li>
 			<li>
 				<key>BackLeftDriveSprocket</key>
-				<label>Back Left Drive Sprocket</label>
+				<label>Back left drive sprocket</label>
 				<health>25</health>
 				<depth>External</depth>
 				
@@ -248,7 +248,7 @@
 			</li>
 			<li>
 				<key>BackRightDriveSprocket</key>
-				<label>Back Right Drive Sprocket</label>
+				<label>Back right drive sprocket</label>
 				<health>25</health>
 				<depth>External</depth>
 				
@@ -285,7 +285,7 @@
 			</li>
 			<li>
 				<key>FrontArmorPlating</key>
-				<label>Front Armor Plating</label>
+				<label>Front armor plating</label>
 				<health>220</health>
 				<depth>External</depth>
 				
@@ -300,7 +300,7 @@
 			</li>
 			<li>
 				<key>LeftArmorPlating</key>
-				<label>Left Armor Plating</label>
+				<label>Left armor plating</label>
 				<health>220</health>
 				<depth>External</depth>
 				
@@ -315,7 +315,7 @@
 			</li>
 			<li>
 				<key>RightArmorPlating</key>
-				<label>Right Armor Plating</label>
+				<label>Right armor plating</label>
 				<health>220</health>
 				<depth>External</depth>
 				
@@ -330,7 +330,7 @@
 			</li>
 			<li>
 				<key>BackArmorPlating</key>
-				<label>Rear Armor Plating</label>
+				<label>Rear armor plating</label>
 				<health>170</health>
 				<depth>External</depth>
 				
@@ -370,7 +370,7 @@
 			</li>
 			<li>
 				<key>SteeringApparatus</key>
-				<label>Steering Apparatus</label>
+				<label>Steering apparatus</label>
 				<health>40</health>
 				<depth>Internal</depth>
 				<hitWeight>5</hitWeight>
