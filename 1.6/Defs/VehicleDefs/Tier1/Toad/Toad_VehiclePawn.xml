@@ -289,7 +289,7 @@
 							<north>(0, 0.3755)</north>
 						</renderProperties>
 						
-						<gizmoLabel>Main Turret</gizmoLabel>
+						<gizmoLabel>Main turret</gizmoLabel>
 						<autoTargeting>false</autoTargeting>
 						
 						<angleRestricted/>

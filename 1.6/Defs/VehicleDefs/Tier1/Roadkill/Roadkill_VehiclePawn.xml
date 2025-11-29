@@ -364,7 +364,7 @@
 						</renderProperties>
 						<drawLayer>1</drawLayer>
 
-						<gizmoLabel>Main Turret</gizmoLabel>
+						<gizmoLabel>Main turret</gizmoLabel>
 						
 						<angleRestricted/>
 						<aimPieOffset>(0, 1)</aimPieOffset>
