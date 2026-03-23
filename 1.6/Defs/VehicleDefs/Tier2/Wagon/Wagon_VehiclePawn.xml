@@ -62,7 +62,7 @@
 			<roles>
 				<li>
 					<key>driver</key>
-					<label>Driver</label>
+					<label>driver</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
@@ -78,7 +78,7 @@
 				</li>
 				<li>
 					<key>passenger</key>
-					<label>Passenger</label>
+					<label>passenger</label>
 					<slots>3</slots>
 					
 					<hitbox>

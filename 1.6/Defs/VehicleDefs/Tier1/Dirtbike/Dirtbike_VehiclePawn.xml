@@ -98,7 +98,7 @@
 			<roles>
 				<li>
 					<key>rider</key>
-					<label>Rider</label>
+					<label>rider</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					<exposed>true</exposed>

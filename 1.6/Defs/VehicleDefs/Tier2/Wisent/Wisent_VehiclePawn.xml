@@ -70,7 +70,7 @@
 			<roles>
 				<li>
 					<key>driver</key>
-					<label>Driver</label>
+					<label>driver</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
@@ -87,7 +87,7 @@
 				</li>
 				<li>
 					<key>passenger1</key>
-					<label>Passenger 1</label>
+					<label>passenger 1</label>
 					<slots>1</slots>
 			
 					<hitbox>
@@ -98,7 +98,7 @@
 				</li>
 				<li>
 					<key>passenger2</key>
-					<label>Passenger 2</label>
+					<label>passenger 2</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
@@ -134,7 +134,7 @@
 				</li>
 				<li>
 					<key>passenger3</key>
-					<label>Passenger 3</label>
+					<label>passenger 3</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
@@ -170,7 +170,7 @@
 				</li>
 				<li>
 					<key>passenger4</key>
-					<label>Passenger 4</label>
+					<label>passenger 4</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
@@ -206,7 +206,7 @@
 				</li>
 				<li>
 					<key>passenger5</key>
-					<label>Passenger 5</label>
+					<label>passenger 5</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
@@ -242,7 +242,7 @@
 				</li>
 				<li>
 					<key>passenger6</key>
-					<label>Passenger 6</label>
+					<label>passenger 6</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
@@ -278,7 +278,7 @@
 				</li>
 				<li>
 					<key>passenger7</key>
-					<label>Passenger 7</label>
+					<label>passenger 7</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
@@ -314,7 +314,7 @@
 				</li>
 				<li>
 					<key>passenger8</key>
-					<label>Passenger 8</label>
+					<label>passenger 8</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>
@@ -350,7 +350,7 @@
 				</li>
 				<li>
 					<key>passenger9</key>
-					<label>Passenger 9</label>
+					<label>passenger 9</label>
 					<slots>1</slots>
 					
 					<exposed>true</exposed>

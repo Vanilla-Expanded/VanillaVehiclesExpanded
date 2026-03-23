@@ -75,7 +75,7 @@
 			<roles>
 				<li>
 					<key>Operator</key>
-					<label>Operator</label>
+					<label>operator</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					

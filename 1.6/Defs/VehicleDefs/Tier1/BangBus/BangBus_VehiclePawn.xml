@@ -63,7 +63,7 @@
 			<roles>
 				<li>
 					<key>driver</key>
-					<label>Driver</label>
+					<label>driver</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
@@ -77,7 +77,7 @@
 				</li>
 				<li>
 					<key>passenger_shotgun</key>
-					<label>Shotgun</label>
+					<label>passenger</label>
 					<slots>1</slots>
 					
 					<hitbox>
@@ -86,7 +86,7 @@
 				</li>
 				<li>
 					<key>passenger_rear</key>
-					<label>Rear Passenger</label>
+					<label>rear passenger</label>
 					<slots>4</slots>
 					
 					<hitbox>

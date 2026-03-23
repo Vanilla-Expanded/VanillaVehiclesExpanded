@@ -73,7 +73,7 @@
 			<roles>
 				<li>
 					<key>Operator</key>
-					<label>Operator</label>
+					<label>operator</label>
 					<slots>1</slots>
 					<slotsToOperate>1</slotsToOperate>
 					
@@ -88,7 +88,7 @@
 				</li>
 				<li>
 					<key>Passenger</key>
-					<label>Passenger</label>
+					<label>passenger</label>
 					<slots>3</slots>
 				</li>
 			</roles>

@@ -77,7 +77,7 @@
 			<roles>
 				<li>
 					<key>driver</key>
-					<label>Driver</label>
+					<label>driver</label>
 					<exposed>true</exposed>
 					
 					<handlingTypes>
@@ -112,7 +112,7 @@
 				</li>
 				<li>
 					<key>Passenger_BottomRight</key>
-					<label>Passenger 1</label>
+					<label>passenger 1</label>
 					<slots>1</slots>
 					<exposed>true</exposed>
 					
@@ -141,7 +141,7 @@
 				</li>
 				<li>
 					<key>Passenger_MiddleLeft</key>
-					<label>Passenger 2</label>
+					<label>passenger 2</label>
 					<slots>1</slots>
 					<exposed>true</exposed>
 					
@@ -170,7 +170,7 @@
 				</li>
 				<li>
 					<key>Passenger_MiddleRight</key>
-					<label>Passenger 3</label>
+					<label>passenger 3</label>
 					<slots>1</slots>
 					<exposed>true</exposed>
 					
@@ -199,7 +199,7 @@
 				</li>
 				<li>
 					<key>Passenger_TopLeft</key>
-					<label>Passenger 4</label>
+					<label>passenger 4</label>
 					<slots>1</slots>
 					<exposed>true</exposed>
 					
@@ -228,7 +228,7 @@
 				</li>
 				<li>
 					<key>Passenger_TopRight</key>
-					<label>Passenger 5</label>
+					<label>passenger 5</label>
 					<slots>1</slots>
 					<exposed>true</exposed>
 					
