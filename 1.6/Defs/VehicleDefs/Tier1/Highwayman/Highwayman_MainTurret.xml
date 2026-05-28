@@ -35,7 +35,7 @@
 			<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
 		</recoil>
 		
-		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
+		<attachProjectileFlag>VVE_ArmoredVehicle</attachProjectileFlag>
 		
 		<fireModes>
 			<li>
