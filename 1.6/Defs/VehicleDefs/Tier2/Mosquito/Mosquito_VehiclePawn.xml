@@ -114,10 +114,6 @@
 					<label>passenger</label>
 					<slots>3</slots>
 					
-					<handlingTypes>
-						<li>Movement</li>
-					</handlingTypes>
-					
 					<hitbox>
 						<cells>
 							<li>(0, 2)</li>
