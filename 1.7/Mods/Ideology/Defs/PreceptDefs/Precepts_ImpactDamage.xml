@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IssueDef>
+		<defName>VVE_ImpactDamage</defName>
+		<label>impact damage</label>
+		<iconPath>UI/Issues/VVE_ImpactDamage</iconPath>
+	</IssueDef>
+
+	
+	<PreceptDef>
+		<defName>VVE_ImpactDamage_High</defName>
+		<issue>VVE_ImpactDamage</issue>
+		<label>high</label>
+		<description>In our belief, a vehicle's power is truly felt in its formidable impact.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - Damage done via driving people over is further multiplied by x1.25</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		
+	</PreceptDef>
+	
+	
+</Defs>

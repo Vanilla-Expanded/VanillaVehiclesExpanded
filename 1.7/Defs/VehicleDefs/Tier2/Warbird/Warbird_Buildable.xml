@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Warbird_Blueprint</defName>
+		<label>Warbird</label>
+		<description>A general-purpose fighter plane, the Warbird is an incredibly fast and effective attack craft. With minimal cargo intended for holding maintenance equipment and fuel, its primary purpose is to engage other aircraft and initiate strafing manoeuvres.\n\nDifferent to other tier 2 vehicles, this has regular fuel efficiency on the world map but moves significantly faster in return.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Warplane/Tier2_Warplane</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(6, 6)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>16000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<size>(5, 5)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_CombatVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>2</VVE_EngineBlock>
+			<VVE_CarAlternator>2</VVE_CarAlternator>
+			<VVE_CarExhaust>4</VVE_CarExhaust>
+			<VVE_CarSuspension>3</VVE_CarSuspension>
+			<VVE_CarWheel>3</VVE_CarWheel>
+			<VVE_CarTransmission>1</VVE_CarTransmission>
+			<VVE_CarWiring>1</VVE_CarWiring>
+			<VVE_CarFuelTank>2</VVE_CarFuelTank>
+			<Steel>240</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>VVE_Warbird</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

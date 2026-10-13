@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IssueDef>
+		<defName>VVE_MaxSpeed</defName>
+		<label>max speed</label>
+		<iconPath>UI/Issues/VVE_MaxSpeed</iconPath>
+	</IssueDef>
+
+	
+	<PreceptDef>
+		<defName>VVE_MaxSpeed_Increased</defName>
+		<issue>VVE_MaxSpeed</issue>
+		<label>increased</label>
+		<description>We cherish vehicles that transcend traditional limits.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n -  Maximum speed of vehicles is increased by a multiplier of x1.2.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		
+	</PreceptDef>
+	
+	
+</Defs>

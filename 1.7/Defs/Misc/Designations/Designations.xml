@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+  <DesignationDef>
+    <defName>VVE_Open</defName>
+    <texturePath>Things/Building/Structure/GarageDoor_Open</texturePath>
+    <targetType>Thing</targetType>
+    <designateCancelable>false</designateCancelable>
+  </DesignationDef>
+  
+  <DesignationDef>
+    <defName>VVE_Close</defName>
+    <texturePath>Things/Building/Structure/GarageDoor_Close</texturePath>
+    <targetType>Thing</targetType>
+    <designateCancelable>false</designateCancelable>
+  </DesignationDef>
+  
+	<DesignationDef>
+    <defName>VVE_RestoreWreck</defName>
+    <texturePath>UI/RestoreWreck</texturePath>
+    <targetType>Thing</targetType>
+    <designateCancelable>false</designateCancelable>
+  </DesignationDef>
+  
+</Defs>

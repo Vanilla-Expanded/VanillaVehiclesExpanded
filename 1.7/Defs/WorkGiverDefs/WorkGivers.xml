@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>VVE_DoBillsGarageBench</defName>
+    <label>make things at garage bench</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Smithing</workType>
+    <priorityInType>80</priorityInType>
+    <fixedBillGiverDefs>
+      <li>VVE_GarageBench</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>VVE_OpenGarages</defName>
+    <label>open garages</label>
+    <giverClass>VanillaVehiclesExpanded.WorkGiver_OpenGarage</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>open garage</verb>
+    <gerund>opening garage</gerund>
+    <canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+    <priorityInType>500</priorityInType>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>VVE_CloseGarages</defName>
+    <label>close garages</label>
+    <giverClass>VanillaVehiclesExpanded.WorkGiver_CloseGarage</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>close garage</verb>
+    <gerund>closing garage</gerund>
+    <canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+    <priorityInType>500</priorityInType>
+  </WorkGiverDef>
+  
+	<WorkGiverDef>
+		<defName>VVE_RestoreWreck</defName>
+		<label>restore vehicle wrecks</label>
+		<giverClass>VanillaVehiclesExpanded.WorkGiver_RestoreWreck</giverClass>
+		<workType>Construction</workType>
+		<verb>restore</verb>
+		<gerund>restoring</gerund>
+		<priorityInType>70</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+	
+</Defs>

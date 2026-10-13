@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IssueDef>
+		<defName>VVE_Driving</defName>
+		<label>driving</label>
+		<iconPath>UI/Issues/VVE_Driving</iconPath>
+	</IssueDef>
+	<PreceptDef>
+		<defName>VVE_Driving_Forbidden</defName>
+		<issue>VVE_Driving</issue>
+		<label>forbidden</label>
+		<description>To traverse the land in vehicles is a violation of our core beliefs.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>50</displayOrderInIssue>
+		<comps>
+			<li Class="PreceptComp_UnwillingToDo">
+				<eventDef>VF_BoardLandVehicle</eventDef>
+			</li>
+		</comps>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Driving_Horrible</defName>
+		<issue>VVE_Driving</issue>
+		<label>horrible</label>
+		<description>We see setting foot in a land vehicle as a profound offense to our values.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>40</displayOrderInIssue>
+		<comps>
+			<li Class="PreceptComp_SelfTookMemoryThought">
+				<eventDef>VF_BoardedLandVehicle</eventDef>
+				<thought>VVE_Driving_Horrible</thought>
+				<description>Driven a land vehicle</description>
+			</li>
+		</comps>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Driving_Allowed</defName>
+		<issue>VVE_Driving</issue>
+		<label>allowed</label>
+		<description>Navigating the world in vehicles is an accepted practice in our community.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>35</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<classic>true</classic>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Driving_Approved</defName>
+		<issue>VVE_Driving</issue>
+		<label>approved</label>
+		<description>Every drive on land affirms our shared spirit and joy.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		<comps>
+			<li Class="PreceptComp_SelfTookMemoryThought">
+				<eventDef>VF_BoardedLandVehicle</eventDef>
+				<thought>VVE_Driving_Approved</thought>
+				<description>Driven a land vehicle</description>
+			</li>
+		</comps>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_Driving_Required</defName>
+		<issue>VVE_Driving</issue>
+		<label>required</label>
+		<description>Our people believe in the necessity of movement, to not drive is to neglect one's duty to oneself.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>20</displayOrderInIssue>
+		<comps>
+			<li Class="VanillaVehiclesExpanded.PreceptComp_DrivingRequired">
+				<eventDef>VF_BoardedLandVehicle</eventDef>
+				
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>VVE_Driving_Required</thought>
+				<thoughtStageDescriptions>
+					
+					<li>Roadrage (1 days without driving)</li>
+					<li>Roadrage (5 days without driving)</li>
+					<li>Roadrage (10 days without driving)</li>
+					<li>Roadrage (20 days without driving)</li>
+			
+				</thoughtStageDescriptions>
+			</li>
+		</comps>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>VVE_Driving_Horrible</defName>
+		<durationDays>3</durationDays>
+		<stages>
+			<li>
+				<label>drove a land vehicle</label>
+				<description>I was in a land vehicle. It was horrible.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VVE_Driving_Approved</defName>
+		<durationDays>3</durationDays>
+		<stages>
+			<li>
+				<label>drove a land vehicle</label>
+				<description>I was in a land vehicle. I loved it.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+		<ThoughtDef>
+		<defName>VVE_Driving_Required</defName>
+		<validWhileDespawned>true</validWhileDespawned>
+		<workerClass>VanillaVehiclesExpanded.ThoughtWorker_Driving_Required</workerClass>
+		<stages>
+			<li>
+				<label>roadrage (more than 1 day)</label>
+				<description>It has been a lil while since I've been at the wheel of a land vehicle.</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+			<li>
+				<label>roadrage (more than 5 days)</label>
+				<description>I need to drive, I'm getting very antsy.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>roadrage (more than 10 days)</label>
+				<description>Enough is enough, I'm feeling the call of the road! I want to drive!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>roadrage (more than 20 days)</label>
+				<description>I AM THE ONE THAT RUNS FROM BOTH THE LIVING AND THE DEAD! GIVE ME MY CAR!</description>
+				<baseMoodEffect>-15</baseMoodEffect>
+			</li>
+			
+			
+			
+			
+		</stages>
+	</ThoughtDef>
+</Defs>

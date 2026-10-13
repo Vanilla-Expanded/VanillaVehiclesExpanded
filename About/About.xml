@@ -13,7 +13,8 @@ This mod utilises the paint job system added in Vehicles framework, allowing you
     <supportedVersions>
 		<li>1.4</li>
 		<li>1.5</li>
-    <li>1.6</li>
+		<li>1.6</li>
+		<li>1.7</li>
     </supportedVersions>
     <modDependencies>
 		<li>

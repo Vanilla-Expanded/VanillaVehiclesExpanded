@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+   <!-- Adding stat parts to VF's new acceleration stat -->
+   <Operation Class = "PatchOperationConditional">
+      <xpath>Defs/Vehicles.VehicleStatDef[defName="AccelerationRate"]/parts</xpath>
+      <match Class = "PatchOperationSequence">
+         <operations>
+            <li Class = "PatchOperationConditional">
+               <xpath>Defs/Vehicles.VehicleStatDef[defName="AccelerationRate"]/parts/li[@Class="VanillaVehiclesExpanded.StatPart_AccelerationPrecept_SundayDriver"]</xpath>
+               <nomatch Class = "PatchOperationAdd">
+                  <xpath>Defs/Vehicles.VehicleStatDef[defName="AccelerationRate"]/parts</xpath>
+                  <value>
+                     <li Class = "VanillaVehiclesExpanded.StatPart_AccelerationPrecept_SundayDriver" />
+                  </value>
+               </nomatch>
+            </li>
+            <li Class = "PatchOperationConditional">
+               <xpath>Defs/Vehicles.VehicleStatDef[defName="AccelerationRate"]/parts/li[@Class="VanillaVehiclesExpanded.StatPart_AccelerationPrecept_High"]</xpath>
+               <nomatch Class = "PatchOperationAdd">
+                  <xpath>Defs/Vehicles.VehicleStatDef[defName="AccelerationRate"]/parts</xpath>
+                  <value>
+                     <li Class = "VanillaVehiclesExpanded.StatPart_AccelerationPrecept_High" />
+                  </value>
+               </nomatch>
+            </li>
+         </operations>
+      </match>
+      <nomatch Class = "PatchOperationAdd">
+         <xpath>Defs/Vehicles.VehicleStatDef[defName="AccelerationRate"]</xpath>
+         <value>
+            <parts>
+               <li Class="VanillaVehiclesExpanded.StatPart_AccelerationPrecept_SundayDriver" />
+			      <li Class="VanillaVehiclesExpanded.StatPart_AccelerationPrecept_High" />
+            </parts>
+         </value>
+      </nomatch>
+   </Operation>
+</Patch>

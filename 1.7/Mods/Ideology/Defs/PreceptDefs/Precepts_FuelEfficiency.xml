@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IssueDef>
+		<defName>VVE_FuelEfficiency</defName>
+		<label>fuel efficiency</label>
+		<iconPath>UI/Issues/VVE_FuelEfficiency</iconPath>
+	</IssueDef>
+
+	<PreceptDef>
+		<defName>VVE_FuelEfficiency_Standard</defName>
+		<issue>VVE_FuelEfficiency</issue>
+		<label>standard</label>
+		<description>Our fuel consumption remains traditional.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>35</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<classic>true</classic>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_FuelEfficiency_Inefficient</defName>
+		<issue>VVE_FuelEfficiency</issue>
+		<label>inefficient</label>
+		<description>Our vehicles have a higher fuel appetite.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - This precept increases FuelConsumptionRate (if present) on the vehicle by 50%.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		
+	</PreceptDef>
+	<PreceptDef>
+		<defName>VVE_FuelEfficiency_Efficient</defName>
+		<issue>VVE_FuelEfficiency</issue>
+		<label>efficient</label>
+		<description>Our vehicles are optimized for minimal fuel usage.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;\n - This precept decreases FuelConsumptionRate (if present) on the vehicle by 50%.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>20</displayOrderInIssue>
+		
+	</PreceptDef>
+	
+</Defs>

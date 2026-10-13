@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ResearchProjectDef>
+    <defName>VVE_BasicVehicles</defName>
+    <label>basic vehicles</label>
+    <description>Learn to construct basic, inefficient vehicles, from prowler buggy to roadkill single-person tanks.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+	<prerequisites>
+      <li>BiofuelRefining</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->first vehicles</li>
+    <li>subject_story->started making simple vehicles like buggies and single-person tanks</li>
+    <li>subject_story->changed how far we could go and what we could carry</li>
+    <li>subject_story->made travel faster than ever before</li>
+    <li>subject_gerund->inventing new ways to move</li>
+  </rulesStrings>
+</generalRules>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VVE_ComplexVehicles</defName>
+    <label>complex vehicles</label>
+    <description>Learn to construct complex vehicles, such as wagons, roadrunners and snatchers, using the components you can easily fabricate.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+	<prerequisites>
+      <li>VVE_BasicVehicles</li>
+	  <li>Fabrication</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->better vehicles</li>
+    <li>subject_story->built more complex vehicles like wagons and fast cars</li>
+    <li>subject_story->made it easier to move things and people over long distances</li>
+    <li>subject_story->vehicles became more useful and versatile</li>
+    <li>subject_gerund->improving our rides</li>
+  </rulesStrings>
+</generalRules>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VVE_AerialVehicles</defName>
+    <label>aerial vehicles</label>
+    <description>Learn to construct vehicles capable of travelling above the ground, such as a mosquito helicopter and a smuggler cargo airplane.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+	<prerequisites>
+      <li>VVE_BasicVehicles</li>
+	  <li>Fabrication</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->flying machines</li>
+    <li>subject_story->created helicopters and cargo planes to fly over obstacles</li>
+    <li>subject_story->opened up new ways to explore and trade</li>
+    <li>subject_story->made air travel possible, changing how we see the world</li>
+    <li>subject_gerund->taking to the skies</li>
+  </rulesStrings>
+</generalRules>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VVE_CombatVehicles</defName>
+    <label>combat vehicles</label>
+    <description>Learn to construct complex combat vehicles, such as bulldog battle tanks, tango armored personnel carriers and warbird combat airplanes.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Industrial</techLevel>
+	<prerequisites>
+      <li>VVE_BasicVehicles</li>
+	  <li>Fabrication</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	<tab>Vehicles</tab>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->war vehicles</li>
+    <li>subject_story->made powerful combat vehicles like tanks and armored planes</li>
+    <li>subject_story->vehicles could now fight and defend in wars</li>
+    <li>subject_story->changed how battles are fought with these new machines</li>
+    <li>subject_gerund->building for battle</li>
+  </rulesStrings>
+</generalRules>
+  </ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Scytheman_Blueprint</defName>
+		<label>Scytheman</label>
+		<description>A juryrigged multiple rocket launcher system, the Scytheman is a repurposed farming vehicle intended to saturate a location with inaccurate volleys of explosives. Due to the design, it is not intended to fire successive volleys or be exposed to enemy fire.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances. Performs worse in the winter but slightly better on the flat, open road.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_RocketTruck/Tier1_RocketTruck</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 5)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>8500</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<size>(2, 4)</size>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<VVE_CarAlternator>1</VVE_CarAlternator>
+			<VVE_CarExhaust>2</VVE_CarExhaust>
+			<VVE_CarSuspension>6</VVE_CarSuspension>
+			<VVE_CarWheel>6</VVE_CarWheel>
+			<Steel>120</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>VVE_Scytheman</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

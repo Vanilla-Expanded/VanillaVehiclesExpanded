@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Authors>Oskar Potocki, Smash Phil, Taranchuk</Authors>
+		<Description>Vanilla Vehicles Expanded.</Description>
+		<Product>Vanilla Vehicles Expanded</Product>
+		<RootNamespace>VanillaVehiclesExpanded</RootNamespace>
+		<AssemblyName>VanillaVehiclesExpanded</AssemblyName>
+		<CurrentDate>$([System.DateTime]::Now.ToString(yyyy/MM/dd HH:mm:ss))</CurrentDate>
+		<ProjectGuid>{97FA1308-3ED7-41D8-827D-0CC3A3291EE8}</ProjectGuid>
+
+		<Configurations>Debug;;Release;</Configurations>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<FileVersion>1.7.0</FileVersion>
+		<AssemblyVersion>1.7.0</AssemblyVersion>
+
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+		<GenerateDependencyFile>False</GenerateDependencyFile>
+		<Deterministic>true</Deterministic>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<FileAlignment>512</FileAlignment>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<NoWarn>0649</NoWarn>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<PublicizerClearCacheOnClean>true</PublicizerClearCacheOnClean>
+
+		<ModDir>..\..\</ModDir>
+		<OutDir>$(ModDir)\1.7\Assemblies\</OutDir>
+		<VehicleFrameworkDir>$(ModDir)\..\Vehicle-Framework\1.7\Assemblies</VehicleFrameworkDir>
+		<RefDir>$(ModDir)\..\..\</RefDir>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<Optimize>false</Optimize>
+		<DefineConstants>TRACE;DEBUG;UNITY_ASSERTIONS;</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<Optimize>true</Optimize>
+		<DefineConstants>TRACE;RELEASE;</DefineConstants>
+	</PropertyGroup>
+
+	<!-- Dependencies -->
+	<ItemGroup Condition="'$(UseKrafsPackageRef)' == 'true' AND '$(AnalyzerProject)' != 'true'">
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.*" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(UseKrafsPackageRef)' != 'true' AND '$(AnalyzerProject)' != 'true'">
+		<Reference Include="System">
+			<HintPath>$(RefDir)\System.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="System.Xml">
+			<HintPath>$(RefDir)\System.Xml.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="System.Xml.Linq">
+			<HintPath>$(RefDir)\System.Xml.Linq.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="mscorlib">
+			<HintPath>$(RefDir)\mscorlib.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityStubs">
+			<HintPath>$(RefDir)\UnityStubs.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(RefDir)\Assembly-CSharp.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Waylith">
+			<HintPath>$(RefDir)\Waylith.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Waylith.UnityCompat">
+			<HintPath>$(RefDir)\Waylith.UnityCompat.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony.Ref" Version="2.4.2" />
+
+		<!--Local -->
+		<Reference Include="CoreLib">
+			<HintPath>$(VehicleFrameworkDir)\CoreLib.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+
+		<Reference Include="SmashTools">
+			<HintPath>$(VehicleFrameworkDir)\SmashTools.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+
+		<Reference Include="VehicleFramework">
+			<HintPath>$(VehicleFrameworkDir)\Vehicles.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBoatBaseBuildable">
+		<defName>VVE_Dinghy_Blueprint</defName>
+		<label>Dinghy</label>
+		<description>A very basic motorised boat, the Dingy is an incredibly cheap and discrete method of transportation over water. Has a good cargo capacity, however it is likely to get frozen solid in the winter times and moves slowly on rivers. The exposed rear-mounted engine is vulnerable to attacks and the hull plating should not be expected to wither projectile weapons.\n\nSimilar to other tier 1 vehicles, this is a gas guzzler and best used for medium distances.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Driver x1, Passenger x5\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier1/Tier1_Boat/Tier1_Boat</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>3500</WorkToBuild>
+			<Flammability>0.65</Flammability>
+		</statBases>
+		
+		<size>(2, 4)</size>
+		
+		<researchPrerequisites>
+			<li>VVE_BasicVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>1</VVE_EngineBlock>
+			<Steel>20</Steel>
+			<WoodLog>140</WoodLog>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Wood</soundImpactDefault>
+		
+		<thingToSpawn>VVE_Dinghy</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

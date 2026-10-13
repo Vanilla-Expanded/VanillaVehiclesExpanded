@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<success>Always</success>
+		<xpath>/Defs/Vehicles.VehicleStatDef[defName = "RepairRate"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/Vehicles.VehicleStatDef[defName = "RepairRate"]</xpath>
+			<value>
+				<parts>
+					<li Class="VanillaVehiclesExpanded.StatPart_VehicleRepairs_Slow"/>
+					<li Class="VanillaVehiclesExpanded.StatPart_VehicleRepairs_Fast"/>
+				</parts>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/Vehicles.VehicleStatDef[defName = "RepairRate"]/parts</xpath>
+			<value>
+				<li Class="VanillaVehiclesExpanded.StatPart_VehicleRepairs_Slow"/>
+				<li Class="VanillaVehiclesExpanded.StatPart_VehicleRepairs_Fast"/>
+			</value>
+		</match>
+	</Operation>
+</Patch>

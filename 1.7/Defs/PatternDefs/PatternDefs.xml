@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<Vehicles.PatternDef>
+		<defName>VVE_Streaky</defName>
+		<label>Streaky</label>
+		<path>Patterns/Streaky/Pattern_Streaky</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_8bit</defName>
+		<label>8 Bit</label>
+		<path>Patterns/8bit/Pattern_8Bit</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Blocky</defName>
+		<label>Blocky</label>
+		<path>Patterns/Blocky/Pattern_Blocky</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_CallOfDuty</defName>
+		<label>CallOfDuty</label>
+		<path>Patterns/CallOfDuty/Pattern_CallOfDuty</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Dots</defName>
+		<label>Dots</label>
+		<path>Patterns/Dots/Pattern_Dots</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_GeometricGrunge</defName>
+		<label>Geometric Grunge</label>
+		<path>Patterns/GeometricGrunge/Pattern_GeometricGrunge</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Gloss</defName>
+		<label>Gloss</label>
+		<path>Patterns/Gloss/Pattern_Gloss</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Grunge</defName>
+		<label>Grunge</label>
+		<path>Patterns/Grunge/Pattern_Grunge</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Marble</defName>
+		<label>Marble</label>
+		<path>Patterns/Marble/Pattern_Marble</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Painted</defName>
+		<label>Painted</label>
+		<path>Patterns/Painted/Pattern_Painted</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Processor</defName>
+		<label>Processor</label>
+		<path>Patterns/Processor/Pattern_Processor</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Reactive</defName>
+		<label>Reactive</label>
+		<path>Patterns/Reactive/Pattern_Reactive</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Rocky</defName>
+		<label>Rocky</label>
+		<path>Patterns/Rocky/Pattern_Rocky</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Savannah</defName>
+		<label>Savannah</label>
+		<path>Patterns/Savannah/Pattern_Savannah</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Shine</defName>
+		<label>Shine</label>
+		<path>Patterns/Shine/Pattern_Shine</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Smudges</defName>
+		<label>Smudges</label>
+		<path>Patterns/Smudges/Pattern_Smudges</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Splatter</defName>
+		<label>Splatter</label>
+		<path>Patterns/Splatter/Pattern_Splatter</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Stamped</defName>
+		<label>Stamped</label>
+		<path>Patterns/Stamped/Pattern_Stamped</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Vinyl</defName>
+		<label>Vinyl</label>
+		<path>Patterns/Vinyl/Pattern_Vinyl</path>
+	</Vehicles.PatternDef>
+	
+	<Vehicles.PatternDef>
+		<defName>VVE_Wildcat</defName>
+		<label>Wildcat</label>
+		<path>Patterns/Wildcat/Pattern_Wildcat</path>
+	</Vehicles.PatternDef>
+</Defs>

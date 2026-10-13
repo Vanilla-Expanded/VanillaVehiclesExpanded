@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class = "PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName = "AncientTankTrap"]</xpath>
+		<match Class = "PatchOperationAddModExtension">
+			<xpath>Defs/ThingDef[defName = "AncientTankTrap"]</xpath>
+			<value>
+				<li Class = "Vehicles.CustomCostDefModExtension">
+					<cost>10000</cost>
+				</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>
+

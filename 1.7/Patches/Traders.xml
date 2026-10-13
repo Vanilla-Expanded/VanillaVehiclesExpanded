@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/TraderKindDef[defName="Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+      <value>
+         <li Class="StockGenerator_Tag">
+            <tradeTag>VVE_CarPartAdvanced</tradeTag>
+            <thingDefCountRange>1~2</thingDefCountRange>
+            <countRange>1~2</countRange>
+         </li>
+      </value>
+   </Operation>
+   
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/TraderKindDef[defName="Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
+      <value>
+         <li Class="StockGenerator_Tag">
+            <tradeTag>VVE_CarPartBasic</tradeTag>
+            <thingDefCountRange>1~2</thingDefCountRange>
+            <countRange>1~2</countRange>
+         </li>
+      </value>
+   </Operation>
+   
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/TraderKindDef[defName="Base_Outlander_Standard"]/stockGenerators</xpath>
+      <value>
+         <li Class="StockGenerator_Tag">
+            <tradeTag>VVE_CarPartBasic</tradeTag>
+            <thingDefCountRange>1~3</thingDefCountRange>
+            <countRange>1~2</countRange>
+         </li>
+         <li Class="StockGenerator_Tag">
+            <tradeTag>VVE_CarPartAdvanced</tradeTag>
+            <thingDefCountRange>0~2</thingDefCountRange>
+            <countRange>1~1</countRange>
+         </li>
+      </value>
+   </Operation>
+   
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+      <value>
+         <li Class="StockGenerator_Tag">
+            <tradeTag>VVE_CarPartAdvanced</tradeTag>
+            <thingDefCountRange>1~3</thingDefCountRange>
+            <countRange>1~3</countRange>
+         </li>
+      </value>
+   </Operation>
+   
+   <Operation Class="PatchOperationFindMod">
+      <mods>
+         <li>Royalty</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+         <operations>
+            <li Class="PatchOperationAdd">
+               <xpath>Defs/TraderKindDef[defName="Base_Empire_Standard"]/stockGenerators</xpath>
+               <value>
+                  <li Class="StockGenerator_Tag">
+                     <tradeTag>VVE_CarPartBasic</tradeTag>
+                     <thingDefCountRange>0~2</thingDefCountRange>
+                     <countRange>1~2</countRange>
+                  </li>
+                  <li Class="StockGenerator_Tag">
+                     <tradeTag>VVE_CarPartAdvanced</tradeTag>
+                     <thingDefCountRange>0~1</thingDefCountRange>
+                     <countRange>1~1</countRange>
+                  </li>
+               </value>
+            </li>
+         </operations>
+      </match>
+   </Operation>
+</Patch>

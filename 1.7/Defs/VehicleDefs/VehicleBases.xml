@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<Vehicles.VehicleDef Name = "VVE_VehiclePawn_Land" ParentName = "BaseVehiclePawn" Abstract = "True">
+		<properties>
+			<worldSpeedMultiplier>1</worldSpeedMultiplier>
+		</properties>
+		
+		<vehicleStats>
+			<AccelerationRate>0.03</AccelerationRate>
+		</vehicleStats>
+		
+		<comps>
+			<li Class="VanillaVehiclesExpanded.CompProperties_VehicleMovementController"></li>
+		</comps>
+	</Vehicles.VehicleDef>
+	
+	<Vehicles.VehicleDef Name = "VehiclePawn_Mechanical" ParentName = "VVE_VehiclePawn_Land" Abstract = "True">
+		<properties>
+			<customTerrainCosts DisallowTerrainWithTag="Water"/>
+		</properties>
+		
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>PawnEntered</key>
+				<value>VVE_VehicleEnter</value>
+			</li>
+			<li>
+				<key>PawnExited</key>
+				<value>VVE_VehicleEnter</value>
+			</li>
+			<li>
+				<key>IgnitionOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+	</Vehicles.VehicleDef>
+	
+	<Vehicles.VehicleDef Name = "VehiclePawn_Armored" ParentName = "VVE_VehiclePawn_Land" Abstract = "True">
+		<soundOneShotsOnEvent Inherit = "False">
+			<li>
+				<key>PawnEntered</key>
+				<value>VVE_VehicleEnterArmored</value>
+			</li>
+			<li>
+				<key>PawnExited</key>
+				<value>VVE_VehicleEnterArmored</value>
+			</li>
+			<li>
+				<key>IgnitionOn</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>VVE_VehicleStart</value>
+			</li>
+		</soundOneShotsOnEvent>
+	</Vehicles.VehicleDef>
+</Defs>

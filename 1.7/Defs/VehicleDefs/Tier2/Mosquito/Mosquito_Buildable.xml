@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>VVE_Mosquito_Blueprint</defName>
+		<label>Mosquito</label>
+		<description>A general-purpose aircraft, the Mosquito is an extremely fast and mobile mode of transportation. While it doesn’t require a landing strip, it is slower than aeroplanes and has less cargo capacity.\n\nSimilar to other tier 2 vehicles, this has double fuel efficiency on the world map which makes them more efficient than tier 1 vehicles.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1, Passenger x3\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Tier2/Tier2_Helicopter/Tier2_Helicopter</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,6)</drawSize>
+		</graphicData>
+		
+		<size>(2,5)</size>
+		
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<researchPrerequisites>
+			<li>VVE_AerialVehicles</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<VVE_EngineBlock>2</VVE_EngineBlock>
+			<VVE_CarAlternator>4</VVE_CarAlternator>
+			<VVE_CarExhaust>4</VVE_CarExhaust>
+			<VVE_CarSuspension>6</VVE_CarSuspension>
+			<VVE_CarTransmission>1</VVE_CarTransmission>
+			<VVE_CarWiring>2</VVE_CarWiring>
+			<VVE_CarBattery>2</VVE_CarBattery>
+			<Steel>480</Steel>
+			<ComponentIndustrial>16</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>VVE_Mosquito</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>
