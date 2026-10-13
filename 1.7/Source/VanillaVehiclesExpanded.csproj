@@ -37,6 +37,7 @@
 		<OutDir>$(ModDir)\1.7\Assemblies\</OutDir>
 		<VehicleFrameworkDir>$(ModDir)\..\Vehicle-Framework\1.7\Assemblies</VehicleFrameworkDir>
 		<RefDir>$(ModDir)\..\..\</RefDir>
+		<UseKrafsPackageRef>false</UseKrafsPackageRef>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
