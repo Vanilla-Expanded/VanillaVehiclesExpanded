@@ -3,13 +3,7 @@
 <Defs>
 	<Vehicles.CustomHitFlags>
 		<defName>VVE_Tank</defName>
-		<!-- Pass over most cover in the game, including rock chunks and sandbags -->
 		<minFillPercent>0.8</minFillPercent>
-	</Vehicles.CustomHitFlags>
-
-	<Vehicles.CustomHitFlags>
-		<defName>VVE_ArmoredVehicle</defName>
-		<!-- Pass over trees and foliage, but can be intercepted by rock chunks and sandbags -->
-		<minFillPercent>0.30</minFillPercent>
+		<hitThroughPawns>true</hitThroughPawns>
 	</Vehicles.CustomHitFlags>
 </Defs>

@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using SmashTools;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CoreLib.PathFinding;
-using RimWorld;
-using SmashTools;
+using System.Threading;
 using UnityEngine;
 using Vehicles;
 using Verse;
+using Verse.AI;
 using Verse.Sound;
 
 namespace VanillaVehiclesExpanded
@@ -36,7 +37,7 @@ namespace VanillaVehiclesExpanded
         private float prevPctOfPathPassed;
         private float curPctOfPathPassed;
 
-        private Dictionary<StartAndDestCells, Path> savedPaths = new();
+        private Dictionary<StartAndDestCells, VehiclePath> savedPaths = new();
 
         public float AccelerationRate => Vehicle.GetStatValue(VVE_DefOf.AccelerationRate);
 
@@ -286,7 +287,7 @@ namespace VanillaVehiclesExpanded
                     var path = GetPawnPath(startPos, queueJob.job.targetA.Cell);
                     if (path != null)
                     {
-                        startPos = path.LastNode.ToIntVec3();
+                        startPos = path.LastNode;
                         var otherResult = GetPathCost(path, ignorePassedCells: false);
                         result.cost += otherResult.cost;
                         result.cells += otherResult.cells;
@@ -300,19 +301,19 @@ namespace VanillaVehiclesExpanded
             return result;
         }
 
-        private Path GetPawnPath(IntVec3 start, IntVec3 dest)
+        private VehiclePath GetPawnPath(IntVec3 start, IntVec3 dest)
         {
             var key = new StartAndDestCells { start = start, dest = dest };
             if (!savedPaths.TryGetValue(key, out var path))
-            { 
-                var pathFinder = Vehicle.Map.GetCachedMapComponent<VehiclePathingSystem>().PathFinder;
-                path = pathFinder.FindPath(start.ToPathNode(), dest.ToPathNode(), PathSettings.For(Vehicle));
-                savedPaths[key] = path;
+            {
+                savedPaths[key] =
+                  path = Vehicle.Map.GetCachedMapComponent<VehiclePathingSystem>()[Vehicle.VehicleDef]
+                   .VehiclePathFinder.FindPath(start, dest, Vehicle, CancellationToken.None);
             }
             return path;
         }
 
-        public PathCostResult GetPathCost(Path path, bool ignorePassedCells)
+        public PathCostResult GetPathCost(VehiclePath path, bool ignorePassedCells)
         {
             var result = default(PathCostResult);
             if (path != null)
@@ -321,9 +322,8 @@ namespace VanillaVehiclesExpanded
                 bool startCalculation = false;
                 var nodes = path.Nodes.ToList();
                 nodes.Reverse();
-                foreach (var node in nodes)
+                foreach (var cell in nodes)
                 {
-                    IntVec3 cell = node.ToIntVec3();
                     if (startCalculation || !ignorePassedCells)
                     {
                         result.cost += VehiclePathFollower.CostToMoveIntoCell(Vehicle, prevCell, cell);
